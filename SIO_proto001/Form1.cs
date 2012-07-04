@@ -113,8 +113,8 @@ namespace SIO_proto001
             ArrayList al = new ArrayList();
 
             System.IO.Stream stream;
-            stream = ofd.OpenFile();          
-
+            stream = ofd.OpenFile();
+            
             if (stream != null)
             {
                 //内容を読み込み、表示する
@@ -123,18 +123,31 @@ namespace SIO_proto001
 
                 while ((line = sr.ReadLine()) != null)
                 {
-                    al.Add(line);                    
+                    al.Add(line);
+                    // ここに処理するﾙｰﾁﾝをいれる
                 }
+                //for (int i = 0; i < al.Count; i++)
+                //{
+                //    MessageBox.Show(al[i].ToString());
+                //}
 //                MessageBox.Show(sr.ReadToEnd());
                 //閉じる
                 sr.Close();
                 stream.Close();
 
-                for (int i = 0; i < al.Count; i++)
-                {
-                    MessageBox.Show(al[i].ToString());
-                }
-            } 
+            }
+
+
+            // こっちは書き込んでる
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(
+                outputFilePath.Text,
+                true,
+                System.Text.Encoding.GetEncoding("shift_jis"));
+            
+            //TextBox1.Textの内容を書き込む
+            sw.Write(sw.NewLine + "ZZZ");
+            //閉じる
+            sw.Close();
         }
 
     }
