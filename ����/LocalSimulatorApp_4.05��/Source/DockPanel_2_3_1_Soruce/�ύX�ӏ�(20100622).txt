@@ -1,0 +1,55 @@
+WinFormsUI 変更箇所
+
+2010/06/17
+
+・FloatWindow.cs
+
+	InternalConstructメソッドにて、以下の構文をコメントアウト。
+	
+	////////////////////////////////////////////////////////////
+
+	FormBorderStyle = FormBorderStyle.SizableToolWindow;
+
+	////////////////////////////////////////////////////////////
+
+	理由：ドッキングを解除したフォームが、Sizableなフォームにならないようにするため。
+
+
+・FloatWindow.cs
+
+	InternalConstructメソッドにて、以下のように構文を変更。
+
+	////////////////////////////////////////////////////////////
+
+	//Size = dockPanel.DefaultFloatWindowSize;
+	Size = dockPanel.Size;
+
+	////////////////////////////////////////////////////////////
+
+	理由：ドッキングを解除したフォームの大きさを、元のフォームの大きさに合わせる。
+
+
+2010/06/22
+
+・FloatWindow.cs
+
+	WndProcメソッドにて処理されていた、WM_CLOSE イベントの処理を、OnFormClosingメソッドで処理するように変更。
+	また、「IsFloat = true」のときはフォームをクローズしないように変更。
+
+	理由：ドッキングを解除したフォームが、Alt + F4 キーでクローズされるのを防ぐため。
+
+
+・DockContentHandler.cs
+
+	IDockDragSource.BeginDragメソッドにて、以下のように構文を変更。
+
+	////////////////////////////////////////////////////////////
+
+	if (DockState == DockState.Float || floatPane == null || floatPane.FloatWindow.NestedPanes.Count != 1)
+		//size = DockPanel.DefaultFloatWindowSize;
+		size = DockPanel.Size;
+
+	////////////////////////////////////////////////////////////
+
+	理由：ドラッグを開始したフォームの大きさを、元のフォームの大きさに合わせる。
+

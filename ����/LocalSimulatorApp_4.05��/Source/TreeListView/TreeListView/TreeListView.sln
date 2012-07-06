@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeListView", "TreeListView.csproj", "{33221C8F-C2D3-4B58-9E55-3CE85F75C58F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIs2002", "..\APIs\APIs2002.csproj", "{4C455726-38B4-4143-8C43-46653918F0E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33221C8F-C2D3-4B58-9E55-3CE85F75C58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33221C8F-C2D3-4B58-9E55-3CE85F75C58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33221C8F-C2D3-4B58-9E55-3CE85F75C58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33221C8F-C2D3-4B58-9E55-3CE85F75C58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C455726-38B4-4143-8C43-46653918F0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C455726-38B4-4143-8C43-46653918F0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C455726-38B4-4143-8C43-46653918F0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C455726-38B4-4143-8C43-46653918F0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

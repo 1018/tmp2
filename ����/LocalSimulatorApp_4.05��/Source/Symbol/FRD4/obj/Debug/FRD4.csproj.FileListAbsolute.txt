@@ -1,0 +1,17 @@
+D:\LocalSimulatorApp_4.04β\Source\Symbol\FRD4\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.04β\Source\Symbol\FRD4\obj\Debug\SymbolLibrary.FRD4_Draw.resources
+D:\LocalSimulatorApp_4.04β\Source\Symbol\FRD4\obj\Debug\FRD4.csproj.GenerateResource.Cache
+D:\LocalSimulatorApp_4.04β\Source\Symbol\FRD4\obj\Debug\SymbolLibrary.Alarm_Form.resources
+D:\LocalSimulatorApp_4.04β\Source\Symbol\FRD4\obj\Debug\SymbolLibrary.Log_Form.resources
+D:\LocalSimulatorApp_4.04β\Data\Symbol\FRD4.dll
+D:\LocalSimulatorApp_4.04β\Data\Symbol\FRD4.pdb
+D:\LocalSimulatorApp_4.04β\Source\Symbol\FRD4\obj\Debug\FRD4.dll
+D:\LocalSimulatorApp_4.04β\Source\Symbol\FRD4\obj\Debug\FRD4.pdb
+D:\LocalSimulatorApp_4.05α\Data\Symbol\FRD4.dll
+D:\LocalSimulatorApp_4.05α\Data\Symbol\FRD4.pdb
+D:\LocalSimulatorApp_4.05α\Source\Symbol\FRD4\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\Symbol\FRD4\obj\Debug\SymbolLibrary.FRD4_Draw.resources
+D:\LocalSimulatorApp_4.05α\Source\Symbol\FRD4\obj\Debug\SymbolLibrary.Log_Form.resources
+D:\LocalSimulatorApp_4.05α\Source\Symbol\FRD4\obj\Debug\FRD4.csproj.GenerateResource.Cache
+D:\LocalSimulatorApp_4.05α\Source\Symbol\FRD4\obj\Debug\FRD4.dll
+D:\LocalSimulatorApp_4.05α\Source\Symbol\FRD4\obj\Debug\FRD4.pdb

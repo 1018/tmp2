@@ -1,0 +1,7 @@
+D:\LocalSimulatorApp_4.05α\Data\Symbol\MelsecSerialUnit.dll
+D:\LocalSimulatorApp_4.05α\Data\Symbol\MelsecSerialUnit.pdb
+D:\LocalSimulatorApp_4.05α\Source\Symbol\MelsecSerialUnit\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\Symbol\MelsecSerialUnit\obj\Debug\SymbolLibrary.MelsecSerialUnit_Draw.resources
+D:\LocalSimulatorApp_4.05α\Source\Symbol\MelsecSerialUnit\obj\Debug\MelsecSerialUnit.csproj.GenerateResource.Cache
+D:\LocalSimulatorApp_4.05α\Source\Symbol\MelsecSerialUnit\obj\Debug\MelsecSerialUnit.dll
+D:\LocalSimulatorApp_4.05α\Source\Symbol\MelsecSerialUnit\obj\Debug\MelsecSerialUnit.pdb

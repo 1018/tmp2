@@ -1,0 +1,5 @@
+D:\LocalSimulatorApp_4.05α\Release\PC_PLC.dll
+D:\LocalSimulatorApp_4.05α\Release\PC_PLC.pdb
+D:\LocalSimulatorApp_4.05α\Source\PC_PLC\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\PC_PLC\obj\Debug\PC_PLC.dll
+D:\LocalSimulatorApp_4.05α\Source\PC_PLC\obj\Debug\PC_PLC.pdb

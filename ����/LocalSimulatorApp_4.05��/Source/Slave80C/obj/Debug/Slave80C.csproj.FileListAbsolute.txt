@@ -1,0 +1,5 @@
+D:\LocalSimulatorApp_4.05α\Release\Slave80C.dll
+D:\LocalSimulatorApp_4.05α\Release\Slave80C.pdb
+D:\LocalSimulatorApp_4.05α\Source\Slave80C\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\Slave80C\obj\Debug\Slave80C.dll
+D:\LocalSimulatorApp_4.05α\Source\Slave80C\obj\Debug\Slave80C.pdb

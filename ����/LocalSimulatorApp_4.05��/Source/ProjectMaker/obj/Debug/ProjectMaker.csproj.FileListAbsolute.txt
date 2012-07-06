@@ -1,0 +1,16 @@
+D:\LocalSimulatorApp_4.05α\Release\ProjectMaker.exe
+D:\LocalSimulatorApp_4.05α\Release\ProjectMaker.pdb
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.BaseForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.ProjectForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.PropertyForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.SystemSettingForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.SymbolListForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.GridSettingForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.IoListForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.MainForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.ImportProjectForm.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\LocalSimulator.ProjectMaker.Properties.Resources.resources
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\ProjectMaker.csproj.GenerateResource.Cache
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\ProjectMaker.exe
+D:\LocalSimulatorApp_4.05α\Source\ProjectMaker\obj\Debug\ProjectMaker.pdb

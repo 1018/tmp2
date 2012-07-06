@@ -1,0 +1,10 @@
+D:\LocalSimulatorApp_4.05α\Data\Symbol\ETU_HEC003.dll
+D:\LocalSimulatorApp_4.05α\Data\Symbol\ETU_HEC003.pdb
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\SymbolLibrary.Alarm_Form.resources
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\SymbolLibrary.ETU_HEC003_Draw.resources
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\SymbolLibrary.Log_Form.resources
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\SymbolLibrary.Properties.Resources.resources
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\ETU_HEC003.csproj.GenerateResource.Cache
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\ETU_HEC003.dll
+D:\LocalSimulatorApp_4.05α\Source\Symbol\ETU_HEC003\obj\Debug\ETU_HEC003.pdb

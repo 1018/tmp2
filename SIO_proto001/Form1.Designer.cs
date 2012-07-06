@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.inputFilePath = new System.Windows.Forms.TextBox();
             this.outputFilePath = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.trashMode = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -74,15 +74,15 @@
             this.outputFilePath.TabIndex = 3;
             this.outputFilePath.Text = "D:\\nagase\\WorkSpace\\SIO_proto001\\SIO.txt";
             // 
-            // checkBox1
+            // trashMode
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(24, 80);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 16);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "いらんやつ捨てる";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.trashMode.AutoSize = true;
+            this.trashMode.Location = new System.Drawing.Point(24, 80);
+            this.trashMode.Name = "trashMode";
+            this.trashMode.Size = new System.Drawing.Size(101, 16);
+            this.trashMode.TabIndex = 4;
+            this.trashMode.Text = "いらんやつ捨てる";
+            this.trashMode.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -156,7 +156,7 @@
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.trashMode);
             this.Controls.Add(this.outputFilePath);
             this.Controls.Add(this.inputFilePath);
             this.Controls.Add(this.label2);
@@ -174,7 +174,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox inputFilePath;
         private System.Windows.Forms.TextBox outputFilePath;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox trashMode;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;

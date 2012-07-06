@@ -1,0 +1,91 @@
+09:17:56.167 フォーム復元：LocalSimulator.ProjectMaker.SymbolListForm
+09:17:56.167 フォーム復元：LocalSimulator.ProjectMaker.ProjectForm
+09:17:56.167 フォーム復元：LocalSimulator.ProjectMaker.PropertyForm
+09:17:58.980 MainForm起動完了
+09:18:02.683 [PROC]Load BaseForm : BAKE1温調
+09:18:02.948 シンボル読み出し完了 FRD41
+09:18:03.011 シンボル読み出し完了 MelsecSerialUnit1
+09:18:03.151 シンボル読み出し完了 SRZ_Z_TIO1
+09:18:03.276 シンボル読み出し完了 SRZ_Z_TIO2
+09:18:03.433 シンボル読み出し完了 FRD42
+09:18:03.558 シンボル読み出し完了 SRZ_Z_TIO3
+09:18:03.698 シンボル読み出し完了 SRZ_Z_TIO4
+09:18:03.714 [PROC]Complete Load BaseForm : BAKE1温調
+09:18:03.714 [PROC]Load BaseForm : IND_TRN_IFB
+09:18:03.823 シンボル読み出し完了 Scn80C1
+09:18:03.870 シンボル読み出し完了 Button1
+09:18:03.886 シンボル読み出し完了 Button2
+09:18:03.886 シンボル読み出し完了 Button3
+09:18:03.886 シンボル読み出し完了 Button4
+09:18:03.901 シンボル読み出し完了 Button5
+09:18:03.901 シンボル読み出し完了 Button6
+09:18:03.901 Dll Not Found Eew80C.dll
+09:18:03.901 [ERROR]BaseForm読み込みエラー : ファイル=D:\LocalSimulatorApp_4.05α\Release\SIM_80C_ver7.2.lcs, ベースフォーム=IND_TRN_IFB, 内容=オブジェクト参照がオブジェクト インスタンスに設定されていません。
+09:18:03.917 [PROC]Load BaseForm : IF-B_IO
+09:18:03.933 シンボル読み出し完了 AlternateButton14
+09:18:03.948 シンボル読み出し完了 AlternateButton15
+09:18:03.948 シンボル読み出し完了 AlternateButton16
+09:18:03.964 シンボル読み出し完了 AlternateButton17
+09:18:03.964 シンボル読み出し完了 AlternateButton18
+09:18:03.980 シンボル読み出し完了 AlternateButton19
+09:18:03.980 シンボル読み出し完了 AlternateButton20
+09:18:03.995 シンボル読み出し完了 AlternateButton21
+09:18:03.995 シンボル読み出し完了 AlternateButton22
+09:18:03.995 シンボル読み出し完了 AlternateButton23
+09:18:04.011 シンボル読み出し完了 AlternateButton24
+09:18:04.011 シンボル読み出し完了 AlternateButton25
+09:18:04.026 シンボル読み出し完了 AlternateButton26
+09:18:04.026 シンボル読み出し完了 AlternateButton27
+09:18:04.042 シンボル読み出し完了 AlternateButton28
+09:18:04.042 シンボル読み出し完了 AlternateButton29
+09:18:04.042 シンボル読み出し完了 AlternateButton30
+09:18:04.058 シンボル読み出し完了 AlternateButton31
+09:18:04.073 シンボル読み出し完了 AlternateButton32
+09:18:04.073 シンボル読み出し完了 AlternateButton33
+09:18:04.089 シンボル読み出し完了 AlternateButton34
+09:18:04.089 シンボル読み出し完了 AlternateButton35
+09:18:04.105 シンボル読み出し完了 AlternateButton36
+09:18:04.120 シンボル読み出し完了 AlternateButton37
+09:18:04.120 シンボル読み出し完了 AlternateButton38
+09:18:04.136 シンボル読み出し完了 AlternateButton39
+09:18:04.136 シンボル読み出し完了 AlternateButton40
+09:18:04.151 シンボル読み出し完了 AlternateButton41
+09:18:04.151 シンボル読み出し完了 AlternateButton42
+09:18:04.151 シンボル読み出し完了 AlternateButton43
+09:18:04.167 シンボル読み出し完了 AlternateButton44
+09:18:04.167 シンボル読み出し完了 AlternateButton45
+09:18:04.183 [PROC]Complete Load BaseForm : IF-B_IO
+09:18:04.183 [PROC]Load BaseForm : CVP
+09:18:04.198 シンボル読み出し完了 Button1
+09:18:04.198 シンボル読み出し完了 Button2
+09:18:04.198 シンボル読み出し完了 Button3
+09:18:04.214 シンボル読み出し完了 Button4
+09:18:04.214 シンボル読み出し完了 Button5
+09:18:04.230 シンボル読み出し完了 Button6
+09:18:04.230 シンボル読み出し完了 Button7
+09:18:04.245 シンボル読み出し完了 Button8
+09:18:04.245 シンボル読み出し完了 Button9
+09:18:04.261 シンボル読み出し完了 Button10
+09:18:04.261 シンボル読み出し完了 Button12
+09:18:04.261 シンボル読み出し完了 Button13
+09:18:04.276 シンボル読み出し完了 Button22
+09:18:04.276 シンボル読み出し完了 Button23
+09:18:04.292 シンボル読み出し完了 Button24
+09:18:04.292 シンボル読み出し完了 Button25
+09:18:04.308 シンボル読み出し完了 Button26
+09:18:04.308 シンボル読み出し完了 Button27
+09:18:04.323 シンボル読み出し完了 Button28
+09:18:04.323 シンボル読み出し完了 Button29
+09:18:04.323 シンボル読み出し完了 Button30
+09:18:04.339 シンボル読み出し完了 Button31
+09:18:04.339 シンボル読み出し完了 Button32
+09:18:04.355 シンボル読み出し完了 Button33
+09:18:04.355 シンボル読み出し完了 Button34
+09:18:04.370 シンボル読み出し完了 Button35
+09:18:04.370 シンボル読み出し完了 Button36
+09:18:04.370 シンボル読み出し完了 Button37
+09:18:04.386 シンボル読み出し完了 Button38
+09:18:04.386 [PROC]Complete Load BaseForm : CVP
+09:18:04.401 [PROC]Load BaseForm : ﾃﾞﾊﾞｲｽ一覧
+09:18:04.433 シンボル読み出し完了 DeviceList1
+09:18:04.448 [PROC]Complete Load BaseForm : ﾃﾞﾊﾞｲｽ一覧
