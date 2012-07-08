@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SIO_proto001">
+</Property><Property Name="ソリューション ファイル" Value="C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001.sln">
+</Property><Property Name="ユーザー オプション ファイル" Value="C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001.suo">
+</Property><Property Name="Date" Value="2012年7月7日">
+</Property><Property Name="Time" Value="0:07">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="SIO_proto001.sln" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001.sln としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="" Source="SIO_proto001.suo" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001.suo としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\SIO_proto001.csproj" Description="プロジェクト ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\SIO_proto001.csproj としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Form1.cs" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Form1.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Form1.Designer.cs" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Form1.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Program.cs" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Program.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Properties\AssemblyInfo.cs" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Properties\AssemblyInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Properties\Resources.Designer.cs" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Properties\Resources.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Properties\Settings.Designer.cs" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Properties\Settings.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Properties\Settings.settings" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Properties\Settings.settings としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Form1.resx" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Form1.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\Properties\Resources.resx" Description="ファイルは正常に C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\Backup\SIO_proto001\Properties\Resources.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\SIO_proto001.csproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="SIO_proto001" Source="SIO_proto001\SIO_proto001.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SIO_proto001.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="SIO_proto001.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SIO_proto001" Source="SIO_proto001\SIO_proto001.csproj" Description="スキャンが完了しました: プロジェクト ファイルにアップグレードは必要ありません。">
+</Event></UpgradeLog>

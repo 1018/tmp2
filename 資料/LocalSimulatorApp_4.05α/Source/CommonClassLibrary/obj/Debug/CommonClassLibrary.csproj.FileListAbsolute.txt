@@ -1,0 +1,5 @@
+D:\LocalSimulatorApp_4.05α\Release\CommonClassLibrary.dll
+D:\LocalSimulatorApp_4.05α\Release\CommonClassLibrary.pdb
+D:\LocalSimulatorApp_4.05α\Source\CommonClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\CommonClassLibrary\obj\Debug\CommonClassLibrary.dll
+D:\LocalSimulatorApp_4.05α\Source\CommonClassLibrary\obj\Debug\CommonClassLibrary.pdb

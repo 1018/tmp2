@@ -1,0 +1,5 @@
+D:\LocalSimulatorApp_4.05α\Release\LogManager.dll
+D:\LocalSimulatorApp_4.05α\Release\LogManager.pdb
+D:\LocalSimulatorApp_4.05α\Source\LogManager\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\LogManager\obj\Debug\LogManager.dll
+D:\LocalSimulatorApp_4.05α\Source\LogManager\obj\Debug\LogManager.pdb

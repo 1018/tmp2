@@ -1,0 +1,17 @@
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\obj\Debug\ResolveAssemblyReference.cache
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.Form1.resources
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.Properties.Resources.resources
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.csproj.GenerateResource.Cache
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\bin\Debug\SIO_proto001.exe
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\bin\Debug\SIO_proto001.pdb
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.exe
+D:\nagase\WorkSpace\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.pdb
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.exe
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.pdb
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\bin\Debug\SIO_proto001.exe
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\bin\Debug\SIO_proto001.pdb
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.Form1.resources
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\obj\Debug\SIO_proto001.Properties.Resources.resources
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\obj\Debug\ResGen.read.1.tlog
+C:\Users\neko\Documents\Visual Studio 2010\Projects\SIO_proto001\SIO_proto001\obj\Debug\ResGen.write.1.tlog

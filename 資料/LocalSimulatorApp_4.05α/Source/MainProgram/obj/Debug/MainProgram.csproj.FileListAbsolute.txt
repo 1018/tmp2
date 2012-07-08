@@ -1,0 +1,13 @@
+D:\LocalSimulatorApp_4.05α\Release\MainProgram.exe
+D:\LocalSimulatorApp_4.05α\Release\MainProgram.pdb
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\ResolveAssemblyReference.cache
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\LocalSimulator.MainProgram.BaseForm.resources
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\LocalSimulator.MainProgram.BaseFormListForm.resources
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\LocalSimulator.MainProgram.IOMonitorForm.resources
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\LocalSimulator.MainProgram.MainForm.resources
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\ProgressForm.resources
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\LocalSimulator.MainProgram.SelectSymbolForm.resources
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\LocalSimulator.MainProgram.SetDeviceForm.resources
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\MainProgram.csproj.GenerateResource.Cache
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\MainProgram.exe
+D:\LocalSimulatorApp_4.05α\Source\MainProgram\obj\Debug\MainProgram.pdb
