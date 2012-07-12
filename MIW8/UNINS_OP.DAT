@@ -1,0 +1,7 @@
+deleteregkey
+HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\miwmenu
+deleteregkey
+HKEY_CLASSES_ROOT\CLSID\{5A14C450-8D78-11D5-A8A7-00A0C9E272A1}
+deleteregvalue
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved
+{5A14C450-8D78-11D5-A8A7-00A0C9E272A1}

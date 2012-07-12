@@ -1,4 +1,4 @@
-﻿#define ALLOW_ALL_FILE
+﻿//#define ALLOW_ALL_FILE
 
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.IO;
 using System.Collections;
 
 
-namespace SIO_proto001
+namespace SioLog
 {
     public partial class Form1 : Form
     {
@@ -28,7 +28,7 @@ namespace SIO_proto001
         }
         #endregion
 
-        FileDirPath currentFile = new FileDirPath();
+        FileDirPath CurrentDir = new FileDirPath();
 
         Dictionary<string, Action<string>> cpDic = null;
         Dictionary<string, Action<string>> pollingDic = null;
@@ -133,6 +133,7 @@ namespace SIO_proto001
         {
             public string InFile { get; set;}
             public string OutFile { get; set; }
+            public string SelectedPath { get; set; }
         }
 
         public class ConvertedData
@@ -166,19 +167,19 @@ namespace SIO_proto001
 
         #region ﾌｫｰﾑｲﾍﾞﾝﾄ
         /// <summary>
-        /// "select"ﾎﾞﾀﾝｸﾘｯｸ時の動作です
+        /// "参照"ﾎﾞﾀﾝｸﾘｯｸ時の動作です
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void selectBtn_Click(object sender, EventArgs e)
+        private void InputFileSelectBtn(object sender, EventArgs e)
         {
             // OpenFileDialogｸﾗｽのｲﾝｽﾀﾝｽ作成
             OpenFileDialog ofd = new OpenFileDialog();
 
             // はじめのﾌｧｲﾙ名指定
-            ofd.FileName = Constants.FileName;
+            ofd.FileName = Constants.LogFileName;
             // はじめに表示されるDir指定(ｶﾚﾝﾄDir)            
-//            ofd.InitialDirectory = @"C\";            
+            //            ofd.InitialDirectory = @"C\";            
             // [ﾌｧｲﾙの種類]ではじめに
             //「すべてのﾌｧｲﾙ」が選択されているようにする
             ofd.FilterIndex = 2;
@@ -194,13 +195,43 @@ namespace SIO_proto001
             // ﾀﾞｲｱﾛｸﾞ表示
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                currentFile.InFile = ofd.FileName;
-                inputFilePath.Text = currentFile.InFile;
-
-                // 出力先
-                currentFile.OutFile = outputFilePath.Text;
+                CurrentDir.InFile = ofd.FileName;
+                inputFilePath.Text = CurrentDir.InFile;
             }
-        }      
+
+        }
+
+        /// <summary>
+        /// 出力先ﾃﾞｨﾚｸﾄﾘを指定します
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OutputFileSelectBtn_Click(object sender, EventArgs e)
+        {
+            //FolderBrowserDialogクラスのインスタンスを作成
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            //上部に表示する説明テキストを指定する
+            fbd.Description = "フォルダを指定してください。";
+            //ルートフォルダを指定する
+            //デフォルトでDesktop
+            fbd.RootFolder = Environment.SpecialFolder.Desktop;
+            //最初に選択するフォルダを指定する
+            //RootFolder以下にあるフォルダである必要がある
+            fbd.SelectedPath = System.IO.Directory.GetCurrentDirectory();
+            //ユーザーが新しいフォルダを作成できるようにする
+            //デフォルトでTrue
+            fbd.ShowNewFolderButton = true;
+
+            //ダイアログを表示する
+            if (fbd.ShowDialog(this) == DialogResult.OK)
+            {
+                CurrentDir.SelectedPath = fbd.SelectedPath;
+                //選択されたフォルダを表示する
+                this.outputFilePath.Text = CurrentDir.SelectedPath;
+            }
+        }
+
 
         /// <summary>
         /// "convert"ﾎﾞﾀﾝｸﾘｯｸ時の動作
@@ -210,26 +241,15 @@ namespace SIO_proto001
         private void convertBtn_Click(object sender, EventArgs e)
         {
 
-            getNodeNumber();
-
-            int cpDataCounts = 0;
+            if (!getNodeNumber())
+            {
+                return;
+            }
 
             // OpenFileDialogｸﾗｽのｲﾝｽﾀﾝｽ作成
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.FileName = inputFilePath.Text;
 
-#if ALLOW_ALL_FILE
-#else
-
-            if (!inputFilePath.Text.Contains("SIO.log"))
-            {
-                MessageBox.Show("「SIO.log」を選択してください",
-                                "エラー",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                return;
-            }
-#endif
             System.IO.Stream stream = ofd.OpenFile();
             //内容を読み込む
             System.IO.StreamReader sr =
@@ -237,12 +257,20 @@ namespace SIO_proto001
                     stream,
                     System.Text.Encoding.GetEncoding(Constants.FileEncording));
 
+
+            if (this.outputFilePath.Text == "")
+            {
+                this.outputFilePath.Text = Directory.GetCurrentDirectory();
+
+            }
+
             // ﾌｧｲﾙ作成
             System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                outputFilePath.Text,
+                this.outputFilePath.Text + Constants.OutFileName,
                 true,
                 System.Text.Encoding.GetEncoding(Constants.FileEncording));
 
+            int cpDataCounts = 0;
             string line = "";
             while ((line = sr.ReadLine()) != null)
             {
@@ -285,7 +313,7 @@ namespace SIO_proto001
                 }
                               
                 
-                // ごみ箱もーど
+                // すっきりもーど(仮)
                 int result = 0;
                 if (trashMode.Checked)
                 {                 
@@ -328,7 +356,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder ComAscii = new System.Text.StringBuilder();
 
                 try
-                {
+                {                    
                     // 2.SND/RCVを確認する
                     if (line.Contains(Constants.SndMsg))
                     {
@@ -383,7 +411,7 @@ namespace SIO_proto001
                            data[5] != CurrentNodeNum.CpNode2)
                         {
                             if (this.filterCp.Checked) { continue; }
-                            
+
                             ComAscii.Append((char)Convert.ToInt32(data[Constants.ComPollingRcvPosi], 16));
                             ComAscii.Append((char)Convert.ToInt32(data[Constants.ComPollingRcvPosi + 1], 16));
 
@@ -403,7 +431,7 @@ namespace SIO_proto001
                            data[5] == CurrentNodeNum.CpNode2)
                         {
                             if (this.filterHp.Checked) { continue; }
-                            
+
                             ComAscii.Append((char)Convert.ToInt32(data[Constants.ComCpRcvPosi], 16));
                             ComAscii.Append((char)Convert.ToInt32(data[Constants.ComCpRcvPosi + 1], 16));
 
@@ -411,28 +439,32 @@ namespace SIO_proto001
                             CallCpDic(command, line);
                         }
                     }
-                }
-                catch (InvalidOperationException)
+                    else
+                    {                 
+                        throw new Exception();
+                    }
+                }            
+                catch (Exception ex)
                 {
                     continue;
                 }
-                finally
-               {
-                   if (NewLine.AddData[0] != Constants.ErrorCase)
+//                finally
+//                {
+                   if (NewLine.AddData[0] != Constants.ErrorCase)                    
                    {
                        sw.WriteLine(line);
                        NewLine.AddData.ForEach((string str) => sw.Write(str));
                        sw.Write(sw.NewLine);
                    }
-               }
+//               }
             }
             //閉じる
             sr.Close();
             sw.Close();
             stream.Close();
             
-            MessageBox.Show("完了しました。",
-                            "読込み完了",
+            MessageBox.Show("読込みが完了しました。",
+                            "完了",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
         }
@@ -489,7 +521,7 @@ namespace SIO_proto001
             string[] fileNameArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             string fileName = fileNameArray[0];
 
-            inputFilePath.Text = fileName;
+            this.inputFilePath.Text = fileName;
         }
 
 
@@ -531,7 +563,7 @@ namespace SIO_proto001
         }
 
         /// <summary>
-        /// ﾌｫｰﾑ内にﾌｧｲﾙをﾄﾞﾗｯｸﾞしたときの動作
+        /// ﾌｫｰﾑ内にﾌｧｲﾙをﾄﾞﾛｯﾌﾟﾞしたときの動作
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -540,9 +572,10 @@ namespace SIO_proto001
             string[] fileNameArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             string fileName = fileNameArray[0];
 
-            inputFilePath.Text = fileName;
-        }
+            this.inputFilePath.Text = fileName;
+        } 
 
+ 
         #endregion
         #endregion
 
@@ -609,7 +642,7 @@ namespace SIO_proto001
                 buf.Append((char)Convert.ToInt32(data[8 + i], 16));
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 制御ﾓｰﾄﾞ:");
+                NewLine.AddData.Add(Constants.WMRM);
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\n");
             }
@@ -645,7 +678,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" ｽﾃｰﾀｽ:");
+                NewLine.AddData.Add(Constants.RR);
                 for (int j = 0; j < 4; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[8 + j + (i * 4)], 16));
@@ -685,7 +718,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 制御ｾﾝｻ:");
+                NewLine.AddData.Add(Constants.RX1);
                 for (int j = 0; j < 3; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));
@@ -695,7 +728,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 外部ｾﾝｻ:");
+                NewLine.AddData.Add(Constants.RX2);
                 for (int k = 0; k < 3; k++)
                 {
                     buf.Append((char)Convert.ToInt32(data[11 + k + (i * 3)], 16));
@@ -726,7 +759,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 比例帯温度幅:");
+                NewLine.AddData.Add(Constants.Pb);
                 for (int p = 0; p < 3; p++)
                 {
                     buf.Append((char)Convert.ToInt32(data[9 + p + (i * 3)], 16));
@@ -736,7 +769,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 積分時間:");
+                NewLine.AddData.Add(Constants.Integral);
                 for (int _i = 0; _i < 3; _i++)
                 {
                     buf.Append((char)Convert.ToInt32(data[12 + _i + (i * 3)], 16));
@@ -746,7 +779,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 微分時間:");                
+                NewLine.AddData.Add(Constants.Differential);                
                 for (int d = 0; d < 3; d++)
                 {
                     buf.Append((char)Convert.ToInt32(data[15 + d + (i * 3)], 16));
@@ -756,7 +789,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" ｵﾌｾｯﾄ値:");
+                NewLine.AddData.Add(Constants.ADJ);
                 for (int adj = 0; adj < 3; adj++)
                 {
                     buf.Append((char)Convert.ToInt32(data[18 + adj + (i * 4)], 16));
@@ -798,7 +831,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 比例帯温度幅:");
+                NewLine.AddData.Add(Constants.Pb);
                 for (int p = 0; p < 3; p++)
                 {
                     buf.Append((char)Convert.ToInt32(data[8 + p + (i * 3)], 16));
@@ -808,7 +841,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 積分時間:");
+                NewLine.AddData.Add(Constants.Integral);
                 for (int _i = 0; _i < 3; _i++)
                 {
                     buf.Append((char)Convert.ToInt32(data[11 + _i + (i * 3)], 16));
@@ -818,7 +851,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 微分時間:");
+                NewLine.AddData.Add(Constants.Differential);
                 for (int d = 0; d < 3; d++)
                 {
                     buf.Append((char)Convert.ToInt32(data[14 + d + (i * 3)], 16));
@@ -828,7 +861,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" ｵﾌｾｯﾄ値:");
+                NewLine.AddData.Add(Constants.ADJ);
                 for (int adj = 0; adj < 3; adj++)
                 {
                     buf.Append((char)Convert.ToInt32(data[17 + adj + (i * 4)], 16));
@@ -859,7 +892,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 目標温度:");
+                NewLine.AddData.Add(Constants.WSRS);
                 for (int j = 0; j < 3; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[9 + j + (i * 3)], 16));
@@ -899,7 +932,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 目標温度:");
+                NewLine.AddData.Add(Constants.WSRS);
                 for (int j = 0; j < 3; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));
@@ -930,7 +963,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 上限温度幅:");
+                NewLine.AddData.Add(Constants.UpperTempWidth);
                 for (int j = 0; j < 3; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[9 + j + (i * 3)], 16));
@@ -940,7 +973,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 下限温度幅:");
+                NewLine.AddData.Add(Constants.LowerTempWidth);
                 for (int k = 0; k < 3; k++)
                 {
                     buf.Append((char)Convert.ToInt32(data[12 + k + (i * 3)], 16));                    
@@ -982,7 +1015,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 上限温度幅:");
+                NewLine.AddData.Add(Constants.UpperTempWidth);
                 for (int j = 0; j < 3; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));                    
@@ -992,7 +1025,7 @@ namespace SIO_proto001
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 下限温度幅:");
+                NewLine.AddData.Add(Constants.LowerTempWidth);
                 for (int k = 0; k < 3; k++)
                 {
                     buf.Append((char)Convert.ToInt32(data[11 + k + (i * 3)], 16));
@@ -1024,7 +1057,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 演算開始定数:");
+                NewLine.AddData.Add(Constants.WPRP);
                 for (int j = 0; j < 3; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[9 + j + (i * 3)], 16));
@@ -1064,7 +1097,7 @@ namespace SIO_proto001
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(" 演算開始定数:");
+                NewLine.AddData.Add(Constants.WPRP);
                 for (int j = 0; j < 3; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));
@@ -1468,6 +1501,7 @@ namespace SIO_proto001
             return;
         }
 
+        // A2:下限温度
         private void SplitA2_Selecting(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1645,10 +1679,33 @@ namespace SIO_proto001
         /// <summary>
         /// ﾉｰﾄﾞ番号を取得します
         /// </summary>
-        private void getNodeNumber()
+        private bool getNodeNumber()
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.FileName = inputFilePath.Text;
+
+#if ALLOW_ALL_FILE
+#else 
+            if (this.inputFilePath.Text == null)
+            {
+                MessageBox.Show("「SIO.log」を選択してください",
+                                "エラー",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+            if(!this.inputFilePath.Text.Contains(Constants.LogFileName))
+            {
+                if (!this.inputFilePath.Text.Contains(Constants.OldFileName))
+                {
+                    MessageBox.Show("「SIO.log」を選択してください",
+                                    "エラー",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+#endif
             System.IO.Stream stream = ofd.OpenFile();
 
             System.IO.StreamReader sr =
@@ -1734,8 +1791,9 @@ namespace SIO_proto001
             }
             sr.Close();
             stream.Close();
-        }
 
+            return true;
+        }
 
         /// <summary>
         /// 定数ｸﾗｽ
@@ -1769,6 +1827,19 @@ namespace SIO_proto001
             public const string I1 = "積分時間  :";
             public const string D1 = "微分時間  :";
 
+            public const string WMRM = " 制御ﾓｰﾄ:";
+            public const string RR = " ｽﾃｰﾀｽ;";
+            public const string RX1 = " 制御ｾﾝｻ:";
+            public const string RX2 = " 外部ｾﾝｻ:";
+            public const string Pb = " 比例帯温度幅:";
+            public const string Integral = " 積分時間:";
+            public const string Differential = " 微分時間:";
+            public const string ADJ = " ｵﾌｾｯﾄ値:";
+            public const string WSRS = " 目標温度:";
+            public const string UpperTempWidth = " 上限温度幅:";
+            public const string LowerTempWidth = " 下限温度幅;";
+            public const string WPRP = " 演算開始定数:";
+
             public const string FileEncording = "shift_jis";
 
             public const int ComPollingSndPosi = 10;
@@ -1779,21 +1850,13 @@ namespace SIO_proto001
             public const int ComCpSndPosi = 7;
             public const int ComCpRcvPosi = 6;
 
-            public const string FileName = "SIO.log";           
-            
-            
-            
-            public const string Header1 = "      HP:N1[";
-            public const string Header2 = "] CH";
-            
-
-
-
-            
+            public const string LogFileName = "SIO.log";
+            public const string OldFileName = "SIO.old";           
+              
+            public const string OutFileName = @"\SIO.txt";                      
+ 
 
         }
-
-    
 
     }
 }

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<!--<!DOCTYPE Configure SYSTEM "AutoUpdateConfigure.dtd">-->
+<!-- オンラインアップデータ設定ファイル -->
+<Configure format="1.0" version="1.09e">
+	<ProductList>
+		<Product id="1" prodname="MIW8" prodtype="MIW8" prodver="8.0" path="MIFES\8.0\OnlineUpdate" />
+	</ProductList>
+	<RegPath>MIFES\8.0\OnlineUpdate</RegPath>
+	<ConfigAlias mode="UPDATE" ref="APPUPDATE" initcmd="NewUpdMsg" />
+	<ConfigEntry mode="CHECKONLY">
+		<CommandDefinition>
+			<Command id="setschedule" type="function" funcno="6" />
+			<Command id="chkschedule" type="function" funcno="7" />
+			<Command id="chkupdate" type="function" funcno="1">
+				<Parameter name="URL1">http://update.megasoft.co.jp/cgi-bin/filecheck.cgi</Parameter>
+			</Command>
+			<Command id="exit0" type="function" funcno="-1">
+				<Parameter name="ReturnCode">0</Parameter>
+			</Command>
+			<Command id="exit1" type="function" funcno="-1">
+				<Parameter name="ReturnCode">1</Parameter>
+			</Command>
+		</CommandDefinition>
+		<ActionTable initcmd="chkschedule">
+			<Action id="1" now="setschedule" cmdno="0" next="setschedule" />
+			<Action id="2" now="setschedule" cmdno="1" next="chkschedule" />
+			<Action id="3" now="chkschedule" cmdno="0" next="chkschedule" />
+			<Action id="4" now="chkschedule" cmdno="1" next="chkupdate" />
+			<Action id="5" now="chkschedule" cmdno="2" next="exit0" />
+			<Action id="6" now="chkupdate" cmdno="1" next="exit1" />
+			<Action id="7" now="chkupdate" cmdno="2" next="exit0" />
+			<Action id="8" now="chkupdate" cmdno="3" next="exit0" />
+			<Action id="9" now="chkupdate" cmdno="9" next="exit0" />
+			<Action id="a" now="exit0" cmdno="0" next="exit0" />
+		</ActionTable>
+	</ConfigEntry>
+	<ConfigEntry mode="SETTING" windowmode="AlwaysTop">
+		<CommandDefinition>
+			<Command id="setnetwork" type="dialog" dlgno="8" visible="true">
+				<Parameter name="Btn1">設定(&amp;N)</Parameter>
+				<Parameter name="Btn3">取り消し(&amp;C)</Parameter>
+			</Command>
+			<Command id="setschedule" type="dialog" dlgno="9" visible="true">
+				<Parameter name="GuidanceText">自動チェックしないを選択した場合は手動でオンラインアップデータを起動する必要があります。&#xD;&#xA;手動でオンラインアップデータを起動するにはＳＴＡＲＦＡＸのヘルプメニューからオンラインアップデートを選択してください。</Parameter>
+			</Command>
+			<Command id="exit0" type="function" funcno="-1">
+				<Parameter name="ReturnCode">0</Parameter>
+			</Command>
+		</CommandDefinition>
+		<ActionTable initcmd="exit0">
+			<Action id="01" now="setschedule" cmdno="0" next="setschedule" />
+			<Action id="02" now="setschedule" cmdno="5" next="setnetwork" />
+			<Action id="03" now="setschedule" cmdno="1" next="exit0" />
+			<Action id="04" now="setschedule" cmdno="3" next="exit0" />
+			<Action id="05" now="setnetwork" cmdno="0" next="setnetwork" />
+			<Action id="06" now="setnetwork" cmdno="1" next="setschedule" />
+			<Action id="07" now="setnetwork" cmdno="2" next="setschedule" />
+			<Action id="08" now="setnetwork" cmdno="3" next="setschedule" />
+		</ActionTable>
+	</ConfigEntry>
+	<ConfigEntry mode="APPUPDATE">
+		<CommandDefinition>
+			<Command id="TopDialog" type="dialog" dlgno="0" visible="true">
+			</Command>
+			<Command id="ChkUpdate" type="dialog" dlgno="7" visible="true">
+				<Parameter name="GuidanceText">メガソフトのアップデートサイトに接続して&#xD;&#xA;最新アップデートが登録されているかを&#xD;&#xA;確認しています。&#xD;&#xA;&#xD;&#xA;しばらくお待ちください。</Parameter>
+				<Parameter name="URL1">http://update.megasoft.co.jp/cgi-bin/filecheck.cgi</Parameter>
+				<Parameter name="ExecFunc">1</Parameter>
+			</Command>
+			<Command id="NewUpdMsg" type="dialog" dlgno="1" visible="true" />
+			<Command id="RunCheck" type="function" funcno="13">
+				<Parameter name="DllFile">MiwUninst.dll</Parameter>
+				<Parameter name="FuncType">1</Parameter>	<!-- 1:戻り値DWORD、引数無し -->
+				<Parameter name="FuncName">_MIFES_Updater</Parameter>
+				<Parameter name="Return1">Other</Parameter>	<!-- 関数の戻り値が０以外なら動作中 -->
+				<Parameter name="Return2">0</Parameter>		<!-- 関数の戻り値が０なら非動作 -->
+			</Command>
+			<Command id="ReqClose" type="dialog" dlgno="1" visible="true">
+				<Parameter name="GuidanceText">MIFESおよび、他のプログラムを終了させてください。&#xD;&#xA;&#xD;&#xA;また、ウィルスチェックプログラムが動作している場合は終了させてください。&#xD;&#xA;&#xD;&#xA;アップデートを続ける場合は「次へ」をクリックしてください。&#xD;&#xA;&#xD;&#xA;アップデートをしたくない場合は「中止」をクリックしてください。</Parameter>
+			</Command>
+			<Command id="NoClose" type="dialog" dlgno="1" visible="true">
+				<Parameter name="GuidanceText">MIFESが起動しています。&#xD;&#xA;&#xD;&#xA;終了させてください。</Parameter>
+			</Command>
+			<Command id="ChkUpdList" type="function" funcno="3" />
+			<Command id="SelectItem" type="dialog" dlgno="2" visible="true" />
+			<Command id="ConfirmItem" type="dialog" dlgno="3" visible="true" />
+			<Command id="CmplUpd" type="dialog" dlgno="5" visible="true">
+				<Parameter name="GuidanceText">&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;MIFESの&#xD;&#xA;&#xD;&#xA;オンラインアップデートが終了しました。</Parameter>
+<!--				<Parameter name="ReleaseNote">ReleaseNote.htm</Parameter>-->
+			</Command>
+			<Command id="NoUpdate" type="dialog" dlgno="5" visible="true">
+				<Parameter name="GuidanceText">&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;適用できるアップデートはありませんでした。&#xD;&#xA;&#xD;&#xA;現在お使いのものが最新です。</Parameter>
+			</Command>
+			<Command id="GetUpdList" type="dialog" dlgno="7" visible="true">
+				<Parameter name="GuidanceText">メガソフトのアップデートサイトに接続して&#xD;&#xA;更新ファイルのリストを取得しています。&#xD;&#xA;&#xD;&#xA;しばらくお待ちください。</Parameter>
+				<Parameter name="URL1">http://update.megasoft.co.jp/cgi-bin/getlist.cgi</Parameter>
+				<Parameter name="ExecFunc">2</Parameter>
+			</Command>
+			<Command id="DLUpdate" type="dialog" dlgno="10" visible="true">
+				<Parameter name="URL">http://www.megasoft.co.jp/auto-update/mifes/mifes_8.html</Parameter>
+			</Command>
+			<Command id="SetNetwork" type="dialog" dlgno="8" visible="true">
+				<Parameter name="Btn1">設定(&amp;N)</Parameter>
+				<Parameter name="Btn3">取り消し(&amp;C)</Parameter>
+			</Command>
+			<Command id="UpdUpd2A" type="function" funcno="11">
+				<Parameter name="Command">UpdateTemp\UPDUPD2.EXE</Parameter>
+				<Parameter name="Hide">true</Parameter>
+				<Parameter name="Wait">true</Parameter>
+				<Parameter name="ExitCode">1</Parameter>
+			</Command>
+			<Command id="UpdUpd2B" type="function" funcno="11">
+				<Parameter name="Command">UpdateTemp\UPDUPD2.EXE</Parameter>
+				<Parameter name="Hide">true</Parameter>
+				<Parameter name="Wait">true</Parameter>
+				<Parameter name="ExitCode">1</Parameter>
+			</Command>
+			<Command id="DelUpdUpd2A" type="function" funcno="16">
+				<Parameter name="RemoveFile">UpdateTemp\UPDUPD2.EXE</Parameter>
+			</Command>
+			<Command id="DelUpdUpd2B" type="function" funcno="16">
+				<Parameter name="RemoveFile">UpdateTemp\UPDUPD2.EXE</Parameter>
+			</Command>
+			<Command id="CommErr" type="function" funcno="12">
+				<Parameter name="Command">Disconnect</Parameter>
+			</Command>
+			<Command id="CommErr2" type="dialog" dlgno="5" visible="true">
+				<Parameter name="GuidanceText">&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;サーバーとの通信に失敗しました。&#xD;&#xA;&#xD;&#xA;サーバーが込み入っている可能性があります。しばらく時間をおいてから再実行してください。</Parameter>
+				<Parameter name="GuidanceAlign">Left</Parameter><!-- Left/Center/Right -->
+			</Command>
+			<Command id="CheckErr" type="function" funcno="12">
+				<Parameter name="Command">Disconnect</Parameter>
+			</Command>
+			<Command id="CheckErr2" type="dialog" dlgno="5" visible="true">
+				<Parameter name="GuidanceText">&#xD;&#xA;&#xD;&#xA;最新アップデートの確認ができませんでした。&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;ウェブブラウザなどからインターネットに接続できる状態になっているかを確認してください。&#xD;&#xA;&#xD;&#xA;また、一時的にサーバーが混み合っている可能性があります。&#xD;&#xA;しばらく時間をおいてからアップデートの再実行をお願いいたします。</Parameter>
+				<Parameter name="GuidanceAlign">Left</Parameter><!-- Left/Center/Right -->
+			</Command>
+			<Command id="Exit" type="function" funcno="16">
+				<Parameter name="RemoveFile">UpdateTemp</Parameter>
+			</Command>
+			<Command id="Quit" type="function" funcno="-1" />
+		</CommandDefinition>
+		<ActionTable initcmd="ChkUpdate">
+			<Action id="000" now="TopDialog"   cmdno="0" next="TopDialog" />
+			<Action id="001" now="TopDialog"   cmdno="1" next="ChkUpdate" />
+			<Action id="005" now="TopDialog"   cmdno="5" next="SetNetwork" />
+			<Action id="010" now="ChkUpdate"   cmdno="0" next="ChkUpdate" />
+			<Action id="011" now="ChkUpdate"   cmdno="1" next="ReqClose" />
+			<Action id="012" now="ChkUpdate"   cmdno="2" next="NoUpdate" />
+			<!-- Action id="019" now="ChkUpdate"   cmdno="9" next="NoUpdate" / -->
+			<Action id="019" now="ChkUpdate"   cmdno="9" next="CheckErr" />
+			<Action id="020" now="NewUpdMsg"   cmdno="0" next="NewUpdMsg" />
+			<Action id="021" now="NewUpdMsg"   cmdno="1" next="ReqClose" />
+			<Action id="025" now="ReqClose"    cmdno="1" next="RunCheck" />
+			<Action id="031" now="RunCheck"    cmdno="1" next="NoClose" />
+			<Action id="032" now="RunCheck"    cmdno="2" next="GetUpdList" />
+			<Action id="041" now="NoClose"     cmdno="1" next="RunCheck" />
+			<Action id="051" now="GetUpdList"  cmdno="1" next="ChkUpdList" />
+			<Action id="052" now="GetUpdList"  cmdno="2" next="NoUpdate" />
+			<Action id="059" now="GetUpdList"  cmdno="9" next="NoUpdate" />
+			<Action id="061" now="ChkUpdList"  cmdno="1" next="SelectItem" />
+			<Action id="062" now="ChkUpdList"  cmdno="2" next="NoUpdate" />
+			<Action id="069" now="ChkUpdList"  cmdno="9" next="NoUpdate" />
+			<Action id="101" now="SelectItem"  cmdno="1" next="ConfirmItem" />
+			<Action id="111" now="ConfirmItem" cmdno="1" next="DLUpdate" />
+			<Action id="121" now="DLUpdate"    cmdno="1" next="CmplUpd" />
+			<Action id="129" now="DLUpdate"    cmdno="9" next="CommErr" />
+			<Action id="131" now="CmplUpd"     cmdno="1" next="Exit" />
+			<Action id="142" now="SelectItem"  cmdno="2" next="NewUpdMsg" />
+			<Action id="152" now="ConfirmItem" cmdno="2" next="SelectItem" />
+			<Action id="161" now="NoUpdate"    cmdno="1" next="Exit" />
+			<Action id="201" now="SetNetwork"  cmdno="1" next="TopDialog" />
+			<Action id="203" now="SetNetwork"  cmdno="3" next="TopDialog" />
+			<Action id="901" now="CommErr"     cmdno="1"  next="CommErr2" />
+			<Action id="911" now="CommErr2"    cmdno="1"  next="Exit" />
+			<Action id="921" now="CheckErr"    cmdno="1" next="CheckErr2" />
+			<Action id="931" now="CheckErr2"   cmdno="1" next="Exit" />
+			<Action id="998" now="Exit"        cmdno="1"  next="Quit" />
+			<Action id="999" now="Exit"        cmdno="9"  next="Quit" />
+		</ActionTable>
+	</ConfigEntry>
+	<ConfigEntry mode="UPDATERUPDATE">
+		<CommandDefinition>
+			<Command id="chkschedule" type="function" funcno="7" />
+			<Command id="isupdate" type="function" funcno="1">
+				<Parameter name="URL1">http://www.megasoft.co.jp/cgi-bin/autoupdater/updupdgetver.cgi</Parameter>
+				<Parameter name="NoModifySchedule">false</Parameter>
+			</Command>
+			<Command id="getupdlist" type="function" funcno="2">
+				<Parameter name="URL1">http://www.megasoft.co.jp/cgi-bin/autoupdater/updupdgetlist.cgi</Parameter>
+			</Command>
+			<Command id="chkupdate" type="function" funcno="3">
+			</Command>
+			<Command id="download" type="function" funcno="4">
+				<Parameter name="NoDisconnect">true</Parameter>
+			</Command>
+			<Command id="updsetup" type="function" funcno="5">
+			</Command>
+			<Command id="isupdate2" type="function" funcno="1">
+				<Parameter name="URL1">http://update.megasoft.co.jp/cgi-bin/filecheck.cgi</Parameter>
+			</Command>
+			<Command id="exit0" type="function" funcno="-1">
+				<Parameter name="ReturnCode">0</Parameter>
+			</Command>
+			<Command id="exit1" type="function" funcno="-1">
+				<Parameter name="ReturnCode">1</Parameter>
+			</Command>
+		</CommandDefinition>
+		<ActionTable initcmd="chkschedule">
+			<Action id="10" now="chkschedule" cmdno="0" next="chkschedule" />
+			<Action id="11" now="chkschedule" cmdno="1" next="isupdate" />
+			<Action id="12" now="chkschedule" cmdno="2" next="exit0" />
+			<Action id="21" now="isupdate" cmdno="1" next="getupdlist" />
+			<Action id="22" now="isupdate" cmdno="2" next="isupdate2" />
+			<Action id="23" now="isupdate" cmdno="3" next="isupdate2" />
+			<Action id="29" now="isupdate" cmdno="9" next="isupdate2" />
+			<Action id="31" now="getupdlist" cmdno="1" next="chkupdate" />
+			<Action id="33" now="getupdlist" cmdno="3" next="isupdate2" />
+			<Action id="39" now="getupdlist" cmdno="9" next="isupdate2" />
+			<Action id="41" now="chkupdate" cmdno="1" next="download" />
+			<Action id="42" now="chkupdate" cmdno="2" next="isupdate2" />
+			<Action id="43" now="chkupdate" cmdno="3" next="isupdate2" />
+			<Action id="61" now="download" cmdno="1" next="updsetup" />
+			<Action id="62" now="download" cmdno="2" next="isupdate2" />
+			<Action id="69" now="download" cmdno="9" next="isupdate2" />
+			<Action id="71" now="updsetup" cmdno="1" next="isupdate2" />
+			<Action id="79" now="updsetup" cmdno="9" next="isupdate2" />
+			<Action id="81" now="isupdate2" cmdno="1" next="exit1" />
+			<Action id="82" now="isupdate2" cmdno="2" next="exit0" />
+			<Action id="83" now="isupdate2" cmdno="3" next="exit0" />
+			<Action id="89" now="isupdate2" cmdno="9" next="exit0" />
+		</ActionTable>
+	</ConfigEntry>
+	<ConfigEntry mode="MANUAL" default="true">
+		<CommandDefinition>
+			<Command id="TopDialog" type="dialog" dlgno="0" visible="true">
+			</Command>
+			<Command id="UIsUpdate" type="dialog" dlgno="7" visible="true">
+				<Parameter name="GuidanceText">メガソフトのアップデートサイトに接続して&#xD;&#xA;アップデートプログラムのバージョンを&#xD;&#xA;確認しています。&#xD;&#xA;&#xD;&#xA;しばらくお待ちください。</Parameter>
+				<Parameter name="URL1">http://www.megasoft.co.jp/cgi-bin/autoupdater/updupdgetver.cgi</Parameter>
+				<Parameter name="NoModifySchedule">false</Parameter>
+				<Parameter name="ExecFunc">1</Parameter>
+			</Command>
+			<Command id="UGetUpdList" type="function" funcno="2">
+				<Parameter name="URL1">http://www.megasoft.co.jp/cgi-bin/autoupdater/updupdgetlist.cgi</Parameter>
+			</Command>
+			<Command id="UChkUpdate" type="function" funcno="3">
+			</Command>
+			<Command id="UDownload" type="function" funcno="4">
+				<Parameter name="NoDisconnect">true</Parameter>
+			</Command>
+			<Command id="USetup" type="function" funcno="5">
+			</Command>
+			<Command id="RunUpdater" type="function" funcno="11">
+				<Parameter name="Command">MgAutoUD.exe -M APPUPDATE</Parameter>
+				<Parameter name="WorkDir"></Parameter>
+				<Parameter name="Hide">false</Parameter>
+				<Parameter name="Wait">false</Parameter>
+			</Command>
+			<Command id="SetNetwork" type="dialog" dlgno="8" visible="true">
+				<Parameter name="Btn1">設定(&amp;N)</Parameter>
+				<Parameter name="Btn3">取り消し(&amp;C)</Parameter>
+			</Command>
+			<Command id="CommErr" type="function" funcno="12">
+				<Parameter name="Command">Disconnect</Parameter>
+			</Command>
+			<Command id="CommErr2" type="dialog" dlgno="5" visible="true">
+				<Parameter name="GuidanceText">サーバーとの通信に失敗しました。&#xD;&#xA;&#xD;&#xA;サーバーが込み入っている可能性があります。しばらく時間をおいてから再実行してください。</Parameter>
+				<Parameter name="GuidanceAlign">Left</Parameter><!-- Left/Center/Right -->
+			</Command>
+			<Command id="Quit" type="function" funcno="-1">
+				<Parameter name="NoDisconnect">false</Parameter>
+			</Command>
+			<Command id="Quit2" type="function" funcno="-1">
+				<Parameter name="NoDisconnect">true</Parameter>
+			</Command>
+		</CommandDefinition>
+		<ActionTable initcmd="TopDialog">
+			<Action id="000" now="TopDialog"   cmdno="0"  next="TopDialog" />
+			<Action id="010" now="TopDialog"   cmdno="1"  next="UIsUpdate" />
+			<Action id="020" now="TopDialog"   cmdno="5"  next="SetNetwork" />
+			<Action id="040" now="UIsUpdate"   cmdno="1"  next="UGetUpdList" />
+			<Action id="050" now="UIsUpdate"   cmdno="2"  next="RunUpdater" />
+			<Action id="055" now="UIsUpdate"   cmdno="3"  next="RunUpdater" />
+			<Action id="060" now="UIsUpdate"   cmdno="9"  next="RunUpdater" />
+			<Action id="110" now="UGetUpdList" cmdno="1"  next="UChkUpdate" />
+			<Action id="115" now="UGetUpdList" cmdno="2"  next="RunUpdater" />
+			<Action id="120" now="UGetUpdList" cmdno="9"  next="RunUpdater" />
+			<Action id="130" now="UChkUpdate"  cmdno="1"  next="UDownload" />
+			<Action id="140" now="UChkUpdate"  cmdno="2"  next="RunUpdater" />
+			<Action id="149" now="UChkUpdate"  cmdno="9"  next="RunUpdater" />
+			<Action id="150" now="UDownload"   cmdno="1"  next="USetup" />
+			<Action id="160" now="UDownload"   cmdno="2"  next="RunUpdater" />
+			<Action id="165" now="UDownload"   cmdno="9"  next="Quit" />
+			<Action id="170" now="USetup"      cmdno="1"  next="RunUpdater" />
+			<Action id="180" now="USetup"      cmdno="2"  next="RunUpdater" />
+			<Action id="200" now="RunUpdater"  cmdno="0"  next="Quit2" />
+			<Action id="210" now="RunUpdater"  cmdno="9"  next="Quit" />
+			<Action id="400" now="SetNetwork"  cmdno="1"  next="TopDialog" />
+			<Action id="410" now="SetNetwork"  cmdno="3"  next="TopDialog" />
+			<Action id="420" now="CommErr"     cmdno="1"  next="CommErr2" />
+			<Action id="430" now="CommErr2"    cmdno="1"  next="Quit" />
+		</ActionTable>
+	</ConfigEntry>
+</Configure>

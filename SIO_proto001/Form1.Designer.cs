@@ -1,4 +1,4 @@
-﻿namespace SIO_proto001
+﻿namespace SioLog
 {
     partial class Form1
     {
@@ -39,58 +39,60 @@
             this.convertBtn = new System.Windows.Forms.Button();
             this.selectBtn = new System.Windows.Forms.Button();
             this.filterNode2 = new System.Windows.Forms.CheckBox();
+            this.OutputFileSelectBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 26);
+            this.label1.Location = new System.Drawing.Point(8, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 12);
+            this.label1.Size = new System.Drawing.Size(104, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Input File Path";
+            this.label1.Text = "読込み先ファイル名：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 50);
+            this.label2.Location = new System.Drawing.Point(8, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 12);
+            this.label2.Size = new System.Drawing.Size(93, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "OutPut File Path";
+            this.label2.Text = "出力先ファイル名：";
             // 
             // inputFilePath
             // 
             this.inputFilePath.AllowDrop = true;
-            this.inputFilePath.Location = new System.Drawing.Point(104, 24);
+            this.inputFilePath.Location = new System.Drawing.Point(8, 32);
             this.inputFilePath.Name = "inputFilePath";
-            this.inputFilePath.Size = new System.Drawing.Size(336, 19);
+            this.inputFilePath.Size = new System.Drawing.Size(408, 19);
             this.inputFilePath.TabIndex = 2;
             this.inputFilePath.DragDrop += new System.Windows.Forms.DragEventHandler(this.inputFilePath_DragDrop);
             this.inputFilePath.DragEnter += new System.Windows.Forms.DragEventHandler(this.inputFilePath_DragEnter);
             // 
             // outputFilePath
             // 
-            this.outputFilePath.Location = new System.Drawing.Point(104, 48);
+            this.outputFilePath.AllowDrop = true;
+            this.outputFilePath.Location = new System.Drawing.Point(8, 80);
             this.outputFilePath.Name = "outputFilePath";
-            this.outputFilePath.Size = new System.Drawing.Size(336, 19);
+            this.outputFilePath.Size = new System.Drawing.Size(408, 19);
             this.outputFilePath.TabIndex = 3;
-            this.outputFilePath.Text = "..\\..\\..\\SIO.txt";
+            this.outputFilePath.Text = System.IO.Directory.GetCurrentDirectory();
             // 
             // trashMode
             // 
             this.trashMode.AutoSize = true;
-            this.trashMode.Location = new System.Drawing.Point(104, 80);
+            this.trashMode.Location = new System.Drawing.Point(16, 112);
             this.trashMode.Name = "trashMode";
-            this.trashMode.Size = new System.Drawing.Size(84, 16);
+            this.trashMode.Size = new System.Drawing.Size(107, 16);
             this.trashMode.TabIndex = 4;
-            this.trashMode.Text = "ごみ箱もーど";
+            this.trashMode.Text = "すっきりもーど(仮)";
             this.trashMode.UseVisualStyleBackColor = true;
             // 
             // filterCp
             // 
             this.filterCp.AutoSize = true;
-            this.filterCp.Location = new System.Drawing.Point(224, 80);
+            this.filterCp.Location = new System.Drawing.Point(128, 112);
             this.filterCp.Name = "filterCp";
             this.filterCp.Size = new System.Drawing.Size(84, 16);
             this.filterCp.TabIndex = 5;
@@ -100,7 +102,7 @@
             // filterHp
             // 
             this.filterHp.AutoSize = true;
-            this.filterHp.Location = new System.Drawing.Point(224, 104);
+            this.filterHp.Location = new System.Drawing.Point(128, 136);
             this.filterHp.Name = "filterHp";
             this.filterHp.Size = new System.Drawing.Size(84, 16);
             this.filterHp.TabIndex = 6;
@@ -110,7 +112,7 @@
             // filterNode1
             // 
             this.filterNode1.AutoSize = true;
-            this.filterNode1.Location = new System.Drawing.Point(320, 80);
+            this.filterNode1.Location = new System.Drawing.Point(224, 112);
             this.filterNode1.Name = "filterNode1";
             this.filterNode1.Size = new System.Drawing.Size(98, 16);
             this.filterNode1.TabIndex = 7;
@@ -119,33 +121,43 @@
             // 
             // convertBtn
             // 
-            this.convertBtn.Location = new System.Drawing.Point(448, 64);
+            this.convertBtn.Location = new System.Drawing.Point(424, 112);
             this.convertBtn.Name = "convertBtn";
             this.convertBtn.Size = new System.Drawing.Size(64, 32);
             this.convertBtn.TabIndex = 8;
-            this.convertBtn.Text = "Convert";
+            this.convertBtn.Text = "読込み";
             this.convertBtn.UseVisualStyleBackColor = true;
             this.convertBtn.Click += new System.EventHandler(this.convertBtn_Click);
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(448, 24);
+            this.selectBtn.Location = new System.Drawing.Point(424, 25);
             this.selectBtn.Name = "selectBtn";
             this.selectBtn.Size = new System.Drawing.Size(64, 32);
             this.selectBtn.TabIndex = 9;
-            this.selectBtn.Text = "Select";
+            this.selectBtn.Text = "参照";
             this.selectBtn.UseVisualStyleBackColor = true;
-            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
+            this.selectBtn.Click += new System.EventHandler(this.InputFileSelectBtn);
             // 
             // filterNode2
             // 
             this.filterNode2.AutoSize = true;
-            this.filterNode2.Location = new System.Drawing.Point(320, 104);
+            this.filterNode2.Location = new System.Drawing.Point(224, 136);
             this.filterNode2.Name = "filterNode2";
             this.filterNode2.Size = new System.Drawing.Size(98, 16);
             this.filterNode2.TabIndex = 10;
             this.filterNode2.Text = "ﾉｰﾄﾞ2のみ抽出";
             this.filterNode2.UseVisualStyleBackColor = true;
+            // 
+            // OutputFileSelectBtn
+            // 
+            this.OutputFileSelectBtn.Location = new System.Drawing.Point(424, 72);
+            this.OutputFileSelectBtn.Name = "OutputFileSelectBtn";
+            this.OutputFileSelectBtn.Size = new System.Drawing.Size(64, 32);
+            this.OutputFileSelectBtn.TabIndex = 11;
+            this.OutputFileSelectBtn.Text = "参照";
+            this.OutputFileSelectBtn.UseVisualStyleBackColor = true;
+            this.OutputFileSelectBtn.Click += new System.EventHandler(this.OutputFileSelectBtn_Click);
             // 
             // Form1
             // 
@@ -153,7 +165,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(535, 138);
+            this.ClientSize = new System.Drawing.Size(535, 162);
+            this.Controls.Add(this.OutputFileSelectBtn);
             this.Controls.Add(this.filterNode2);
             this.Controls.Add(this.selectBtn);
             this.Controls.Add(this.convertBtn);
@@ -187,6 +200,7 @@
         private System.Windows.Forms.Button convertBtn;
         private System.Windows.Forms.Button selectBtn;
         private System.Windows.Forms.CheckBox filterNode2;
+        private System.Windows.Forms.Button OutputFileSelectBtn;
     }
 }
 
