@@ -1,0 +1,3408 @@
+07月12日 14:48:48.895 SL1_RcvEvnt:src=1/event=4865/sta=2
+07月12日 14:48:48.895 [ 4]lotClear    0,   0,   0
+07月12日 14:48:48.895 [ 4]Buf ful & emp data    c,   8,   0
+07月12日 14:48:48.896 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 14:48:48.896 SL2_RcvEvnt:src=1/event=4865/sta=2
+07月12日 14:48:48.896 [ 5]lotClear    0,   0,   0
+07月12日 14:48:48.975 SL2T：ASAP_CLR
+07月12日 14:48:48.976 STZ：ASAP_CLR
+07月12日 14:48:48.977 SL1T：ASAP_CLR
+07月12日 14:48:48.977 STY：ASAP_CLR
+07月12日 14:48:48.978 SL2Z：ASAP_CLR
+07月12日 14:48:48.979 SL1Z：ASAP_CLR
+07月12日 14:48:52.891 [ 1]未定義LAN-MSG受信
+07月12日 14:49:02.147 [ 1]RET:(pss,process,port)    3,   4,   4
+07月12日 14:49:02.148 SHU_RcvEvnt:src=1/event=4866/sta=2
+07月12日 14:49:26.499 [ 1]RET:(pss,process,port)    3,   4,   4
+07月12日 14:49:26.508 SL1_RcvEvnt:src=1/event=4928/sta=1
+07月12日 14:49:26.510 SL2_RcvEvnt:src=1/event=4928/sta=1
+07月12日 14:49:26.514 SHU_RcvEvnt:src=1/event=4928/sta=1
+07月12日 14:49:26.613 SL2T：ASAP_SEN
+07月12日 14:49:26.615 SL1T：ASAP_SEN
+07月12日 14:49:27.008 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffeb7,fffffeb7,989536
+07月12日 14:49:27.009 [13:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffebc,fffffebc,98953b
+07月12日 14:49:27.010 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:49:27.020 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:49:27.108 SL2T：ASAP_RET
+07月12日 14:49:27.110 SL1T：ASAP_RET
+07月12日 14:49:27.301 SL2T：AxisSta=0
+07月12日 14:49:27.303 SL1T：AxisSta=0
+07月12日 14:49:27.502 SL2T：AxisSta=1
+07月12日 14:49:27.503 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 14:49:27.503 SL1T：AxisSta=1
+07月12日 14:49:27.503 [13:W]AXIS::set_response() b428,   0,   1
+07月12日 14:49:27.750 SL1T：AxisSta=0
+07月12日 14:49:27.753 SL2T：AxisSta=0
+07月12日 14:49:27.850 SL1T：AxisSta=1
+07月12日 14:49:27.850 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 14:49:27.853 SL2T：AxisSta=1
+07月12日 14:49:27.854 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 14:49:28.000 [13:W]timeout_set()    0,   0,   0
+07月12日 14:49:28.002 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:49:28.039 [15:W]timeout_set()    0,   0,   0
+07月12日 14:49:28.039 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:49:28.049 SL2_RcvEvnt:src=1/event=4929/sta=1
+07月12日 14:49:28.050 SHU_RcvEvnt:src=1/event=4866/sta=1
+07月12日 14:49:28.051 SL1_RcvEvnt:src=1/event=4929/sta=1
+07月12日 14:49:28.145 [12:W]timeout_set()    0,   0,   0
+07月12日 14:49:28.152 SL2Z：ASAP_RET
+07月12日 14:49:28.153 SL1Z：ASAP_RET
+07月12日 14:49:28.245 STZ：ASAP_SEN
+07月12日 14:49:28.247 [16:W]timeout_set()    0,   0,   0
+07月12日 14:49:28.248 [14:W]timeout_set()    0,   0,   0
+07月12日 14:49:28.352 SL2Z：AxisSta=0
+07月12日 14:49:28.354 SL1Z：AxisSta=0
+07月12日 14:49:29.645 [12:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) ffffc00e,ffffc00e,98568d
+07月12日 14:49:29.647 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 14:49:29.677 STY：ASAP_RET
+07月12日 14:49:29.769 [11:W]timeout_set()    0,   0,   0
+07月12日 14:49:29.871 STY：AxisSta=0
+07月12日 14:49:39.254 SL2Z：AxisSta=1
+07月12日 14:49:39.257 [16:W]AXIS::set_response() ffffffe4,   0,   1
+07月12日 14:49:39.528 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:49:39.529 SL2_RcvEvnt:src=5/event=4402/sta=0
+07月12日 14:49:39.529 [ 5]****** SL2 ORG-->INIT (Start) *****    0,39bc,   0
+07月12日 14:49:39.564 SL2T：ASAP_SNS
+07月12日 14:49:39.567 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:49:39.630 SL2Z：ASAP_MOV
+07月12日 14:49:39.732 SL2Z：AxisSta=0
+07月12日 14:49:40.133 SL2Z：AxisSta=1
+07月12日 14:49:40.134 [16:W]AXIS::set_response() 122ee,   0,   1
+07月12日 14:49:40.235 SL2Z：エンコーダ正常 ODR:75700 NOW:75536
+07月12日 14:49:40.238 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:49:40.239 [ 5]****** SL2 ORG-->INIT (End) *****    0,39bc,   0
+07月12日 14:49:40.239 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 14:49:40.283 STY：AxisSta=1
+07月12日 14:49:40.284 [11:W]AXIS::set_response()    0,   0,   0
+07月12日 14:49:40.559 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 14:49:40.589 STZ：ASAP_RET
+07月12日 14:49:40.679 [12:W]timeout_set()    0,   0,   0
+07月12日 14:49:40.779 STZ：AxisSta=0
+07月12日 14:49:47.832 STZ：AxisSta=1
+07月12日 14:49:47.833 [12:W]AXIS::set_response()    0,   0,   0
+07月12日 14:49:48.090 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 14:49:48.091 SHU_RcvEvnt:src=3/event=4400/sta=0
+07月12日 14:49:48.092 [ 3]****** SHU ORG-->INIT (Start) *****    0,39bc,   0
+07月12日 14:49:48.098 [ 1]updateShuttle    0,   7,   4
+07月12日 14:49:48.098 [ 1]updateShuttle (STANDBY) wf:       0(evt,sts,0) 1001,   7,   0
+07月12日 14:49:48.188 STZ：ASAP_MOV
+07月12日 14:49:48.293 STZ：AxisSta=0
+07月12日 14:49:49.094 STZ：AxisSta=1
+07月12日 14:49:49.095 [12:W]AXIS::set_response() 1afa9,   0,   0
+07月12日 14:49:49.196 STZ：エンコーダ正常 ODR:110500 NOW:110505
+07月12日 14:49:49.200 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 14:49:49.260 STY：ASAP_MOV
+07月12日 14:49:49.369 STY：AxisSta=0
+07月12日 14:49:51.299 STY：AxisSta=1
+07月12日 14:49:51.300 [11:W]AXIS::set_response() 24be4,   0,   0
+07月12日 14:49:51.401 STY：エンコーダ正常 ODR:150500 NOW:150500
+07月12日 14:49:51.404 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 14:49:51.405 [ 3]****** SHU ORG-->INIT (End) *****    0,39bc,   0
+07月12日 14:49:51.405 [ 3]end 移動完了    0,   0,   0
+07月12日 14:50:22.821 SL1Z：AxisSta=1
+07月12日 14:50:22.822 [14:W]AXIS::set_response() fffffff2,   0,   1
+07月12日 14:50:23.087 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:50:23.088 SL1_RcvEvnt:src=4/event=4401/sta=0
+07月12日 14:50:23.088 [ 4]****** SL1 ORG-->INIT (Start) *****    0,   0,   0
+07月12日 14:50:23.097 [ 1]990217(1)    1,   1,   0
+07月12日 14:50:23.098 SL1_RcvEvnt:src=1/event=4934/sta=0
+07月12日 14:50:23.098 [ 4]990217(3)    0,   0,   0
+07月12日 14:50:23.098 SL2_RcvEvnt:src=1/event=4934/sta=0
+07月12日 14:50:23.128 SL1T：ASAP_SNS
+07月12日 14:50:23.200 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:50:23.288 SL1Z：ASAP_MOV
+07月12日 14:50:23.389 SL1Z：AxisSta=0
+07月12日 14:50:24.589 SL1Z：AxisSta=1
+07月12日 14:50:24.590 [14:W]AXIS::set_response() 70505,   0,   1
+07月12日 14:50:24.691 SL1Z：エンコーダ正常 ODR:461000 NOW:460805
+07月12日 14:50:24.698 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:50:24.699 [ 4]****** SL1 ORG-->INIT (End) *****    0,   0,   0
+07月12日 14:50:24.700 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 14:50:24.710 SHU_RcvEvnt:src=1/event=4903/sta=0
+07月12日 14:50:24.717 [ 1]updateStatus:STT-PROC send!!    0,   0,   0
+07月12日 14:50:25.158 [ 1:W]recvHdlc_USM:not use!!    4,   2,   1
+07月12日 14:50:27.157 [ 1:W]recvHdlc_USM:not use!!    3,   1,   0
+07月12日 14:50:45.537 SL1_RcvEvnt:src=1/event=4900/sta=2
+07月12日 14:50:45.538 [ 4]modeChange (event,req_mode,0) 1324,   2,   0
+07月12日 14:50:45.538 SL2_RcvEvnt:src=1/event=4900/sta=2
+07月12日 14:50:45.538 [ 5]modeChange (event,req_mode,0) 1324,   2,   0
+07月12日 14:50:45.539 SHU_RcvEvnt:src=1/event=4900/sta=2
+07月12日 14:50:45.539 [ 3]modeChange (event,req_mode,0) 1324,   2,   0
+07月12日 14:50:45.545 [ 1]responceEventMla:(now_mode,task,req_mode)    1,   4,   2
+07月12日 14:50:45.545 [ 1]responceEventMla:(now_mode,task,req_mode)    1,   5,   2
+07月12日 14:50:45.545 [ 1]responceEventMla:(now_mode,task,req_mode)    1,   3,   2
+07月12日 14:50:45.545 [ 1]updateStatus:STT-PROC send!!    4,   0,   0
+07月12日 14:50:52.457 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:50:52.504 SL1T：ASAP_SNS
+07月12日 14:50:52.510 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:50:52.608 SL1Z：ASAP_MOV
+07月12日 14:50:52.709 SL1Z：AxisSta=0
+07月12日 14:50:52.911 SL1Z：AxisSta=1
+07月12日 14:50:52.913 [14:W]AXIS::set_response() 72743,   0,   1
+07月12日 14:50:53.015 SL1Z：エンコーダ正常 ODR:469500 NOW:469489
+07月12日 14:50:53.016 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:50:54.241 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:50:54.339 SL1T：ASAP_SNS
+07月12日 14:50:54.345 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:50:54.441 SL1Z：ASAP_MOV
+07月12日 14:50:54.547 SL1Z：AxisSta=0
+07月12日 14:50:54.849 SL1Z：AxisSta=1
+07月12日 14:50:54.852 [14:W]AXIS::set_response() 752bc,   0,   1
+07月12日 14:50:54.952 SL1Z：エンコーダ正常 ODR:480500 NOW:480472
+07月12日 14:50:54.957 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:50:58.402 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:50:58.420 SL1T：ASAP_SNS
+07月12日 14:50:58.425 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:50:58.425 [ 4:W]manual_move:not position! UP or DOWN    0,  13,   0
+07月12日 14:51:00.583 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:51:00.663 SL1T：ASAP_SNS
+07月12日 14:51:00.668 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:00.765 SL1Z：ASAP_MOV
+07月12日 14:51:00.869 SL1Z：AxisSta=0
+07月12日 14:51:01.175 SL1Z：AxisSta=1
+07月12日 14:51:01.177 [14:W]AXIS::set_response() 72b2a,   0,   1
+07月12日 14:51:01.277 SL1Z：エンコーダ正常 ODR:469500 NOW:469465
+07月12日 14:51:01.281 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:51:02.653 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:51:02.703 SL1T：ASAP_SNS
+07月12日 14:51:02.705 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:02.808 SL1Z：ASAP_MOV
+07月12日 14:51:02.912 SL1Z：AxisSta=0
+07月12日 14:51:03.214 SL1Z：AxisSta=1
+07月12日 14:51:03.215 [14:W]AXIS::set_response() 75445,   0,   1
+07月12日 14:51:03.317 SL1Z：エンコーダ正常 ODR:480500 NOW:480493
+07月12日 14:51:03.325 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:51:06.187 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:51:06.273 SL1T：ASAP_SNS
+07月12日 14:51:06.279 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:06.279 [ 4:W]manual_move:not position! FOR or REV    0,   e,   0
+07月12日 14:51:09.823 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:51:09.843 SL1T：ASAP_SNS
+07月12日 14:51:09.849 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:09.945 SL1T：ASAP_MOV
+07月12日 14:51:10.049 SL1T：AxisSta=0
+07月12日 14:51:10.149 SL1T：AxisSta=1
+07月12日 14:51:10.150 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 14:51:10.153 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:11.702 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:51:11.781 SL1T：ASAP_SNS
+07月12日 14:51:11.785 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:11.883 SL1T：ASAP_MOV
+07月12日 14:51:11.889 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:13.860 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:51:13.924 SL1T：ASAP_SNS
+07月12日 14:51:13.927 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:14.028 SL1T：ASAP_MOV
+07月12日 14:51:14.031 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:16.627 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:51:16.677 SL1T：ASAP_SNS
+07月12日 14:51:16.681 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:51:16.779 SL1T：ASAP_MOV
+07月12日 14:51:16.784 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:55:40.314 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:40.401 SL2T：ASAP_SNS
+07月12日 14:55:40.407 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:40.503 SL2Z：ASAP_MOV
+07月12日 14:55:40.607 SL2Z：AxisSta=0
+07月12日 14:55:40.811 SL2Z：AxisSta=1
+07月12日 14:55:40.812 [16:W]AXIS::set_response() 14376,   0,   1
+07月12日 14:55:40.913 SL2Z：エンコーダ正常 ODR:83500 NOW:83387
+07月12日 14:55:40.921 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:55:41.278 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:41.319 SL2T：ASAP_SNS
+07月12日 14:55:41.321 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:41.420 SL2Z：ASAP_MOV
+07月12日 14:55:41.523 SL2Z：AxisSta=0
+07月12日 14:55:41.729 SL2Z：AxisSta=1
+07月12日 14:55:41.731 [16:W]AXIS::set_response() 157cb,   0,   1
+07月12日 14:55:41.831 SL2Z：エンコーダ正常 ODR:88200 NOW:88168
+07月12日 14:55:41.833 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:55:42.530 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:42.543 SL2T：ASAP_SNS
+07月12日 14:55:42.544 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:42.647 SL2Z：ASAP_MOV
+07月12日 14:55:42.749 SL2Z：AxisSta=0
+07月12日 14:55:45.093 SL2Z：AxisSta=1
+07月12日 14:55:45.095 [16:W]AXIS::set_response() 57970,   0,   1
+07月12日 14:55:45.195 SL2Z：エンコーダ正常 ODR:359500 NOW:359469
+07月12日 14:55:45.200 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:55:46.249 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:46.323 SL2T：ASAP_SNS
+07月12日 14:55:46.328 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:46.424 SL2Z：ASAP_MOV
+07月12日 14:55:46.527 SL2Z：AxisSta=0
+07月12日 14:55:46.830 SL2Z：AxisSta=1
+07月12日 14:55:46.831 [16:W]AXIS::set_response() 5a87a,   0,   1
+07月12日 14:55:46.931 SL2Z：エンコーダ正常 ODR:371500 NOW:371471
+07月12日 14:55:46.943 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:55:47.281 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:47.338 SL2T：ASAP_SNS
+07月12日 14:55:47.347 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:47.442 SL2Z：ASAP_MOV
+07月12日 14:55:47.543 SL2Z：AxisSta=0
+07月12日 14:55:48.463 SL2Z：AxisSta=1
+07月12日 14:55:48.465 [16:W]AXIS::set_response() 70793,   0,   1
+07月12日 14:55:48.565 SL2Z：エンコーダ正常 ODR:461000 NOW:460992
+07月12日 14:55:48.571 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:55:48.939 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:48.969 SL2T：ASAP_SNS
+07月12日 14:55:48.974 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:49.071 SL2Z：ASAP_MOV
+07月12日 14:55:49.174 SL2Z：AxisSta=0
+07月12日 14:55:49.581 SL2Z：AxisSta=1
+07月12日 14:55:49.582 [16:W]AXIS::set_response() 7542f,   0,   1
+07月12日 14:55:49.683 SL2Z：エンコーダ正常 ODR:480500 NOW:480507
+07月12日 14:55:49.689 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:55:51.113 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:51.213 SL2T：ASAP_SNS
+07月12日 14:55:51.219 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:51.220 [ 5:W]manual_move:not position! UP or DOWN    0,  1f,   0
+07月12日 14:55:55.174 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:55.191 SL2T：ASAP_SNS
+07月12日 14:55:55.196 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:55.293 SL2T：ASAP_MOV
+07月12日 14:55:55.397 SL2T：AxisSta=0
+07月12日 14:55:57.945 SL2T：AxisSta=1
+07月12日 14:55:57.947 [15:W]AXIS::set_response() 2126,   0,   0
+07月12日 14:55:57.949 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:55:59.264 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:55:59.272 SL2T：ASAP_SNS
+07月12日 14:55:59.272 [15:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 14:55:59.277 SL2_RcvEvnt:src=15/event=5636/sta=-1
+07月12日 14:55:59.373 SL2T：ASAP_MOV
+07月12日 14:55:59.475 SL2T：AxisSta=0
+07月12日 14:56:02.025 SL2T：AxisSta=1
+07月12日 14:56:02.028 [15:W]AXIS::set_response() b426,   0,   0
+07月12日 14:56:02.031 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:02.032 [ 5:W]alarmSet axis, local_code code    0, 19f, 513
+07月12日 14:56:09.059 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:09.064 SL1T：ASAP_SNS
+07月12日 14:56:09.070 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:56:09.169 SL1Z：ASAP_MOV
+07月12日 14:56:09.273 SL1Z：AxisSta=0
+07月12日 14:56:09.576 SL1Z：AxisSta=1
+07月12日 14:56:09.577 [14:W]AXIS::set_response() 72a84,   0,   1
+07月12日 14:56:09.682 SL1Z：エンコーダ正常 ODR:469500 NOW:469461
+07月12日 14:56:09.684 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:56:10.785 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:10.797 SL1T：ASAP_SNS
+07月12日 14:56:10.800 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:56:10.899 SL1Z：ASAP_MOV
+07月12日 14:56:11.002 SL1Z：AxisSta=0
+07月12日 14:56:11.208 SL1Z：AxisSta=1
+07月12日 14:56:11.209 [14:W]AXIS::set_response() 70bfd,   0,   1
+07月12日 14:56:11.309 SL1Z：エンコーダ正常 ODR:461000 NOW:461078
+07月12日 14:56:11.313 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:56:13.564 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:13.652 SL1T：ASAP_SNS
+07月12日 14:56:13.660 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:56:13.754 SL1Z：ASAP_MOV
+07月12日 14:56:13.858 SL1Z：AxisSta=0
+07月12日 14:56:14.062 SL1Z：AxisSta=1
+07月12日 14:56:14.063 [14:W]AXIS::set_response() 727e2,   0,   1
+07月12日 14:56:14.165 SL1Z：エンコーダ正常 ODR:469500 NOW:469329
+07月12日 14:56:14.168 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:56:15.214 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:15.280 SL1T：ASAP_SNS
+07月12日 14:56:15.289 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 14:56:15.385 SL1Z：ASAP_MOV
+07月12日 14:56:15.487 SL1Z：AxisSta=0
+07月12日 14:56:15.790 SL1Z：AxisSta=1
+07月12日 14:56:15.791 [14:W]AXIS::set_response() 75283,   0,   1
+07月12日 14:56:15.891 SL1Z：エンコーダ正常 ODR:480500 NOW:480456
+07月12日 14:56:15.892 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 14:56:17.260 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:17.324 SL2T：ASAP_SNS
+07月12日 14:56:17.325 [15:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 14:56:17.328 SL2_RcvEvnt:src=15/event=5636/sta=-1
+07月12日 14:56:17.328 [ 5:W]alarmSet axis, local_code code    0, 1a6, 521
+07月12日 14:56:17.331 [ 5:W]manual check err..(rc,key,err)  ffffffff,  20,   0
+07月12日 14:56:21.067 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:21.093 SL2T：ASAP_SNS
+07月12日 14:56:21.095 [15:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 14:56:21.098 SL2_RcvEvnt:src=15/event=5636/sta=-1
+07月12日 14:56:21.098 [ 5:W]alarmSet axis, local_code code    0, 1a6, 521
+07月12日 14:56:21.098 [ 5:W]manual check err..(rc,key,err)  ffffffff,  20,   0
+07月12日 14:56:21.108 [ 1:W]alarmSet double code!!  521,   5,   0
+07月12日 14:56:24.071 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:24.156 SL2T：ASAP_SNS
+07月12日 14:56:24.157 [15:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 14:56:24.158 SL2_RcvEvnt:src=15/event=5636/sta=-1
+07月12日 14:56:24.158 [ 5:W]alarmSet axis, local_code code    0, 1a6, 521
+07月12日 14:56:24.164 [ 1:W]alarmSet double code!!  521,   5,   0
+07月12日 14:56:24.259 SL2T：ASAP_RET
+07月12日 14:56:24.452 SL2T：AxisSta=0
+07月12日 14:56:24.653 SL2T：AxisSta=1
+07月12日 14:56:24.654 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 14:56:24.901 SL2T：AxisSta=0
+07月12日 14:56:25.005 SL2T：AxisSta=1
+07月12日 14:56:25.007 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 14:56:25.178 [15:W]timeout_set()    0,   0,   0
+07月12日 14:56:25.185 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:27.919 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:27.928 SL2T：ASAP_SNS
+07月12日 14:56:27.932 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:28.029 SL2T：ASAP_SEN
+07月12日 14:56:28.457 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffe07,fffffe07,989486
+07月12日 14:56:28.461 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:28.558 SL2T：ASAP_RET
+07月12日 14:56:28.754 SL2T：AxisSta=0
+07月12日 14:56:29.059 SL2T：AxisSta=1
+07月12日 14:56:29.061 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 14:56:29.318 SL2T：AxisSta=0
+07月12日 14:56:29.418 SL2T：AxisSta=1
+07月12日 14:56:29.419 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 14:56:29.580 [15:W]timeout_set()    0,   0,   0
+07月12日 14:56:29.580 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:31.259 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:31.298 SL2T：ASAP_SNS
+07月12日 14:56:31.307 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:31.397 SL2Z：ASAP_MOV
+07月12日 14:56:31.501 SL2Z：AxisSta=0
+07月12日 14:56:31.809 SL2Z：AxisSta=1
+07月12日 14:56:31.809 [16:W]AXIS::set_response() 70c42,   0,   1
+07月12日 14:56:31.910 SL2Z：エンコーダ正常 ODR:461000 NOW:461302
+07月12日 14:56:31.919 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:56:33.914 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:33.945 SL2T：ASAP_SNS
+07月12日 14:56:33.951 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:34.047 SL2Z：ASAP_MOV
+07月12日 14:56:34.150 SL2Z：AxisSta=0
+07月12日 14:56:35.067 SL2Z：AxisSta=1
+07月12日 14:56:35.070 [16:W]AXIS::set_response() 5adea,   0,   1
+07月12日 14:56:35.171 SL2Z：エンコーダ正常 ODR:371500 NOW:371496
+07月12日 14:56:35.175 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:56:36.382 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:36.394 SL2T：ASAP_SNS
+07月12日 14:56:36.399 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:36.495 SL2Z：ASAP_MOV
+07月12日 14:56:36.598 SL2Z：AxisSta=0
+07月12日 14:56:37.515 SL2Z：AxisSta=1
+07月12日 14:56:37.518 [16:W]AXIS::set_response() 707ef,   0,   1
+07月12日 14:56:37.620 SL2Z：エンコーダ正常 ODR:461000 NOW:460963
+07月12日 14:56:37.623 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 14:56:39.407 SL2_RcvEvnt:src=1/event=5122/sta=0
+07月12日 14:56:39.453 SL2T：ASAP_SNS
+07月12日 14:56:39.457 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 14:56:39.555 SL2Z：ASAP_MOV
+07月12日 14:56:39.658 SL2Z：AxisSta=0
+07月12日 14:56:40.067 SL2Z：AxisSta=1
+07月12日 14:56:40.068 [16:W]AXIS::set_response() 7546b,   0,   1
+07月12日 14:56:40.170 SL2Z：エンコーダ正常 ODR:480500 NOW:480511
+07月12日 14:56:40.182 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:07:18.605 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:18.684 SL1T：ASAP_SNS
+07月12日 15:07:18.691 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:18.788 SL1Z：ASAP_MOV
+07月12日 15:07:18.892 SL1Z：AxisSta=0
+07月12日 15:07:19.196 SL1Z：AxisSta=1
+07月12日 15:07:19.197 [14:W]AXIS::set_response() 72aa8,   0,   1
+07月12日 15:07:19.298 SL1Z：エンコーダ正常 ODR:469500 NOW:469463
+07月12日 15:07:19.302 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:07:20.734 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:20.829 SL1T：ASAP_SNS
+07月12日 15:07:20.838 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:20.932 SL1Z：ASAP_MOV
+07月12日 15:07:21.034 SL1Z：AxisSta=0
+07月12日 15:07:21.236 SL1Z：AxisSta=1
+07月12日 15:07:21.237 [14:W]AXIS::set_response() 70c20,   0,   1
+07月12日 15:07:21.338 SL1Z：エンコーダ正常 ODR:461000 NOW:461298
+07月12日 15:07:21.340 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:07:23.592 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:23.682 SL1T：ASAP_SNS
+07月12日 15:07:23.686 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:23.687 [ 4:W]manual_move:not position! UP or DOWN    0,  14,   0
+07月12日 15:07:26.185 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:26.231 SL1T：ASAP_SNS
+07月12日 15:07:26.234 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:26.333 SL1Z：ASAP_MOV
+07月12日 15:07:26.437 SL1Z：AxisSta=0
+07月12日 15:07:26.741 SL1Z：AxisSta=1
+07月12日 15:07:26.742 [14:W]AXIS::set_response() 729b7,   0,   1
+07月12日 15:07:26.843 SL1Z：エンコーダ正常 ODR:469500 NOW:469531
+07月12日 15:07:26.847 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:07:36.106 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:36.125 SL1T：ASAP_SNS
+07月12日 15:07:36.127 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:36.227 SL1T：ASAP_SEN
+07月12日 15:07:36.615 [13:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffea6,fffffea6,989527
+07月12日 15:07:36.617 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:36.716 SL1T：ASAP_RET
+07月12日 15:07:36.912 SL1T：AxisSta=0
+07月12日 15:07:37.113 SL1T：AxisSta=1
+07月12日 15:07:37.116 [13:W]AXIS::set_response() b428,   0,   1
+07月12日 15:07:37.359 SL1T：AxisSta=0
+07月12日 15:07:37.460 SL1T：AxisSta=1
+07月12日 15:07:37.463 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:07:37.634 [13:W]timeout_set()    0,   0,   0
+07月12日 15:07:37.636 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:41.268 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:41.338 SL1T：ASAP_SNS
+07月12日 15:07:41.344 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:41.431 SL1Z：ASAP_MOV
+07月12日 15:07:41.533 SL1Z：AxisSta=0
+07月12日 15:07:41.839 SL1Z：AxisSta=1
+07月12日 15:07:41.840 [14:W]AXIS::set_response() 7543b,   0,   1
+07月12日 15:07:41.940 SL1Z：エンコーダ正常 ODR:480500 NOW:480464
+07月12日 15:07:41.945 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:07:44.185 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:44.285 SL1T：ASAP_SNS
+07月12日 15:07:44.291 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:44.387 SL1T：ASAP_MOV
+07月12日 15:07:44.492 SL1T：AxisSta=0
+07月12日 15:07:44.592 SL1T：AxisSta=1
+07月12日 15:07:44.595 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:07:44.598 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:46.692 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:46.736 SL1T：ASAP_SNS
+07月12日 15:07:46.740 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:46.740 [ 4:W]manual_move:not position! FOR or REV    0,   e,   0
+07月12日 15:07:49.621 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:07:49.691 SL1T：ASAP_SNS
+07月12日 15:07:49.696 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:07:49.794 SL1T：ASAP_MOV
+07月12日 15:07:49.798 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:41:54.668 ***** StartLogging IFB.log *****
+07月12日 15:41:54.700 [ 1]IFB::TASK_MAIN 起動
+07月12日 15:41:54.705 [ 7]IFB::TASK_KANSHI 起動
+07月12日 15:41:54.706 [ 7]initial.. wait    0,   0,   0
+07月12日 15:41:54.711 [18]IFB::TASK_KANSHI2 起動
+07月12日 15:41:54.711 [18]initial.. wait    0,   0,   0
+07月12日 15:41:54.713 [ 6]IFB::TASK_EXPIO 起動
+07月12日 15:41:54.713 [ 6][initial.. wait]    0,   0,   0
+07月12日 15:41:54.716 [ 8]IFB::TASK_RECV 起動
+07月12日 15:41:54.717 [ 2]IFB::TASK_HDLC 起動
+07月12日 15:41:54.719 [ 9]IFB::TASK_SEND 起動
+07月12日 15:41:54.721 [ 0]IFB::TASK_SHUTTLE 起動
+07月12日 15:41:54.722 [ 4]IFB::TASK_SLIDER1 起動
+07月12日 15:41:54.731 [11]IFB::TASK_AXIS 起動
+07月12日 15:41:54.732 [12]IFB::TASK_AXIS 起動
+07月12日 15:41:54.739 [13]IFB::TASK_AXIS 起動
+07月12日 15:41:54.742 [14]IFB::TASK_AXIS 起動
+07月12日 15:41:54.751 [15]IFB::TASK_AXIS 起動
+07月12日 15:41:54.752 [16]IFB::TASK_AXIS 起動
+07月12日 15:41:54.753 [ 5]IFB::TASK_SLIDER2 起動
+07月12日 15:41:54.753 [ 5]<< start expif task >>    0,   0,   0
+07月12日 15:41:54.753 [ 5]initial.. wait    0,   0,   0
+07月12日 15:41:59.786 [ 0]ppiOn   68,  1c,   0
+07月12日 15:41:59.788 [ 0]ppiOn   68,   3,   3
+07月12日 15:41:59.889 [ 0]ppiOn   68,   3,   0
+07月12日 15:42:00.091 [ 0]ppiOn   68,  1c,  1c
+07月12日 15:42:00.093 [ 1]RSW34 data    0,   0,ffffffff
+07月12日 15:42:52.379 [ 1]TR-SLAVE No.    2,   0,   0
+07月12日 15:42:52.380 [ 7]initial    0,   0,   0
+07月12日 15:42:52.387 [ 3]initial    0,   0,   0
+07月12日 15:42:52.388 [ 4]initial (DIPSW1,DIPSW2,0) ffffffff,ffffffff,   0
+07月12日 15:42:52.388 [ 4]Buf ful & emp data    c,   8,   0
+07月12日 15:42:52.388 [18]initial    0,   0,   0
+07月12日 15:42:52.389 [ 5]initial    0,ffffffff,   0
+07月12日 15:42:52.389 [ 6][initial]    0,   0,   0
+07月12日 15:42:52.390 [15]initial (boss,axisID,taskID)    5,   0,   f
+07月12日 15:42:52.390 [11]initial (boss,axisID,taskID)    3,   0,   b
+07月12日 15:42:52.390 [12]initial (boss,axisID,taskID)    3,   1,   c
+07月12日 15:42:52.390 [13]initial (boss,axisID,taskID)    4,   0,   d
+07月12日 15:42:52.393 [16]initial (boss,axisID,taskID)    5,   1,  10
+07月12日 15:42:52.393 [14]initial (boss,axisID,taskID)    4,   1,   e
+07月12日 15:42:52.590 [15]IFB::TASK_AXIS Initial終了
+07月12日 15:42:52.591 [11]IFB::TASK_AXIS Initial終了
+07月12日 15:42:52.593 [12]IFB::TASK_AXIS Initial終了
+07月12日 15:42:52.594 [13]IFB::TASK_AXIS Initial終了
+07月12日 15:42:55.324 [16]IFB::TASK_AXIS Initial終了
+07月12日 15:42:55.324 [14]IFB::TASK_AXIS Initial終了
+07月12日 15:42:57.266 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.268 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.269 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.292 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.295 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.295 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.296 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.324 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.325 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.350 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.351 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.352 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.392 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.395 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.395 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.396 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.424 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.427 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.451 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.454 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.456 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.494 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.496 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.497 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.497 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.524 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.528 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.549 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.549 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.550 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.595 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.596 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.597 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.597 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.624 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.628 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.641 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.641 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.643 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:42:57.696 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.697 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.698 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.698 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:42:57.724 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:42:57.728 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:43:05.061 [ 1]recvHdlc_SOS SW8 (msg,sub,len)    0,   8,   2
+07月12日 15:43:05.065 SHU_RcvEvnt:src=1/event=4884/sta=8
+07月12日 15:43:05.065 [ 3]machineMake(shuLockAreaY)    0,57e4,   0
+07月12日 15:43:05.065 SL1_RcvEvnt:src=1/event=4884/sta=8
+07月12日 15:43:05.065 [ 4]machineMake (bufPickupOff)    0,  c0,   1
+07月12日 15:43:05.066 SL2_RcvEvnt:src=1/event=4884/sta=8
+07月12日 15:43:05.066 [ 5]machineMake (bufPickupOff)    0,  c0,   1
+07月12日 15:43:05.121 [15:W]rcv_init_msg()->ASAP_INI:    0,   0,   0
+07月12日 15:43:05.121 [13:W]rcv_init_msg()->ASAP_INI:    0,   0,   0
+07月12日 15:43:09.668 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.670 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.671 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.760 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.761 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.761 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.863 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.866 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.867 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.957 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.960 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:09.961 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:10.049 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:10.052 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:10.053 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:43:10.513 SHU_RcvEvnt:src=1/event=4884/sta=25
+07月12日 15:43:10.515 SL1_RcvEvnt:src=1/event=4884/sta=25
+07月12日 15:43:10.515 SL2_RcvEvnt:src=1/event=4884/sta=25
+07月12日 15:43:19.158 [ 6]ONLINE OFF-->ON    1,   0,   0
+07月12日 15:43:19.220 [ 6]READY OFF-->ON    3,   1,   0
+07月12日 15:43:22.850 [ 0]ppiOn   68,  1c,   0
+07月12日 15:43:22.850 [ 0]ppiOn   68,   3,   3
+07月12日 15:43:22.953 [ 0]ppiOn   68,   3,   0
+07月12日 15:43:23.162 [ 0]ppiOn   68,  1c,  1c
+07月12日 15:43:23.167 SHU_RcvEvnt:src=1/event=4865/sta=2
+07月12日 15:43:23.168 [ 3]lotClear(event) 1301,   0,   0
+07月12日 15:43:23.168 [ 3]machineMake(shuLockAreaY)    0,57e4,   0
+07月12日 15:43:23.168 SL1_RcvEvnt:src=1/event=4865/sta=2
+07月12日 15:43:23.169 [ 4]lotClear    0,   0,   0
+07月12日 15:43:23.169 [ 4]Buf ful & emp data    c,   8,   0
+07月12日 15:43:23.169 SL2_RcvEvnt:src=1/event=4865/sta=2
+07月12日 15:43:23.170 [ 5]lotClear    0,   0,   0
+07月12日 15:43:23.197 [ 6]ONLINE OFF-->ON    3,   0,   0
+07月12日 15:43:23.197 [ 6]READY OFF-->ON    3,   0,   0
+07月12日 15:43:23.199 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 15:43:23.199 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 15:43:23.256 SL2T：ASAP_CLR
+07月12日 15:43:23.257 STY：ASAP_CLR
+07月12日 15:43:23.261 STZ：ASAP_CLR
+07月12日 15:43:23.262 SL1T：ASAP_CLR
+07月12日 15:43:23.263 SL2Z：ASAP_CLR
+07月12日 15:43:23.263 SL1Z：ASAP_CLR
+07月12日 15:43:28.077 [ 1]未定義LAN-MSG受信
+07月12日 15:43:41.497 [ 1]RET:(pss,process,port)    3,   4,   4
+07月12日 15:43:41.500 SHU_RcvEvnt:src=1/event=4866/sta=2
+07月12日 15:43:48.801 [ 1]RET:(pss,process,port)    3,   4,   4
+07月12日 15:43:48.810 SHU_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:43:48.811 SL1_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:43:48.812 SL2_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:43:48.911 SL1T：ASAP_SEN
+07月12日 15:43:48.915 SL2T：ASAP_SEN
+07月12日 15:43:49.399 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffeaa,fffffeaa,989529
+07月12日 15:43:49.402 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:43:49.440 [13:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffe13,fffffe13,989492
+07月12日 15:43:49.443 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:43:49.499 SL2T：ASAP_RET
+07月12日 15:43:49.540 SL1T：ASAP_RET
+07月12日 15:43:49.692 SL2T：AxisSta=0
+07月12日 15:43:49.742 SL1T：AxisSta=0
+07月12日 15:43:49.896 SL2T：AxisSta=1
+07月12日 15:43:49.897 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 15:43:50.045 SL1T：AxisSta=1
+07月12日 15:43:50.045 [13:W]AXIS::set_response() b428,   0,   1
+07月12日 15:43:50.143 SL2T：AxisSta=0
+07月12日 15:43:50.248 SL2T：AxisSta=1
+07月12日 15:43:50.249 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 15:43:50.302 SL1T：AxisSta=0
+07月12日 15:43:50.402 SL1T：AxisSta=1
+07月12日 15:43:50.403 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:43:50.422 [15:W]timeout_set()    0,   0,   0
+07月12日 15:43:50.423 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:43:50.585 [13:W]timeout_set()    0,   0,   0
+07月12日 15:43:50.586 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:43:50.596 SHU_RcvEvnt:src=1/event=4866/sta=1
+07月12日 15:43:50.598 SL1_RcvEvnt:src=1/event=4929/sta=1
+07月12日 15:43:50.601 SL2_RcvEvnt:src=1/event=4929/sta=1
+07月12日 15:43:50.662 SL2Z：ASAP_RET
+07月12日 15:43:50.666 SL1Z：ASAP_RET
+07月12日 15:43:50.666 [12:W]timeout_set()    0,   0,   0
+07月12日 15:43:50.761 [14:W]timeout_set()    0,   0,   0
+07月12日 15:43:50.763 [16:W]timeout_set()    0,   0,   0
+07月12日 15:43:50.770 STZ：ASAP_SEN
+07月12日 15:43:50.865 SL1Z：AxisSta=0
+07月12日 15:43:50.866 SL2Z：AxisSta=0
+07月12日 15:43:52.304 [12:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) ffffbe7e,ffffbe7e,9854fd
+07月12日 15:43:52.308 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:43:52.389 STY：ASAP_RET
+07月12日 15:43:52.479 [11:W]timeout_set()    0,   0,   0
+07月12日 15:43:52.580 STY：AxisSta=0
+07月12日 15:44:02.980 STY：AxisSta=1
+07月12日 15:44:02.984 [11:W]AXIS::set_response()    0,   0,   0
+07月12日 15:44:03.249 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:44:03.286 STZ：ASAP_RET
+07月12日 15:44:03.379 [12:W]timeout_set()    0,   0,   0
+07月12日 15:44:03.482 STZ：AxisSta=0
+07月12日 15:44:10.517 STZ：AxisSta=1
+07月12日 15:44:10.517 [12:W]AXIS::set_response()    0,   0,   0
+07月12日 15:44:10.799 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:44:10.801 SHU_RcvEvnt:src=3/event=4400/sta=0
+07月12日 15:44:10.802 [ 3]****** SHU ORG-->INIT (Start) *****    0,39bc,   0
+07月12日 15:44:10.807 [ 1]updateShuttle    0,   7,   4
+07月12日 15:44:10.808 [ 1]updateShuttle (STANDBY) wf:       0(evt,sts,0) 1001,   7,   0
+07月12日 15:44:10.896 STZ：ASAP_MOV
+07月12日 15:44:10.998 STZ：AxisSta=0
+07月12日 15:44:11.801 STZ：AxisSta=1
+07月12日 15:44:11.801 [12:W]AXIS::set_response() 1afa4,   0,   0
+07月12日 15:44:11.902 STZ：エンコーダ正常 ODR:110500 NOW:110505
+07月12日 15:44:11.906 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:44:11.940 STY：ASAP_MOV
+07月12日 15:44:12.043 STY：AxisSta=0
+07月12日 15:44:13.978 STY：AxisSta=1
+07月12日 15:44:13.979 [11:W]AXIS::set_response() 24be4,   0,   0
+07月12日 15:44:14.080 STY：エンコーダ正常 ODR:150500 NOW:150500
+07月12日 15:44:14.084 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:44:14.084 [ 3]****** SHU ORG-->INIT (End) *****    0,39bc,   0
+07月12日 15:44:14.084 [ 3]end 移動完了    0,   0,   0
+07月12日 15:44:46.752 SL2Z：AxisSta=1
+07月12日 15:44:46.753 [16:W]AXIS::set_response() fffffff5,   0,   1
+07月12日 15:44:46.998 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:44:46.999 SL2_RcvEvnt:src=5/event=4402/sta=0
+07月12日 15:44:46.999 [ 5]****** SL2 ORG-->INIT (Start) *****    0,39bc,   0
+07月12日 15:44:47.057 SL2T：ASAP_SNS
+07月12日 15:44:47.061 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:44:47.096 SL2Z：ASAP_MOV
+07月12日 15:44:47.198 SL2Z：AxisSta=0
+07月12日 15:44:47.464 SL1Z：AxisSta=1
+07月12日 15:44:47.465 [14:W]AXIS::set_response() fffffff4,   0,   1
+07月12日 15:44:47.699 SL2Z：AxisSta=1
+07月12日 15:44:47.700 [16:W]AXIS::set_response() 126b3,   0,   1
+07月12日 15:44:47.722 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:44:47.723 SL1_RcvEvnt:src=4/event=4401/sta=0
+07月12日 15:44:47.723 [ 4]****** SL1 ORG-->INIT (Start) *****    0,   0,   0
+07月12日 15:44:47.728 [ 1]990217(1)    1,   1,   0
+07月12日 15:44:47.732 SL2_RcvEvnt:src=1/event=4934/sta=0
+07月12日 15:44:47.741 SL1_RcvEvnt:src=1/event=4934/sta=0
+07月12日 15:44:47.742 [ 4]990217(3)    0,   0,   0
+07月12日 15:44:47.771 SL1T：ASAP_SNS
+07月12日 15:44:47.801 SL2Z：エンコーダ正常 ODR:75700 NOW:75659
+07月12日 15:44:47.832 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:44:47.833 [ 5]****** SL2 ORG-->INIT (End) *****    0,39bc,   0
+07月12日 15:44:47.833 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 15:44:47.842 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:44:47.918 SL1Z：ASAP_MOV
+07月12日 15:44:48.020 SL1Z：AxisSta=0
+07月12日 15:44:49.221 SL1Z：AxisSta=1
+07月12日 15:44:49.222 [14:W]AXIS::set_response() 704db,   0,   1
+07月12日 15:44:49.322 SL1Z：エンコーダ正常 ODR:461000 NOW:460787
+07月12日 15:44:49.327 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:44:49.327 [ 4]****** SL1 ORG-->INIT (End) *****    0,   0,   0
+07月12日 15:44:49.327 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 15:44:49.338 SHU_RcvEvnt:src=1/event=4903/sta=0
+07月12日 15:44:49.350 [ 1]updateStatus:STT-PROC send!!    0,   0,   0
+07月12日 15:45:20.192 [ 1:W]recvHdlc_USM:not use!!    4,   2,   1
+07月12日 15:45:22.311 [ 1:W]recvHdlc_USM:not use!!    3,   1,   0
+07月12日 15:45:24.978 SL2_RcvEvnt:src=1/event=4900/sta=2
+07月12日 15:45:24.979 [ 5]modeChange (event,req_mode,0) 1324,   2,   0
+07月12日 15:45:24.979 SHU_RcvEvnt:src=1/event=4900/sta=2
+07月12日 15:45:24.979 [ 3]modeChange (event,req_mode,0) 1324,   2,   0
+07月12日 15:45:24.980 SL1_RcvEvnt:src=1/event=4900/sta=2
+07月12日 15:45:24.980 [ 4]modeChange (event,req_mode,0) 1324,   2,   0
+07月12日 15:45:24.987 [ 1]responceEventMla:(now_mode,task,req_mode)    1,   5,   2
+07月12日 15:45:24.987 [ 1]responceEventMla:(now_mode,task,req_mode)    1,   3,   2
+07月12日 15:45:24.987 [ 1]responceEventMla:(now_mode,task,req_mode)    1,   4,   2
+07月12日 15:45:24.989 [ 1]updateStatus:STT-PROC send!!    4,   0,   0
+07月12日 15:45:30.358 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:45:30.417 SL1T：ASAP_SNS
+07月12日 15:45:30.427 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:45:30.519 SL1Z：ASAP_MOV
+07月12日 15:45:30.621 SL1Z：AxisSta=0
+07月12日 15:45:30.928 SL1Z：AxisSta=1
+07月12日 15:45:30.931 [14:W]AXIS::set_response() 75155,   0,   1
+07月12日 15:45:31.031 SL1Z：エンコーダ正常 ODR:480500 NOW:480233
+07月12日 15:45:31.035 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:45:33.333 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:45:33.363 SL1T：ASAP_SNS
+07月12日 15:45:33.369 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:45:33.466 SL1Z：ASAP_MOV
+07月12日 15:45:33.571 SL1Z：AxisSta=0
+07月12日 15:45:33.873 SL1Z：AxisSta=1
+07月12日 15:45:33.875 [14:W]AXIS::set_response() 70a9e,   0,   1
+07月12日 15:45:33.975 SL1Z：エンコーダ正常 ODR:461000 NOW:461121
+07月12日 15:45:33.977 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:45:35.242 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:45:35.292 SL1T：ASAP_SNS
+07月12日 15:45:35.297 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:45:35.395 SL1Z：ASAP_MOV
+07月12日 15:45:35.498 SL1Z：AxisSta=0
+07月12日 15:45:35.800 SL1Z：AxisSta=1
+07月12日 15:45:35.802 [14:W]AXIS::set_response() 75199,   0,   1
+07月12日 15:45:35.903 SL1Z：エンコーダ正常 ODR:480500 NOW:480396
+07月12日 15:45:35.906 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:45:37.658 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:45:37.736 SL1T：ASAP_SNS
+07月12日 15:45:37.740 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:45:37.839 SL1T：ASAP_MOV
+07月12日 15:45:37.942 SL1T：AxisSta=0
+07月12日 15:45:40.585 SL1T：AxisSta=1
+07月12日 15:45:40.586 [13:W]AXIS::set_response() 2125,   0,   0
+07月12日 15:45:40.587 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:45:42.192 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:45:42.207 SL1T：ASAP_SNS
+07月12日 15:45:42.207 [13:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 15:45:42.215 SL1_RcvEvnt:src=13/event=5635/sta=-1
+07月12日 15:45:42.309 SL1T：ASAP_MOV
+07月12日 15:45:42.411 SL1T：AxisSta=0
+07月12日 15:45:44.964 SL1T：AxisSta=1
+07月12日 15:45:44.966 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:45:44.975 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:01.990 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:02.009 SL1T：ASAP_SNS
+07月12日 15:48:02.013 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:02.110 SL1Z：ASAP_MOV
+07月12日 15:48:02.216 SL1Z：AxisSta=0
+07月12日 15:48:02.620 SL1Z：AxisSta=1
+07月12日 15:48:02.622 [14:W]AXIS::set_response() 709ac,   0,   1
+07月12日 15:48:02.722 SL1Z：エンコーダ正常 ODR:461000 NOW:461004
+07月12日 15:48:02.724 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:03.599 [ 1:W]recvHdlc_USM:not use!!    3,   1,   0
+07月12日 15:48:03.701 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:03.740 SL1T：ASAP_SNS
+07月12日 15:48:03.744 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:03.841 SL1Z：ASAP_MOV
+07月12日 15:48:03.946 SL1Z：AxisSta=0
+07月12日 15:48:04.859 SL1Z：AxisSta=1
+07月12日 15:48:04.863 [14:W]AXIS::set_response() 5addb,   0,   1
+07月12日 15:48:04.880 [ 1:W]recvHdlc_USM:not use!!    3,   0,   0
+07月12日 15:48:04.963 SL1Z：エンコーダ正常 ODR:371500 NOW:371508
+07月12日 15:48:04.966 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:05.914 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:05.980 SL1T：ASAP_SNS
+07月12日 15:48:05.985 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:06.082 SL1Z：ASAP_MOV
+07月12日 15:48:06.185 SL1Z：AxisSta=0
+07月12日 15:48:06.489 SL1Z：AxisSta=1
+07月12日 15:48:06.491 [14:W]AXIS::set_response() 57e13,   0,   1
+07月12日 15:48:06.591 SL1Z：エンコーダ正常 ODR:359500 NOW:359475
+07月12日 15:48:06.595 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:07.942 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:08.013 SL1T：ASAP_SNS
+07月12日 15:48:08.019 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:08.116 SL1Z：ASAP_MOV
+07月12日 15:48:08.219 SL1Z：AxisSta=0
+07月12日 15:48:10.663 SL1Z：AxisSta=1
+07月12日 15:48:10.664 [14:W]AXIS::set_response() 15945,   0,   1
+07月12日 15:48:10.765 SL1Z：エンコーダ正常 ODR:88200 NOW:88213
+07月12日 15:48:10.767 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:12.473 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:12.489 SL1T：ASAP_SNS
+07月12日 15:48:12.498 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:12.591 SL1Z：ASAP_MOV
+07月12日 15:48:12.695 SL1Z：AxisSta=0
+07月12日 15:48:12.899 SL1Z：AxisSta=1
+07月12日 15:48:12.899 [14:W]AXIS::set_response() 147ee,   0,   1
+07月12日 15:48:13.000 SL1Z：エンコーダ正常 ODR:83500 NOW:83527
+07月12日 15:48:13.002 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:15.380 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:15.440 SL1T：ASAP_SNS
+07月12日 15:48:15.445 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:15.546 SL1Z：ASAP_MOV
+07月12日 15:48:15.648 SL1Z：AxisSta=0
+07月12日 15:48:15.850 SL1Z：AxisSta=1
+07月12日 15:48:15.852 [14:W]AXIS::set_response() 12aa5,   0,   1
+07月12日 15:48:15.952 SL1Z：エンコーダ正常 ODR:75700 NOW:75913
+07月12日 15:48:15.955 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:17.191 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:17.276 SL1T：ASAP_SNS
+07月12日 15:48:17.278 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:17.380 SL1Z：ASAP_MOV
+07月12日 15:48:17.481 SL1Z：AxisSta=0
+07月12日 15:48:17.682 SL1Z：AxisSta=1
+07月12日 15:48:17.685 [14:W]AXIS::set_response() 1189d,   0,   1
+07月12日 15:48:17.786 SL1Z：エンコーダ正常 ODR:71500 NOW:71455
+07月12日 15:48:17.795 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:19.001 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:19.103 SL1T：ASAP_SNS
+07月12日 15:48:19.106 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:19.107 [ 4:W]manual_move:not position! UP or DOWN    0,  14,   0
+07月12日 15:48:23.117 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:23.167 SL1T：ASAP_SNS
+07月12日 15:48:23.173 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:23.269 SL1Z：ASAP_MOV
+07月12日 15:48:23.372 SL1Z：AxisSta=0
+07月12日 15:48:23.572 SL1Z：AxisSta=1
+07月12日 15:48:23.576 [14:W]AXIS::set_response() 1267f,   0,   1
+07月12日 15:48:23.676 SL1Z：エンコーダ正常 ODR:75700 NOW:75643
+07月12日 15:48:23.678 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:26.719 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:26.728 SL1T：ASAP_SNS
+07月12日 15:48:26.737 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:26.838 [ 4:W]manual_move:not position! FOR or REV    0,   e,   0
+07月12日 15:48:29.529 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:29.576 SL1T：ASAP_SNS
+07月12日 15:48:29.581 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:29.679 SL1Z：ASAP_MOV
+07月12日 15:48:29.782 SL1Z：AxisSta=0
+07月12日 15:48:29.984 SL1Z：AxisSta=1
+07月12日 15:48:29.987 [14:W]AXIS::set_response() 11820,   0,   1
+07月12日 15:48:30.087 SL1Z：エンコーダ正常 ODR:71500 NOW:71460
+07月12日 15:48:30.090 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:31.240 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:31.300 SL1T：ASAP_SNS
+07月12日 15:48:31.306 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:31.502 SL1T：ASAP_MOV
+07月12日 15:48:31.609 SL1T：AxisSta=0
+07月12日 15:48:33.839 SL1T：AxisSta=1
+07月12日 15:48:33.843 [13:W]AXIS::set_response() 349b,   0,   0
+07月12日 15:48:33.847 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:35.281 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:35.366 SL1T：ASAP_SNS
+07月12日 15:48:35.369 [13:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 15:48:35.379 SL1_RcvEvnt:src=13/event=5635/sta=-1
+07月12日 15:48:35.469 SL1Z：ASAP_MOV
+07月12日 15:48:35.571 SL1Z：AxisSta=0
+07月12日 15:48:35.879 SL1Z：AxisSta=1
+07月12日 15:48:35.884 [14:W]AXIS::set_response() 14446,   0,   1
+07月12日 15:48:35.985 SL1Z：エンコーダ正常 ODR:83500 NOW:83463
+07月12日 15:48:35.991 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:37.183 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:37.200 SL1T：ASAP_SNS
+07月12日 15:48:37.202 [13:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 15:48:37.211 SL1_RcvEvnt:src=13/event=5635/sta=-1
+07月12日 15:48:37.212 [ 4:W]manual_move:not position! FOR or REV    0,   e,   0
+07月12日 15:48:39.314 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:39.333 SL1T：ASAP_SNS
+07月12日 15:48:39.335 [13:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 15:48:39.338 SL1_RcvEvnt:src=13/event=5635/sta=-1
+07月12日 15:48:39.436 SL1T：ASAP_MOV
+07月12日 15:48:39.538 SL1T：AxisSta=0
+07月12日 15:48:41.783 SL1T：AxisSta=1
+07月12日 15:48:41.785 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:48:41.788 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:42.918 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:43.001 SL1T：ASAP_SNS
+07月12日 15:48:43.010 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:43.103 SL1Z：ASAP_MOV
+07月12日 15:48:43.205 SL1Z：AxisSta=0
+07月12日 15:48:43.409 SL1Z：AxisSta=1
+07月12日 15:48:43.410 [14:W]AXIS::set_response() 12ae6,   0,   1
+07月12日 15:48:43.510 SL1Z：エンコーダ正常 ODR:75700 NOW:75806
+07月12日 15:48:43.512 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:45.077 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:45.136 SL1T：ASAP_SNS
+07月12日 15:48:45.139 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:45.237 SL1Z：ASAP_MOV
+07月12日 15:48:45.341 SL1Z：AxisSta=0
+07月12日 15:48:45.542 SL1Z：AxisSta=1
+07月12日 15:48:45.543 [14:W]AXIS::set_response() 14480,   0,   1
+07月12日 15:48:45.643 SL1Z：エンコーダ正常 ODR:83500 NOW:83334
+07月12日 15:48:45.647 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:46.481 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:46.551 SL1T：ASAP_SNS
+07月12日 15:48:46.556 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:46.655 SL1Z：ASAP_MOV
+07月12日 15:48:46.758 SL1Z：AxisSta=0
+07月12日 15:48:46.959 SL1Z：AxisSta=1
+07月12日 15:48:46.960 [14:W]AXIS::set_response() 1569b,   0,   1
+07月12日 15:48:47.061 SL1Z：エンコーダ正常 ODR:88200 NOW:88110
+07月12日 15:48:47.065 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:48:48.709 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:48.798 SL1T：ASAP_SNS
+07月12日 15:48:48.799 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:48.899 SL1T：ASAP_MOV
+07月12日 15:48:49.000 SL1T：AxisSta=0
+07月12日 15:48:52.365 SL1T：AxisSta=1
+07月12日 15:48:52.367 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 15:48:52.370 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:48:58.721 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:48:58.772 SL1T：ASAP_SNS
+07月12日 15:48:58.773 [13:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 15:48:58.779 SL1_RcvEvnt:src=13/event=5635/sta=-1
+07月12日 15:48:58.877 SL1Z：ASAP_MOV
+07月12日 15:48:58.980 SL1Z：AxisSta=0
+07月12日 15:48:59.181 SL1Z：AxisSta=1
+07月12日 15:48:59.183 [14:W]AXIS::set_response() 1468d,   0,   1
+07月12日 15:48:59.284 SL1Z：エンコーダ正常 ODR:83200 NOW:83212
+07月12日 15:48:59.292 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:49:00.940 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:49:01.018 SL1T：ASAP_SNS
+07月12日 15:49:01.020 [13:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 15:49:01.022 SL1_RcvEvnt:src=13/event=5635/sta=-1
+07月12日 15:49:01.122 SL1Z：ASAP_MOV
+07月12日 15:49:01.227 SL1Z：AxisSta=0
+07月12日 15:49:01.430 SL1Z：AxisSta=1
+07月12日 15:49:01.433 [14:W]AXIS::set_response() 12ae0,   0,   1
+07月12日 15:49:01.535 SL1Z：エンコーダ正常 ODR:75700 NOW:75810
+07月12日 15:49:01.541 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:49:03.845 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:49:03.866 SL1T：ASAP_SNS
+07月12日 15:49:03.867 [13:W]no HOME censer(1)!!(alarm,0,0)  1a6,   0,   0
+07月12日 15:49:03.871 SL1_RcvEvnt:src=13/event=5635/sta=-1
+07月12日 15:49:03.967 SL1T：ASAP_MOV
+07月12日 15:49:04.071 SL1T：AxisSta=0
+07月12日 15:49:07.424 SL1T：AxisSta=1
+07月12日 15:49:07.425 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:49:07.427 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:49:08.667 SL1_RcvEvnt:src=1/event=5122/sta=0
+07月12日 15:49:08.746 SL1T：ASAP_SNS
+07月12日 15:49:08.750 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:49:08.948 SL1T：ASAP_MOV
+07月12日 15:49:09.051 SL1T：AxisSta=0
+07月12日 15:49:12.407 SL1T：AxisSta=1
+07月12日 15:49:12.408 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 15:49:12.410 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:49:16.761 SL2_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:49:16.769 SL1_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:49:16.770 SHU_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:49:16.779 SL1T：ASAP_SEN
+07月12日 15:49:16.782 SL2T：ASAP_SEN
+07月12日 15:49:17.278 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffe8e,fffffe8e,98950d
+07月12日 15:49:17.281 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:49:17.379 SL2T：ASAP_RET
+07月12日 15:49:17.576 SL2T：AxisSta=0
+07月12日 15:49:17.779 SL2T：AxisSta=1
+07月12日 15:49:17.779 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 15:49:18.055 SL2T：AxisSta=0
+07月12日 15:49:18.156 SL2T：AxisSta=1
+07月12日 15:49:18.157 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 15:49:18.329 [15:W]timeout_set()    0,   0,   0
+07月12日 15:49:18.330 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:49:29.780 [13:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffe93,fffffe93,97d384
+07月12日 15:49:29.783 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:49:29.881 SL1T：ASAP_RET
+07月12日 15:49:30.071 SL1T：AxisSta=0
+07月12日 15:49:30.271 SL1T：AxisSta=1
+07月12日 15:49:30.271 [13:W]AXIS::set_response() b428,   0,   1
+07月12日 15:49:30.516 SL1T：AxisSta=0
+07月12日 15:49:30.616 SL1T：AxisSta=1
+07月12日 15:49:30.616 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:49:30.768 [13:W]timeout_set()    0,   0,   0
+07月12日 15:49:30.777 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:49:30.787 SL1_RcvEvnt:src=1/event=4929/sta=1
+07月12日 15:49:30.788 SHU_RcvEvnt:src=1/event=4866/sta=1
+07月12日 15:49:30.789 SL2_RcvEvnt:src=1/event=4929/sta=1
+07月12日 15:49:30.816 [12:W]timeout_set()    0,   0,   0
+07月12日 15:49:30.816 SL2Z：ASAP_RET
+07月12日 15:49:30.816 SL1Z：ASAP_RET
+07月12日 15:49:30.909 [16:W]timeout_set()    0,   0,   0
+07月12日 15:49:30.910 [14:W]timeout_set()    0,   0,   0
+07月12日 15:49:30.919 STZ：ASAP_SEN
+07月12日 15:49:31.010 SL2Z：AxisSta=0
+07月12日 15:49:31.011 SL1Z：AxisSta=0
+07月12日 15:49:32.439 [12:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) 16df5,16df5,9854d0
+07月12日 15:49:32.443 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:49:32.540 STY：ASAP_RET
+07月12日 15:49:32.635 [11:W]timeout_set()    0,   0,   0
+07月12日 15:49:32.743 STY：AxisSta=0
+07月12日 15:49:41.998 SL2Z：AxisSta=1
+07月12日 15:49:42.001 [16:W]AXIS::set_response() fffffff0,   0,   1
+07月12日 15:49:42.257 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:49:42.258 SL2_RcvEvnt:src=5/event=4402/sta=0
+07月12日 15:49:42.265 [ 1:W]updateSlider2:same status!!    7,   0,   0
+07月12日 15:49:42.609 SL1Z：AxisSta=1
+07月12日 15:49:42.610 [14:W]AXIS::set_response() fffffff0,   0,   1
+07月12日 15:49:42.867 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:49:42.868 SL1_RcvEvnt:src=4/event=4401/sta=0
+07月12日 15:49:42.875 [ 1:W]updateSlider1:same status!!    7,   0,   0
+07月12日 15:49:43.219 STY：AxisSta=1
+07月12日 15:49:43.220 [11:W]AXIS::set_response()    0,   0,   0
+07月12日 15:49:43.476 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:49:43.526 STZ：ASAP_RET
+07月12日 15:49:43.620 [12:W]timeout_set()    0,   0,   0
+07月12日 15:49:43.720 STZ：AxisSta=0
+07月12日 15:49:50.646 STZ：AxisSta=1
+07月12日 15:49:50.648 [12:W]AXIS::set_response()    0,   0,   0
+07月12日 15:49:50.899 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:49:50.901 SHU_RcvEvnt:src=3/event=4400/sta=0
+07月12日 15:49:50.903 [ 1:W]alarmCancelMain (alarm) ffff9999,   0,   0
+07月12日 15:49:50.903 [ 1]updateShuttle    7,   7,   0
+07月12日 15:49:50.904 [ 1:W]updateShuttle:same status!!    7,   7,   0
+07月12日 15:49:50.909 SL2_RcvEvnt:src=1/event=4900/sta=1
+07月12日 15:49:50.909 [ 5]modeChange (event,req_mode,0) 1324,   1,   0
+07月12日 15:49:50.911 SL1_RcvEvnt:src=1/event=4900/sta=1
+07月12日 15:49:50.911 [ 4]modeChange (event,req_mode,0) 1324,   1,   0
+07月12日 15:49:50.912 SHU_RcvEvnt:src=1/event=4900/sta=1
+07月12日 15:49:50.912 [ 3]modeChange (event,req_mode,0) 1324,   1,   0
+07月12日 15:49:50.916 [ 1]responceEventMla:(now_mode,task,req_mode)    2,   5,   1
+07月12日 15:49:50.916 [ 1]responceEventMla:(now_mode,task,req_mode)    2,   4,   1
+07月12日 15:49:50.916 [ 1]responceEventMla:(now_mode,task,req_mode)    2,   3,   1
+07月12日 15:49:50.916 [ 1]slaveRestart()    4,   0,   0
+07月12日 15:49:50.919 [ 1]RSR restart org!!    1,   1,   4
+07月12日 15:49:50.919 [ 1]slaveRestart:end    4,   0,  ff
+07月12日 15:49:50.921 [ 1]updateStatus:STT-PROC send!!    0,   0,   0
+07月12日 15:49:50.922 SL2_RcvEvnt:src=1/event=4902/sta=0
+07月12日 15:49:50.922 [ 5]autoRestart1    1,   1,   0
+07月12日 15:49:50.923 [ 5]autoRestart2:(autoFc,autoPhase,act_GetSet 1132,   0,   0
+07月12日 15:49:50.923 [ 5]getAutoRestart1 (act,fc,alarm)    0,1132,   0
+07月12日 15:49:50.923 [ 5]getAutoRestart2 (autoPhase,EVF_STP,0)    0,   0,   0
+07月12日 15:49:50.926 SL1_RcvEvnt:src=1/event=4902/sta=0
+07月12日 15:49:50.926 [ 4]autoRestart1    1,   1,   0
+07月12日 15:49:50.926 [ 4]autoRestart2:(autoFc,autoPhase,act_GetSet 1131,   0,   0
+07月12日 15:49:50.926 [ 4]getAutoRestart1 (act,fc,0)    0,1131,   0
+07月12日 15:49:50.926 [ 4]getAutoRestart2 (autoPhase,EVF_STP,0)    0,   0,   0
+07月12日 15:49:50.928 SHU_RcvEvnt:src=1/event=4902/sta=0
+07月12日 15:49:50.928 [ 3]autoRestart1    1,   0,1130
+07月12日 15:49:50.928 [ 3]autoRestart2:(autoFc,autoPhase,act_GetSet 1130,   0,   0
+07月12日 15:49:50.928 [ 3]restart_getsetAct (autoFc,act_GetSet,0) 1130,   0,   0
+07月12日 15:49:50.928 [ 3]getAutoRestart1 (act,fc,alarm)    0,1130,   0
+07月12日 15:49:50.928 [ 3]getAutoRestart2 (autoPhase,EVF_STP,0)    0,   0,   0
+07月12日 15:49:50.929 [ 3]****** SHU ORG-->INIT (Start) *****    0,39bc,   0
+07月12日 15:49:50.951 SL2Z：ASAP_MOV
+07月12日 15:49:50.953 SL1Z：ASAP_MOV
+07月12日 15:49:50.996 STZ：ASAP_MOV
+07月12日 15:49:51.056 SL2Z：AxisSta=0
+07月12日 15:49:51.057 SL1Z：AxisSta=0
+07月12日 15:49:51.098 STZ：AxisSta=0
+07月12日 15:49:51.465 SL2Z：AxisSta=1
+07月12日 15:49:51.465 [16:W]AXIS::set_response() 123f5,   0,   1
+07月12日 15:49:51.567 SL2Z：エンコーダ正常 ODR:75700 NOW:75567
+07月12日 15:49:51.567 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:49:51.567 [ 5]****** SL2 ORG-->INIT (End) *****    0,39bc,   0
+07月12日 15:49:51.567 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 15:49:51.999 STZ：AxisSta=1
+07月12日 15:49:52.002 [12:W]AXIS::set_response() 1afa9,   0,   0
+07月12日 15:49:52.102 STZ：エンコーダ正常 ODR:110500 NOW:110505
+07月12日 15:49:52.106 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:49:52.173 STY：ASAP_MOV
+07月12日 15:49:52.276 SL1Z：AxisSta=1
+07月12日 15:49:52.278 [14:W]AXIS::set_response() 705e1,   0,   1
+07月12日 15:49:52.279 STY：AxisSta=0
+07月12日 15:49:52.378 SL1Z：エンコーダ正常 ODR:461000 NOW:460860
+07月12日 15:49:52.380 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:49:52.381 [ 4]****** SL1 ORG-->INIT (End) *****    0,   0,   0
+07月12日 15:49:52.381 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 15:49:54.213 STY：AxisSta=1
+07月12日 15:49:54.216 [11:W]AXIS::set_response() 24be4,   0,   0
+07月12日 15:49:54.317 STY：エンコーダ正常 ODR:150500 NOW:150500
+07月12日 15:49:54.321 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:49:54.322 [ 3]****** SHU ORG-->INIT (End) *****    0,39bc,   0
+07月12日 15:49:54.322 [ 3]end 移動完了    0,   0,   0
+07月12日 15:49:54.332 SHU_RcvEvnt:src=1/event=4903/sta=0
+07月12日 15:52:22.219 SL2_RcvEvnt:src=1/event=4867/sta=0
+07月12日 15:52:22.220 SL1_RcvEvnt:src=1/event=4867/sta=0
+07月12日 15:52:33.063 [ 7]hdlcRecv  102,  1a,   0
+07月12日 15:52:47.006 [ 1]shuttleAction TRANS_TR_SL1P1 wf:0x4bebf810(evt,0,0) 1101,   0,   0
+07月12日 15:52:47.007 [ 1]updateStatus:STT-PROC send!!    1,   0,   0
+07月12日 15:52:47.018 [ 7]hdlcRecv  102,  1c,   0
+07月12日 15:52:47.019 SHU_RcvEvnt:src=1/event=4353/sta=0
+07月12日 15:52:47.019 [ 3]****** SHU TR-->SL1P1 (Start) ***** 4beb,fffff810,   0
+07月12日 15:52:47.069 STY：ASAP_MOV
+07月12日 15:52:47.071 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:52:47.270 STZ：ASAP_MOV
+07月12日 15:52:47.373 STZ：AxisSta=0
+07月12日 15:52:48.591 STZ：AxisSta=1
+07月12日 15:52:48.593 [12:W]AXIS::set_response() 2579c,   0,   0
+07月12日 15:52:48.695 STZ：エンコーダ正常 ODR:153500 NOW:153500
+07月12日 15:52:48.699 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:52:48.897 STZ：ASAP_MOV
+07月12日 15:52:49.000 STZ：AxisSta=0
+07月12日 15:52:49.616 STZ：AxisSta=1
+07月12日 15:52:49.616 [12:W]AXIS::set_response() 28c58,   0,   0
+07月12日 15:52:49.719 STZ：エンコーダ正常 ODR:167000 NOW:167000
+07月12日 15:52:49.720 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:52:49.818 STY：ASAP_MOV
+07月12日 15:52:49.919 STY：AxisSta=0
+07月12日 15:52:51.949 STY：AxisSta=1
+07月12日 15:52:51.950 [11:W]AXIS::set_response() 4e8d1,   0,   0
+07月12日 15:52:52.052 STY：エンコーダ正常 ODR:321750 NOW:321745
+07月12日 15:52:52.057 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:52:52.155 STZ：ASAP_MOV
+07月12日 15:52:52.257 STZ：AxisSta=0
+07月12日 15:52:52.862 STZ：AxisSta=1
+07月12日 15:52:52.862 [12:W]AXIS::set_response() 1afa9,   0,   0
+07月12日 15:52:52.965 STZ：エンコーダ正常 ODR:110500 NOW:110505
+07月12日 15:52:52.968 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:52:53.168 STZ：ASAP_MOV
+07月12日 15:52:53.269 STZ：AxisSta=0
+07月12日 15:52:54.693 STZ：AxisSta=1
+07月12日 15:52:54.697 [12:W]AXIS::set_response() bd7e,   0,   0
+07月12日 15:52:54.797 STZ：エンコーダ正常 ODR:48500 NOW:48510
+07月12日 15:52:54.801 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:52:54.898 STZ：ASAP_MOV
+07月12日 15:52:55.000 STZ：AxisSta=0
+07月12日 15:52:56.121 STZ：AxisSta=1
+07月12日 15:52:56.123 [12:W]AXIS::set_response() 1581,   0,   0
+07月12日 15:52:56.226 STZ：エンコーダ正常 ODR:5500 NOW:5505
+07月12日 15:52:56.229 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:52:56.329 [ 3]****** SHU TR-->SL1P1 (End) ***** 4beb,fffff810,   0
+07月12日 15:52:56.331 [ 3]end 移動完了    0,   0,   0
+07月12日 15:52:56.335 [ 1]updateShuttle   17,   5,   1
+07月12日 15:52:56.335 [ 1]updateShuttle (PUSH   ) wf:4bebf810(evt,sts,0) 1001,   5,   0
+07月12日 15:52:56.335 [ 1]TRANS_SL1P1_EXP1    0,   0,   0
+07月12日 15:52:56.335 [ 1]slider1Action TRANS_SL1P1_EXP1 wf:0x4bebf810(evt,0,0) 1103,   0,   0
+07月12日 15:52:56.338 SL1_RcvEvnt:src=1/event=4355/sta=0
+07月12日 15:52:56.339 [ 4]****** SL1 SL1P1-->EXP1 (Start) ***** 4beb,fffff810,   0
+07月12日 15:52:56.426 SL1T：ASAP_SNS
+07月12日 15:52:56.431 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:52:56.528 SL1Z：ASAP_MOV
+07月12日 15:52:56.533 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:52:56.729 SL1T：ASAP_MOV
+07月12日 15:52:56.832 SL1T：AxisSta=0
+07月12日 15:52:57.746 SL1T：AxisSta=1
+07月12日 15:52:57.747 [13:W]AXIS::set_response() 2125,   0,   0
+07月12日 15:52:57.752 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:52:57.849 SL1Z：ASAP_MOV
+07月12日 15:52:57.951 SL1Z：AxisSta=0
+07月12日 15:52:58.257 SL1Z：AxisSta=1
+07月12日 15:52:58.258 [14:W]AXIS::set_response() 7273d,   0,   1
+07月12日 15:52:58.358 SL1Z：エンコーダ正常 ODR:469500 NOW:469508
+07月12日 15:52:58.367 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:52:58.461 SL1Z：ASAP_MOV
+07月12日 15:52:58.562 SL1Z：AxisSta=0
+07月12日 15:52:58.965 SL1Z：AxisSta=1
+07月12日 15:52:58.968 [14:W]AXIS::set_response() 7548f,   0,   1
+07月12日 15:52:59.069 SL1Z：エンコーダ正常 ODR:480500 NOW:480498
+07月12日 15:52:59.072 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:52:59.168 SL1T：ASAP_MOV
+07月12日 15:52:59.271 SL1T：AxisSta=0
+07月12日 15:53:00.185 SL1T：AxisSta=1
+07月12日 15:53:00.186 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:53:00.191 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:53:00.300 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   0,   0
+07月12日 15:53:00.388 SL1Z：ASAP_MOV
+07月12日 15:53:00.492 SL1Z：AxisSta=0
+07月12日 15:53:01.426 [ 7]hdlcRecv  102,  1b,   0
+07月12日 15:53:01.613 SL1Z：AxisSta=1
+07月12日 15:53:01.618 [14:W]AXIS::set_response() 15aed,   0,   1
+07月12日 15:53:01.718 SL1Z：エンコーダ正常 ODR:88200 NOW:88238
+07月12日 15:53:01.726 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:53:01.726 SL1_RcvEvnt:src=4/event=5119/sta=0
+07月12日 15:53:01.815 SL1T：ASAP_MOV
+07月12日 15:53:01.919 SL1T：AxisSta=0
+07月12日 15:53:03.038 SL1T：AxisSta=1
+07月12日 15:53:03.040 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 15:53:03.043 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:53:03.141 SL1Z：ASAP_MOV
+07月12日 15:53:03.243 SL1Z：AxisSta=0
+07月12日 15:53:03.549 SL1Z：AxisSta=1
+07月12日 15:53:03.551 [14:W]AXIS::set_response() 145ce,   0,   1
+07月12日 15:53:03.651 SL1Z：エンコーダ正常 ODR:83200 NOW:83213
+07月12日 15:53:03.656 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:53:03.753 SL1Z：ASAP_MOV
+07月12日 15:53:03.856 SL1Z：AxisSta=0
+07月12日 15:53:04.160 SL1Z：AxisSta=1
+07月12日 15:53:04.161 [14:W]AXIS::set_response() 127f4,   0,   1
+07月12日 15:53:04.261 SL1Z：エンコーダ正常 ODR:75700 NOW:75692
+07月12日 15:53:04.263 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:53:04.360 SL1T：ASAP_MOV
+07月12日 15:53:04.464 SL1T：AxisSta=0
+07月12日 15:53:05.585 SL1T：AxisSta=1
+07月12日 15:53:05.586 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:53:05.589 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:53:05.690 [ 4]****** SL1 SL1P1-->EXP1 (End) ***** 4beb,fffff810,   0
+07月12日 15:53:05.691 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 15:53:05.699 [ 1]sendEventExp:()    1,   1,   0
+07月12日 15:53:05.701 [ 6]expioSend(syn,wf ON/OFF,LEVF_SEND)    1,   1,   0
+07月12日 15:53:05.913 [ 6]READY ON-->OFF    1,   3,   0
+07月12日 15:53:05.925 SL1_RcvEvnt:src=6/event=4616/sta=0
+07月12日 15:53:05.926 SL1_RcvEvnt:src=6/event=4609/sta=-1
+07月12日 15:53:05.931 [ 1]expStart:EXPPIO_SEND (1) 4beb,fffff810,   0
+07月12日 15:53:05.931 [ 1]expStart:EXPPIO_SEND (2) 4beb,fffff840,   0
+07月12日 15:53:15.257 [ 6]READY OFF-->ON   47,   1,   0
+07月12日 15:53:15.261 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 15:53:15.261 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 15:53:15.475 [ 6]signal_chk_ult(bit,syn)    4,   1,  44
+07月12日 15:53:15.477 SL2_RcvEvnt:src=6/event=4610/sta=0
+07月12日 15:53:15.478 [ 5]expPioMsg:(evt,sts,wf) 1202,   0,fffff810
+07月12日 15:53:15.478 [ 5]sendStatus(event,rjt,lost) 1202,   0,   0
+07月12日 15:53:15.481 [ 1]expStart:(EXPPIO_RECV)    1,   0,   0
+07月12日 15:53:15.488 [ 7]hdlcRecv  102,  1b,   0
+07月12日 15:53:15.652 [ 1]slider2Action TRANS_EXP2_SL2P1 wf:0x4bebf810(evt,0,0) 1106,   0,   0
+07月12日 15:53:15.656 SL2_RcvEvnt:src=1/event=4358/sta=0
+07月12日 15:53:15.656 [ 5]****** SL2 EXP2-->SL2P1 (Start) ***** 4beb,fffff810,   0
+07月12日 15:53:15.665 SL2T：ASAP_SNS
+07月12日 15:53:15.677 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:53:15.766 SL2Z：ASAP_MOV
+07月12日 15:53:15.768 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:53:15.968 SL2T：ASAP_MOV
+07月12日 15:53:16.077 SL2T：AxisSta=0
+07月12日 15:53:17.191 SL2T：AxisSta=1
+07月12日 15:53:17.193 [15:W]AXIS::set_response() 175b6,   0,   0
+07月12日 15:53:17.196 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:53:17.293 SL2Z：ASAP_MOV
+07月12日 15:53:17.397 SL2Z：AxisSta=0
+07月12日 15:53:17.700 SL2Z：AxisSta=1
+07月12日 15:53:17.702 [16:W]AXIS::set_response() 142c2,   0,   1
+07月12日 15:53:17.802 SL2Z：エンコーダ正常 ODR:83200 NOW:83148
+07月12日 15:53:17.810 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:53:17.904 SL2Z：ASAP_MOV
+07月12日 15:53:18.006 SL2Z：AxisSta=0
+07月12日 15:53:18.208 SL2Z：AxisSta=1
+07月12日 15:53:18.209 [16:W]AXIS::set_response() 15773,   0,   1
+07月12日 15:53:18.310 SL2Z：エンコーダ正常 ODR:88200 NOW:88223
+07月12日 15:53:18.312 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:53:18.410 SL2T：ASAP_MOV
+07月12日 15:53:18.515 SL2T：AxisSta=0
+07月12日 15:53:19.528 SL2T：AxisSta=1
+07月12日 15:53:19.530 [15:W]AXIS::set_response() b426,   0,   0
+07月12日 15:53:19.537 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:53:19.537 [ 5:W]alarmSet axis, local_code code    0, 19f, 513
+07月12日 15:53:19.538 [ 1]updateStatus:STT-PROC send!!    4,   0,   0
+07月12日 15:53:29.178 [ 7]hdlcRecv  102,  1b,   0
+07月12日 15:53:43.028 [ 7]hdlcRecv  102,  1b,   0
+07月12日 15:53:44.048 [ 1:W]recvHdlc_ARS (alarm,0,0)  513,   0,   0
+07月12日 15:53:44.051 SL2_RcvEvnt:src=1/event=4880/sta=1299
+07月12日 15:53:44.052 [ 5]alarmReset(event alarm,cf)    0, 513,   0
+07月12日 15:53:44.052 [ 5]restart(A)  513,   1,   1
+07月12日 15:53:44.052 [ 5]restart0100_0600   9f,   0,   0
+07月12日 15:53:44.052 [ 5]restart0100_0600 : AXIS_X     0,   0,   0
+07月12日 15:53:44.060 [ 1]updateStatus:STT-PROC send!!    1,   0,   0
+07月12日 15:53:44.139 SL2T：ASAP_SEN
+07月12日 15:53:44.649 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffea8,fffffea8,989529
+07月12日 15:53:44.651 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:53:44.651 [ 5]restart(A)  513,   1,   0
+07月12日 15:53:44.651 [ 5]restart0100_0600    0,   0,   0
+07月12日 15:53:44.651 [ 5]restart0100_0600 : AXIS_X     0,   1,   0
+07月12日 15:53:44.751 SL2T：ASAP_RET
+07月12日 15:53:44.941 SL2T：AxisSta=0
+07月12日 15:53:45.141 SL2T：AxisSta=1
+07月12日 15:53:45.143 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 15:53:45.426 SL2T：AxisSta=0
+07月12日 15:53:45.527 SL2T：AxisSta=1
+07月12日 15:53:45.529 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 15:53:45.704 [15:W]timeout_set()    0,   0,   0
+07月12日 15:53:45.706 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:53:45.706 [ 5]restart(A)  513,   1,   0
+07月12日 15:53:45.706 [ 5]restart0100_0600    0,   0,   0
+07月12日 15:53:45.706 [ 5]restart0100_0600 : AXIS_X     0,   2,   0
+07月12日 15:53:45.706 [ 5]restart_getsetActX (act_x,act_GetSet,0)    2,   1,   0
+07月12日 15:53:45.806 [ 5]restart_getsetActX :end (rc,alarm,0)    2,   0,   0
+07月12日 15:53:45.807 [ 5]getAutoRestart1 (act,fc,alarm)    2,1106,   0
+07月12日 15:53:45.808 [ 5]getAutoRestart2 (autoPhase,EVF_STP,0)    3,   0,   0
+07月12日 15:53:45.808 [ 5]restart0100_0600 (X) 1106,   3,   2
+07月12日 15:53:45.808 [ 5]alarmResEnd    0,   0,   0
+07月12日 15:53:45.978 SL2Z：ASAP_MOV
+07月12日 15:53:46.079 SL2Z：AxisSta=0
+07月12日 15:53:47.100 SL2Z：AxisSta=1
+07月12日 15:53:47.103 [16:W]AXIS::set_response() 74f40,   0,   1
+07月12日 15:53:47.205 SL2Z：エンコーダ正常 ODR:480500 NOW:480368
+07月12日 15:53:47.208 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:53:47.407 SL2T：ASAP_MOV
+07月12日 15:53:47.511 SL2T：AxisSta=0
+07月12日 15:53:48.420 SL2T：AxisSta=1
+07月12日 15:53:48.422 [15:W]AXIS::set_response() 2125,   0,   0
+07月12日 15:53:48.425 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:53:48.521 SL2Z：ASAP_MOV
+07月12日 15:53:48.625 SL2Z：AxisSta=0
+07月12日 15:53:49.030 SL2Z：AxisSta=1
+07月12日 15:53:49.032 [16:W]AXIS::set_response() 72a98,   0,   1
+07月12日 15:53:49.133 SL2Z：エンコーダ正常 ODR:469500 NOW:469485
+07月12日 15:53:49.135 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:53:49.236 SL2Z：ASAP_MOV
+07月12日 15:53:49.338 SL2Z：AxisSta=0
+07月12日 15:53:49.745 SL2Z：AxisSta=1
+07月12日 15:53:49.746 [16:W]AXIS::set_response() 708e9,   0,   1
+07月12日 15:53:49.846 SL2Z：エンコーダ正常 ODR:461000 NOW:460990
+07月12日 15:53:49.849 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:53:49.947 SL2T：ASAP_MOV
+07月12日 15:53:50.049 SL2T：AxisSta=0
+07月12日 15:53:50.961 SL2T：AxisSta=1
+07月12日 15:53:50.963 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 15:53:50.966 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:53:51.066 [ 5]****** SL2 EXP2-->SL2P1 (End) ***** 4beb,fffff810,   0
+07月12日 15:53:51.068 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 15:53:51.795 [ 1]shuttleAction TRANS_SL2P1_TR wf:0x4bebf810(evt,0,0) 1102,   0,   0
+07月12日 15:53:51.798 SHU_RcvEvnt:src=1/event=4354/sta=0
+07月12日 15:53:51.799 [ 3]****** SHU Sl2P1-->TR (Start) ***** 4beb,fffff810,   0
+07月12日 15:53:51.873 STY：ASAP_MOV
+07月12日 15:53:51.978 STY：AxisSta=0
+07月12日 15:53:53.811 STY：AxisSta=1
+07月12日 15:53:53.816 [11:W]AXIS::set_response() 2e342,   0,   0
+07月12日 15:53:53.917 STY：エンコーダ正常 ODR:189250 NOW:189250
+07月12日 15:53:53.919 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:53:54.122 STZ：ASAP_MOV
+07月12日 15:53:54.223 STZ：AxisSta=0
+07月12日 15:53:55.338 STZ：AxisSta=1
+07月12日 15:53:55.339 [12:W]AXIS::set_response() bd79,   0,   0
+07月12日 15:53:55.442 STZ：エンコーダ正常 ODR:48500 NOW:48505
+07月12日 15:53:55.451 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:53:55.646 STZ：ASAP_MOV
+07月12日 15:53:55.748 STZ：AxisSta=0
+07月12日 15:53:57.073 STZ：AxisSta=1
+07月12日 15:53:57.077 [12:W]AXIS::set_response() 1afa9,   0,   0
+07月12日 15:53:57.177 STZ：エンコーダ正常 ODR:110500 NOW:110500
+07月12日 15:53:57.187 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:53:57.197 [ 1]updateShuttle   17,   2,   1
+07月12日 15:53:57.197 [ 1]updateShuttle (BUSY) wf:4bebf810(evt,sts,0) 1001,   2,   0
+07月12日 15:53:57.276 STY：ASAP_MOV
+07月12日 15:53:57.377 STY：AxisSta=0
+07月12日 15:53:58.799 STY：AxisSta=1
+07月12日 15:53:58.800 [11:W]AXIS::set_response() 40353,   0,   0
+07月12日 15:53:58.902 STY：エンコーダ正常 ODR:263000 NOW:262995
+07月12日 15:53:58.907 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:53:59.004 STZ：ASAP_MOV
+07月12日 15:53:59.108 STZ：AxisSta=0
+07月12日 15:53:59.711 STZ：AxisSta=1
+07月12日 15:53:59.713 [12:W]AXIS::set_response() 28c5d,   0,   0
+07月12日 15:53:59.815 STZ：エンコーダ正常 ODR:167000 NOW:167005
+07月12日 15:53:59.818 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:53:59.915 STY：ASAP_MOV
+07月12日 15:54:00.017 STY：AxisSta=0
+07月12日 15:54:01.745 STY：AxisSta=1
+07月12日 15:54:01.746 [11:W]AXIS::set_response() 24be9,   0,   0
+07月12日 15:54:01.846 STY：エンコーダ正常 ODR:150500 NOW:150505
+07月12日 15:54:01.850 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:54:02.048 STZ：ASAP_MOV
+07月12日 15:54:02.151 STZ：AxisSta=0
+07月12日 15:54:02.866 STZ：AxisSta=1
+07月12日 15:54:02.869 [12:W]AXIS::set_response() 257a1,   0,   0
+07月12日 15:54:02.969 STZ：エンコーダ正常 ODR:153500 NOW:153505
+07月12日 15:54:02.970 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:54:03.070 STZ：ASAP_MOV
+07月12日 15:54:03.171 STZ：AxisSta=0
+07月12日 15:54:04.295 STZ：AxisSta=1
+07月12日 15:54:04.297 [12:W]AXIS::set_response() 1afa9,   0,   0
+07月12日 15:54:04.399 STZ：エンコーダ正常 ODR:110500 NOW:110505
+07月12日 15:54:04.400 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:54:04.500 [ 3]****** SHU Sl2P1-->TR (End) ***** 4beb,fffff810,   0
+07月12日 15:54:04.502 [ 3]end 移動完了    0,   0,   0
+07月12日 15:54:04.509 [ 1]updateShuttle   12,   6,   1
+07月12日 15:54:04.509 [ 1]updateShuttle (POP    ) wf:4bebf810(evt,sts,0) 1001,   6,   0
+07月12日 15:54:04.509 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   1,   0
+07月12日 15:54:07.580 [ 7]hdlcRecv  102,  1c,   0
+07月12日 15:54:07.669 [ 1]未定義LAN-MSG受信
+07月12日 15:54:07.861 [ 1]updateStatus:STT-PROC send!!    0,   0,   0
+07月12日 15:54:07.865 SL1_RcvEvnt:src=1/event=4868/sta=0
+07月12日 15:54:07.873 SL2_RcvEvnt:src=1/event=4868/sta=0
+07月12日 15:55:17.676 ***** StartLogging IFB.log *****
+07月12日 15:55:17.707 [ 1]IFB::TASK_MAIN 起動
+07月12日 15:55:17.715 [ 7]IFB::TASK_KANSHI 起動
+07月12日 15:55:17.715 [ 7]initial.. wait    0,   0,   0
+07月12日 15:55:17.718 [18]IFB::TASK_KANSHI2 起動
+07月12日 15:55:17.718 [18]initial.. wait    0,   0,   0
+07月12日 15:55:17.720 [ 6]IFB::TASK_EXPIO 起動
+07月12日 15:55:17.720 [ 6][initial.. wait]    0,   0,   0
+07月12日 15:55:17.723 [ 8]IFB::TASK_RECV 起動
+07月12日 15:55:17.724 [ 2]IFB::TASK_HDLC 起動
+07月12日 15:55:17.725 [ 9]IFB::TASK_SEND 起動
+07月12日 15:55:17.727 [ 0]IFB::TASK_SHUTTLE 起動
+07月12日 15:55:17.732 [ 4]IFB::TASK_SLIDER1 起動
+07月12日 15:55:17.746 [11]IFB::TASK_AXIS 起動
+07月12日 15:55:17.748 [12]IFB::TASK_AXIS 起動
+07月12日 15:55:17.750 [13]IFB::TASK_AXIS 起動
+07月12日 15:55:17.751 [14]IFB::TASK_AXIS 起動
+07月12日 15:55:17.753 [15]IFB::TASK_AXIS 起動
+07月12日 15:55:17.753 [16]IFB::TASK_AXIS 起動
+07月12日 15:55:17.753 [ 5]IFB::TASK_SLIDER2 起動
+07月12日 15:55:17.754 [ 5]<< start expif task >>    0,   0,   0
+07月12日 15:55:17.754 [ 5]initial.. wait    0,   0,   0
+07月12日 15:55:22.794 [ 0]ppiOn   68,  1c,   0
+07月12日 15:55:22.795 [ 0]ppiOn   68,   3,   3
+07月12日 15:55:22.897 [ 0]ppiOn   68,   3,   0
+07月12日 15:55:23.100 [ 0]ppiOn   68,  1c,  1c
+07月12日 15:55:23.102 [ 1]RSW34 data    0,   0,ffffffff
+07月12日 15:56:09.679 [ 1]TR-SLAVE No.    2,   0,   0
+07月12日 15:56:09.680 [ 5]initial    0,ffffffff,   0
+07月12日 15:56:09.681 [ 6][initial]    0,   0,   0
+07月12日 15:56:09.682 [ 7]initial    0,   0,   0
+07月12日 15:56:09.682 [ 3]initial    0,   0,   0
+07月12日 15:56:09.682 [ 4]initial (DIPSW1,DIPSW2,0) ffffffff,ffffffff,   0
+07月12日 15:56:09.682 [ 4]Buf ful & emp data    c,   8,   0
+07月12日 15:56:09.683 [18]initial    0,   0,   0
+07月12日 15:56:09.690 [11]initial (boss,axisID,taskID)    3,   0,   b
+07月12日 15:56:09.690 [12]initial (boss,axisID,taskID)    3,   1,   c
+07月12日 15:56:09.690 [13]initial (boss,axisID,taskID)    4,   0,   d
+07月12日 15:56:09.690 [14]initial (boss,axisID,taskID)    4,   1,   e
+07月12日 15:56:09.691 [15]initial (boss,axisID,taskID)    5,   0,   f
+07月12日 15:56:09.691 [16]initial (boss,axisID,taskID)    5,   1,  10
+07月12日 15:56:09.867 [11]IFB::TASK_AXIS Initial終了
+07月12日 15:56:09.867 [12]IFB::TASK_AXIS Initial終了
+07月12日 15:56:09.867 [13]IFB::TASK_AXIS Initial終了
+07月12日 15:56:09.868 [15]IFB::TASK_AXIS Initial終了
+07月12日 15:56:12.139 [14]IFB::TASK_AXIS Initial終了
+07月12日 15:56:12.139 [16]IFB::TASK_AXIS Initial終了
+07月12日 15:56:15.103 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.107 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.108 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.174 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.176 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.176 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.177 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.178 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.178 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.202 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.202 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.203 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.276 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.278 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.279 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.279 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.280 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.280 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.290 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.290 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.291 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.382 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.382 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.382 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.382 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.383 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.383 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.395 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.395 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.396 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.482 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.482 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.482 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.484 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.484 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.485 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.486 SL2_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.486 SHU_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.491 SL1_RcvEvnt:src=1/event=4884/sta=3
+07月12日 15:56:15.583 [14:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.585 [16:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.585 [11:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.586 [12:W]set_message()->LPN_OOF:    0,   0,   1
+07月12日 15:56:15.586 [13:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:15.587 [15:W]set_message()->LPN_OOF:    0,fffffffe,   0
+07月12日 15:56:22.178 [ 1]recvHdlc_SOS SW8 (msg,sub,len)    0,   8,   2
+07月12日 15:56:22.179 SHU_RcvEvnt:src=1/event=4884/sta=8
+07月12日 15:56:22.181 [ 3]machineMake(shuLockAreaY)    0,57e4,   0
+07月12日 15:56:22.181 SL1_RcvEvnt:src=1/event=4884/sta=8
+07月12日 15:56:22.182 [ 4]machineMake (bufPickupOff)    0,  c0,   1
+07月12日 15:56:22.182 SL2_RcvEvnt:src=1/event=4884/sta=8
+07月12日 15:56:22.182 [ 5]machineMake (bufPickupOff)    0,  c0,   1
+07月12日 15:56:22.202 [13:W]rcv_init_msg()->ASAP_INI:    0,   0,   0
+07月12日 15:56:22.202 [15:W]rcv_init_msg()->ASAP_INI:    0,   0,   0
+07月12日 15:56:27.092 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.092 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.094 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.182 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.184 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.193 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.284 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.285 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.288 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.819 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.822 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.823 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.911 SL2_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.914 SHU_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:27.917 SL1_RcvEvnt:src=1/event=4884/sta=24
+07月12日 15:56:28.377 SHU_RcvEvnt:src=1/event=4884/sta=25
+07月12日 15:56:28.380 SL1_RcvEvnt:src=1/event=4884/sta=25
+07月12日 15:56:28.380 SL2_RcvEvnt:src=1/event=4884/sta=25
+07月12日 15:56:36.139 [ 6]ONLINE OFF-->ON    1,   0,   0
+07月12日 15:56:36.201 [ 6]READY OFF-->ON    3,   1,   0
+07月12日 15:56:41.318 [ 0]ppiOn   68,  1c,   0
+07月12日 15:56:41.319 [ 0]ppiOn   68,   3,   3
+07月12日 15:56:41.425 [ 0]ppiOn   68,   3,   0
+07月12日 15:56:41.626 [ 0]ppiOn   68,  1c,  1c
+07月12日 15:56:41.629 [ 6]ONLINE OFF-->ON    3,   0,   0
+07月12日 15:56:41.629 [ 6]READY OFF-->ON    3,   0,   0
+07月12日 15:56:41.630 SHU_RcvEvnt:src=1/event=4865/sta=2
+07月12日 15:56:41.630 [ 3]lotClear(event) 1301,   0,   0
+07月12日 15:56:41.630 [ 3]machineMake(shuLockAreaY)    0,57e4,   0
+07月12日 15:56:41.631 SL1_RcvEvnt:src=1/event=4865/sta=2
+07月12日 15:56:41.631 [ 4]lotClear    0,   0,   0
+07月12日 15:56:41.631 [ 4]Buf ful & emp data    c,   8,   0
+07月12日 15:56:41.632 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 15:56:41.632 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 15:56:41.635 SL2_RcvEvnt:src=1/event=4865/sta=2
+07月12日 15:56:41.635 [ 5]lotClear    0,   0,   0
+07月12日 15:56:41.649 SL1Z：ASAP_CLR
+07月12日 15:56:41.650 SL2Z：ASAP_CLR
+07月12日 15:56:41.651 STY：ASAP_CLR
+07月12日 15:56:41.652 STZ：ASAP_CLR
+07月12日 15:56:41.655 SL1T：ASAP_CLR
+07月12日 15:56:41.655 SL2T：ASAP_CLR
+07月12日 15:56:46.695 [ 1]未定義LAN-MSG受信
+07月12日 15:56:53.054 [ 1]RET:(pss,process,port)    3,   4,   4
+07月12日 15:56:53.068 SHU_RcvEvnt:src=1/event=4866/sta=2
+07月12日 15:57:00.444 [ 1]RET:(pss,process,port)    3,   4,   4
+07月12日 15:57:00.446 SL1_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:57:00.447 SL2_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:57:00.449 SHU_RcvEvnt:src=1/event=4928/sta=1
+07月12日 15:57:00.509 SL1T：ASAP_SEN
+07月12日 15:57:00.509 SL2T：ASAP_SEN
+07月12日 15:57:00.980 [13:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffebc,fffffebc,98953b
+07月12日 15:57:00.981 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffeb6,fffffeb6,989535
+07月12日 15:57:00.989 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:57:00.990 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:57:01.082 SL1T：ASAP_RET
+07月12日 15:57:01.082 SL2T：ASAP_RET
+07月12日 15:57:01.277 SL1T：AxisSta=0
+07月12日 15:57:01.279 SL2T：AxisSta=0
+07月12日 15:57:01.480 SL1T：AxisSta=1
+07月12日 15:57:01.481 SL2T：AxisSta=1
+07月12日 15:57:01.481 [13:W]AXIS::set_response() b428,   0,   1
+07月12日 15:57:01.482 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 15:57:01.747 SL1T：AxisSta=0
+07月12日 15:57:01.762 SL2T：AxisSta=0
+07月12日 15:57:01.848 SL1T：AxisSta=1
+07月12日 15:57:01.848 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 15:57:01.862 SL2T：AxisSta=1
+07月12日 15:57:01.862 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 15:57:01.995 [13:W]timeout_set()    0,   0,   0
+07月12日 15:57:02.010 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:57:02.041 [15:W]timeout_set()    0,   0,   0
+07月12日 15:57:02.053 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:57:02.063 SL1_RcvEvnt:src=1/event=4929/sta=1
+07月12日 15:57:02.063 SL2_RcvEvnt:src=1/event=4929/sta=1
+07月12日 15:57:02.070 SHU_RcvEvnt:src=1/event=4866/sta=1
+07月12日 15:57:02.141 [12:W]timeout_set()    0,   0,   0
+07月12日 15:57:02.142 SL1Z：ASAP_RET
+07月12日 15:57:02.142 SL2Z：ASAP_RET
+07月12日 15:57:02.240 [14:W]timeout_set()    0,   0,   0
+07月12日 15:57:02.241 [16:W]timeout_set()    0,   0,   0
+07月12日 15:57:02.243 STZ：ASAP_SEN
+07月12日 15:57:02.342 SL1Z：AxisSta=0
+07月12日 15:57:02.344 SL2Z：AxisSta=0
+07月12日 15:57:03.735 [12:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) ffffbf8c,ffffbf8c,98560b
+07月12日 15:57:03.736 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:57:03.773 STY：ASAP_RET
+07月12日 15:57:03.879 [11:W]timeout_set()    0,   0,   0
+07月12日 15:57:03.984 STY：AxisSta=0
+07月12日 15:57:13.951 SL1Z：AxisSta=1
+07月12日 15:57:13.952 [14:W]AXIS::set_response() fffffff1,   0,   1
+07月12日 15:57:14.200 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:57:14.201 SL1_RcvEvnt:src=4/event=4401/sta=0
+07月12日 15:57:14.201 [ 4]****** SL1 ORG-->INIT (Start) *****    0,   0,   0
+07月12日 15:57:14.256 SL1T：ASAP_SNS
+07月12日 15:57:14.261 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 15:57:14.298 SL1Z：ASAP_MOV
+07月12日 15:57:14.358 STY：AxisSta=1
+07月12日 15:57:14.359 [11:W]AXIS::set_response()    0,   0,   0
+07月12日 15:57:14.398 SL1Z：AxisSta=0
+07月12日 15:57:14.613 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:57:14.664 STZ：ASAP_RET
+07月12日 15:57:14.756 [12:W]timeout_set()    0,   0,   0
+07月12日 15:57:14.858 STZ：AxisSta=0
+07月12日 15:57:15.598 SL1Z：AxisSta=1
+07月12日 15:57:15.600 [14:W]AXIS::set_response() 703f8,   0,   1
+07月12日 15:57:15.700 SL1Z：エンコーダ正常 ODR:461000 NOW:460539
+07月12日 15:57:15.705 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 15:57:15.705 [ 4]****** SL1 ORG-->INIT (End) *****    0,   0,   0
+07月12日 15:57:15.705 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 15:57:21.906 STZ：AxisSta=1
+07月12日 15:57:21.909 [12:W]AXIS::set_response()    0,   0,   0
+07月12日 15:57:22.153 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:57:22.154 SHU_RcvEvnt:src=3/event=4400/sta=0
+07月12日 15:57:22.154 [ 3]****** SHU ORG-->INIT (Start) *****    0,39bc,   0
+07月12日 15:57:22.161 [ 1]updateShuttle    0,   7,   4
+07月12日 15:57:22.161 [ 1]updateShuttle (STANDBY) wf:       0(evt,sts,0) 1001,   7,   0
+07月12日 15:57:22.251 STZ：ASAP_MOV
+07月12日 15:57:22.355 STZ：AxisSta=0
+07月12日 15:57:23.161 STZ：AxisSta=1
+07月12日 15:57:23.162 [12:W]AXIS::set_response() 1afa9,   0,   0
+07月12日 15:57:23.262 STZ：エンコーダ正常 ODR:110500 NOW:110505
+07月12日 15:57:23.265 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 15:57:23.335 STY：ASAP_MOV
+07月12日 15:57:23.438 STY：AxisSta=0
+07月12日 15:57:25.374 STY：AxisSta=1
+07月12日 15:57:25.375 [11:W]AXIS::set_response() 24be4,   0,   0
+07月12日 15:57:25.478 STY：エンコーダ正常 ODR:150500 NOW:150500
+07月12日 15:57:25.481 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 15:57:25.482 [ 3]****** SHU ORG-->INIT (End) *****    0,39bc,   0
+07月12日 15:57:25.482 [ 3]end 移動完了    0,   0,   0
+07月12日 15:57:56.143 SL2Z：AxisSta=1
+07月12日 15:57:56.145 [16:W]AXIS::set_response() ffffffed,   0,   1
+07月12日 15:57:56.404 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:57:56.405 SL2_RcvEvnt:src=5/event=4402/sta=0
+07月12日 15:57:56.405 [ 5]****** SL2 ORG-->INIT (Start) *****    0,39bc,   0
+07月12日 15:57:56.406 [ 1]990217(1)    1,   1,   0
+07月12日 15:57:56.421 SL1_RcvEvnt:src=1/event=4934/sta=0
+07月12日 15:57:56.421 [ 4]990217(3)    0,   0,   0
+07月12日 15:57:56.422 SL2_RcvEvnt:src=1/event=4934/sta=0
+07月12日 15:57:56.446 SL2T：ASAP_SNS
+07月12日 15:57:56.527 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 15:57:56.596 SL2Z：ASAP_MOV
+07月12日 15:57:56.700 SL2Z：AxisSta=0
+07月12日 15:57:57.100 SL2Z：AxisSta=1
+07月12日 15:57:57.100 [16:W]AXIS::set_response() 12108,   0,   1
+07月12日 15:57:57.200 SL2Z：エンコーダ正常 ODR:75700 NOW:75068
+07月12日 15:57:57.203 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 15:57:57.204 [ 5]****** SL2 ORG-->INIT (End) *****    0,39bc,   0
+07月12日 15:57:57.204 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 15:57:57.213 SHU_RcvEvnt:src=1/event=4903/sta=0
+07月12日 15:57:57.219 [ 1]updateStatus:STT-PROC send!!    0,   0,   0
+07月12日 15:57:58.076 [ 1:W]recvHdlc_USM:not use!!    4,   2,   1
+07月12日 15:57:59.552 [ 1:W]recvHdlc_USM:not use!!    3,   1,   0
+07月12日 16:29:44.700 SL2_RcvEvnt:src=1/event=4867/sta=0
+07月12日 16:29:44.704 SL1_RcvEvnt:src=1/event=4867/sta=0
+07月12日 16:29:55.252 [ 7]hdlcRecv  102,  1a,   0
+07月12日 16:30:07.940 [ 1]shuttleAction TRANS_TR_SL1P1 wf:0x4bebc800(evt,0,0) 1101,   0,   0
+07月12日 16:30:07.942 [ 1]updateStatus:STT-PROC send!!    1,   0,   0
+07月12日 16:30:07.944 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:30:07.957 SHU_RcvEvnt:src=1/event=4353/sta=0
+07月12日 16:30:07.957 [ 3]****** SHU TR-->SL1P1 (Start) ***** 4beb,ffffc800,   0
+07月12日 16:30:07.978 STY：ASAP_MOV
+07月12日 16:30:07.980 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:30:08.179 STZ：ASAP_MOV
+07月12日 16:30:08.281 STZ：AxisSta=0
+07月12日 16:30:09.398 STZ：AxisSta=1
+07月12日 16:30:09.399 [12:W]AXIS::set_response() 25792,   0,   0
+07月12日 16:30:09.502 STZ：エンコーダ正常 ODR:153500 NOW:153490
+07月12日 16:30:09.506 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:09.703 STZ：ASAP_MOV
+07月12日 16:30:09.805 STZ：AxisSta=0
+07月12日 16:30:10.416 STZ：AxisSta=1
+07月12日 16:30:10.418 [12:W]AXIS::set_response() 28c4e,   0,   0
+07月12日 16:30:10.519 STZ：エンコーダ正常 ODR:167000 NOW:166990
+07月12日 16:30:10.523 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:10.620 STY：ASAP_MOV
+07月12日 16:30:10.724 STY：AxisSta=0
+07月12日 16:30:12.758 STY：AxisSta=1
+07月12日 16:30:12.760 [11:W]AXIS::set_response() 4e8d6,   0,   0
+07月12日 16:30:12.861 STY：エンコーダ正常 ODR:321750 NOW:321745
+07月12日 16:30:12.866 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:30:12.963 STZ：ASAP_MOV
+07月12日 16:30:13.065 STZ：AxisSta=0
+07月12日 16:30:13.674 STZ：AxisSta=1
+07月12日 16:30:13.675 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:30:13.778 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:30:13.781 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:13.980 STZ：ASAP_MOV
+07月12日 16:30:14.082 STZ：AxisSta=0
+07月12日 16:30:15.508 STZ：AxisSta=1
+07月12日 16:30:15.510 [12:W]AXIS::set_response() bd74,   0,   0
+07月12日 16:30:15.610 STZ：エンコーダ正常 ODR:48500 NOW:48500
+07月12日 16:30:15.614 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:15.711 STZ：ASAP_MOV
+07月12日 16:30:15.813 STZ：AxisSta=0
+07月12日 16:30:16.938 STZ：AxisSta=1
+07月12日 16:30:16.938 [12:W]AXIS::set_response() 157c,   0,   0
+07月12日 16:30:17.040 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:30:17.042 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:17.143 [ 3]****** SHU TR-->SL1P1 (End) ***** 4beb,ffffc800,   0
+07月12日 16:30:17.144 [ 3]end 移動完了    0,   0,   0
+07月12日 16:30:17.152 [ 1]updateShuttle   17,   5,   1
+07月12日 16:30:17.152 [ 1]updateShuttle (PUSH   ) wf:4bebc800(evt,sts,0) 1001,   5,   0
+07月12日 16:30:17.152 [ 1]TRANS_SL1P1_EXP1    0,   0,   0
+07月12日 16:30:17.152 [ 1]slider1Action TRANS_SL1P1_EXP1 wf:0x4bebc800(evt,0,0) 1103,   0,   0
+07月12日 16:30:17.153 SL1_RcvEvnt:src=1/event=4355/sta=0
+07月12日 16:30:17.153 [ 4]****** SL1 SL1P1-->EXP1 (Start) ***** 4beb,ffffc800,   0
+07月12日 16:30:17.245 SL1T：ASAP_SNS
+07月12日 16:30:17.254 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:30:17.345 SL1Z：ASAP_MOV
+07月12日 16:30:17.354 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:30:17.546 SL1T：ASAP_MOV
+07月12日 16:30:17.651 SL1T：AxisSta=0
+07月12日 16:30:18.563 SL1T：AxisSta=1
+07月12日 16:30:18.564 [13:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:30:18.565 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:30:18.665 SL1Z：ASAP_MOV
+07月12日 16:30:18.768 SL1Z：AxisSta=0
+07月12日 16:30:19.177 SL1Z：AxisSta=1
+07月12日 16:30:19.178 [14:W]AXIS::set_response() 729a2,   0,   1
+07月12日 16:30:19.278 SL1Z：エンコーダ正常 ODR:469500 NOW:469531
+07月12日 16:30:19.280 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:30:19.380 SL1Z：ASAP_MOV
+07月12日 16:30:19.484 SL1Z：AxisSta=0
+07月12日 16:30:19.889 SL1Z：AxisSta=1
+07月12日 16:30:19.890 [14:W]AXIS::set_response() 7543a,   0,   1
+07月12日 16:30:19.991 SL1Z：エンコーダ正常 ODR:480500 NOW:480489
+07月12日 16:30:19.994 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:30:20.091 SL1T：ASAP_MOV
+07月12日 16:30:20.194 SL1T：AxisSta=0
+07月12日 16:30:21.108 SL1T：AxisSta=1
+07月12日 16:30:21.110 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:30:21.114 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:30:21.219 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   0,   0
+07月12日 16:30:21.311 SL1Z：ASAP_MOV
+07月12日 16:30:21.416 SL1Z：AxisSta=0
+07月12日 16:30:22.165 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:30:22.534 SL1Z：AxisSta=1
+07月12日 16:30:22.535 [14:W]AXIS::set_response() 15a80,   0,   1
+07月12日 16:30:22.636 SL1Z：エンコーダ正常 ODR:88200 NOW:88270
+07月12日 16:30:22.641 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:30:22.641 SL1_RcvEvnt:src=4/event=5119/sta=0
+07月12日 16:30:22.738 SL1T：ASAP_MOV
+07月12日 16:30:22.840 SL1T：AxisSta=0
+07月12日 16:30:23.958 SL1T：AxisSta=1
+07月12日 16:30:23.960 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:30:23.965 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:30:24.062 SL1Z：ASAP_MOV
+07月12日 16:30:24.166 SL1Z：AxisSta=0
+07月12日 16:30:24.471 SL1Z：AxisSta=1
+07月12日 16:30:24.472 [14:W]AXIS::set_response() 145c0,   0,   1
+07月12日 16:30:24.572 SL1Z：エンコーダ正常 ODR:83200 NOW:83202
+07月12日 16:30:24.576 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:30:24.673 SL1Z：ASAP_MOV
+07月12日 16:30:24.777 SL1Z：AxisSta=0
+07月12日 16:30:25.181 SL1Z：AxisSta=1
+07月12日 16:30:25.182 [14:W]AXIS::set_response() 127cc,   0,   1
+07月12日 16:30:25.284 SL1Z：エンコーダ正常 ODR:75700 NOW:75684
+07月12日 16:30:25.286 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:30:25.387 SL1T：ASAP_MOV
+07月12日 16:30:25.491 SL1T：AxisSta=0
+07月12日 16:30:26.611 SL1T：AxisSta=1
+07月12日 16:30:26.612 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:30:26.617 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:30:26.718 [ 4]****** SL1 SL1P1-->EXP1 (End) ***** 4beb,ffffc800,   0
+07月12日 16:30:26.720 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 16:30:26.723 [ 1]sendEventExp:()    1,   1,   0
+07月12日 16:30:26.743 [ 6]expioSend(syn,wf ON/OFF,LEVF_SEND)    1,   1,   0
+07月12日 16:30:26.956 [ 6]READY ON-->OFF    1,   3,   0
+07月12日 16:30:26.963 SL1_RcvEvnt:src=6/event=4616/sta=0
+07月12日 16:30:26.963 SL1_RcvEvnt:src=6/event=4609/sta=-1
+07月12日 16:30:26.969 [ 1]expStart:EXPPIO_SEND (1) 4beb,ffffc800,   0
+07月12日 16:30:26.969 [ 1]expStart:EXPPIO_SEND (2) 4beb,ffffc830,   0
+07月12日 16:30:36.265 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:30:36.492 [ 6]READY OFF-->ON    7,   1,   0
+07月12日 16:30:36.501 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 16:30:36.503 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 16:30:36.706 [ 6]signal_chk_ult(bit,syn)    4,   1,  44
+07月12日 16:30:36.714 SL2_RcvEvnt:src=6/event=4610/sta=0
+07月12日 16:30:36.716 [ 5]expPioMsg:(evt,sts,wf) 1202,   0,ffffc800
+07月12日 16:30:36.716 [ 5]sendStatus(event,rjt,lost) 1202,   0,   0
+07月12日 16:30:36.725 [ 1]expStart:(EXPPIO_RECV)    1,   0,   0
+07月12日 16:30:36.898 [ 1]slider2Action TRANS_EXP2_SL2P1 wf:0x4bebc800(evt,0,0) 1106,   0,   0
+07月12日 16:30:36.903 SL2_RcvEvnt:src=1/event=4358/sta=0
+07月12日 16:30:36.903 [ 5]****** SL2 EXP2-->SL2P1 (Start) ***** 4beb,ffffc800,   0
+07月12日 16:30:36.990 SL2T：ASAP_SNS
+07月12日 16:30:36.994 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:30:37.092 SL2Z：ASAP_MOV
+07月12日 16:30:37.096 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:30:37.296 SL2T：ASAP_MOV
+07月12日 16:30:37.400 SL2T：AxisSta=0
+07月12日 16:30:38.518 SL2T：AxisSta=1
+07月12日 16:30:38.519 [15:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:30:38.522 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:30:38.620 SL2Z：ASAP_MOV
+07月12日 16:30:38.723 SL2Z：AxisSta=0
+07月12日 16:30:39.032 SL2Z：AxisSta=1
+07月12日 16:30:39.033 [16:W]AXIS::set_response() 142c9,   0,   1
+07月12日 16:30:39.135 SL2Z：エンコーダ正常 ODR:83200 NOW:83161
+07月12日 16:30:39.144 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:30:39.237 SL2Z：ASAP_MOV
+07月12日 16:30:39.339 SL2Z：AxisSta=0
+07月12日 16:30:39.641 SL2Z：AxisSta=1
+07月12日 16:30:39.642 [16:W]AXIS::set_response() 15871,   0,   1
+07月12日 16:30:39.743 SL2Z：エンコーダ正常 ODR:88200 NOW:88215
+07月12日 16:30:39.744 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:30:39.845 SL2T：ASAP_MOV
+07月12日 16:30:39.949 SL2T：AxisSta=0
+07月12日 16:30:41.069 SL2T：AxisSta=1
+07月12日 16:30:41.072 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:30:41.073 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:30:41.272 SL2Z：ASAP_MOV
+07月12日 16:30:41.378 SL2Z：AxisSta=0
+07月12日 16:30:42.495 SL2Z：AxisSta=1
+07月12日 16:30:42.496 [16:W]AXIS::set_response() 752db,   0,   1
+07月12日 16:30:42.598 SL2Z：エンコーダ正常 ODR:480500 NOW:480433
+07月12日 16:30:42.600 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:30:42.800 SL2T：ASAP_MOV
+07月12日 16:30:42.903 SL2T：AxisSta=0
+07月12日 16:30:43.819 SL2T：AxisSta=1
+07月12日 16:30:43.820 [15:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:30:43.824 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:30:43.922 SL2Z：ASAP_MOV
+07月12日 16:30:44.025 SL2Z：AxisSta=0
+07月12日 16:30:44.428 SL2Z：AxisSta=1
+07月12日 16:30:44.429 [16:W]AXIS::set_response() 72b43,   0,   1
+07月12日 16:30:44.530 SL2Z：エンコーダ正常 ODR:469500 NOW:469487
+07月12日 16:30:44.535 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:30:44.631 SL2Z：ASAP_MOV
+07月12日 16:30:44.733 SL2Z：AxisSta=0
+07月12日 16:30:45.139 SL2Z：AxisSta=1
+07月12日 16:30:45.140 [16:W]AXIS::set_response() 708ed,   0,   1
+07月12日 16:30:45.241 SL2Z：エンコーダ正常 ODR:461000 NOW:460992
+07月12日 16:30:45.245 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:30:45.343 SL2T：ASAP_MOV
+07月12日 16:30:45.448 SL2T：AxisSta=0
+07月12日 16:30:46.363 SL2T：AxisSta=1
+07月12日 16:30:46.365 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:30:46.368 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:30:46.470 [ 5]****** SL2 EXP2-->SL2P1 (End) ***** 4beb,ffffc800,   0
+07月12日 16:30:46.471 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 16:30:46.910 [ 1]shuttleAction TRANS_SL2P1_TR wf:0x4bebc800(evt,0,0) 1102,   0,   0
+07月12日 16:30:46.911 SHU_RcvEvnt:src=1/event=4354/sta=0
+07月12日 16:30:46.915 [ 3]****** SHU Sl2P1-->TR (Start) ***** 4beb,ffffc800,   0
+07月12日 16:30:46.975 STY：ASAP_MOV
+07月12日 16:30:47.084 STY：AxisSta=0
+07月12日 16:30:48.906 STY：AxisSta=1
+07月12日 16:30:48.908 [11:W]AXIS::set_response() 2e342,   0,   0
+07月12日 16:30:49.008 STY：エンコーダ正常 ODR:189250 NOW:189250
+07月12日 16:30:49.021 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:30:49.209 STZ：ASAP_MOV
+07月12日 16:30:49.313 STZ：AxisSta=0
+07月12日 16:30:50.431 STZ：AxisSta=1
+07月12日 16:30:50.432 [12:W]AXIS::set_response() bd6f,   0,   0
+07月12日 16:30:50.533 STZ：エンコーダ正常 ODR:48500 NOW:48495
+07月12日 16:30:50.539 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:50.736 STZ：ASAP_MOV
+07月12日 16:30:50.839 STZ：AxisSta=0
+07月12日 16:30:52.264 STZ：AxisSta=1
+07月12日 16:30:52.266 [12:W]AXIS::set_response() 1af9a,   0,   0
+07月12日 16:30:52.367 STZ：エンコーダ正常 ODR:110500 NOW:110490
+07月12日 16:30:52.371 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:52.375 [ 1]updateShuttle   17,   2,   1
+07月12日 16:30:52.375 [ 1]updateShuttle (BUSY) wf:4bebc800(evt,sts,0) 1001,   2,   0
+07月12日 16:30:52.468 STY：ASAP_MOV
+07月12日 16:30:52.570 STY：AxisSta=0
+07月12日 16:30:53.892 STY：AxisSta=1
+07月12日 16:30:53.893 [11:W]AXIS::set_response() 40358,   0,   0
+07月12日 16:30:53.995 STY：エンコーダ正常 ODR:263000 NOW:263000
+07月12日 16:30:53.996 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:30:54.096 STZ：ASAP_MOV
+07月12日 16:30:54.200 STZ：AxisSta=0
+07月12日 16:30:54.811 STZ：AxisSta=1
+07月12日 16:30:54.813 [12:W]AXIS::set_response() 28c53,   0,   0
+07月12日 16:30:54.913 STZ：エンコーダ正常 ODR:167000 NOW:166995
+07月12日 16:30:54.922 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:55.014 STY：ASAP_MOV
+07月12日 16:30:55.118 STY：AxisSta=0
+07月12日 16:30:56.843 STY：AxisSta=1
+07月12日 16:30:56.845 [11:W]AXIS::set_response() 24be9,   0,   0
+07月12日 16:30:56.946 STY：エンコーダ正常 ODR:150500 NOW:150505
+07月12日 16:30:56.951 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:30:57.148 STZ：ASAP_MOV
+07月12日 16:30:57.250 STZ：AxisSta=0
+07月12日 16:30:57.860 STZ：AxisSta=1
+07月12日 16:30:57.861 [12:W]AXIS::set_response() 25797,   0,   0
+07月12日 16:30:57.961 STZ：エンコーダ正常 ODR:153500 NOW:153495
+07月12日 16:30:57.965 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:58.063 STZ：ASAP_MOV
+07月12日 16:30:58.165 STZ：AxisSta=0
+07月12日 16:30:59.285 STZ：AxisSta=1
+07月12日 16:30:59.288 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:30:59.388 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:30:59.391 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:30:59.494 [ 3]****** SHU Sl2P1-->TR (End) ***** 4beb,ffffc800,   0
+07月12日 16:30:59.495 [ 3]end 移動完了    0,   0,   0
+07月12日 16:30:59.498 [ 1]updateShuttle   12,   6,   1
+07月12日 16:30:59.498 [ 1]updateShuttle (POP    ) wf:4bebc800(evt,sts,0) 1001,   6,   0
+07月12日 16:30:59.498 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   1,   0
+07月12日 16:31:02.362 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:31:02.454 [ 1]未定義LAN-MSG受信
+07月12日 16:31:02.635 [ 1]updateStatus:STT-PROC send!!    0,   0,   0
+07月12日 16:31:02.638 SL2_RcvEvnt:src=1/event=4868/sta=0
+07月12日 16:31:02.642 SL1_RcvEvnt:src=1/event=4868/sta=0
+07月12日 16:32:52.324 SL1_RcvEvnt:src=1/event=4867/sta=0
+07月12日 16:32:52.325 SL2_RcvEvnt:src=1/event=4867/sta=0
+07月12日 16:33:15.202 [ 1]shuttleAction TRANS_TR_SL1P1 wf:0x4bebc860(evt,0,0) 1101,   0,   0
+07月12日 16:33:15.204 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:33:15.205 SHU_RcvEvnt:src=1/event=4353/sta=0
+07月12日 16:33:15.205 [ 3]****** SHU TR-->SL1P1 (Start) ***** 4beb,ffffc860,   0
+07月12日 16:33:15.295 STY：ASAP_MOV
+07月12日 16:33:15.299 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:33:15.499 STZ：ASAP_MOV
+07月12日 16:33:15.604 STZ：AxisSta=0
+07月12日 16:33:16.725 STZ：AxisSta=1
+07月12日 16:33:16.726 [12:W]AXIS::set_response() 25792,   0,   0
+07月12日 16:33:16.828 STZ：エンコーダ正常 ODR:153500 NOW:153490
+07月12日 16:33:16.830 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:17.030 STZ：ASAP_MOV
+07月12日 16:33:17.135 STZ：AxisSta=0
+07月12日 16:33:17.845 STZ：AxisSta=1
+07月12日 16:33:17.849 [12:W]AXIS::set_response() 28c4e,   0,   0
+07月12日 16:33:17.950 STZ：エンコーダ正常 ODR:167000 NOW:166990
+07月12日 16:33:17.951 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:18.050 STY：ASAP_MOV
+07月12日 16:33:18.151 STY：AxisSta=0
+07月12日 16:33:20.289 STY：AxisSta=1
+07月12日 16:33:20.290 [11:W]AXIS::set_response() 4e8d1,   0,   0
+07月12日 16:33:20.392 STY：エンコーダ正常 ODR:321750 NOW:321745
+07月12日 16:33:20.396 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:33:20.494 STZ：ASAP_MOV
+07月12日 16:33:20.596 STZ：AxisSta=0
+07月12日 16:33:21.203 STZ：AxisSta=1
+07月12日 16:33:21.205 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:33:21.308 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:33:21.311 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:21.508 STZ：ASAP_MOV
+07月12日 16:33:21.611 STZ：AxisSta=0
+07月12日 16:33:23.032 STZ：AxisSta=1
+07月12日 16:33:23.034 [12:W]AXIS::set_response() bd74,   0,   0
+07月12日 16:33:23.135 STZ：エンコーダ正常 ODR:48500 NOW:48500
+07月12日 16:33:23.140 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:23.237 STZ：ASAP_MOV
+07月12日 16:33:23.341 STZ：AxisSta=0
+07月12日 16:33:24.460 STZ：AxisSta=1
+07月12日 16:33:24.461 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:33:24.562 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:33:24.563 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:24.665 [ 3]****** SHU TR-->SL1P1 (End) ***** 4beb,ffffc860,   0
+07月12日 16:33:24.667 [ 3]end 移動完了    0,   0,   0
+07月12日 16:33:24.675 [ 1]updateShuttle   17,   5,   1
+07月12日 16:33:24.675 [ 1]updateShuttle (PUSH   ) wf:4bebc860(evt,sts,0) 1001,   5,   0
+07月12日 16:33:24.675 [ 1]TRANS_SL1P1_EXP1    0,   0,   0
+07月12日 16:33:24.676 [ 1]slider1Action TRANS_SL1P1_EXP1 wf:0x4bebc860(evt,0,0) 1103,   0,   0
+07月12日 16:33:24.680 SL1_RcvEvnt:src=1/event=4355/sta=0
+07月12日 16:33:24.680 [ 4]****** SL1 SL1P1-->EXP1 (Start) ***** 4beb,ffffc860,   0
+07月12日 16:33:24.769 SL1T：ASAP_SNS
+07月12日 16:33:24.770 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:24.870 SL1Z：ASAP_MOV
+07月12日 16:33:24.972 SL1Z：AxisSta=0
+07月12日 16:33:26.089 SL1Z：AxisSta=1
+07月12日 16:33:26.091 [14:W]AXIS::set_response() 70703,   0,   1
+07月12日 16:33:26.192 SL1Z：エンコーダ正常 ODR:461000 NOW:460974
+07月12日 16:33:26.196 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:26.398 SL1T：ASAP_MOV
+07月12日 16:33:26.500 SL1T：AxisSta=0
+07月12日 16:33:27.411 SL1T：AxisSta=1
+07月12日 16:33:27.413 [13:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:33:27.416 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:27.514 SL1Z：ASAP_MOV
+07月12日 16:33:27.616 SL1Z：AxisSta=0
+07月12日 16:33:28.021 SL1Z：AxisSta=1
+07月12日 16:33:28.022 [14:W]AXIS::set_response() 72917,   0,   1
+07月12日 16:33:28.123 SL1Z：エンコーダ正常 ODR:469500 NOW:469532
+07月12日 16:33:28.129 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:28.229 SL1Z：ASAP_MOV
+07月12日 16:33:28.333 SL1Z：AxisSta=0
+07月12日 16:33:28.736 SL1Z：AxisSta=1
+07月12日 16:33:28.737 [14:W]AXIS::set_response() 7540d,   0,   1
+07月12日 16:33:28.838 SL1Z：エンコーダ正常 ODR:480500 NOW:480485
+07月12日 16:33:28.845 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:28.939 SL1T：ASAP_MOV
+07月12日 16:33:29.043 SL1T：AxisSta=0
+07月12日 16:33:29.860 SL1T：AxisSta=1
+07月12日 16:33:29.860 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:33:29.868 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:30.062 SL1Z：ASAP_MOV
+07月12日 16:33:30.163 SL1Z：AxisSta=0
+07月12日 16:33:31.284 SL1Z：AxisSta=1
+07月12日 16:33:31.286 [14:W]AXIS::set_response() 159f0,   0,   1
+07月12日 16:33:31.386 SL1Z：エンコーダ正常 ODR:88200 NOW:88238
+07月12日 16:33:31.391 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:31.392 SL1_RcvEvnt:src=4/event=5119/sta=0
+07月12日 16:33:31.491 SL1T：ASAP_MOV
+07月12日 16:33:31.593 SL1T：AxisSta=0
+07月12日 16:33:32.305 [ 1]shuttleAction TRANS_TR_SL1P1 wf:0x4bebc890(evt,0,0) 1101,   0,   0
+07月12日 16:33:32.310 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:33:32.315 SHU_RcvEvnt:src=1/event=4353/sta=0
+07月12日 16:33:32.315 [ 3]****** SHU TR-->SL1P1 (Start) ***** 4beb,ffffc890,   0
+07月12日 16:33:32.406 STY：ASAP_MOV
+07月12日 16:33:32.510 STY：AxisSta=0
+07月12日 16:33:32.712 SL1T：AxisSta=1
+07月12日 16:33:32.714 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:33:32.718 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:32.815 SL1Z：ASAP_MOV
+07月12日 16:33:32.918 SL1Z：AxisSta=0
+07月12日 16:33:33.222 SL1Z：AxisSta=1
+07月12日 16:33:33.224 [14:W]AXIS::set_response() 1463f,   0,   1
+07月12日 16:33:33.325 SL1Z：エンコーダ正常 ODR:83200 NOW:83206
+07月12日 16:33:33.331 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:33.426 SL1Z：ASAP_MOV
+07月12日 16:33:33.530 SL1Z：AxisSta=0
+07月12日 16:33:33.836 SL1Z：AxisSta=1
+07月12日 16:33:33.838 [14:W]AXIS::set_response() 127f9,   0,   1
+07月12日 16:33:33.938 SL1Z：エンコーダ正常 ODR:75700 NOW:75694
+07月12日 16:33:33.942 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:34.038 SL1T：ASAP_MOV
+07月12日 16:33:34.142 SL1T：AxisSta=0
+07月12日 16:33:35.053 STY：AxisSta=1
+07月12日 16:33:35.054 [11:W]AXIS::set_response() 12bd3,   0,   0
+07月12日 16:33:35.157 SL1T：AxisSta=1
+07月12日 16:33:35.157 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:33:35.159 STY：エンコーダ正常 ODR:76750 NOW:76755
+07月12日 16:33:35.159 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:33:35.160 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:35.260 STZ：ASAP_MOV
+07月12日 16:33:35.262 [ 4]****** SL1 SL1P1-->EXP1 (End) ***** 4beb,ffffc860,   0
+07月12日 16:33:35.262 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 16:33:35.271 [ 1]sendEventExp:()    1,   0,   0
+07月12日 16:33:35.294 [ 6]expioSend(syn,wf ON/OFF,LEVF_SEND)    0,   0,   0
+07月12日 16:33:35.361 STZ：AxisSta=0
+07月12日 16:33:35.502 [ 6]READY ON-->OFF    1,   3,   0
+07月12日 16:33:35.512 SL1_RcvEvnt:src=6/event=4616/sta=0
+07月12日 16:33:35.513 SL1_RcvEvnt:src=6/event=4609/sta=-1
+07月12日 16:33:35.518 [ 1]expStart:EXPPIO_SEND (1) 4beb,ffffc860,   0
+07月12日 16:33:35.518 [ 1]expStart:EXPPIO_SEND (2)    0,   0,   0
+07月12日 16:33:36.177 STZ：AxisSta=1
+07月12日 16:33:36.178 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:33:36.278 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:33:36.279 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:36.379 STY：ASAP_MOV
+07月12日 16:33:36.481 STY：AxisSta=0
+07月12日 16:33:37.908 STY：AxisSta=1
+07月12日 16:33:37.910 [11:W]AXIS::set_response() 24be4,   0,   0
+07月12日 16:33:38.012 STY：エンコーダ正常 ODR:150500 NOW:150500
+07月12日 16:33:38.016 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:33:38.216 STZ：ASAP_MOV
+07月12日 16:33:38.320 STZ：AxisSta=0
+07月12日 16:33:39.434 STZ：AxisSta=1
+07月12日 16:33:39.436 [12:W]AXIS::set_response() 25792,   0,   0
+07月12日 16:33:39.536 STZ：エンコーダ正常 ODR:153500 NOW:153490
+07月12日 16:33:39.545 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:39.739 STZ：ASAP_MOV
+07月12日 16:33:39.841 STZ：AxisSta=0
+07月12日 16:33:40.449 STZ：AxisSta=1
+07月12日 16:33:40.451 [12:W]AXIS::set_response() 28c4e,   0,   0
+07月12日 16:33:40.552 STZ：エンコーダ正常 ODR:167000 NOW:166990
+07月12日 16:33:40.556 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:40.653 STY：ASAP_MOV
+07月12日 16:33:40.755 STY：AxisSta=0
+07月12日 16:33:42.795 STY：AxisSta=1
+07月12日 16:33:42.795 [11:W]AXIS::set_response() 4e8d1,   0,   0
+07月12日 16:33:42.895 STY：エンコーダ正常 ODR:321750 NOW:321745
+07月12日 16:33:42.901 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:33:42.997 STZ：ASAP_MOV
+07月12日 16:33:43.099 STZ：AxisSta=0
+07月12日 16:33:43.704 STZ：AxisSta=1
+07月12日 16:33:43.707 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:33:43.808 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:33:43.812 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:44.010 STZ：ASAP_MOV
+07月12日 16:33:44.112 STZ：AxisSta=0
+07月12日 16:33:44.973 [ 6]READY OFF-->ON    7,   1,   0
+07月12日 16:33:44.976 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 16:33:44.977 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 16:33:45.188 [ 6]signal_chk_ult(bit,syn)    4,   0,   4
+07月12日 16:33:45.191 SL2_RcvEvnt:src=6/event=4610/sta=0
+07月12日 16:33:45.191 [ 5]expPioMsg:(evt,sts,wf) 1202,   0,ffffc860
+07月12日 16:33:45.191 [ 5]sendStatus(event,rjt,lost) 1202,   0,   0
+07月12日 16:33:45.194 [ 1]expStart:(EXPPIO_RECV)    1,   0,   0
+07月12日 16:33:45.378 [ 1]slider2Action TRANS_EXP2_SL2P1 wf:0x4bebc860(evt,0,0) 1106,   0,   0
+07月12日 16:33:45.381 SL2_RcvEvnt:src=1/event=4358/sta=0
+07月12日 16:33:45.382 [ 5]****** SL2 EXP2-->SL2P1 (Start) ***** 4beb,ffffc860,   0
+07月12日 16:33:45.430 SL2T：ASAP_SNS
+07月12日 16:33:45.434 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:33:45.532 STZ：AxisSta=1
+07月12日 16:33:45.534 [12:W]AXIS::set_response() bd74,   0,   0
+07月12日 16:33:45.535 SL2Z：ASAP_MOV
+07月12日 16:33:45.635 STZ：エンコーダ正常 ODR:48500 NOW:48500
+07月12日 16:33:45.638 SL2Z：AxisSta=0
+07月12日 16:33:45.645 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:45.736 STZ：ASAP_MOV
+07月12日 16:33:45.838 STZ：AxisSta=0
+07月12日 16:33:46.755 SL2Z：AxisSta=1
+07月12日 16:33:46.757 [16:W]AXIS::set_response() 128a2,   0,   1
+07月12日 16:33:46.857 SL2Z：エンコーダ正常 ODR:75700 NOW:75693
+07月12日 16:33:46.864 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:33:46.954 STZ：AxisSta=1
+07月12日 16:33:46.955 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:33:47.056 SL2T：ASAP_MOV
+07月12日 16:33:47.061 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:33:47.068 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:33:47.160 SL2T：AxisSta=0
+07月12日 16:33:47.170 [ 3]****** SHU TR-->SL1P1 (End) ***** 4beb,ffffc890,   0
+07月12日 16:33:47.170 [ 3]end 移動完了    0,   0,   0
+07月12日 16:33:47.180 [ 1]updateShuttle   17,   5,   1
+07月12日 16:33:47.180 [ 1]updateShuttle (PUSH   ) wf:4bebc890(evt,sts,0) 1001,   5,   0
+07月12日 16:33:47.180 [ 1]TRANS_SL1P1_EXP1    0,   0,   0
+07月12日 16:33:47.180 [ 1]slider1Action TRANS_SL1P1_EXP1 wf:0x4bebc890(evt,0,0) 1103,   0,   0
+07月12日 16:33:47.195 SL1_RcvEvnt:src=1/event=4355/sta=0
+07月12日 16:33:47.195 [ 4]****** SL1 SL1P1-->EXP1 (Start) ***** 4beb,ffffc890,   0
+07月12日 16:33:47.263 SL1T：ASAP_SNS
+07月12日 16:33:47.272 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:47.364 SL1Z：ASAP_MOV
+07月12日 16:33:47.466 SL1Z：AxisSta=0
+07月12日 16:33:48.279 SL2T：AxisSta=1
+07月12日 16:33:48.280 [15:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:33:48.283 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:33:48.382 SL2Z：ASAP_MOV
+07月12日 16:33:48.485 SL1Z：AxisSta=1
+07月12日 16:33:48.485 [14:W]AXIS::set_response() 70517,   0,   1
+07月12日 16:33:48.491 SL2Z：AxisSta=0
+07月12日 16:33:48.587 SL1Z：エンコーダ正常 ODR:461000 NOW:460640
+07月12日 16:33:48.596 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:48.690 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:33:48.789 SL1T：ASAP_MOV
+07月12日 16:33:48.792 SL2Z：AxisSta=1
+07月12日 16:33:48.792 [16:W]AXIS::set_response() 1438d,   0,   1
+07月12日 16:33:48.892 SL1T：AxisSta=0
+07月12日 16:33:48.892 SL2Z：エンコーダ正常 ODR:83200 NOW:83133
+07月12日 16:33:48.895 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:33:48.992 SL2Z：ASAP_MOV
+07月12日 16:33:49.094 SL2Z：AxisSta=0
+07月12日 16:33:49.399 SL2Z：AxisSta=1
+07月12日 16:33:49.400 [16:W]AXIS::set_response() 15889,   0,   1
+07月12日 16:33:49.503 SL2Z：エンコーダ正常 ODR:88200 NOW:88217
+07月12日 16:33:49.505 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:33:49.605 SL2T：ASAP_MOV
+07月12日 16:33:49.706 SL2T：AxisSta=0
+07月12日 16:33:49.710 SL1T：AxisSta=1
+07月12日 16:33:49.710 [13:W]AXIS::set_response() 2126,   0,   0
+07月12日 16:33:49.718 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:49.810 SL1Z：ASAP_MOV
+07月12日 16:33:49.914 SL1Z：AxisSta=0
+07月12日 16:33:50.316 SL1Z：AxisSta=1
+07月12日 16:33:50.319 [14:W]AXIS::set_response() 72940,   0,   1
+07月12日 16:33:50.420 SL1Z：エンコーダ正常 ODR:469500 NOW:469534
+07月12日 16:33:50.422 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:50.521 SL1Z：ASAP_MOV
+07月12日 16:33:50.623 SL1Z：AxisSta=0
+07月12日 16:33:50.723 SL2T：AxisSta=1
+07月12日 16:33:50.725 [15:W]AXIS::set_response() b426,   0,   0
+07月12日 16:33:50.731 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:33:50.732 [ 5:W]alarmSet axis, local_code code    0, 19f, 513
+07月12日 16:33:50.735 [ 1]updateStatus:STT-PROC send!!    4,   0,   0
+07月12日 16:33:51.030 SL1Z：AxisSta=1
+07月12日 16:33:51.031 [14:W]AXIS::set_response() 75466,   0,   1
+07月12日 16:33:51.132 SL1Z：エンコーダ正常 ODR:480500 NOW:480499
+07月12日 16:33:51.135 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:51.232 SL1T：ASAP_MOV
+07月12日 16:33:51.334 SL1T：AxisSta=0
+07月12日 16:33:52.248 SL1T：AxisSta=1
+07月12日 16:33:52.249 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:33:52.254 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:52.452 SL1Z：ASAP_MOV
+07月12日 16:33:52.555 SL1Z：AxisSta=0
+07月12日 16:33:53.682 SL1Z：AxisSta=1
+07月12日 16:33:53.683 [14:W]AXIS::set_response() 15a1f,   0,   1
+07月12日 16:33:53.783 SL1Z：エンコーダ正常 ODR:88200 NOW:88245
+07月12日 16:33:53.790 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:53.790 SL1_RcvEvnt:src=4/event=5119/sta=0
+07月12日 16:33:53.882 SL1T：ASAP_MOV
+07月12日 16:33:53.984 SL1T：AxisSta=0
+07月12日 16:33:55.103 SL1T：AxisSta=1
+07月12日 16:33:55.105 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:33:55.108 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:55.205 SL1Z：ASAP_MOV
+07月12日 16:33:55.308 SL1Z：AxisSta=0
+07月12日 16:33:55.611 SL1Z：AxisSta=1
+07月12日 16:33:55.613 [14:W]AXIS::set_response() 145c5,   0,   1
+07月12日 16:33:55.713 SL1Z：エンコーダ正常 ODR:83200 NOW:83202
+07月12日 16:33:55.717 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:55.815 SL1Z：ASAP_MOV
+07月12日 16:33:55.917 SL1Z：AxisSta=0
+07月12日 16:33:56.321 SL1Z：AxisSta=1
+07月12日 16:33:56.324 [14:W]AXIS::set_response() 127ba,   0,   1
+07月12日 16:33:56.424 SL1Z：エンコーダ正常 ODR:75700 NOW:75686
+07月12日 16:33:56.429 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:33:56.524 SL1T：ASAP_MOV
+07月12日 16:33:56.628 SL1T：AxisSta=0
+07月12日 16:33:57.742 SL1T：AxisSta=1
+07月12日 16:33:57.743 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:33:57.749 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:33:57.852 [ 4]****** SL1 SL1P1-->EXP1 (End) ***** 4beb,ffffc890,   0
+07月12日 16:33:57.853 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 16:33:57.860 [ 1]sendEventExp:()    1,   1,   0
+07月12日 16:33:57.871 [ 6]expioSend(syn,wf ON/OFF,LEVF_SEND)    1,   1,   0
+07月12日 16:33:58.112 [ 6]READY ON-->OFF    1,   3,   0
+07月12日 16:33:58.113 SL1_RcvEvnt:src=6/event=4616/sta=0
+07月12日 16:33:58.114 SL1_RcvEvnt:src=6/event=4609/sta=-1
+07月12日 16:33:58.125 [ 1]expStart:EXPPIO_SEND (1) 4beb,ffffc890,   0
+07月12日 16:33:58.126 [ 1]expStart:EXPPIO_SEND (2) 4beb,ffffc8c0,   0
+07月12日 16:34:02.480 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:34:13.070 [ 1:W]recvHdlc_ARS (alarm,0,0)  513,   0,   0
+07月12日 16:34:13.072 SL2_RcvEvnt:src=1/event=4880/sta=1299
+07月12日 16:34:13.072 [ 5]alarmReset(event alarm,cf)    0, 513,   0
+07月12日 16:34:13.072 [ 5]restart(A)  513,   1,   1
+07月12日 16:34:13.072 [ 5]restart0100_0600   9f,   0,   0
+07月12日 16:34:13.072 [ 5]restart0100_0600 : AXIS_X     0,   0,   0
+07月12日 16:34:13.082 [ 1]updateStatus:STT-PROC send!!    1,   0,   0
+07月12日 16:34:13.122 SL2T：ASAP_SEN
+07月12日 16:34:13.642 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffe16,fffffe16,989497
+07月12日 16:34:13.645 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:13.645 [ 5]restart(A)  513,   1,   0
+07月12日 16:34:13.645 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:34:13.645 [ 5]restart0100_0600 : AXIS_X     0,   1,   0
+07月12日 16:34:13.742 SL2T：ASAP_RET
+07月12日 16:34:13.940 SL2T：AxisSta=0
+07月12日 16:34:14.141 SL2T：AxisSta=1
+07月12日 16:34:14.141 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 16:34:14.399 SL2T：AxisSta=0
+07月12日 16:34:14.500 SL2T：AxisSta=1
+07月12日 16:34:14.502 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:34:14.645 [15:W]timeout_set()    0,   0,   0
+07月12日 16:34:14.657 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:14.657 [ 5]restart(A)  513,   1,   0
+07月12日 16:34:14.658 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:34:14.658 [ 5]restart0100_0600 : AXIS_X     0,   2,   0
+07月12日 16:34:14.658 [ 5]restart_getsetActX (act_x,act_GetSet,0)    2,   1,   0
+07月12日 16:34:14.759 [ 5]restart_getsetActX :end (rc,alarm,0)    2,   0,   0
+07月12日 16:34:14.759 [ 5]getAutoRestart1 (act,fc,alarm)    2,1106,   0
+07月12日 16:34:14.759 [ 5]getAutoRestart2 (autoPhase,EVF_STP,0)    3,   0,   0
+07月12日 16:34:14.760 [ 5]restart0100_0600 (X) 1106,   3,   2
+07月12日 16:34:14.760 [ 5]alarmResEnd    0,   0,   0
+07月12日 16:34:14.959 SL2Z：ASAP_MOV
+07月12日 16:34:15.065 SL2Z：AxisSta=0
+07月12日 16:34:16.177 SL2Z：AxisSta=1
+07月12日 16:34:16.178 [16:W]AXIS::set_response() 753d8,   0,   1
+07月12日 16:34:16.280 SL2Z：エンコーダ正常 ODR:480500 NOW:480499
+07月12日 16:34:16.283 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:16.446 SL2T：ASAP_MOV
+07月12日 16:34:16.549 SL2T：AxisSta=0
+07月12日 16:34:17.203 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:34:17.449 SL2T：AxisSta=1
+07月12日 16:34:17.451 [15:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:34:17.458 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:17.503 SL2Z：ASAP_MOV
+07月12日 16:34:17.606 SL2Z：AxisSta=0
+07月12日 16:34:18.012 SL2Z：AxisSta=1
+07月12日 16:34:18.014 [16:W]AXIS::set_response() 72ade,   0,   1
+07月12日 16:34:18.114 SL2Z：エンコーダ正常 ODR:469500 NOW:469473
+07月12日 16:34:18.116 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:18.216 SL2Z：ASAP_MOV
+07月12日 16:34:18.318 SL2Z：AxisSta=0
+07月12日 16:34:18.624 SL2Z：AxisSta=1
+07月12日 16:34:18.625 [16:W]AXIS::set_response() 709e5,   0,   1
+07月12日 16:34:18.726 SL2Z：エンコーダ正常 ODR:461000 NOW:461015
+07月12日 16:34:18.732 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:18.755 SL2T：ASAP_MOV
+07月12日 16:34:18.858 SL2T：AxisSta=0
+07月12日 16:34:19.761 SL2T：AxisSta=1
+07月12日 16:34:19.763 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:34:19.770 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:19.870 [ 5]****** SL2 EXP2-->SL2P1 (End) ***** 4beb,ffffc860,   0
+07月12日 16:34:19.870 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 16:34:20.287 [ 1]shuttleAction TRANS_SL2P1_TR wf:0x4bebc860(evt,0,0) 1102,   0,   0
+07月12日 16:34:20.288 SHU_RcvEvnt:src=1/event=4354/sta=0
+07月12日 16:34:20.288 [ 3]****** SHU Sl2P1-->TR (Start) ***** 4beb,ffffc860,   0
+07月12日 16:34:20.359 STY：ASAP_MOV
+07月12日 16:34:20.462 STY：AxisSta=0
+07月12日 16:34:22.292 STY：AxisSta=1
+07月12日 16:34:22.293 [11:W]AXIS::set_response() 2e342,   0,   0
+07月12日 16:34:22.395 STY：エンコーダ正常 ODR:189250 NOW:189250
+07月12日 16:34:22.399 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:34:22.597 STZ：ASAP_MOV
+07月12日 16:34:22.701 STZ：AxisSta=0
+07月12日 16:34:23.817 STZ：AxisSta=1
+07月12日 16:34:23.818 [12:W]AXIS::set_response() bd6f,   0,   0
+07月12日 16:34:23.919 STZ：エンコーダ正常 ODR:48500 NOW:48495
+07月12日 16:34:23.923 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:24.123 STZ：ASAP_MOV
+07月12日 16:34:24.225 STZ：AxisSta=0
+07月12日 16:34:25.649 STZ：AxisSta=1
+07月12日 16:34:25.649 [12:W]AXIS::set_response() 1af9a,   0,   0
+07月12日 16:34:25.750 STZ：エンコーダ正常 ODR:110500 NOW:110490
+07月12日 16:34:25.759 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:25.760 [ 1]updateShuttle   17,   2,   1
+07月12日 16:34:25.761 [ 1]updateShuttle (BUSY) wf:4bebc860(evt,sts,0) 1001,   2,   0
+07月12日 16:34:25.849 STY：ASAP_MOV
+07月12日 16:34:25.954 STY：AxisSta=0
+07月12日 16:34:27.383 STY：AxisSta=1
+07月12日 16:34:27.386 [11:W]AXIS::set_response() 40358,   0,   0
+07月12日 16:34:27.486 STY：エンコーダ正常 ODR:263000 NOW:263000
+07月12日 16:34:27.490 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:34:27.589 STZ：ASAP_MOV
+07月12日 16:34:27.690 STZ：AxisSta=0
+07月12日 16:34:28.297 STZ：AxisSta=1
+07月12日 16:34:28.298 [12:W]AXIS::set_response() 28c53,   0,   0
+07月12日 16:34:28.400 STZ：エンコーダ正常 ODR:167000 NOW:166995
+07月12日 16:34:28.403 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:28.500 STY：ASAP_MOV
+07月12日 16:34:28.603 STY：AxisSta=0
+07月12日 16:34:28.886 [ 6]READY OFF-->ON   47,   1,   0
+07月12日 16:34:28.890 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 16:34:28.890 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 16:34:29.103 [ 6]signal_chk_ult(bit,syn)    4,   1,  44
+07月12日 16:34:29.105 SL2_RcvEvnt:src=6/event=4610/sta=0
+07月12日 16:34:29.105 [ 5]expPioMsg:(evt,sts,wf) 1202,   0,ffffc890
+07月12日 16:34:29.106 [ 5]sendStatus(event,rjt,lost) 1202,   0,   0
+07月12日 16:34:29.113 [ 1]expStart:(EXPPIO_RECV)    1,   0,   0
+07月12日 16:34:29.294 [ 1]slider2Action TRANS_EXP2_SL2P1 wf:0x4bebc890(evt,0,0) 1106,   0,   0
+07月12日 16:34:29.300 SL2_RcvEvnt:src=1/event=4358/sta=0
+07月12日 16:34:29.300 [ 5]****** SL2 EXP2-->SL2P1 (Start) ***** 4beb,ffffc890,   0
+07月12日 16:34:29.317 SL2T：ASAP_SNS
+07月12日 16:34:29.321 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:29.418 SL2Z：ASAP_MOV
+07月12日 16:34:29.523 SL2Z：AxisSta=0
+07月12日 16:34:30.333 STY：AxisSta=1
+07月12日 16:34:30.334 [11:W]AXIS::set_response() 24be9,   0,   0
+07月12日 16:34:30.438 STY：エンコーダ正常 ODR:150500 NOW:150505
+07月12日 16:34:30.440 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:34:30.641 STZ：ASAP_MOV
+07月12日 16:34:30.644 SL2Z：AxisSta=1
+07月12日 16:34:30.645 [16:W]AXIS::set_response() 12895,   0,   1
+07月12日 16:34:30.746 STZ：AxisSta=0
+07月12日 16:34:30.748 SL2Z：エンコーダ正常 ODR:75700 NOW:75694
+07月12日 16:34:30.749 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:30.950 SL2T：ASAP_MOV
+07月12日 16:34:31.052 SL2T：AxisSta=0
+07月12日 16:34:31.358 STZ：AxisSta=1
+07月12日 16:34:31.359 [12:W]AXIS::set_response() 25797,   0,   0
+07月12日 16:34:31.460 STZ：エンコーダ正常 ODR:153500 NOW:153495
+07月12日 16:34:31.468 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:31.560 STZ：ASAP_MOV
+07月12日 16:34:31.662 STZ：AxisSta=0
+07月12日 16:34:32.069 SL2T：AxisSta=1
+07月12日 16:34:32.069 [15:W]AXIS::set_response() 175b5,   0,   0
+07月12日 16:34:32.070 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:32.171 SL2Z：ASAP_MOV
+07月12日 16:34:32.272 SL2Z：AxisSta=0
+07月12日 16:34:32.578 SL2Z：AxisSta=1
+07月12日 16:34:32.579 [16:W]AXIS::set_response() 1428a,   0,   1
+07月12日 16:34:32.681 SL2Z：エンコーダ正常 ODR:83200 NOW:83124
+07月12日 16:34:32.683 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:32.785 STZ：AxisSta=1
+07月12日 16:34:32.785 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:34:32.786 SL2Z：ASAP_MOV
+07月12日 16:34:32.889 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:34:32.891 SL2Z：AxisSta=0
+07月12日 16:34:32.899 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:33.002 [ 3]****** SHU Sl2P1-->TR (End) ***** 4beb,ffffc860,   0
+07月12日 16:34:33.003 [ 3]end 移動完了    0,   0,   0
+07月12日 16:34:33.012 [ 1]updateShuttle   12,   6,   1
+07月12日 16:34:33.012 [ 1]updateShuttle (POP    ) wf:4bebc860(evt,sts,0) 1001,   6,   0
+07月12日 16:34:33.012 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   1,   0
+07月12日 16:34:33.192 SL2Z：AxisSta=1
+07月12日 16:34:33.195 [16:W]AXIS::set_response() 15874,   0,   1
+07月12日 16:34:33.295 SL2Z：エンコーダ正常 ODR:88200 NOW:88217
+07月12日 16:34:33.297 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:33.397 SL2T：ASAP_MOV
+07月12日 16:34:33.499 SL2T：AxisSta=0
+07月12日 16:34:34.614 SL2T：AxisSta=1
+07月12日 16:34:34.615 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:34:34.620 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:34.818 SL2Z：ASAP_MOV
+07月12日 16:34:34.922 SL2Z：AxisSta=0
+07月12日 16:34:36.046 SL2Z：AxisSta=1
+07月12日 16:34:36.048 [16:W]AXIS::set_response() 752ea,   0,   1
+07月12日 16:34:36.148 SL2Z：エンコーダ正常 ODR:480500 NOW:480488
+07月12日 16:34:36.155 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:36.351 SL2T：ASAP_MOV
+07月12日 16:34:36.455 SL2T：AxisSta=0
+07月12日 16:34:36.677 [ 1:W]psStart : wafer FIFO error!!!    0,   0,   0
+07月12日 16:34:36.678 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:34:37.371 SL2T：AxisSta=1
+07月12日 16:34:37.372 [15:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:34:37.373 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:37.476 SL2Z：ASAP_MOV
+07月12日 16:34:37.578 SL2Z：AxisSta=0
+07月12日 16:34:37.982 SL2Z：AxisSta=1
+07月12日 16:34:37.983 [16:W]AXIS::set_response() 72aa7,   0,   1
+07月12日 16:34:38.085 SL2Z：エンコーダ正常 ODR:469500 NOW:469471
+07月12日 16:34:38.089 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:38.188 SL2Z：ASAP_MOV
+07月12日 16:34:38.290 SL2Z：AxisSta=0
+07月12日 16:34:38.594 SL2Z：AxisSta=1
+07月12日 16:34:38.595 [16:W]AXIS::set_response() 7099f,   0,   1
+07月12日 16:34:38.695 SL2Z：エンコーダ正常 ODR:461000 NOW:461029
+07月12日 16:34:38.697 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:34:38.797 SL2T：ASAP_MOV
+07月12日 16:34:38.899 SL2T：AxisSta=0
+07月12日 16:34:39.811 SL2T：AxisSta=1
+07月12日 16:34:39.813 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:34:39.816 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:34:39.917 [ 5]****** SL2 EXP2-->SL2P1 (End) ***** 4beb,ffffc890,   0
+07月12日 16:34:39.921 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 16:34:40.401 [ 1]shuttleAction TRANS_SL2P1_TR wf:0x4bebc890(evt,0,0) 1102,   0,   0
+07月12日 16:34:40.403 SHU_RcvEvnt:src=1/event=4354/sta=0
+07月12日 16:34:40.404 [ 3]****** SHU Sl2P1-->TR (Start) ***** 4beb,ffffc890,   0
+07月12日 16:34:40.424 STY：ASAP_MOV
+07月12日 16:34:40.525 STY：AxisSta=0
+07月12日 16:34:41.850 STY：AxisSta=1
+07月12日 16:34:41.851 [11:W]AXIS::set_response() 12bd3,   0,   0
+07月12日 16:34:41.952 STY：エンコーダ正常 ODR:76750 NOW:76755
+07月12日 16:34:41.954 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:34:42.055 STZ：ASAP_MOV
+07月12日 16:34:42.157 STZ：AxisSta=0
+07月12日 16:34:42.971 STZ：AxisSta=1
+07月12日 16:34:42.973 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:34:43.073 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:34:43.077 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:43.172 STY：ASAP_MOV
+07月12日 16:34:43.275 STY：AxisSta=0
+07月12日 16:34:45.006 STY：AxisSta=1
+07月12日 16:34:45.009 [11:W]AXIS::set_response() 2e33d,   0,   0
+07月12日 16:34:45.110 STY：エンコーダ正常 ODR:189250 NOW:189245
+07月12日 16:34:45.114 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:34:45.312 STZ：ASAP_MOV
+07月12日 16:34:45.414 STZ：AxisSta=0
+07月12日 16:34:46.536 STZ：AxisSta=1
+07月12日 16:34:46.539 [12:W]AXIS::set_response() bd6f,   0,   0
+07月12日 16:34:46.640 STZ：エンコーダ正常 ODR:48500 NOW:48495
+07月12日 16:34:46.643 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:46.843 STZ：ASAP_MOV
+07月12日 16:34:46.945 STZ：AxisSta=0
+07月12日 16:34:48.270 STZ：AxisSta=1
+07月12日 16:34:48.273 [12:W]AXIS::set_response() 1af9a,   0,   0
+07月12日 16:34:48.373 STZ：エンコーダ正常 ODR:110500 NOW:110490
+07月12日 16:34:48.381 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:48.393 [ 1]updateShuttle   17,   2,   1
+07月12日 16:34:48.393 [ 1]updateShuttle (BUSY) wf:4bebc890(evt,sts,0) 1001,   2,   0
+07月12日 16:34:48.472 STY：ASAP_MOV
+07月12日 16:34:48.575 STY：AxisSta=0
+07月12日 16:34:49.896 STY：AxisSta=1
+07月12日 16:34:49.897 [11:W]AXIS::set_response() 40358,   0,   0
+07月12日 16:34:49.998 STY：エンコーダ正常 ODR:263000 NOW:263000
+07月12日 16:34:50.001 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:34:50.100 STZ：ASAP_MOV
+07月12日 16:34:50.202 STZ：AxisSta=0
+07月12日 16:34:50.805 STZ：AxisSta=1
+07月12日 16:34:50.808 [12:W]AXIS::set_response() 28c53,   0,   0
+07月12日 16:34:50.909 STZ：エンコーダ正常 ODR:167000 NOW:166995
+07月12日 16:34:50.911 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:51.009 STY：ASAP_MOV
+07月12日 16:34:51.112 STY：AxisSta=0
+07月12日 16:34:52.839 STY：AxisSta=1
+07月12日 16:34:52.841 [11:W]AXIS::set_response() 24be9,   0,   0
+07月12日 16:34:52.942 STY：エンコーダ正常 ODR:150500 NOW:150505
+07月12日 16:34:52.946 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:34:53.145 STZ：ASAP_MOV
+07月12日 16:34:53.248 STZ：AxisSta=0
+07月12日 16:34:53.859 STZ：AxisSta=1
+07月12日 16:34:53.860 [12:W]AXIS::set_response() 25797,   0,   0
+07月12日 16:34:53.960 STZ：エンコーダ正常 ODR:153500 NOW:153495
+07月12日 16:34:53.969 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:54.061 STZ：ASAP_MOV
+07月12日 16:34:54.163 STZ：AxisSta=0
+07月12日 16:34:55.283 STZ：AxisSta=1
+07月12日 16:34:55.285 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:34:55.386 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:34:55.390 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:34:55.491 [ 3]****** SHU Sl2P1-->TR (End) ***** 4beb,ffffc890,   0
+07月12日 16:34:55.493 [ 3]end 移動完了    0,   0,   0
+07月12日 16:34:55.496 [ 1]updateShuttle   12,   6,   1
+07月12日 16:34:55.496 [ 1]updateShuttle (POP    ) wf:4bebc890(evt,sts,0) 1001,   6,   0
+07月12日 16:34:55.496 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   1,   0
+07月12日 16:34:58.609 [ 1:W]psStart : wafer FIFO error!!!    0,   0,   0
+07月12日 16:34:58.610 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:34:58.709 [ 1]未定義LAN-MSG受信
+07月12日 16:34:59.168 [ 1]updateStatus:STT-PROC send!!    0,   0,   0
+07月12日 16:34:59.170 SL2_RcvEvnt:src=1/event=4868/sta=0
+07月12日 16:34:59.172 SL1_RcvEvnt:src=1/event=4868/sta=0
+07月12日 16:43:07.741 SL1_RcvEvnt:src=1/event=4867/sta=0
+07月12日 16:43:07.745 SL2_RcvEvnt:src=1/event=4867/sta=0
+07月12日 16:43:46.523 [ 1]shuttleAction TRANS_TR_SL1P1 wf:0x4bebc8f0(evt,0,0) 1101,   0,   0
+07月12日 16:43:46.526 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:43:46.531 SHU_RcvEvnt:src=1/event=4353/sta=0
+07月12日 16:43:46.532 [ 3]****** SHU TR-->SL1P1 (Start) ***** 4beb,ffffc8f0,   0
+07月12日 16:43:46.574 STY：ASAP_MOV
+07月12日 16:43:46.579 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:43:46.776 STZ：ASAP_MOV
+07月12日 16:43:46.879 STZ：AxisSta=0
+07月12日 16:43:47.996 STZ：AxisSta=1
+07月12日 16:43:47.998 [12:W]AXIS::set_response() 25792,   0,   0
+07月12日 16:43:48.098 STZ：エンコーダ正常 ODR:153500 NOW:153490
+07月12日 16:43:48.102 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:43:48.300 STZ：ASAP_MOV
+07月12日 16:43:48.403 STZ：AxisSta=0
+07月12日 16:43:49.012 STZ：AxisSta=1
+07月12日 16:43:49.014 [12:W]AXIS::set_response() 28c4e,   0,   0
+07月12日 16:43:49.115 STZ：エンコーダ正常 ODR:167000 NOW:166990
+07月12日 16:43:49.120 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:43:49.214 STY：ASAP_MOV
+07月12日 16:43:49.319 STY：AxisSta=0
+07月12日 16:43:51.355 STY：AxisSta=1
+07月12日 16:43:51.357 [11:W]AXIS::set_response() 4e8d1,   0,   0
+07月12日 16:43:51.458 STY：エンコーダ正常 ODR:321750 NOW:321745
+07月12日 16:43:51.461 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:43:51.559 STZ：ASAP_MOV
+07月12日 16:43:51.663 STZ：AxisSta=0
+07月12日 16:43:52.269 STZ：AxisSta=1
+07月12日 16:43:52.270 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:43:52.372 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:43:52.376 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:43:52.574 STZ：ASAP_MOV
+07月12日 16:43:52.678 STZ：AxisSta=0
+07月12日 16:43:54.105 STZ：AxisSta=1
+07月12日 16:43:54.106 [12:W]AXIS::set_response() bd74,   0,   0
+07月12日 16:43:54.206 STZ：エンコーダ正常 ODR:48500 NOW:48500
+07月12日 16:43:54.210 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:43:54.308 STZ：ASAP_MOV
+07月12日 16:43:54.410 STZ：AxisSta=0
+07月12日 16:43:55.532 STZ：AxisSta=1
+07月12日 16:43:55.533 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:43:55.633 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:43:55.636 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:43:55.736 [ 3]****** SHU TR-->SL1P1 (End) ***** 4beb,ffffc8f0,   0
+07月12日 16:43:55.736 [ 3]end 移動完了    0,   0,   0
+07月12日 16:43:55.744 [ 1]updateShuttle   17,   5,   1
+07月12日 16:43:55.744 [ 1]updateShuttle (PUSH   ) wf:4bebc8f0(evt,sts,0) 1001,   5,   0
+07月12日 16:43:55.744 [ 1]TRANS_SL1P1_EXP1    0,   0,   0
+07月12日 16:43:55.745 [ 1]slider1Action TRANS_SL1P1_EXP1 wf:0x4bebc8f0(evt,0,0) 1103,   0,   0
+07月12日 16:43:55.747 SL1_RcvEvnt:src=1/event=4355/sta=0
+07月12日 16:43:55.748 [ 4]****** SL1 SL1P1-->EXP1 (Start) ***** 4beb,ffffc8f0,   0
+07月12日 16:43:55.837 SL1T：ASAP_SNS
+07月12日 16:43:55.838 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:43:55.940 SL1Z：ASAP_MOV
+07月12日 16:43:56.042 SL1Z：AxisSta=0
+07月12日 16:43:57.162 SL1Z：AxisSta=1
+07月12日 16:43:57.166 [14:W]AXIS::set_response() 7075d,   0,   1
+07月12日 16:43:57.266 SL1Z：エンコーダ正常 ODR:461000 NOW:460994
+07月12日 16:43:57.270 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:43:57.468 SL1T：ASAP_MOV
+07月12日 16:43:57.572 SL1T：AxisSta=0
+07月12日 16:43:58.485 SL1T：AxisSta=1
+07月12日 16:43:58.488 [13:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:43:58.491 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:43:58.589 SL1Z：ASAP_MOV
+07月12日 16:43:58.691 SL1Z：AxisSta=0
+07月12日 16:43:59.096 SL1Z：AxisSta=1
+07月12日 16:43:59.099 [14:W]AXIS::set_response() 7292c,   0,   1
+07月12日 16:43:59.199 SL1Z：エンコーダ正常 ODR:469500 NOW:469532
+07月12日 16:43:59.203 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:43:59.301 SL1Z：ASAP_MOV
+07月12日 16:43:59.403 SL1Z：AxisSta=0
+07月12日 16:43:59.810 SL1Z：AxisSta=1
+07月12日 16:43:59.811 [14:W]AXIS::set_response() 753f5,   0,   1
+07月12日 16:43:59.911 SL1Z：エンコーダ正常 ODR:480500 NOW:480468
+07月12日 16:43:59.916 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:00.012 SL1T：ASAP_MOV
+07月12日 16:44:00.118 SL1T：AxisSta=0
+07月12日 16:44:01.032 SL1T：AxisSta=1
+07月12日 16:44:01.034 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:44:01.039 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:01.237 SL1Z：ASAP_MOV
+07月12日 16:44:01.340 SL1Z：AxisSta=0
+07月12日 16:44:02.460 SL1Z：AxisSta=1
+07月12日 16:44:02.462 [14:W]AXIS::set_response() 15a27,   0,   1
+07月12日 16:44:02.564 SL1Z：エンコーダ正常 ODR:88200 NOW:88215
+07月12日 16:44:02.569 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:02.569 SL1_RcvEvnt:src=4/event=5119/sta=0
+07月12日 16:44:02.663 SL1T：ASAP_MOV
+07月12日 16:44:02.765 SL1T：AxisSta=0
+07月12日 16:44:03.782 SL1T：AxisSta=1
+07月12日 16:44:03.784 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:44:03.789 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:03.885 SL1Z：ASAP_MOV
+07月12日 16:44:03.988 SL1Z：AxisSta=0
+07月12日 16:44:04.289 SL1Z：AxisSta=1
+07月12日 16:44:04.290 [14:W]AXIS::set_response() 14580,   0,   1
+07月12日 16:44:04.392 SL1Z：エンコーダ正常 ODR:83200 NOW:83196
+07月12日 16:44:04.396 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:04.495 SL1Z：ASAP_MOV
+07月12日 16:44:04.599 SL1Z：AxisSta=0
+07月12日 16:44:04.902 SL1Z：AxisSta=1
+07月12日 16:44:04.903 [14:W]AXIS::set_response() 12807,   0,   1
+07月12日 16:44:05.005 SL1Z：エンコーダ正常 ODR:75700 NOW:75695
+07月12日 16:44:05.008 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:05.034 [ 1]shuttleAction TRANS_TR_SL1P1 wf:0x4bebc920(evt,0,0) 1101,   0,   0
+07月12日 16:44:05.039 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:44:05.042 SHU_RcvEvnt:src=1/event=4353/sta=0
+07月12日 16:44:05.042 [ 3]****** SHU TR-->SL1P1 (Start) ***** 4beb,ffffc920,   0
+07月12日 16:44:05.110 SL1T：ASAP_MOV
+07月12日 16:44:05.112 STY：ASAP_MOV
+07月12日 16:44:05.212 SL1T：AxisSta=0
+07月12日 16:44:05.212 STY：AxisSta=0
+07月12日 16:44:06.324 SL1T：AxisSta=1
+07月12日 16:44:06.328 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:44:06.330 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:06.430 [ 4]****** SL1 SL1P1-->EXP1 (End) ***** 4beb,ffffc8f0,   0
+07月12日 16:44:06.432 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 16:44:06.440 [ 1]sendEventExp:()    1,   0,   0
+07月12日 16:44:06.472 [ 6]expioSend(syn,wf ON/OFF,LEVF_SEND)    0,   0,   0
+07月12日 16:44:06.748 [ 6]READY ON-->OFF    1,   3,   0
+07月12日 16:44:06.757 SL1_RcvEvnt:src=6/event=4616/sta=0
+07月12日 16:44:06.759 SL1_RcvEvnt:src=6/event=4609/sta=-1
+07月12日 16:44:06.769 [ 1]expStart:EXPPIO_SEND (1) 4beb,ffffc8f0,   0
+07月12日 16:44:06.769 [ 1]expStart:EXPPIO_SEND (2)    0,   0,   0
+07月12日 16:44:07.754 STY：AxisSta=1
+07月12日 16:44:07.755 [11:W]AXIS::set_response() 12bd3,   0,   0
+07月12日 16:44:07.855 STY：エンコーダ正常 ODR:76750 NOW:76755
+07月12日 16:44:07.863 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:44:07.956 STZ：ASAP_MOV
+07月12日 16:44:08.061 STZ：AxisSta=0
+07月12日 16:44:08.875 STZ：AxisSta=1
+07月12日 16:44:08.878 [12:W]AXIS::set_response() 1af9a,   0,   0
+07月12日 16:44:08.980 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:44:08.983 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:09.079 STY：ASAP_MOV
+07月12日 16:44:09.182 STY：AxisSta=0
+07月12日 16:44:10.605 STY：AxisSta=1
+07月12日 16:44:10.608 [11:W]AXIS::set_response() 24be4,   0,   0
+07月12日 16:44:10.709 STY：エンコーダ正常 ODR:150500 NOW:150500
+07月12日 16:44:10.713 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:44:10.911 STZ：ASAP_MOV
+07月12日 16:44:11.013 STZ：AxisSta=0
+07月12日 16:44:12.133 STZ：AxisSta=1
+07月12日 16:44:12.135 [12:W]AXIS::set_response() 25792,   0,   0
+07月12日 16:44:12.235 STZ：エンコーダ正常 ODR:153500 NOW:153490
+07月12日 16:44:12.239 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:12.439 STZ：ASAP_MOV
+07月12日 16:44:12.542 STZ：AxisSta=0
+07月12日 16:44:13.155 STZ：AxisSta=1
+07月12日 16:44:13.156 [12:W]AXIS::set_response() 28c4e,   0,   0
+07月12日 16:44:13.256 STZ：エンコーダ正常 ODR:167000 NOW:166990
+07月12日 16:44:13.260 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:13.356 STY：ASAP_MOV
+07月12日 16:44:13.461 STY：AxisSta=0
+07月12日 16:44:15.593 STY：AxisSta=1
+07月12日 16:44:15.594 [11:W]AXIS::set_response() 4e8d1,   0,   0
+07月12日 16:44:15.694 STY：エンコーダ正常 ODR:321750 NOW:321745
+07月12日 16:44:15.698 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:44:15.796 STZ：ASAP_MOV
+07月12日 16:44:15.899 STZ：AxisSta=0
+07月12日 16:44:16.276 [ 6]READY OFF-->ON    7,   1,   0
+07月12日 16:44:16.285 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 16:44:16.288 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 16:44:16.491 [ 6]signal_chk_ult(bit,syn)    4,   0,   4
+07月12日 16:44:16.501 SL2_RcvEvnt:src=6/event=4610/sta=0
+07月12日 16:44:16.501 [ 5]expPioMsg:(evt,sts,wf) 1202,   0,ffffc8f0
+07月12日 16:44:16.501 [ 5]sendStatus(event,rjt,lost) 1202,   0,   0
+07月12日 16:44:16.508 STZ：AxisSta=1
+07月12日 16:44:16.509 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:44:16.510 [ 1]expStart:(EXPPIO_RECV)    1,   0,   0
+07月12日 16:44:16.610 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:44:16.613 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:16.680 [ 1]slider2Action TRANS_EXP2_SL2P1 wf:0x4bebc8f0(evt,0,0) 1106,   0,   0
+07月12日 16:44:16.684 SL2_RcvEvnt:src=1/event=4358/sta=0
+07月12日 16:44:16.684 [ 5]****** SL2 EXP2-->SL2P1 (Start) ***** 4beb,ffffc8f0,   0
+07月12日 16:44:16.711 SL2T：ASAP_SNS
+07月12日 16:44:16.714 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:44:16.813 STZ：ASAP_MOV
+07月12日 16:44:16.814 SL2Z：ASAP_MOV
+07月12日 16:44:16.915 STZ：AxisSta=0
+07月12日 16:44:16.916 SL2Z：AxisSta=0
+07月12日 16:44:17.939 SL2Z：AxisSta=1
+07月12日 16:44:17.939 [16:W]AXIS::set_response() 12c82,   0,   1
+07月12日 16:44:18.040 SL2Z：エンコーダ正常 ODR:75700 NOW:76058
+07月12日 16:44:18.043 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:44:18.242 SL2T：ASAP_MOV
+07月12日 16:44:18.342 STZ：AxisSta=1
+07月12日 16:44:18.345 [12:W]AXIS::set_response() bd74,   0,   0
+07月12日 16:44:18.345 SL2T：AxisSta=0
+07月12日 16:44:18.446 STZ：エンコーダ正常 ODR:48500 NOW:48500
+07月12日 16:44:18.448 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:18.549 STZ：ASAP_MOV
+07月12日 16:44:18.651 STZ：AxisSta=0
+07月12日 16:44:19.465 SL2T：AxisSta=1
+07月12日 16:44:19.469 [15:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:44:19.472 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:44:19.568 SL2Z：ASAP_MOV
+07月12日 16:44:19.671 SL2Z：AxisSta=0
+07月12日 16:44:19.771 STZ：AxisSta=1
+07月12日 16:44:19.772 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:44:19.874 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:44:19.877 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:19.978 SL2Z：AxisSta=1
+07月12日 16:44:19.979 [16:W]AXIS::set_response() 1437e,   0,   1
+07月12日 16:44:19.982 [ 3]****** SHU TR-->SL1P1 (End) ***** 4beb,ffffc920,   0
+07月12日 16:44:19.982 [ 3]end 移動完了    0,   0,   0
+07月12日 16:44:19.988 [ 1]updateShuttle   17,   5,   1
+07月12日 16:44:19.988 [ 1]updateShuttle (PUSH   ) wf:4bebc920(evt,sts,0) 1001,   5,   0
+07月12日 16:44:19.991 [ 1]TRANS_SL1P1_EXP1    0,   0,   0
+07月12日 16:44:19.993 [ 1]slider1Action TRANS_SL1P1_EXP1 wf:0x4bebc920(evt,0,0) 1103,   0,   0
+07月12日 16:44:19.997 SL1_RcvEvnt:src=1/event=4355/sta=0
+07月12日 16:44:19.997 [ 4]****** SL1 SL1P1-->EXP1 (Start) ***** 4beb,ffffc920,   0
+07月12日 16:44:20.077 SL1T：ASAP_SNS
+07月12日 16:44:20.079 SL2Z：エンコーダ正常 ODR:83200 NOW:83110
+07月12日 16:44:20.081 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:20.083 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:44:20.179 SL1Z：ASAP_MOV
+07月12日 16:44:20.182 SL2Z：ASAP_MOV
+07月12日 16:44:20.282 SL1Z：AxisSta=0
+07月12日 16:44:20.285 SL2Z：AxisSta=0
+07月12日 16:44:20.586 SL2Z：AxisSta=1
+07月12日 16:44:20.589 [16:W]AXIS::set_response() 15887,   0,   1
+07月12日 16:44:20.690 SL2Z：エンコーダ正常 ODR:88200 NOW:88219
+07月12日 16:44:20.692 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:44:20.792 SL2T：ASAP_MOV
+07月12日 16:44:20.895 SL2T：AxisSta=0
+07月12日 16:44:21.402 SL1Z：AxisSta=1
+07月12日 16:44:21.404 [14:W]AXIS::set_response() 707b0,   0,   1
+07月12日 16:44:21.505 SL1Z：エンコーダ正常 ODR:461000 NOW:460973
+07月12日 16:44:21.509 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:21.705 SL1T：ASAP_MOV
+07月12日 16:44:21.809 SL1T：AxisSta=0
+07月12日 16:44:21.911 SL2T：AxisSta=1
+07月12日 16:44:21.912 [15:W]AXIS::set_response() b426,   0,   0
+07月12日 16:44:21.915 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:44:21.915 [ 5:W]alarmSet axis, local_code code    0, 19f, 513
+07月12日 16:44:21.921 [ 1]updateStatus:STT-PROC send!!    4,   0,   0
+07月12日 16:44:22.722 SL1T：AxisSta=1
+07月12日 16:44:22.725 [13:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:44:22.729 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:22.826 SL1Z：ASAP_MOV
+07月12日 16:44:22.930 SL1Z：AxisSta=0
+07月12日 16:44:23.235 SL1Z：AxisSta=1
+07月12日 16:44:23.235 [14:W]AXIS::set_response() 7270e,   0,   1
+07月12日 16:44:23.335 SL1Z：エンコーダ正常 ODR:469500 NOW:469317
+07月12日 16:44:23.339 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:23.437 SL1Z：ASAP_MOV
+07月12日 16:44:23.540 SL1Z：AxisSta=0
+07月12日 16:44:23.946 SL1Z：AxisSta=1
+07月12日 16:44:23.950 [14:W]AXIS::set_response() 75489,   0,   1
+07月12日 16:44:24.050 SL1Z：エンコーダ正常 ODR:480500 NOW:480496
+07月12日 16:44:24.055 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:24.150 SL1T：ASAP_MOV
+07月12日 16:44:24.255 SL1T：AxisSta=0
+07月12日 16:44:24.372 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:44:25.170 SL1T：AxisSta=1
+07月12日 16:44:25.173 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:44:25.175 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:25.281 [ 1]shuttleAction TRANS_TR_SL1P1 wf:0x4bebc950(evt,0,0) 1101,   0,   0
+07月12日 16:44:25.283 SHU_RcvEvnt:src=1/event=4353/sta=0
+07月12日 16:44:25.283 [ 3]****** SHU TR-->SL1P1 (Start) ***** 4beb,ffffc950,   0
+07月12日 16:44:25.374 SL1Z：ASAP_MOV
+07月12日 16:44:25.377 STY：ASAP_MOV
+07月12日 16:44:25.479 SL1Z：AxisSta=0
+07月12日 16:44:25.481 STY：AxisSta=0
+07月12日 16:44:26.595 SL1Z：AxisSta=1
+07月12日 16:44:26.598 [14:W]AXIS::set_response() 15a45,   0,   1
+07月12日 16:44:26.698 SL1Z：エンコーダ正常 ODR:88200 NOW:88215
+07月12日 16:44:26.708 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:26.708 SL1_RcvEvnt:src=4/event=5119/sta=0
+07月12日 16:44:26.798 SL1T：ASAP_MOV
+07月12日 16:44:26.905 SL1T：AxisSta=0
+07月12日 16:44:27.918 SL1T：AxisSta=1
+07月12日 16:44:27.920 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:44:27.929 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:28.023 SL1Z：ASAP_MOV
+07月12日 16:44:28.025 STY：AxisSta=1
+07月12日 16:44:28.025 [11:W]AXIS::set_response() 12bd3,   0,   0
+07月12日 16:44:28.124 SL1Z：AxisSta=0
+07月12日 16:44:28.132 STY：エンコーダ正常 ODR:76750 NOW:76755
+07月12日 16:44:28.138 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:44:28.232 STZ：ASAP_MOV
+07月12日 16:44:28.333 STZ：AxisSta=0
+07月12日 16:44:28.424 SL1Z：AxisSta=1
+07月12日 16:44:28.424 [14:W]AXIS::set_response() 14656,   0,   1
+07月12日 16:44:28.528 SL1Z：エンコーダ正常 ODR:83200 NOW:83209
+07月12日 16:44:28.528 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:28.628 SL1Z：ASAP_MOV
+07月12日 16:44:28.733 SL1Z：AxisSta=0
+07月12日 16:44:29.039 SL1Z：AxisSta=1
+07月12日 16:44:29.040 [14:W]AXIS::set_response() 127ea,   0,   1
+07月12日 16:44:29.140 SL1Z：エンコーダ正常 ODR:75700 NOW:75692
+07月12日 16:44:29.143 STZ：AxisSta=1
+07月12日 16:44:29.144 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:44:29.145 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:29.239 SL1T：ASAP_MOV
+07月12日 16:44:29.246 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:44:29.253 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:29.345 SL1T：AxisSta=0
+07月12日 16:44:29.346 STY：ASAP_MOV
+07月12日 16:44:29.447 STY：AxisSta=0
+07月12日 16:44:30.462 SL1T：AxisSta=1
+07月12日 16:44:30.463 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:44:30.468 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:30.571 [ 4]****** SL1 SL1P1-->EXP1 (End) ***** 4beb,ffffc920,   0
+07月12日 16:44:30.571 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 16:44:30.575 [ 1]sendEventExp:()    1,   0,   0
+07月12日 16:44:30.600 [ 6]expioSend(syn,wf ON/OFF,LEVF_SEND)    0,   0,   0
+07月12日 16:44:30.772 STY：AxisSta=1
+07月12日 16:44:30.776 [11:W]AXIS::set_response() 24be4,   0,   0
+07月12日 16:44:30.849 [ 6]READY ON-->OFF    1,   3,   0
+07月12日 16:44:30.851 SL1_RcvEvnt:src=6/event=4616/sta=0
+07月12日 16:44:30.851 SL1_RcvEvnt:src=6/event=4609/sta=-1
+07月12日 16:44:30.852 [ 1]expStart:EXPPIO_SEND (1) 4beb,ffffc920,   0
+07月12日 16:44:30.852 [ 1]expStart:EXPPIO_SEND (2)    0,   0,   0
+07月12日 16:44:30.876 STY：エンコーダ正常 ODR:150500 NOW:150500
+07月12日 16:44:30.882 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:44:31.076 STZ：ASAP_MOV
+07月12日 16:44:31.181 STZ：AxisSta=0
+07月12日 16:44:32.297 STZ：AxisSta=1
+07月12日 16:44:32.298 [12:W]AXIS::set_response() 25792,   0,   0
+07月12日 16:44:32.399 STZ：エンコーダ正常 ODR:153500 NOW:153490
+07月12日 16:44:32.408 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:32.600 STZ：ASAP_MOV
+07月12日 16:44:32.705 STZ：AxisSta=0
+07月12日 16:44:33.316 STZ：AxisSta=1
+07月12日 16:44:33.317 [12:W]AXIS::set_response() 28c4e,   0,   0
+07月12日 16:44:33.417 STZ：エンコーダ正常 ODR:167000 NOW:166990
+07月12日 16:44:33.420 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:33.517 STY：ASAP_MOV
+07月12日 16:44:33.619 STY：AxisSta=0
+07月12日 16:44:35.659 STY：AxisSta=1
+07月12日 16:44:35.660 [11:W]AXIS::set_response() 4e8d1,   0,   0
+07月12日 16:44:35.760 STY：エンコーダ正常 ODR:321750 NOW:321745
+07月12日 16:44:35.762 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:44:35.861 STZ：ASAP_MOV
+07月12日 16:44:35.964 STZ：AxisSta=0
+07月12日 16:44:36.579 STZ：AxisSta=1
+07月12日 16:44:36.580 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:44:36.680 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:44:36.685 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:36.883 STZ：ASAP_MOV
+07月12日 16:44:36.986 STZ：AxisSta=0
+07月12日 16:44:38.414 STZ：AxisSta=1
+07月12日 16:44:38.420 [12:W]AXIS::set_response() bd74,   0,   0
+07月12日 16:44:38.521 STZ：エンコーダ正常 ODR:48500 NOW:48500
+07月12日 16:44:38.528 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:38.622 STZ：ASAP_MOV
+07月12日 16:44:38.723 STZ：AxisSta=0
+07月12日 16:44:39.838 STZ：AxisSta=1
+07月12日 16:44:39.838 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:44:39.938 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:44:39.941 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:44:40.042 [ 3]****** SHU TR-->SL1P1 (End) ***** 4beb,ffffc950,   0
+07月12日 16:44:40.043 [ 3]end 移動完了    0,   0,   0
+07月12日 16:44:40.051 [ 1]updateShuttle   17,   5,   1
+07月12日 16:44:40.052 [ 1]updateShuttle (PUSH   ) wf:4bebc950(evt,sts,0) 1001,   5,   0
+07月12日 16:44:40.052 [ 1]slider1Action TRANS_SL1P1_BUF1 wf:0x4bebc950(evt,0,0) 1104,   0,   0
+07月12日 16:44:40.053 SL1_RcvEvnt:src=1/event=4356/sta=0
+07月12日 16:44:40.054 [ 4]****** SL1 SL1P1-->BUF1 (Start) ***** 4beb,ffffc950,   0
+07月12日 16:44:40.142 SL1T：ASAP_SNS
+07月12日 16:44:40.148 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:40.243 SL1Z：ASAP_MOV
+07月12日 16:44:40.351 SL1Z：AxisSta=0
+07月12日 16:44:41.378 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:44:41.466 SL1Z：AxisSta=1
+07月12日 16:44:41.468 [14:W]AXIS::set_response() 707c3,   0,   1
+07月12日 16:44:41.569 SL1Z：エンコーダ正常 ODR:461000 NOW:460975
+07月12日 16:44:41.570 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:41.772 SL1T：ASAP_MOV
+07月12日 16:44:41.876 SL1T：AxisSta=0
+07月12日 16:44:42.788 SL1T：AxisSta=1
+07月12日 16:44:42.789 [13:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:44:42.791 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:42.891 SL1Z：ASAP_MOV
+07月12日 16:44:42.993 SL1Z：AxisSta=0
+07月12日 16:44:43.298 SL1Z：AxisSta=1
+07月12日 16:44:43.299 [14:W]AXIS::set_response() 727bd,   0,   1
+07月12日 16:44:43.400 SL1Z：エンコーダ正常 ODR:469500 NOW:469520
+07月12日 16:44:43.402 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:43.501 SL1Z：ASAP_MOV
+07月12日 16:44:43.605 SL1Z：AxisSta=0
+07月12日 16:44:44.011 SL1Z：AxisSta=1
+07月12日 16:44:44.011 [14:W]AXIS::set_response() 75484,   0,   1
+07月12日 16:44:44.112 SL1Z：エンコーダ正常 ODR:480500 NOW:480489
+07月12日 16:44:44.115 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:44.214 SL1T：ASAP_MOV
+07月12日 16:44:44.316 SL1T：AxisSta=0
+07月12日 16:44:45.230 SL1T：AxisSta=1
+07月12日 16:44:45.231 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:44:45.232 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:45.433 SL1Z：ASAP_MOV
+07月12日 16:44:45.537 SL1Z：AxisSta=0
+07月12日 16:44:46.657 SL1Z：AxisSta=1
+07月12日 16:44:46.658 [14:W]AXIS::set_response() 14818,   0,   1
+07月12日 16:44:46.760 SL1Z：エンコーダ正常 ODR:83500 NOW:83587
+07月12日 16:44:46.762 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:46.963 SL1T：ASAP_MOV
+07月12日 16:44:47.065 SL1T：AxisSta=0
+07月12日 16:44:47.883 SL1T：AxisSta=1
+07月12日 16:44:47.885 [13:W]AXIS::set_response() 349b,   0,   0
+07月12日 16:44:47.886 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:47.985 SL1Z：ASAP_MOV
+07月12日 16:44:48.090 SL1Z：AxisSta=0
+07月12日 16:44:48.495 SL1Z：AxisSta=1
+07月12日 16:44:48.496 [14:W]AXIS::set_response() 11963,   0,   1
+07月12日 16:44:48.597 SL1Z：エンコーダ正常 ODR:71500 NOW:71489
+07月12日 16:44:48.599 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:44:48.699 SL1T：ASAP_MOV
+07月12日 16:44:48.802 SL1T：AxisSta=0
+07月12日 16:44:49.616 SL1T：AxisSta=1
+07月12日 16:44:49.619 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:44:49.624 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:44:49.725 [ 4]****** SL1 SL1P1-->BUF1 (End) ***** 4beb,ffffc950,   0
+07月12日 16:44:49.726 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 16:44:55.709 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:45:01.209 [ 1:W]recvHdlc_ARS (alarm,0,0)  513,   0,   0
+07月12日 16:45:01.213 SL2_RcvEvnt:src=1/event=4880/sta=1299
+07月12日 16:45:01.213 [ 5]alarmReset(event alarm,cf)    0, 513,   0
+07月12日 16:45:01.213 [ 5]restart(A)  513,   1,   1
+07月12日 16:45:01.213 [ 5]restart0100_0600   9f,   0,   0
+07月12日 16:45:01.214 [ 5]restart0100_0600 : AXIS_X     0,   0,   0
+07月12日 16:45:01.221 [ 1]updateStatus:STT-PROC send!!    1,   0,   0
+07月12日 16:45:01.232 SL2T：ASAP_SEN
+07月12日 16:45:01.718 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffe98,fffffe98,989519
+07月12日 16:45:01.726 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:01.726 [ 5]restart(A)  513,   1,   0
+07月12日 16:45:01.726 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:45:01.726 [ 5]restart0100_0600 : AXIS_X     0,   1,   0
+07月12日 16:45:01.819 SL2T：ASAP_RET
+07月12日 16:45:02.016 SL2T：AxisSta=0
+07月12日 16:45:02.217 SL2T：AxisSta=1
+07月12日 16:45:02.220 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 16:45:02.498 SL2T：AxisSta=0
+07月12日 16:45:02.598 SL2T：AxisSta=1
+07月12日 16:45:02.600 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:45:02.773 [15:W]timeout_set()    0,   0,   0
+07月12日 16:45:02.778 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:02.778 [ 5]restart(A)  513,   1,   0
+07月12日 16:45:02.778 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:45:02.779 [ 5]restart0100_0600 : AXIS_X     0,   2,   0
+07月12日 16:45:02.779 [ 5]restart_getsetActX (act_x,act_GetSet,0)    2,   1,   0
+07月12日 16:45:02.881 [ 5]restart_getsetActX :end (rc,alarm,0)    2,   0,   0
+07月12日 16:45:02.883 [ 5]getAutoRestart1 (act,fc,alarm)    2,1106,   0
+07月12日 16:45:02.883 [ 5]getAutoRestart2 (autoPhase,EVF_STP,0)    3,   0,   0
+07月12日 16:45:02.883 [ 5]restart0100_0600 (X) 1106,   3,   2
+07月12日 16:45:02.883 [ 5]alarmResEnd    0,   0,   0
+07月12日 16:45:03.065 SL2Z：ASAP_MOV
+07月12日 16:45:03.170 SL2Z：AxisSta=0
+07月12日 16:45:04.290 SL2Z：AxisSta=1
+07月12日 16:45:04.292 [16:W]AXIS::set_response() 7531d,   0,   1
+07月12日 16:45:04.393 SL2Z：エンコーダ正常 ODR:480500 NOW:480482
+07月12日 16:45:04.397 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:04.596 SL2T：ASAP_MOV
+07月12日 16:45:04.700 SL2T：AxisSta=0
+07月12日 16:45:05.613 SL2T：AxisSta=1
+07月12日 16:45:05.617 [15:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:45:05.617 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:05.716 SL2Z：ASAP_MOV
+07月12日 16:45:05.818 SL2Z：AxisSta=0
+07月12日 16:45:06.226 SL2Z：AxisSta=1
+07月12日 16:45:06.226 [16:W]AXIS::set_response() 72b05,   0,   1
+07月12日 16:45:06.328 SL2Z：エンコーダ正常 ODR:469500 NOW:469504
+07月12日 16:45:06.336 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:06.429 SL2Z：ASAP_MOV
+07月12日 16:45:06.533 SL2Z：AxisSta=0
+07月12日 16:45:06.837 SL2Z：AxisSta=1
+07月12日 16:45:06.838 [16:W]AXIS::set_response() 70a20,   0,   1
+07月12日 16:45:06.938 SL2Z：エンコーダ正常 ODR:461000 NOW:461020
+07月12日 16:45:06.940 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:07.039 SL2T：ASAP_MOV
+07月12日 16:45:07.143 SL2T：AxisSta=0
+07月12日 16:45:08.059 SL2T：AxisSta=1
+07月12日 16:45:08.060 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:45:08.066 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:08.168 [ 5]****** SL2 EXP2-->SL2P1 (End) ***** 4beb,ffffc8f0,   0
+07月12日 16:45:08.168 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 16:45:08.684 [ 1]shuttleAction TRANS_SL2P1_TR wf:0x4bebc8f0(evt,0,0) 1102,   0,   0
+07月12日 16:45:08.688 SHU_RcvEvnt:src=1/event=4354/sta=0
+07月12日 16:45:08.688 [ 3]****** SHU Sl2P1-->TR (Start) ***** 4beb,ffffc8f0,   0
+07月12日 16:45:08.773 STY：ASAP_MOV
+07月12日 16:45:08.878 STY：AxisSta=0
+07月12日 16:45:10.715 STY：AxisSta=1
+07月12日 16:45:10.716 [11:W]AXIS::set_response() 2e342,   0,   0
+07月12日 16:45:10.816 STY：エンコーダ正常 ODR:189250 NOW:189250
+07月12日 16:45:10.826 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:45:11.019 STZ：ASAP_MOV
+07月12日 16:45:11.122 STZ：AxisSta=0
+07月12日 16:45:12.243 STZ：AxisSta=1
+07月12日 16:45:12.243 [12:W]AXIS::set_response() bd6f,   0,   0
+07月12日 16:45:12.349 STZ：エンコーダ正常 ODR:48500 NOW:48495
+07月12日 16:45:12.350 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:12.549 STZ：ASAP_MOV
+07月12日 16:45:12.650 STZ：AxisSta=0
+07月12日 16:45:14.079 STZ：AxisSta=1
+07月12日 16:45:14.081 [12:W]AXIS::set_response() 1af9a,   0,   0
+07月12日 16:45:14.184 STZ：エンコーダ正常 ODR:110500 NOW:110490
+07月12日 16:45:14.188 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:14.196 [ 1]updateShuttle   17,   2,   1
+07月12日 16:45:14.196 [ 1]updateShuttle (BUSY) wf:4bebc8f0(evt,sts,0) 1001,   2,   0
+07月12日 16:45:14.283 STY：ASAP_MOV
+07月12日 16:45:14.387 STY：AxisSta=0
+07月12日 16:45:15.712 STY：AxisSta=1
+07月12日 16:45:15.713 [11:W]AXIS::set_response() 40358,   0,   0
+07月12日 16:45:15.813 STY：エンコーダ正常 ODR:263000 NOW:263000
+07月12日 16:45:15.817 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:45:15.914 STZ：ASAP_MOV
+07月12日 16:45:16.019 STZ：AxisSta=0
+07月12日 16:45:16.630 STZ：AxisSta=1
+07月12日 16:45:16.630 [12:W]AXIS::set_response() 28c53,   0,   0
+07月12日 16:45:16.731 STZ：エンコーダ正常 ODR:167000 NOW:166995
+07月12日 16:45:16.735 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:16.830 STY：ASAP_MOV
+07月12日 16:45:16.934 STY：AxisSta=0
+07月12日 16:45:17.193 [ 6]READY OFF-->ON    7,   1,   0
+07月12日 16:45:17.201 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 16:45:17.201 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 16:45:17.414 [ 6]signal_chk_ult(bit,syn)    4,   0,   4
+07月12日 16:45:17.418 SL2_RcvEvnt:src=6/event=4610/sta=0
+07月12日 16:45:17.418 [ 5]expPioMsg:(evt,sts,wf) 1202,   0,ffffc920
+07月12日 16:45:17.418 [ 5]sendStatus(event,rjt,lost) 1202,   0,   0
+07月12日 16:45:17.424 [ 1]expStart:(EXPPIO_RECV)    1,   0,   0
+07月12日 16:45:17.608 [ 1]slider2Action TRANS_EXP2_SL2P1 wf:0x4bebc920(evt,0,0) 1106,   0,   0
+07月12日 16:45:17.609 SL2_RcvEvnt:src=1/event=4358/sta=0
+07月12日 16:45:17.609 [ 5]****** SL2 EXP2-->SL2P1 (Start) ***** 4beb,ffffc920,   0
+07月12日 16:45:17.652 [ 1]TRANS_BUF1_EXP1    0,   0,   0
+07月12日 16:45:17.652 [ 1]slider1Action TRANS_BUF1_EXP1 wf:0x       0(evt,0,0) 1105,   0,   0
+07月12日 16:45:17.653 SL2T：ASAP_SNS
+07月12日 16:45:17.658 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:17.659 SL1_RcvEvnt:src=1/event=4357/sta=0
+07月12日 16:45:17.660 [ 4]****** SL1 BUF1-->EXP1 (Start) ***** 4beb,ffffc950,   0
+07月12日 16:45:17.750 SL1T：ASAP_SNS
+07月12日 16:45:17.750 SL2Z：ASAP_MOV
+07月12日 16:45:17.753 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:45:17.851 SL1Z：ASAP_MOV
+07月12日 16:45:17.851 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:45:17.852 SL2Z：AxisSta=0
+07月12日 16:45:18.155 SL1T：ASAP_MOV
+07月12日 16:45:18.260 SL1T：AxisSta=0
+07月12日 16:45:18.566 STY：AxisSta=1
+07月12日 16:45:18.569 [11:W]AXIS::set_response() 24be9,   0,   0
+07月12日 16:45:18.669 STY：エンコーダ正常 ODR:150500 NOW:150505
+07月12日 16:45:18.671 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:45:18.874 STZ：ASAP_MOV
+07月12日 16:45:18.875 SL2Z：AxisSta=1
+07月12日 16:45:18.876 [16:W]AXIS::set_response() 12cdc,   0,   1
+07月12日 16:45:18.975 STZ：AxisSta=0
+07月12日 16:45:18.976 SL2Z：エンコーダ正常 ODR:75700 NOW:76096
+07月12日 16:45:18.978 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:19.079 SL1T：AxisSta=1
+07月12日 16:45:19.079 [13:W]AXIS::set_response() 349b,   0,   0
+07月12日 16:45:19.082 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:45:19.179 SL1Z：ASAP_MOV
+07月12日 16:45:19.181 SL2T：ASAP_MOV
+07月12日 16:45:19.280 SL1Z：AxisSta=0
+07月12日 16:45:19.286 SL2T：AxisSta=0
+07月12日 16:45:19.591 STZ：AxisSta=1
+07月12日 16:45:19.595 [12:W]AXIS::set_response() 25797,   0,   0
+07月12日 16:45:19.689 SL1Z：AxisSta=1
+07月12日 16:45:19.691 [14:W]AXIS::set_response() 143b7,   0,   1
+07月12日 16:45:19.698 STZ：エンコーダ正常 ODR:153500 NOW:153495
+07月12日 16:45:19.704 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:19.792 SL1Z：エンコーダ正常 ODR:83500 NOW:83410
+07月12日 16:45:19.795 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:45:19.798 STZ：ASAP_MOV
+07月12日 16:45:19.891 SL1T：ASAP_MOV
+07月12日 16:45:19.899 STZ：AxisSta=0
+07月12日 16:45:19.994 SL1T：AxisSta=0
+07月12日 16:45:20.403 SL2T：AxisSta=1
+07月12日 16:45:20.404 [15:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:45:20.409 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:20.505 SL2Z：ASAP_MOV
+07月12日 16:45:20.607 SL2Z：AxisSta=0
+07月12日 16:45:20.810 SL1T：AxisSta=1
+07月12日 16:45:20.810 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:45:20.814 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:45:20.911 SL2Z：AxisSta=1
+07月12日 16:45:20.912 [16:W]AXIS::set_response() 1433f,   0,   1
+07月12日 16:45:21.013 SL1Z：ASAP_MOV
+07月12日 16:45:21.015 SL2Z：エンコーダ正常 ODR:83200 NOW:83165
+07月12日 16:45:21.015 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:21.116 SL1Z：AxisSta=0
+07月12日 16:45:21.116 STZ：AxisSta=1
+07月12日 16:45:21.116 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:45:21.117 SL2Z：ASAP_MOV
+07月12日 16:45:21.218 SL1Z：AxisSta=1
+07月12日 16:45:21.218 [14:W]AXIS::set_response() 1558f,   0,   1
+07月12日 16:45:21.219 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:45:21.219 SL2Z：AxisSta=0
+07月12日 16:45:21.220 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:21.320 SL1Z：エンコーダ正常 ODR:88200 NOW:88092
+07月12日 16:45:21.323 [ 3]****** SHU Sl2P1-->TR (End) ***** 4beb,ffffc8f0,   0
+07月12日 16:45:21.323 [ 3]end 移動完了    0,   0,   0
+07月12日 16:45:21.332 [ 1]updateShuttle   12,   6,   1
+07月12日 16:45:21.332 [ 1]updateShuttle (POP    ) wf:4bebc8f0(evt,sts,0) 1001,   6,   0
+07月12日 16:45:21.332 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   1,   0
+07月12日 16:45:21.336 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:45:21.338 SL1_RcvEvnt:src=4/event=5119/sta=0
+07月12日 16:45:21.421 SL1T：ASAP_MOV
+07月12日 16:45:21.525 SL1T：AxisSta=0
+07月12日 16:45:21.530 SL2Z：AxisSta=1
+07月12日 16:45:21.531 [16:W]AXIS::set_response() 1588a,   0,   1
+07月12日 16:45:21.632 SL2Z：エンコーダ正常 ODR:88200 NOW:88217
+07月12日 16:45:21.637 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:21.732 SL2T：ASAP_MOV
+07月12日 16:45:21.839 SL2T：AxisSta=0
+07月12日 16:45:22.544 SL1T：AxisSta=1
+07月12日 16:45:22.545 [13:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:45:22.550 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:45:22.646 SL1Z：ASAP_MOV
+07月12日 16:45:22.750 SL1Z：AxisSta=0
+07月12日 16:45:22.856 SL2T：AxisSta=1
+07月12日 16:45:22.857 [15:W]AXIS::set_response() b426,   0,   0
+07月12日 16:45:22.859 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:22.859 [ 5:W]alarmSet axis, local_code code    0, 19f, 513
+07月12日 16:45:22.863 [ 1]updateStatus:STT-PROC send!!    4,   0,   0
+07月12日 16:45:23.056 SL1Z：AxisSta=1
+07月12日 16:45:23.057 [14:W]AXIS::set_response() 14702,   0,   1
+07月12日 16:45:23.158 SL1Z：エンコーダ正常 ODR:83200 NOW:83222
+07月12日 16:45:23.160 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:45:23.260 SL1Z：ASAP_MOV
+07月12日 16:45:23.363 SL1Z：AxisSta=0
+07月12日 16:45:23.669 SL1Z：AxisSta=1
+07月12日 16:45:23.670 [14:W]AXIS::set_response() 12818,   0,   1
+07月12日 16:45:23.770 SL1Z：エンコーダ正常 ODR:75700 NOW:75718
+07月12日 16:45:23.778 SL1_RcvEvnt:src=14/event=5637/sta=0
+07月12日 16:45:23.871 SL1T：ASAP_MOV
+07月12日 16:45:23.976 SL1T：AxisSta=0
+07月12日 16:45:24.319 [ 1:W]psStart : wafer FIFO error!!!    0,   0,   0
+07月12日 16:45:24.321 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:45:25.099 SL1T：AxisSta=1
+07月12日 16:45:25.100 [13:W]AXIS::set_response() b426,   0,   1
+07月12日 16:45:25.103 SL1_RcvEvnt:src=13/event=5635/sta=0
+07月12日 16:45:25.205 [ 4]****** SL1 BUF1-->EXP1 (End) ***** 4beb,ffffc950,   0
+07月12日 16:45:25.209 [ 4]移動完了(SL1)    0,   0,   0
+07月12日 16:45:25.213 [ 1]sendEventExp:()    1,   1,   0
+07月12日 16:45:25.213 [ 6]expioSend(syn,wf ON/OFF,LEVF_SEND)    1,   1,   0
+07月12日 16:45:25.457 [ 6]READY ON-->OFF    1,   3,   0
+07月12日 16:45:25.469 SL1_RcvEvnt:src=6/event=4616/sta=0
+07月12日 16:45:25.469 SL1_RcvEvnt:src=6/event=4609/sta=-1
+07月12日 16:45:25.480 [ 1]expStart:EXPPIO_SEND (1) 4beb,ffffc950,   0
+07月12日 16:45:25.480 [ 1]expStart:EXPPIO_SEND (2) 4beb,ffffc980,   0
+07月12日 16:45:37.985 [ 1:W]recvHdlc_ARS (alarm,0,0)  513,   0,   0
+07月12日 16:45:37.989 SL2_RcvEvnt:src=1/event=4880/sta=1299
+07月12日 16:45:37.989 [ 5]alarmReset(event alarm,cf)    0, 513,   0
+07月12日 16:45:37.989 [ 5]restart(A)  513,   1,   1
+07月12日 16:45:37.989 [ 5]restart0100_0600   9f,   0,   0
+07月12日 16:45:37.989 [ 5]restart0100_0600 : AXIS_X     0,   0,   0
+07月12日 16:45:37.998 [ 1]updateStatus:STT-PROC send!!    1,   0,   0
+07月12日 16:45:38.035 SL2T：ASAP_SEN
+07月12日 16:45:38.302 [ 7]hdlcRecv  102,  1b,   0
+07月12日 16:45:38.523 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffea8,fffffea8,989529
+07月12日 16:45:38.531 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:38.531 [ 5]restart(A)  513,   1,   0
+07月12日 16:45:38.531 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:45:38.531 [ 5]restart0100_0600 : AXIS_X     0,   1,   0
+07月12日 16:45:38.626 SL2T：ASAP_RET
+07月12日 16:45:38.821 SL2T：AxisSta=0
+07月12日 16:45:39.023 SL2T：AxisSta=1
+07月12日 16:45:39.023 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 16:45:39.303 SL2T：AxisSta=0
+07月12日 16:45:39.403 SL2T：AxisSta=1
+07月12日 16:45:39.403 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:45:39.547 [15:W]timeout_set()    0,   0,   0
+07月12日 16:45:39.552 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:39.552 [ 5]restart(A)  513,   1,   0
+07月12日 16:45:39.552 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:45:39.552 [ 5]restart0100_0600 : AXIS_X     0,   2,   0
+07月12日 16:45:39.552 [ 5]restart_getsetActX (act_x,act_GetSet,0)    2,   1,   0
+07月12日 16:45:39.652 [ 5]restart_getsetActX :end (rc,alarm,0)    2,   0,   0
+07月12日 16:45:39.652 [ 5]getAutoRestart1 (act,fc,alarm)    2,1106,   0
+07月12日 16:45:39.652 [ 5]getAutoRestart2 (autoPhase,EVF_STP,0)    3,   0,   0
+07月12日 16:45:39.652 [ 5]restart0100_0600 (X) 1106,   3,   2
+07月12日 16:45:39.652 [ 5]alarmResEnd    0,   0,   0
+07月12日 16:45:39.771 SL2Z：ASAP_MOV
+07月12日 16:45:39.874 SL2Z：AxisSta=0
+07月12日 16:45:40.997 SL2Z：AxisSta=1
+07月12日 16:45:40.998 [16:W]AXIS::set_response() 752e8,   0,   1
+07月12日 16:45:41.101 SL2Z：エンコーダ正常 ODR:480500 NOW:480453
+07月12日 16:45:41.102 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:41.251 SL2T：ASAP_MOV
+07月12日 16:45:41.356 SL2T：AxisSta=0
+07月12日 16:45:42.257 SL2T：AxisSta=1
+07月12日 16:45:42.260 [15:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:45:42.261 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:42.320 SL2Z：ASAP_MOV
+07月12日 16:45:42.426 SL2Z：AxisSta=0
+07月12日 16:45:42.831 SL2Z：AxisSta=1
+07月12日 16:45:42.832 [16:W]AXIS::set_response() 72b49,   0,   1
+07月12日 16:45:42.932 SL2Z：エンコーダ正常 ODR:469500 NOW:469481
+07月12日 16:45:42.936 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:43.033 SL2Z：ASAP_MOV
+07月12日 16:45:43.135 SL2Z：AxisSta=0
+07月12日 16:45:43.541 SL2Z：AxisSta=1
+07月12日 16:45:43.544 [16:W]AXIS::set_response() 7092a,   0,   1
+07月12日 16:45:43.645 SL2Z：エンコーダ正常 ODR:461000 NOW:460997
+07月12日 16:45:43.647 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:43.674 SL2T：ASAP_MOV
+07月12日 16:45:43.777 SL2T：AxisSta=0
+07月12日 16:45:44.679 SL2T：AxisSta=1
+07月12日 16:45:44.679 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:45:44.684 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:44.784 [ 5]****** SL2 EXP2-->SL2P1 (End) ***** 4beb,ffffc920,   0
+07月12日 16:45:44.785 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 16:45:45.442 [ 1]shuttleAction TRANS_SL2P1_TR wf:0x4bebc920(evt,0,0) 1102,   0,   0
+07月12日 16:45:45.446 SHU_RcvEvnt:src=1/event=4354/sta=0
+07月12日 16:45:45.446 [ 3]****** SHU Sl2P1-->TR (Start) ***** 4beb,ffffc920,   0
+07月12日 16:45:45.481 STY：ASAP_MOV
+07月12日 16:45:45.581 STY：AxisSta=0
+07月12日 16:45:46.904 STY：AxisSta=1
+07月12日 16:45:46.908 [11:W]AXIS::set_response() 12bd3,   0,   0
+07月12日 16:45:47.010 STY：エンコーダ正常 ODR:76750 NOW:76755
+07月12日 16:45:47.015 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:45:47.111 STZ：ASAP_MOV
+07月12日 16:45:47.213 STZ：AxisSta=0
+07月12日 16:45:48.024 STZ：AxisSta=1
+07月12日 16:45:48.025 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:45:48.128 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:45:48.128 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:48.229 STY：ASAP_MOV
+07月12日 16:45:48.332 STY：AxisSta=0
+07月12日 16:45:49.965 STY：AxisSta=1
+07月12日 16:45:49.966 [11:W]AXIS::set_response() 2e33d,   0,   0
+07月12日 16:45:50.066 STY：エンコーダ正常 ODR:189250 NOW:189245
+07月12日 16:45:50.075 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:45:50.268 STZ：ASAP_MOV
+07月12日 16:45:50.372 STZ：AxisSta=0
+07月12日 16:45:51.594 STZ：AxisSta=1
+07月12日 16:45:51.596 [12:W]AXIS::set_response() bd6f,   0,   0
+07月12日 16:45:51.698 STZ：エンコーダ正常 ODR:48500 NOW:48495
+07月12日 16:45:51.702 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:51.900 STZ：ASAP_MOV
+07月12日 16:45:52.004 STZ：AxisSta=0
+07月12日 16:45:53.425 STZ：AxisSta=1
+07月12日 16:45:53.428 [12:W]AXIS::set_response() 1af9a,   0,   0
+07月12日 16:45:53.528 STZ：エンコーダ正常 ODR:110500 NOW:110490
+07月12日 16:45:53.539 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:53.549 [ 1]updateShuttle   17,   2,   1
+07月12日 16:45:53.549 [ 1]updateShuttle (BUSY) wf:4bebc920(evt,sts,0) 1001,   2,   0
+07月12日 16:45:53.626 STY：ASAP_MOV
+07月12日 16:45:53.731 STY：AxisSta=0
+07月12日 16:45:53.745 [ 6]READY OFF-->ON   47,   1,   0
+07月12日 16:45:53.755 SL1_RcvEvnt:src=6/event=5119/sta=0
+07月12日 16:45:53.755 SL1_RcvEvnt:src=6/event=4609/sta=0
+07月12日 16:45:53.955 [ 6]signal_chk_ult(bit,syn)    4,   1,  44
+07月12日 16:45:53.965 SL2_RcvEvnt:src=6/event=4610/sta=0
+07月12日 16:45:53.965 [ 5]expPioMsg:(evt,sts,wf) 1202,   0,ffffc950
+07月12日 16:45:53.965 [ 5]sendStatus(event,rjt,lost) 1202,   0,   0
+07月12日 16:45:53.968 [ 1]expStart:(EXPPIO_RECV)    1,   0,   0
+07月12日 16:45:54.158 [ 1]slider2Action TRANS_EXP2_SL2P1 wf:0x4bebc950(evt,0,0) 1106,   0,   0
+07月12日 16:45:54.159 SL2_RcvEvnt:src=1/event=4358/sta=0
+07月12日 16:45:54.159 [ 5]****** SL2 EXP2-->SL2P1 (Start) ***** 4beb,ffffc950,   0
+07月12日 16:45:54.238 SL2T：ASAP_SNS
+07月12日 16:45:54.242 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:54.339 SL2Z：ASAP_MOV
+07月12日 16:45:54.443 SL2Z：AxisSta=0
+07月12日 16:45:55.152 STY：AxisSta=1
+07月12日 16:45:55.154 [11:W]AXIS::set_response() 40353,   0,   0
+07月12日 16:45:55.255 STY：エンコーダ正常 ODR:263000 NOW:262995
+07月12日 16:45:55.260 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:45:55.358 STZ：ASAP_MOV
+07月12日 16:45:55.460 STZ：AxisSta=0
+07月12日 16:45:55.561 SL2Z：AxisSta=1
+07月12日 16:45:55.562 [16:W]AXIS::set_response() 12895,   0,   1
+07月12日 16:45:55.663 SL2Z：エンコーダ正常 ODR:75700 NOW:75719
+07月12日 16:45:55.668 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:55.865 SL2T：ASAP_MOV
+07月12日 16:45:55.968 SL2T：AxisSta=0
+07月12日 16:45:56.071 STZ：AxisSta=1
+07月12日 16:45:56.071 [12:W]AXIS::set_response() 28c53,   0,   0
+07月12日 16:45:56.172 STZ：エンコーダ正常 ODR:167000 NOW:166995
+07月12日 16:45:56.176 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:56.271 STY：ASAP_MOV
+07月12日 16:45:56.373 STY：AxisSta=0
+07月12日 16:45:56.985 SL2T：AxisSta=1
+07月12日 16:45:56.985 [15:W]AXIS::set_response() 175b6,   0,   0
+07月12日 16:45:56.993 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:57.086 SL2Z：ASAP_MOV
+07月12日 16:45:57.191 SL2Z：AxisSta=0
+07月12日 16:45:57.595 SL2Z：AxisSta=1
+07月12日 16:45:57.595 [16:W]AXIS::set_response() 144b5,   0,   1
+07月12日 16:45:57.696 SL2Z：エンコーダ正常 ODR:83200 NOW:83192
+07月12日 16:45:57.702 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:57.799 SL2Z：ASAP_MOV
+07月12日 16:45:57.903 SL2Z：AxisSta=0
+07月12日 16:45:58.104 STY：AxisSta=1
+07月12日 16:45:58.107 [11:W]AXIS::set_response() 24be9,   0,   0
+07月12日 16:45:58.208 STY：エンコーダ正常 ODR:150500 NOW:150505
+07月12日 16:45:58.211 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:45:58.212 SL2Z：AxisSta=1
+07月12日 16:45:58.212 [16:W]AXIS::set_response() 15881,   0,   1
+07月12日 16:45:58.312 SL2Z：エンコーダ正常 ODR:88200 NOW:88213
+07月12日 16:45:58.314 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:45:58.412 STZ：ASAP_MOV
+07月12日 16:45:58.413 SL2T：ASAP_MOV
+07月12日 16:45:58.518 STZ：AxisSta=0
+07月12日 16:45:58.518 SL2T：AxisSta=0
+07月12日 16:45:59.124 STZ：AxisSta=1
+07月12日 16:45:59.125 [12:W]AXIS::set_response() 25797,   0,   0
+07月12日 16:45:59.226 STZ：エンコーダ正常 ODR:153500 NOW:153495
+07月12日 16:45:59.231 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:45:59.329 STZ：ASAP_MOV
+07月12日 16:45:59.432 STZ：AxisSta=0
+07月12日 16:45:59.533 SL2T：AxisSta=1
+07月12日 16:45:59.535 [15:W]AXIS::set_response() b426,   0,   0
+07月12日 16:45:59.535 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:45:59.536 [ 5:W]alarmSet axis, local_code code    0, 19f, 513
+07月12日 16:45:59.546 [ 1]updateStatus:STT-PROC send!!    4,   0,   0
+07月12日 16:46:00.552 STZ：AxisSta=1
+07月12日 16:46:00.552 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:46:00.655 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:46:00.660 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:46:00.762 [ 3]****** SHU Sl2P1-->TR (End) ***** 4beb,ffffc920,   0
+07月12日 16:46:00.762 [ 3]end 移動完了    0,   0,   0
+07月12日 16:46:00.770 [ 1]updateShuttle   12,   6,   1
+07月12日 16:46:00.771 [ 1]updateShuttle (POP    ) wf:4bebc920(evt,sts,0) 1001,   6,   0
+07月12日 16:46:00.771 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   1,   0
+07月12日 16:46:03.666 [ 1:W]psStart : wafer FIFO error!!!    0,   0,   0
+07月12日 16:46:03.673 [ 7]hdlcRecv  102,  1c,   0
+07月12日 16:46:09.102 [ 1:W]recvHdlc_ARS (alarm,0,0)  513,   0,   0
+07月12日 16:46:09.106 SL2_RcvEvnt:src=1/event=4880/sta=1299
+07月12日 16:46:09.106 [ 5]alarmReset(event alarm,cf)    0, 513,   0
+07月12日 16:46:09.106 [ 5]restart(A)  513,   1,   1
+07月12日 16:46:09.106 [ 5]restart0100_0600   9f,   0,   0
+07月12日 16:46:09.109 [ 5]restart0100_0600 : AXIS_X     0,   0,   0
+07月12日 16:46:09.113 [ 1]updateStatus:STT-PROC send!!    1,   0,   0
+07月12日 16:46:09.206 SL2T：ASAP_SEN
+07月12日 16:46:09.704 [15:W]REV Limmit ON!!! (sts.Acnt,wl,sts.Zpps) fffffe9d,fffffe9d,98951e
+07月12日 16:46:09.708 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:46:09.708 [ 5]restart(A)  513,   1,   0
+07月12日 16:46:09.708 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:46:09.708 [ 5]restart0100_0600 : AXIS_X     0,   1,   0
+07月12日 16:46:09.806 SL2T：ASAP_RET
+07月12日 16:46:10.000 SL2T：AxisSta=0
+07月12日 16:46:10.201 SL2T：AxisSta=1
+07月12日 16:46:10.202 [15:W]AXIS::set_response() b428,   0,   1
+07月12日 16:46:10.450 SL2T：AxisSta=0
+07月12日 16:46:10.552 SL2T：AxisSta=1
+07月12日 16:46:10.553 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:46:10.736 [15:W]timeout_set()    0,   0,   0
+07月12日 16:46:10.738 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:46:10.739 [ 5]restart(A)  513,   1,   0
+07月12日 16:46:10.739 [ 5]restart0100_0600    0,   0,   0
+07月12日 16:46:10.739 [ 5]restart0100_0600 : AXIS_X     0,   2,   0
+07月12日 16:46:10.739 [ 5]restart_getsetActX (act_x,act_GetSet,0)    2,   1,   0
+07月12日 16:46:10.849 [ 5]restart_getsetActX :end (rc,alarm,0)    2,   0,   0
+07月12日 16:46:10.849 [ 5]getAutoRestart1 (act,fc,alarm)    2,1106,   0
+07月12日 16:46:10.849 [ 5]getAutoRestart2 (autoPhase,EVF_STP,0)    3,   0,   0
+07月12日 16:46:10.849 [ 5]restart0100_0600 (X) 1106,   3,   2
+07月12日 16:46:10.849 [ 5]alarmResEnd    0,   0,   0
+07月12日 16:46:11.044 SL2Z：ASAP_MOV
+07月12日 16:46:11.146 SL2Z：AxisSta=0
+07月12日 16:46:12.259 SL2Z：AxisSta=1
+07月12日 16:46:12.261 [16:W]AXIS::set_response() 7538f,   0,   1
+07月12日 16:46:12.361 SL2Z：エンコーダ正常 ODR:480500 NOW:480499
+07月12日 16:46:12.365 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:46:12.563 SL2T：ASAP_MOV
+07月12日 16:46:12.665 SL2T：AxisSta=0
+07月12日 16:46:13.579 SL2T：AxisSta=1
+07月12日 16:46:13.581 [15:W]AXIS::set_response() 2125,   0,   0
+07月12日 16:46:13.584 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:46:13.680 SL2Z：ASAP_MOV
+07月12日 16:46:13.783 SL2Z：AxisSta=0
+07月12日 16:46:14.188 SL2Z：AxisSta=1
+07月12日 16:46:14.190 [16:W]AXIS::set_response() 72ae5,   0,   1
+07月12日 16:46:14.290 SL2Z：エンコーダ正常 ODR:469500 NOW:469493
+07月12日 16:46:14.293 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:46:14.392 SL2Z：ASAP_MOV
+07月12日 16:46:14.495 SL2Z：AxisSta=0
+07月12日 16:46:14.802 SL2Z：AxisSta=1
+07月12日 16:46:14.802 [16:W]AXIS::set_response() 709b6,   0,   1
+07月12日 16:46:14.903 SL2Z：エンコーダ正常 ODR:461000 NOW:461041
+07月12日 16:46:14.908 SL2_RcvEvnt:src=16/event=5638/sta=0
+07月12日 16:46:15.005 SL2T：ASAP_MOV
+07月12日 16:46:15.109 SL2T：AxisSta=0
+07月12日 16:46:16.021 SL2T：AxisSta=1
+07月12日 16:46:16.022 [15:W]AXIS::set_response() b426,   0,   1
+07月12日 16:46:16.022 SL2_RcvEvnt:src=15/event=5636/sta=0
+07月12日 16:46:16.124 [ 5]****** SL2 EXP2-->SL2P1 (End) ***** 4beb,ffffc950,   0
+07月12日 16:46:16.124 [ 5]移動完了(SL2)    0,   0,   0
+07月12日 16:46:16.585 [ 1]shuttleAction TRANS_SL2P1_TR wf:0x4bebc950(evt,0,0) 1102,   0,   0
+07月12日 16:46:16.588 SHU_RcvEvnt:src=1/event=4354/sta=0
+07月12日 16:46:16.589 [ 3]****** SHU Sl2P1-->TR (Start) ***** 4beb,ffffc950,   0
+07月12日 16:46:16.633 STY：ASAP_MOV
+07月12日 16:46:16.736 STY：AxisSta=0
+07月12日 16:46:18.058 STY：AxisSta=1
+07月12日 16:46:18.061 [11:W]AXIS::set_response() 12bd3,   0,   0
+07月12日 16:46:18.162 STY：エンコーダ正常 ODR:76750 NOW:76755
+07月12日 16:46:18.168 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:46:18.264 STZ：ASAP_MOV
+07月12日 16:46:18.366 STZ：AxisSta=0
+07月12日 16:46:19.172 STZ：AxisSta=1
+07月12日 16:46:19.175 [12:W]AXIS::set_response() 1577,   0,   0
+07月12日 16:46:19.277 STZ：エンコーダ正常 ODR:5500 NOW:5495
+07月12日 16:46:19.281 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:46:19.377 STY：ASAP_MOV
+07月12日 16:46:19.482 STY：AxisSta=0
+07月12日 16:46:21.212 STY：AxisSta=1
+07月12日 16:46:21.212 [11:W]AXIS::set_response() 2e33d,   0,   0
+07月12日 16:46:21.315 STY：エンコーダ正常 ODR:189250 NOW:189245
+07月12日 16:46:21.320 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:46:21.519 STZ：ASAP_MOV
+07月12日 16:46:21.621 STZ：AxisSta=0
+07月12日 16:46:22.741 STZ：AxisSta=1
+07月12日 16:46:22.742 [12:W]AXIS::set_response() bd6f,   0,   0
+07月12日 16:46:22.842 STZ：エンコーダ正常 ODR:48500 NOW:48495
+07月12日 16:46:22.848 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:46:23.045 STZ：ASAP_MOV
+07月12日 16:46:23.149 STZ：AxisSta=0
+07月12日 16:46:24.567 STZ：AxisSta=1
+07月12日 16:46:24.570 [12:W]AXIS::set_response() 1af9a,   0,   0
+07月12日 16:46:24.670 STZ：エンコーダ正常 ODR:110500 NOW:110490
+07月12日 16:46:24.674 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:46:24.679 [ 1]updateShuttle   17,   2,   1
+07月12日 16:46:24.679 [ 1]updateShuttle (BUSY) wf:4bebc950(evt,sts,0) 1001,   2,   0
+07月12日 16:46:24.771 STY：ASAP_MOV
+07月12日 16:46:24.873 STY：AxisSta=0
+07月12日 16:46:26.196 STY：AxisSta=1
+07月12日 16:46:26.197 [11:W]AXIS::set_response() 40353,   0,   0
+07月12日 16:46:26.298 STY：エンコーダ正常 ODR:263000 NOW:262995
+07月12日 16:46:26.302 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:46:26.400 STZ：ASAP_MOV
+07月12日 16:46:26.503 STZ：AxisSta=0
+07月12日 16:46:27.111 STZ：AxisSta=1
+07月12日 16:46:27.112 [12:W]AXIS::set_response() 28c53,   0,   0
+07月12日 16:46:27.213 STZ：エンコーダ正常 ODR:167000 NOW:166995
+07月12日 16:46:27.216 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:46:27.314 STY：ASAP_MOV
+07月12日 16:46:27.419 STY：AxisSta=0
+07月12日 16:46:29.142 STY：AxisSta=1
+07月12日 16:46:29.143 [11:W]AXIS::set_response() 24be9,   0,   0
+07月12日 16:46:29.245 STY：エンコーダ正常 ODR:150500 NOW:150505
+07月12日 16:46:29.249 SHU_RcvEvnt:src=11/event=5633/sta=0
+07月12日 16:46:29.448 STZ：ASAP_MOV
+07月12日 16:46:29.550 STZ：AxisSta=0
+07月12日 16:46:30.161 STZ：AxisSta=1
+07月12日 16:46:30.162 [12:W]AXIS::set_response() 25797,   0,   0
+07月12日 16:46:30.264 STZ：エンコーダ正常 ODR:153500 NOW:153495
+07月12日 16:46:30.266 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:46:30.367 STZ：ASAP_MOV
+07月12日 16:46:30.470 STZ：AxisSta=0
+07月12日 16:46:31.692 STZ：AxisSta=1
+07月12日 16:46:31.692 [12:W]AXIS::set_response() 1af9f,   0,   0
+07月12日 16:46:31.792 STZ：エンコーダ正常 ODR:110500 NOW:110495
+07月12日 16:46:31.800 SHU_RcvEvnt:src=12/event=5634/sta=0
+07月12日 16:46:31.900 [ 3]****** SHU Sl2P1-->TR (End) ***** 4beb,ffffc950,   0
+07月12日 16:46:31.902 [ 3]end 移動完了    0,   0,   0
+07月12日 16:46:31.909 [ 1]updateShuttle   12,   6,   1
+07月12日 16:46:31.909 [ 1]updateShuttle (POP    ) wf:4bebc950(evt,sts,0) 1001,   6,   0
+07月12日 16:46:31.909 [ 1]TACT timeing!! (wcq02_req,wcr02,shu_sr_pin)    0,   1,   0
+07月12日 16:46:34.720 [ 1]未定義LAN-MSG受信
