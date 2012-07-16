@@ -1,5 +1,4 @@
 ﻿#define ALLOW_ALL_FILE
-#define M1_INVERSION_MODE
 
 using System;
 using System.Collections.Generic;
@@ -86,7 +85,6 @@ namespace SioLog
                 selectingDic["I1"] = SplitI1_Selecting; // 積分時間
                 selectingDic["D1"] = SplitD1_Selecting; // 微分時間
             }
-
         }
 
         private bool CallCpDic(string command, string line)
@@ -140,7 +138,7 @@ namespace SioLog
         public class ConvertedData
         {
             public List<string> AddData { get; set; }
-            public int PollingNodeNum { get; set; }
+            public string RcvHpNodeNum { get; set; }
         }
 
         // node番号
@@ -154,18 +152,14 @@ namespace SioLog
 
 
         private string[] trashBox = new string[]{
-//            "*****"
             "占有権",
-            "->",
             "モード",
             "初期設定",
             "NOT",
             "READY",
-            "RCV 04",   // ｴｺｰﾊﾞｯｸ受信 
-            "RCV 4D"
+            "[U0C P1]RCV"
         };
         #endregion
-
 
         #region ﾌｫｰﾑｲﾍﾞﾝﾄ
         /// <summary>
@@ -199,8 +193,9 @@ namespace SioLog
             {
                 CurrentDir.InFile = ofd.FileName;
                 inputFilePath.Text = CurrentDir.InFile;
+                this.outputFilePath.Text = 
+                    System.IO.Path.GetDirectoryName(this.inputFilePath.Text);
             }
-
         }
 
         /// <summary>
@@ -262,7 +257,8 @@ namespace SioLog
 
             if (this.outputFilePath.Text == "")
             {
-                this.outputFilePath.Text = Directory.GetCurrentDirectory();
+                this.outputFilePath.Text = 
+                    System.IO.Path.GetDirectoryName(this.inputFilePath.Text);
             }
 
             // ﾌｧｲﾙ作成
@@ -320,31 +316,26 @@ namespace SioLog
                 {
                     foreach (string str in trashBox)
                     {
-#if M1_INVERSION_MODE
-                        // M1の場合
-                        if (line.Contains("RCV U0C") && data[7] == "02")
-                        {
-                            break;
-                        }                         
-                        else if (line.Contains(str))
-                        {                            
-                            result = true;
-                            break;
-                        }
-#else
                         if (line.Contains(str))
                         {                            
                             result = true;
                             break;
                         }
-#endif
-
                     }
-                    // CPｴｺｰﾊﾞｯｸ
-                    if (data.Count() == cpDataCounts - 1)
-                    { 
-                        continue; 
-                    }
+                    // ｴｺｰﾊﾞｯｸ
+                    if (line.Contains(Constants.RcvMsg) && data.Length > 7)
+                    {
+                        // CPｴｺｰﾊﾞｯｸ
+                        if (data.Count() == cpDataCounts + 2)
+                        {
+                            continue;
+                        }
+                        // pollingｴｺｰﾊﾞｯｸ
+                        if (data[7] == Constants.EOT)
+                        {
+                            continue;
+                        }
+                    }                   
                 }
                 else
                 {
@@ -357,12 +348,22 @@ namespace SioLog
                             break;
                         }
                     }
-                    // CPｴｺｰﾊﾞｯｸ
-                    if (data.Count() == cpDataCounts - 1) 
+                    // ｴｺｰﾊﾞｯｸ
+                    if (line.Contains(Constants.RcvMsg) && data.Length > 7)
                     {
-                        sw.WriteLine(line + sw.NewLine);
-                        continue; 
-                    }
+                        // CPｴｺｰﾊﾞｯｸ
+                        if (data.Count() == cpDataCounts + 2)
+                        {
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+                        }
+                        // pollingｴｺｰﾊﾞｯｸ
+                        if (data[7] == Constants.EOT)
+                        {
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+                        }
+                    }                   
                 }
                 if (result) continue;
 
@@ -386,7 +387,7 @@ namespace SioLog
                             CallPollingDic(command, line);
                         }
                         // ｾﾚｸﾃｨﾝｸﾞ
-                        if (data[5] == Constants.HpMsg && !(line.Contains(Constants.PollingMark)))
+                        if (data[5] == Constants.EOT && !(line.Contains(Constants.PollingMark)))
                         {
                             if (this.filterCp.Checked) { continue; }
 
@@ -397,7 +398,7 @@ namespace SioLog
                             CallSelectingDic(command, line);
                         }
                         // CP
-                        if (data[5] == Constants.CpMsg)
+                        if (data[5] == Constants.STX)
                         {
                             if (this.filterHp.Checked) { continue; }
 
@@ -414,29 +415,14 @@ namespace SioLog
                     {
 
                         // ｾﾚｸﾃｨﾝｸﾞ
-                        if (data[4] == Constants.ack && data.Length == 5)
+                        if (data[7] == Constants.ACK && data.Length == 8)
                         {
                             if (this.filterCp.Checked) { continue; }
                             sw.WriteLine(line);
                             continue;
                         }
-#if M1_INVERSION_MODE
-                        // M1:測定温度
-                        if (line.Contains("RCV U0C"))
-                        {
-                            if (this.filterCp.Checked) { continue; }
-                            ComAscii.Append((char)Convert.ToInt32(data[8], 16));
-                            ComAscii.Append((char)Convert.ToInt32(data[9], 16));
-
-                            command = ComAscii.ToString();
-                            CallPollingDic(command, line);
-
-                        }
-#endif
                         // ﾎﾟｰﾘﾝｸﾞ
-                        if (data[5] != CurrentNodeNum.CpNode1 &&
-                           data[5] != CurrentNodeNum.CpNode2 &&
-                            data[5] != trashBox[1])
+                        if(data[7] == Constants.STX && data[8].CompareTo("40") > 0)
                         {
                             if (this.filterCp.Checked) { continue; }
 
@@ -449,15 +435,14 @@ namespace SioLog
 
 
                         // CP writing
-                        if (data[6] == Constants.ack && data.Length == 11)
+                        if (data[9] == Constants.ACK && data.Length == 14)
                         {
                             if (this.filterHp.Checked) { continue; }
-                            sw.WriteLine(line);
+                            sw.WriteLine(line + sw.NewLine);
                             continue;
                         }
                         // CP reading
-                        if (data[5] == CurrentNodeNum.CpNode1 ||
-                           data[5] == CurrentNodeNum.CpNode2)
+                        if(data.Length > 15 && data[8].CompareTo("40") < 0)
                         {
                             if (this.filterHp.Checked) { continue; }
 
@@ -490,7 +475,7 @@ namespace SioLog
             sw.Close();
             stream.Close();
             
-            MessageBox.Show("読込みが完了しました。",
+            MessageBox.Show("変換が完了しました。",
                             "完了",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -549,6 +534,7 @@ namespace SioLog
             string fileName = fileNameArray[0];
 
             this.inputFilePath.Text = fileName;
+            this.outputFilePath.Text = System.IO.Path.GetDirectoryName(fileName);
         }
 
 
@@ -600,6 +586,7 @@ namespace SioLog
             string fileName = fileNameArray[0];
 
             this.inputFilePath.Text = fileName;
+            this.outputFilePath.Text = System.IO.Path.GetDirectoryName(fileName);
         } 
 
  
@@ -642,23 +629,23 @@ namespace SioLog
         private void SplitRM_CP(string line)
         {
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1))
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RM] 制御ﾓｰﾄﾞの取得\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2))
+            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RM] 制御ﾓｰﾄﾞの取得\r\n");
                 return;
             }
             string[] data = line.Split(' ');
 
-            if (data[5] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
+            if (data[8] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RM] 制御ﾓｰﾄﾞの取得応答\r\n");
             }
-            else if (data[5] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
+            else if (data[8] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RM] 制御ﾓｰﾄﾞの取得応答\r\n");
             }
@@ -666,7 +653,7 @@ namespace SioLog
             for (int i = 0; i < 4; i++)
             {
                 System.Text.StringBuilder buf = new System.Text.StringBuilder();
-                buf.Append((char)Convert.ToInt32(data[8 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[11 + i], 16));
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
                 NewLine.AddData.Add(Constants.WMRM);
@@ -680,23 +667,23 @@ namespace SioLog
         private void SplitRR_CP(string line)
         {
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1))
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RR] ｽﾃｰﾀｽ読出し\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2))
+            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RR] ｽﾃｰﾀｽ読出し\r\n");
                 return;
             }
             string[] data = line.Split(' ');
 
-            if (data[5] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
+            if (data[8] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RR] ｽﾃｰﾀｽ読出し応答\r\n");
             }
-            else if (data[5] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
+            else if (data[8] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RR] ｽﾃｰﾀｽ読出し応答\r\n");
             }
@@ -708,7 +695,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.RR);
                 for (int j = 0; j < 4; j++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[8 + j + (i * 4)], 16));
+                    buf.Append((char)Convert.ToInt32(data[11 + j + (i * 4)], 16));
                 }
                 NewLine.AddData.Add("\r\n");
                 
@@ -720,23 +707,23 @@ namespace SioLog
         private void SplitRX_CP(string line)
         {
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1))
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RX] 制御ｾﾝｻ/外部ｾﾝｻ測定温度読出し\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2))
+            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RX] 制御ｾﾝｻ/外部ｾﾝｻ測定温度読出し\r\n");
                 return;
             }
             string[] data = line.Split(' ');
 
-            if (data[5] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
+            if (data[8] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RX] 制御ｾﾝｻ/外部ｾﾝｻ測定温度読出し応答\r\n");
             }
-            else if (data[5] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
+            else if (data[8] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RX] 制御ｾﾝｻ/外部ｾﾝｻ測定温度読出し応答\r\n");
             }
@@ -748,7 +735,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.RX1);
                 for (int j = 0; j < 3; j++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));
+                    buf.Append((char)Convert.ToInt32(data[11 + j + (i * 6)], 16));
                 }
                 NewLine.AddData.Add(buf.ToString());
 
@@ -758,7 +745,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.RX2);
                 for (int k = 0; k < 3; k++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[11 + k + (i * 3)], 16));
+                    buf.Append((char)Convert.ToInt32(data[14 + k + (i * 6)], 16));
                 }
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\r\n");
@@ -833,23 +820,23 @@ namespace SioLog
         private void SplitRB_CP(string line)
         {
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1))
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RB] PID定数及びｵﾌｾｯﾄ読出し\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2))
+            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RB] PID定数及びｵﾌｾｯﾄ読出し\r\n");
                 return;
             }
             string[] data = line.Split(' ');
 
-            if (data[5] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
+            if (data[8] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RB] PID定数及びｵﾌｾｯﾄ読出し応答\r\n");
             }
-            else if (data[5] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
+            else if (data[8] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RB] PID定数及びｵﾌｾｯﾄ読出し応答\r\n");
             }
@@ -861,7 +848,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.Pb);
                 for (int p = 0; p < 3; p++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[8 + p + (i * 3)], 16));
+                    buf.Append((char)Convert.ToInt32(data[11 + p + (i * 3)], 16));
                 }
                 NewLine.AddData.Add(buf.ToString());
 
@@ -871,7 +858,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.Integral);
                 for (int _i = 0; _i < 3; _i++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[11 + _i + (i * 3)], 16));
+                    buf.Append((char)Convert.ToInt32(data[14 + _i + (i * 3)], 16));
                 }
                 NewLine.AddData.Add(buf.ToString());
 
@@ -934,23 +921,23 @@ namespace SioLog
         private void SplitRS_CP(string line)
         {
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1))
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RS] 目標温度読出し\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2))
+            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RS] 目標温度読出し\r\n");
                 return;
             }
             string[] data = line.Split(' ');
 
-            if (data[5] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
+            if (data[8] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RS] 目標温度読出し応答\r\n");
             }
-            else if (data[5] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
+            else if (data[8] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RS] 目標温度読出し応答\r\n");
             }
@@ -962,7 +949,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.WSRS);
                 for (int j = 0; j < 3; j++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));
+                    buf.Append((char)Convert.ToInt32(data[11 + j + (i * 3)], 16));
                 }
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\r\n");
@@ -1017,23 +1004,23 @@ namespace SioLog
         private void SplitRPe_CP(string line)
         {
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1))
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N1[R%] 上下温度幅の読出し\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2))
+            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N2[R%] 上下温度幅の読出し\r\n");
                 return;
             }
             string[] data = line.Split(' ');
  
-            if (data[5] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
+            if (data[8] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N1[R%] 上下温度幅の読出し応答\r\n");
             }
-            else if (data[5] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
+            else if (data[8] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N2[R%] 上下温度幅の読出し応答\r\n");
             }
@@ -1045,7 +1032,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.UpperTempWidth);
                 for (int j = 0; j < 3; j++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));                    
+                    buf.Append((char)Convert.ToInt32(data[11 + j + (i * 3)], 16));                    
                 }
                 NewLine.AddData.Add(buf.ToString());
 
@@ -1055,7 +1042,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.LowerTempWidth);
                 for (int k = 0; k < 3; k++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[11 + k + (i * 3)], 16));
+                    buf.Append((char)Convert.ToInt32(data[14 + k + (i * 3)], 16));
                 }
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\r\n");
@@ -1099,23 +1086,23 @@ namespace SioLog
         private void SplitRP_CP(string line)
         {
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1))
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RP] 演算開始定数読出し\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2))
+            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RP] 演算開始定数読出し\r\n");
                 return;
             }
             string[] data = line.Split(' ');
 
-            if (data[5] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
+            if (data[8] == CurrentNodeNum.CpNode1 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N1[RP] 演算開始定数読出し応答\r\n");
             }
-            else if (data[5] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
+            else if (data[8] == CurrentNodeNum.CpNode2 && line.Contains(Constants.RcvMsg))
             {
                 NewLine.AddData.Add("      CP:N2[RP] 演算開始定数読出し応答\r\n");
             }
@@ -1127,7 +1114,7 @@ namespace SioLog
                 NewLine.AddData.Add(Constants.WPRP);
                 for (int j = 0; j < 3; j++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[8 + j + (i * 3)], 16));
+                    buf.Append((char)Convert.ToInt32(data[11 + j + (i * 3)], 16));
                 }
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\r\n");
@@ -1140,72 +1127,68 @@ namespace SioLog
         // ER:エラーコード：
         private void SplitER_Polling(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[ER] エラーコード読出し\r\n");
-                NewLine.PollingNodeNum = 1;
-                return;
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[ER] エラーコード読出し\r\n");
-                NewLine.PollingNodeNum = 2;
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[ER] エラーコード読出し\r\n");
+
+                NewLine.RcvHpNodeNum = buf.ToString();
                 return;
             }
 
-            string[] data = line.Split(' ');
-            if (NewLine.PollingNodeNum == 1 && line.Contains(Constants.RcvMsg))
+            if (line.Contains(Constants.RcvMsg))
             {
-                NewLine.AddData.Add("      HP:N1[ER] エラーコード応答:");
-            }
-            else if (NewLine.PollingNodeNum == 2 && line.Contains(Constants.RcvMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[ER] エラーコード応答:");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                NewLine.AddData.Add(NewLine.RcvHpNodeNum);
+                NewLine.AddData.Add("[ER] エラーコード読出し応答: ");
             }
             else
             {
                 NewLine.AddData.Add(Constants.ErrorCase);
                 return;
             }           
-            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            buf = new System.Text.StringBuilder();
             for (int i = 0; i < 7; i++)
             {
-                buf.Append((char)Convert.ToInt32(data[7 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[10 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
-            NewLine.AddData.Add("\r\n");           
+            NewLine.AddData.Add("\r\n");
 
-            NewLine.PollingNodeNum = 0;
+            NewLine.RcvHpNodeNum = "";
+
             return;
         }
 
         // C1：ﾘﾓｰﾄ･ﾛｰｶﾙ設定読出し
         private void SplitC1_Polling(string line)
         {
-            NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[C1] ﾘﾓｰﾄ･ﾛｰｶﾙ設定読出し\r\n");
-                NewLine.PollingNodeNum = 1;
-                return;
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[C1] ﾘﾓｰﾄ･ﾛｰｶﾙ設定読出し\r\n");
-                NewLine.PollingNodeNum = 2;
-                return;
-            }
             string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(Constants.SndMsg))
+            {
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[C1] ﾘﾓｰﾄ･ﾛｰｶﾙ設定読出し\r\n");
 
-            if (NewLine.PollingNodeNum == 1 && line.Contains(Constants.RcvMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[C1] ﾘﾓｰﾄ･ﾛｰｶﾙ設定読出し\r\n");
+                NewLine.RcvHpNodeNum = buf.ToString();
+
+                return;
             }
-            else if (NewLine.PollingNodeNum == 2 && line.Contains(Constants.RcvMsg))
+
+            if (line.Contains(Constants.RcvMsg))
             {
-                NewLine.AddData.Add("      HP:N2[C1] ﾘﾓｰﾄ･ﾛｰｶﾙ設定読出し\r\n");
-            }
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                NewLine.AddData.Add(NewLine.RcvHpNodeNum);
+                NewLine.AddData.Add("[C1] ﾘﾓｰﾄ･ﾛｰｶﾙ設定読出し応答\r\n");
+            } 
             else
             {
                 NewLine.AddData.Add(Constants.ErrorCase);
@@ -1213,45 +1196,42 @@ namespace SioLog
             }
             for (int i = 0; i < 4; i++)
             {
-                System.Text.StringBuilder buf = new System.Text.StringBuilder();
-                buf.Append((char)Convert.ToInt32(data[10 + (i * 5)], 16));
+                buf = new System.Text.StringBuilder();
+                buf.Append((char)Convert.ToInt32(data[13 + (i * 5)], 16));
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
                 NewLine.AddData.Add(Constants.C1_polling);
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\r\n");
+
+                NewLine.RcvHpNodeNum = "";
             }
 
-            NewLine.PollingNodeNum = 0;
             return;
 
         }
         // S1:設定温度読み出し
         private void SplitS1_Polling(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[S1] 設定温度読出し\r\r\n");                
-                NewLine.PollingNodeNum = 1;
-                return;
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[S1] 設定温度読出し\r\n");
-                NewLine.PollingNodeNum = 2;
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[S1] 設定温度読出し\r\r\n");
+
+                NewLine.RcvHpNodeNum = buf.ToString();
                 return;
             }
 
-            string[] data = line.Split(' ');
-  
-            if (NewLine.PollingNodeNum == 1 && line.Contains(Constants.RcvMsg))
+            if (line.Contains(Constants.RcvMsg))
             {
-                NewLine.AddData.Add("      HP:N1[S1] 設定温度読出し応答\r\n");
-            }
-            else if(NewLine.PollingNodeNum == 2 && line.Contains(Constants.RcvMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[S1] 設定温度読出し応答\r\n");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                NewLine.AddData.Add(NewLine.RcvHpNodeNum);                
+                NewLine.AddData.Add("[S1] 設定温度読出し応答\r\n");
             }
             else
             {
@@ -1260,10 +1240,10 @@ namespace SioLog
             }
             for (int i = 0; i < 4; i++)
             {
-                System.Text.StringBuilder buf = new System.Text.StringBuilder();
+                buf = new System.Text.StringBuilder();
                 for (int j = 0; j < 5; j++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[12 + j + (i * 11)], 16));
+                    buf.Append((char)Convert.ToInt32(data[15 + j + (i * 11)], 16));
                 }
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
@@ -1271,37 +1251,35 @@ namespace SioLog
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\r\n"); 
             }
- 
-            NewLine.PollingNodeNum = 0;
+
+            NewLine.RcvHpNodeNum = "";
             return;
         }
 
         // PID/AT切換
         private void SplitG1_Polling(string line)
         {
-            NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[G1] PID/AT切換\r\n");
-                NewLine.PollingNodeNum = 1;
-                return;
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[G1] PID/AT切換\r\n");
-                NewLine.PollingNodeNum = 2;
-                return;
-            }
             string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
 
-            if (NewLine.PollingNodeNum == 1 && line.Contains(Constants.RcvMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[G1] PID/AT切換応答\r\n");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[G1] PID/AT切換\r\n");
+
+                NewLine.RcvHpNodeNum = buf.ToString();
+                return;
             }
-            else if (NewLine.PollingNodeNum == 2 && line.Contains(Constants.RcvMsg))
+
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.RcvMsg))
             {
-                NewLine.AddData.Add("      HP:N2[G1] PID/AT切換応答\r\n");
-            }
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                NewLine.AddData.Add(NewLine.RcvHpNodeNum);                   
+                NewLine.AddData.Add("[G1] PID/AT切換応答\r\n");
+            } 
             else
             {
                 NewLine.AddData.Add(Constants.ErrorCase);
@@ -1309,8 +1287,8 @@ namespace SioLog
             }
             for (int i = 0; i < 4; i++)
             {
-                System.Text.StringBuilder buf = new System.Text.StringBuilder();
-                buf.Append((char)Convert.ToInt32(data[10 + (i * 5)], 16));
+                buf = new System.Text.StringBuilder();
+                buf.Append((char)Convert.ToInt32(data[13 + (i * 5)], 16));
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
                 NewLine.AddData.Add(Constants.G1);
@@ -1318,7 +1296,7 @@ namespace SioLog
                 NewLine.AddData.Add("\r\n");
             }
 
-            NewLine.PollingNodeNum = 0;
+            NewLine.RcvHpNodeNum = "";
             return;
 
         }
@@ -1326,31 +1304,25 @@ namespace SioLog
         // M1:測定温度
         private void SplitM1_Polling(string line)
         {
-            NewLine.AddData = new List<string>();
-#if M1_INVERSION_MODE
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[M1] 測定温度読出し\r\n");
-                NewLine.PollingNodeNum = 100;
-                return;
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[M1] 測定温度読出し\r\n");
-                NewLine.PollingNodeNum = 200;
-                return;
-            }
-
             string[] data = line.Split(' ');
-
-            if (NewLine.PollingNodeNum == 100 && line.Contains(Constants.RcvMsg))
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[M1] 測定温度読出し応答\r\n");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[M1] 測定温度読出し\r\n");
+
+                NewLine.RcvHpNodeNum = buf.ToString();
+                return;
             }
-            else if(NewLine.PollingNodeNum == 200 && line.Contains(Constants.RcvMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[M1] 測定温度読出し応答\r\n");
 
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.RcvMsg))
+            {
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                NewLine.AddData.Add(NewLine.RcvHpNodeNum);                   
+                NewLine.AddData.Add("[M1] 測定温度読出し応答\r\n");
             }
             else
             {                
@@ -1359,7 +1331,7 @@ namespace SioLog
             }
             for (int i = 0; i < 4; i++)
             {
-                System.Text.StringBuilder buf = new System.Text.StringBuilder();
+                buf = new System.Text.StringBuilder();
                 for (int j = 0; j < 5; j++)
                 {
                     buf.Append((char)Convert.ToInt32(data[15 + j + (i * 11)], 16));
@@ -1371,82 +1343,32 @@ namespace SioLog
                 NewLine.AddData.Add("\r\n");
             }
 
-            NewLine.PollingNodeNum = 0;
+            NewLine.RcvHpNodeNum = "";
             return;
-#else
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[M1] 測定温度読出し\r\n");
-                NewLine.PollingNodeNum = 1;
-                return;
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[M1] 測定温度読出し\r\n");
-                NewLine.PollingNodeNum = 2;
-                return;
-            }
-            string[] data = line.Split(' ');
-
-            if (NewLine.PollingNodeNum == 1 && line.Contains(Constants.RcvMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[M1] 測定温度読出し応答\r\n");
-            }
-            else if(NewLine.PollingNodeNum == 2 && line.Contains(Constants.RcvMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[M1] 測定温度読出し応答\r\n");
-
-            }
-            else
-            {                
-                NewLine.AddData.Add(Constants.ErrorCase);
-                return;
-            }
-            for (int i = 0; i < 4; i++)
-            {
-                System.Text.StringBuilder buf = new System.Text.StringBuilder();
-                for (int j = 0; j < 5; j++)
-                {
-                    buf.Append((char)Convert.ToInt32(data[12 + j + (i * 11)], 16));
-                }
-                NewLine.AddData.Add(Constants.HeaderCh);
-                NewLine.AddData.Add((i + 1).ToString());
-                NewLine.AddData.Add(Constants.M1);
-                NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("\r\n");
-            }
-
-            NewLine.PollingNodeNum = 0;
-            return;
-#endif
         }
 
         // AJ:総合ｲﾍﾞﾝﾄ状態
         private void SplitAJ_Polling(string line)
         {
-            NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[AJ] 総合ｲﾍﾞﾝﾄ状態読出し\r\n");
-                NewLine.PollingNodeNum = 1;
-                return;
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[AJ] 総合ｲﾍﾞﾝﾄ状態読出し\r\n");
-                NewLine.PollingNodeNum = 2;
-                return;
-            }
-
             string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(Constants.SndMsg))
+            {
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[AJ] 総合ｲﾍﾞﾝﾄ状態読出し\r\n");
 
-            if (NewLine.PollingNodeNum == 1 && line.Contains(Constants.RcvMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[AJ] 総合ｲﾍﾞﾝﾄ状態読出し応答\r\n");
+                NewLine.RcvHpNodeNum = buf.ToString();
+                return;
             }
-            else if (NewLine.PollingNodeNum == 2 && line.Contains(Constants.RcvMsg))
+
+            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.RcvMsg))
             {
-                NewLine.AddData.Add("      HP:N2[AJ] 総合ｲﾍﾞﾝﾄ状態読出し応答\r\n");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                NewLine.AddData.Add(NewLine.RcvHpNodeNum);                   
+                NewLine.AddData.Add("[AJ] 総合ｲﾍﾞﾝﾄ状態読出し応答\r\n");
             }
             else
             {
@@ -1455,10 +1377,10 @@ namespace SioLog
             }
             for (int i = 0; i < 4; i++)
             {
-                System.Text.StringBuilder buf = new System.Text.StringBuilder();
-                for (int j = 0; j < 5; j++)
+                buf = new System.Text.StringBuilder();
+                for (int j = 0; j < 7; j++)
                 {
-                    buf.Append((char)Convert.ToInt32(data[12 + j + (i * 11)], 16));
+                    buf.Append((char)Convert.ToInt32(data[13 + j + (i * 11)], 16));
                 }
                 NewLine.AddData.Add(Constants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
@@ -1466,7 +1388,7 @@ namespace SioLog
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("\r\n");
             }
-            NewLine.PollingNodeNum = 0;
+            NewLine.RcvHpNodeNum = "";
             return; 
         }
         #endregion
@@ -1475,42 +1397,40 @@ namespace SioLog
         // SR:RUN/STOP設定
         private void SplitSR_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[SR] RUN/STOP設定\r\n");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[SR] RUN/STOP設定\r\n");
                 return;
             }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[SR] RUN/STOP設定\r\n");
-                return;
-            }
+
         }
 
         // C1:HCFLG
         private void SplitC1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[C1] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[C1] CH");
             }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[C1] CH");
-            }
-
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.C1_selecting);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 4; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[13 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[13 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1520,26 +1440,24 @@ namespace SioLog
         // S1:温度設定
         private void SplitS1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[S1] CH");
-            }
-            else if(line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[S1] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[S1] CH");
             }
 
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.S1);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 5; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[16 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[16 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1549,26 +1467,25 @@ namespace SioLog
         // A1:上限温度
         private void SplitA1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[A1] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[A1] CH");
             }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[A1] CH");
-            }
-
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+ 
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.A1);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 4; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[17 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[17 + i], 16));
+                
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1578,26 +1495,24 @@ namespace SioLog
         // A2:下限温度
         private void SplitA2_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[A2] CH");
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[A2] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[A2] CH");
             }
 
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.A2);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 4; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[17 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[17 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1607,25 +1522,23 @@ namespace SioLog
         // W1:ｱﾝﾁﾘｾｯﾄﾜｲﾝﾄﾞｱｯﾌﾟ(ARW)
         private void SplitW1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[W1] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[W1] CH");
             }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[W1] CH");
-            }
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.W1);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 6; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[13 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[13 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1635,25 +1548,24 @@ namespace SioLog
         // J1:ｵｰﾄﾁｭｰﾆﾝｸﾞ(AT)実行
         private void SplitJ1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(Constants.SndMsg))
+            {
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[J1] CH");
+            }
 
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[J1] CH");
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[J1] CH");
-            }
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.J1);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 2; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[13 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[13 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1664,26 +1576,24 @@ namespace SioLog
         // P1:比例帯
         private void SplitP1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[P1] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[P1] CH");
             }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N1[P1] CH");
-            }
-
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+ 
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.P1);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 5; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[16 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[16 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1693,26 +1603,24 @@ namespace SioLog
         // I1:積分時間
         private void SplitI1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[I1] CH");
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[I1] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[I1] CH");
             }
 
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.I1);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 2; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[18 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[18 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1722,26 +1630,24 @@ namespace SioLog
         // D1:微分時間
         private void SplitD1_Selecting(string line)
         {
+            string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            string[] selectingData = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-
-            if (line.Contains(CurrentNodeNum.Node1) && line.Contains(Constants.SndMsg))
+            if (line.Contains(Constants.SndMsg))
             {
-                NewLine.AddData.Add("      HP:N1[D1] CH");
-            }
-            else if (line.Contains(CurrentNodeNum.Node2) && line.Contains(Constants.SndMsg))
-            {
-                NewLine.AddData.Add("      HP:N2[D1] CH");
+                NewLine.AddData.Add(Constants.HeaderPolling);
+                buf.Append((char)Convert.ToInt32(data[7], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[D1] CH");
             }
 
-            buf.Append((char)Convert.ToInt32(selectingData[12], 16));
+            buf.Append((char)Convert.ToInt32(data[12], 16));
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add(Constants.D1);
             buf = new System.Text.StringBuilder();
             for (int i = 0; i < 2; i++)
             {
-                buf.Append((char)Convert.ToInt32(selectingData[18 + i], 16));
+                buf.Append((char)Convert.ToInt32(data[18 + i], 16));
             }
             NewLine.AddData.Add(buf.ToString());
             NewLine.AddData.Add("\r\n");
@@ -1798,7 +1704,7 @@ namespace SioLog
 
                 string[] buf = line.Split(' ');
                 // CP
-                if (line.Contains(Constants.SndMsg) && buf[5] == Constants.CpMsg)
+                if (line.Contains(Constants.SndMsg) && buf[5] == Constants.STX)
                 {
                     if (CurrentNodeNum.CpNode1 == null)
                     {
@@ -1828,7 +1734,7 @@ namespace SioLog
                     }
                 }
                 // HP
-                else if (line.Contains(Constants.SndMsg) && buf[5] == Constants.HpMsg)
+                else if (line.Contains(Constants.SndMsg) && buf[5] == Constants.EOT)
                 {
                     if (CurrentNodeNum.Node1 == null)
                     {
@@ -1876,59 +1782,61 @@ namespace SioLog
         {
             public const string NodeError = "15";            
             public const string PollingMark = "4B";
-            public const string SndMsg = "SND";
-            public const string RcvMsg = "RCV";
-            public const string ack = "06";
+            public const string SndMsg = "[U0C P1]SND";
+            public const string RcvMsg = "RCV U0C P1 ->";            
             public const string HeaderCh = "      CH";
-            public const string CpMsg = "02";
-            public const string HpMsg = "04";
             public const int MinDataLength = 5;
             public const string ErrorCase = "ERROR";
 
-            public const string M1 = " 測定温度  :";
-            public const string C1_polling = " ﾘﾓｰﾄ/ﾛｰｶﾙ設定   :";
-            public const string G1 = " PID/AT切換  :";
-            public const string AJ = " 総合ｲﾍﾞﾝﾄ状態 :";
-            public const string ER = " ｴﾗｰｺｰﾄﾞ:";
+            public const string M1 = " 測定温度  : ";
+            public const string C1_polling = " ﾘﾓｰﾄ/ﾛｰｶﾙ設定   : ";
+            public const string G1 = " PID/AT切換  : ";
+            public const string AJ = " 総合ｲﾍﾞﾝﾄ状態 : ";
+            public const string ER = " ｴﾗｰｺｰﾄﾞ: ";
             
-            public const string C1_selecting = "HCFLG     :";
-            public const string S1 = " 目標温度  :";
-            public const string A1 = " 上限温度  :";
-            public const string A2 = " 下限温度  :";
-            public const string W1 = " ｱﾝﾁﾘｾｯﾄｲﾝﾄﾞｱｯﾌﾟ";
-            public const string J1 = " ｵｰﾄﾁｭｰﾆﾝｸﾞ実行";
-            public const string P1 = " 比例帯    :";
-            public const string I1 = " 積分時間  :";
-            public const string D1 = " 微分時間  :";
+            public const string C1_selecting = "HCFLG     : ";
+            public const string S1 = " 目標温度  : ";
+            public const string A1 = " 上限温度  : ";
+            public const string A2 = " 下限温度  : ";
+            public const string W1 = " ｱﾝﾁﾘｾｯﾄｲﾝﾄﾞｱｯﾌﾟ: ";
+            public const string J1 = " ｵｰﾄﾁｭｰﾆﾝｸﾞ実行: ";
+            public const string P1 = " 比例帯    : ";
+            public const string I1 = " 積分時間  : ";
+            public const string D1 = " 微分時間  : ";
 
-            public const string WMRM = " 制御ﾓｰﾄ:";
-            public const string RR = " ｽﾃｰﾀｽ;";
-            public const string RX1 = " 制御ｾﾝｻ:";
-            public const string RX2 = " 外部ｾﾝｻ:";
-            public const string Pb = " 比例帯温度幅:";
-            public const string Integral = " 積分時間:";
-            public const string Differential = " 微分時間:";
-            public const string ADJ = " ｵﾌｾｯﾄ値:";
-            public const string WSRS = " 目標温度:";
-            public const string UpperTempWidth = " 上限温度幅:";
-            public const string LowerTempWidth = " 下限温度幅;";
-            public const string WPRP = " 演算開始定数:";
+            public const string WMRM = " 制御ﾓｰﾄ: ";
+            public const string RR = " ｽﾃｰﾀｽ: ";
+            public const string RX1 = " 制御ｾﾝｻ: ";
+            public const string RX2 = " 外部ｾﾝｻ: ";
+            public const string Pb = " 比例帯温度幅: ";
+            public const string Integral = " 積分時間: ";
+            public const string Differential = " 微分時間: ";
+            public const string ADJ = " ｵﾌｾｯﾄ値: ";
+            public const string WSRS = " 目標温度: ";
+            public const string UpperTempWidth = " 上限温度幅: ";
+            public const string LowerTempWidth = " 下限温度幅; ";
+            public const string WPRP = " 演算開始定数: ";
 
             public const string FileEncording = "shift_jis";
 
             public const int ComPollingSndPosi = 10;
-            public const int ComPollingRcvPosi = 5;
+            public const int ComPollingRcvPosi = 8;
 
             public const int ComSelectingPosi = 9;
 
             public const int ComCpSndPosi = 7;
-            public const int ComCpRcvPosi = 6;
+            public const int ComCpRcvPosi = 9;
 
             public const string LogFileName = "SIO.log";
             public const string OldFileName = "SIO.old";           
               
-            public const string OutFileName = @"\SIO.txt"; 
+            public const string OutFileName = @"\SIO.txt";
 
+            public const string STX = "02";
+            public const string EOT = "04";
+            public const string ACK = "06";
+
+            public const string HeaderPolling = "      HP:N";
         }
 
     }
