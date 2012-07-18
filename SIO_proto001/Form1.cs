@@ -1,4 +1,4 @@
-﻿#define ALLOW_ALL_FILE
+﻿//#define ONLY_SIO_LOG
 
 using System;
 using System.Collections.Generic;
@@ -28,13 +28,14 @@ namespace SioLog
         }
         #endregion
 
-        FileDirPath CurrentDir = new FileDirPath();
 
         Dictionary<string, Action<string>> cpDic = null;
         Dictionary<string, Action<string>> pollingDic = null;
         Dictionary<string, Action<string>> selectingDic = null;
+        Dictionary<string, Action<string>> SpinDic = null;
 
         ConvertedData NewLine = new ConvertedData();
+        MsgInfo OriginalMsg = new MsgInfo();
 
 
         CheckBox[] NodeFileter;
@@ -86,6 +87,27 @@ namespace SioLog
                 selectingDic["I1"] = SplitI1_Selecting; // 積分時間
                 selectingDic["D1"] = SplitD1_Selecting; // 微分時間
             }
+            if (SpinDic == null)
+            {
+                SpinDic = new Dictionary<string, Action<string>>();
+
+                cpDic["WM"] = SplitWM_ETU;   // 制御ﾓｰﾄﾞ設定
+                cpDic["RM"] = SplitRM_ETU;   // 制御ﾓｰﾄﾞ取得
+                cpDic["RR"] = SplitRR_ETU;   // ｽﾃｰﾀｽの読み出し
+                cpDic["RX"] = SplitRX_ETU;   // 制御ｾﾝｻ測定温度の読み出し
+                cpDic["WB"] = SplitWB_ETU;   // PID定数及び表示温度校正値(ADJ)の設定
+                cpDic["RB"] = SplitRB_ETU;   // PID定数及びｵﾌｾｯﾄ読み出し
+                cpDic["WS"] = SplitWS_ETU;   // 目標温度の設定
+                cpDic["RS"] = SplitRS_ETU;   // 目標温度の読み出し
+                cpDic["W%"] = SplitWPe_ETU;  // 上下温度幅の設定
+                cpDic["R%"] = SplitRPe_ETU;  // 上下温度幅の読み出し
+                cpDic["WU"] = SplitWU_ETU;  // 内部ｾﾝｻ及び外部ｾﾝｻ微調整値の設定
+                cpDic["RU"] = SplitRU_ETU;  // 内部ｾﾝｻ及び外部ｾﾝｻ微調整値の読出し
+                cpDic["WA"] = SplitWA_ETU;  // ARW幅の設定
+                cpDic["RA"] = SplitRA_ETU;  // ARW幅の読出し
+                cpDic["RV"] = SplitRV_ETU;  // ｿﾌﾄﾊﾞｰｼﾞｮﾝの読出し
+
+            }
         }
 
         private bool CallCpDic(string command, string line)
@@ -127,6 +149,19 @@ namespace SioLog
             }
         }
 
+        private bool CallSpinDic(string command, string line)
+        {
+            if (SpinDic.ContainsKey(command))
+            {
+                SpinDic[command].Invoke(line);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         
         private void ContainsNodeFilterCheckBox()
         {
@@ -143,17 +178,16 @@ namespace SioLog
 
 
         #region ｸﾗｽ・定義
-        public class FileDirPath
-        {
-            public string InFile { get; set;}
-            public string OutFile { get; set; }
-            public string SelectedPath { get; set; }
-        }
-
         public class ConvertedData
         {
             public List<string> AddData { get; set; }
             public string RcvHpNodeNum { get; set; }
+        }
+
+        public class MsgInfo
+        {
+            public string command   { get; set; }
+            public int MsgKind      { get; set; }
         }
        
 
@@ -186,7 +220,7 @@ namespace SioLog
             //「すべてのﾌｧｲﾙ」が選択されているようにする
             ofd.FilterIndex = 2;
             // ﾀｲﾄﾙ設定
-            ofd.Title = "開くファイルを選択してください";
+            ofd.Title = "読込むﾌｧｲﾙを選択してください";
             // ﾀﾞｲｱﾛｸﾞﾎﾞｯｸｽを閉じる前に現在のDirを復元するようにする
             ofd.RestoreDirectory = true;
             // 存在しないﾌｧｲﾙの名前が指定されたとき警告を表示する
@@ -197,10 +231,8 @@ namespace SioLog
             // ﾀﾞｲｱﾛｸﾞ表示
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                CurrentDir.InFile = ofd.FileName;
-                inputFilePath.Text = CurrentDir.InFile;
-                //this.outputFilePath.Text = 
-                //    System.IO.Path.GetDirectoryName(this.inputFilePath.Text);
+//                CurrentDir.InFile = ofd.FileName;
+                inputFilePath.Text = ofd.FileName;
             }
         }
 
@@ -215,7 +247,7 @@ namespace SioLog
             FolderBrowserDialog fbd = new FolderBrowserDialog();
 
             //上部に表示する説明テキストを指定する
-            fbd.Description = "フォルダを指定してください。";
+            fbd.Description = "ﾌｫﾙﾀﾞを指定してください。";
             //ルートフォルダを指定する
             //デフォルトでDesktop
             fbd.RootFolder = Environment.SpecialFolder.Desktop;
@@ -229,9 +261,8 @@ namespace SioLog
             //ダイアログを表示する
             if (fbd.ShowDialog(this) == DialogResult.OK)
             {
-                CurrentDir.SelectedPath = fbd.SelectedPath;
                 //選択されたフォルダを表示する
-                this.outputFilePath.Text = CurrentDir.SelectedPath;
+                this.outputFilePath.Text = fbd.SelectedPath;
             }
         }
 
@@ -243,26 +274,24 @@ namespace SioLog
         /// <param name="e"></param>
         private void convertBtn_Click(object sender, EventArgs e)
         {
-#if ALLOW_ALL_FILE
-#else 
-            if (this.inputFilePath.Text == null)
+            if (this.inputFilePath.Text == "")
             {
-                MessageBox.Show("「SIO.log」を選択してください",
+                MessageBox.Show("読込むﾌｧｲﾙを選択してください",
                                 "エラー",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                return false;
+                return;
             }
-            if(!this.inputFilePath.Text.Contains(myConstants.LogFileName))
+#if ONLY_SIO_LOG
+
+            if (!this.inputFilePath.Text.Contains(myConstants.LogFileName))
             {
-                if (!this.inputFilePath.Text.Contains(myConstants.OldFileName))
-                {
-                    MessageBox.Show("「SIO.log」を選択してください",
-                                    "エラー",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                    return false;
-                }
+                MessageBox.Show("「SIO.log」を選択してください",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return false;
             }
 #endif
 
@@ -335,6 +364,7 @@ namespace SioLog
                             break;
                         }
                     }
+// ---------------------SPINのｴｺｰﾊﾞｯｸまだ未対応---------------------//
                     // ｴｺｰﾊﾞｯｸ
                     if (line.Contains(myConstants.RcvMsg) && data.Length > 7)
                     {
@@ -357,8 +387,81 @@ namespace SioLog
 
                 System.Text.StringBuilder ComAscii = new System.Text.StringBuilder();
 
+                OriginalMsg = CheckMsg(line);
                 try
-                {                    
+                {
+                    switch (OriginalMsg.MsgKind)
+                    {
+                        case 1: // CP SND
+                            if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
+                            
+                            if (!CallCpDic(command, line))
+                            {
+                                throw new Exception(myConstants.ErrorMsg);
+                            }
+                            cpDataCounts = data.Count();
+                            break;
+
+                        case 2: // Polling SND
+                            if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
+
+                            if (!CallPollingDic(command, line))
+                            {
+                                throw new Exception(myConstants.ErrorMsg);
+                            }
+                            break;
+
+                        case 3: // Selecting SND
+                            if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
+
+                            if (!CallSelectingDic(command, line))
+                            {
+                                throw new Exception(myConstants.ErrorMsg);
+                            }
+                            break;
+
+                        case 4: // ETU(4/40),ACU(5/50) SND/RCV
+                        case 40:
+                        case 5:
+                        case 50:
+                            if (!CallSpinDic(command, line))
+                            {
+                                throw new Exception(myConstants.ErrorMsg);
+                            }
+                            break;
+                        case 10:    // CPwriting RCV
+                            if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+
+                        case 11:    // CPreading RCV
+                            if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
+
+                            if (!CallCpDic(command, line))
+                            {
+                                throw new Exception(myConstants.ErrorMsg);
+                            }
+                            break;
+
+                        case 20:    // Polling RCV
+                            if (!CallPollingDic(command, line))
+                            {
+                                sw.WriteLine(line);
+                                sw.WriteLine(myConstants.ErrorMsg + sw.NewLine);
+                                continue;
+                            }
+                            break;
+
+                        case 30:    // Selecting RCV
+                            if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
+                            sw.WriteLine(line);
+                            continue;
+
+                        default :
+                            throw new Exception(myConstants.ErrorMsg);
+                    }
+
+                    #region 古いmsg確認
                     // 2.SND/RCVを確認する
                     if (line.Contains(myConstants.SndMsg))
                     {
@@ -458,10 +561,12 @@ namespace SioLog
                             }
                         }
                     }
+
                     else
                     {
                         throw new Exception(myConstants.ErrorMsg);
                     }
+                    #endregion
                 }            
                 catch (Exception ex)
                 {
@@ -549,7 +654,6 @@ namespace SioLog
                     return;
                 }
             }
-
 
             // 上記以外は受け入れる
             e.Effect = DragDropEffects.All;
@@ -914,6 +1018,7 @@ namespace SioLog
             }
             for (int i = 0; i < 4; i++)
             {
+                // P
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(myConstants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
@@ -924,6 +1029,7 @@ namespace SioLog
                 }
                 NewLine.AddData.Add(buf.ToString());
 
+                // I
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(myConstants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
@@ -934,6 +1040,7 @@ namespace SioLog
                 }
                 NewLine.AddData.Add(buf.ToString());
 
+                // D
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(myConstants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
@@ -944,6 +1051,7 @@ namespace SioLog
                 }
                 NewLine.AddData.Add(buf.ToString());
 
+                // ADJ
                 buf = new System.Text.StringBuilder();
                 NewLine.AddData.Add(myConstants.HeaderCh);
                 NewLine.AddData.Add((i + 1).ToString());
@@ -1747,7 +1855,240 @@ namespace SioLog
             return;
         }
         #endregion
+
+        #region ETU
+        // WM:
+        private void SplitWM_ETU(string line)
+        {
+        }
+
+        // RM
+        private void SplitRM_ETU(string line)
+        {
+        }
+
+        // RR
+        private void SplitRR_ETU(string line)
+        {
+        }
+
+        // RX
+        private void SplitRX_ETU(string line)
+        {
+        }
+
+        // WB
+        private void SplitWB_ETU(string line)
+        {
+        }
+
+        // RB
+        private void SplitRB_ETU(string line)
+        {
+        }
+
+        // WS:
+        private void SplitWS_ETU(string line)
+        {
+        }
+
+        // RS:
+        private void SplitRS_ETU(string line)
+        {
+        }
+
+        // WPe:
+        private void SplitWPe_ETU(string line)
+        {
+        }
+
+        // RPe
+        private void SplitRPe_ETU(string line)
+        {
+        }
+
+        // WU:
+        private void SplitWU_ETU(string line)
+        {
+        }
+
+        // RU:
+        private void SplitRU_ETU(string line)
+        {
+        }
+
+        // WA:
+        private void SplitWA_ETU(string line)
+        {
+        }
+
+        // RA:
+        private void SplitRA_ETU(string line)
+        {
+        }
+
+        // RV:
+        private void SplitRV_ETU(string line)
+        {
+        }
         #endregion
+
+        #region ACU
+        //　これから追加
+        #endregion
+        #endregion
+
+        /// <summary>
+        /// ﾒｯｾｰｼﾞがどのﾒｯｾｰｼﾞに該当するか調べる
+        /// </summary>
+        /// <param name="line"></param>
+        /// <returns></returns>
+        private MsgInfo CheckMsg(string line)
+        {
+            System.Text.StringBuilder ComAscii = new System.Text.StringBuilder();
+            string[] data = line.Split(' ');
+            OriginalMsg = new MsgInfo();
+
+            // BAKE SND
+            if(line.Contains(myConstants.SndMsg))
+            {
+                // CP
+                if (data[5] == myConstants.STX)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpSndPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpSndPosi + 1], 16));
+                    
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 1;
+                    return OriginalMsg;
+                }
+                else if (data[5] == myConstants.EOT)
+                {
+                    // Polling
+                    if (data[8] == myConstants.PollingMark)
+                    {
+                        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingSndPosi], 16));
+                        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingSndPosi + 1], 16));
+
+                        OriginalMsg.command = ComAscii.ToString();
+                        OriginalMsg.MsgKind = 2;
+                        return OriginalMsg;
+                    }
+                    // Selecting
+                    if (data[8] != myConstants.PollingMark)
+                    {
+                        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComSelectingPosi], 16));
+                        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComSelectingPosi + 1], 16));
+
+                        OriginalMsg.command = ComAscii.ToString();
+                        OriginalMsg.MsgKind = 3;
+                        return OriginalMsg;
+
+                    }
+                }
+
+            }
+
+            // SPIN SND
+            if(line.Contains(myConstants.SpinSndMsg))
+            {
+                // ETU
+                if (data[5] == myConstants.STX && data[6] == myConstants.EtuMark)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi + 1], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 4;
+                    return OriginalMsg;                    
+
+                }
+
+                // ACU
+                if (data[5] == myConstants.EOT && data[data.Length - 1] == myConstants.ENQ)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuSndPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuSndPosi + 1], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 5;
+                    return OriginalMsg;  
+
+                }
+
+            }
+            
+            // BAKE RCV
+            if (line.Contains(myConstants.RcvMsg))
+            {
+                // CPwriting
+                if (data[9] == myConstants.ACK && data.Length == 14)
+                {
+                    OriginalMsg.command = "";
+                    OriginalMsg.MsgKind = 10;
+                    return OriginalMsg;                     
+                }
+                // CPreading
+                if (data.Length > 15 && data[8].CompareTo("40") < 0)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpRcvPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpRcvPosi + 1], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 11;
+                    return OriginalMsg; 
+                }
+
+                // Polling
+                if (data[7] == myConstants.STX && data[8].CompareTo("40") > 0)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi + 1], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 20;
+                    return OriginalMsg;
+                }
+
+                // Selecting   
+                if (data[7] == myConstants.ACK && data.Length == 8)
+                {
+                    OriginalMsg.command = "";
+                    OriginalMsg.MsgKind = 30;
+                    return OriginalMsg;           
+                }
+
+            }            
+                        
+            // SPIN RCV
+            if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                // ETU
+                if(data[6] == myConstants.EtuMark && data[data.Length - 3] == myConstants.ETX)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi + 1], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 40;
+                    return OriginalMsg;  
+                }
+                // ACU
+                if(data[data.Length - 2] == myConstants.ETX)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuRcvPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuRcvPosi + 1], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 50;
+                    return OriginalMsg;  
+                }
+            }
+
+            // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
+
+            return OriginalMsg; // 上での初期化わすれずに！！
+        }
 
         /// <summary>
         /// 定数ｸﾗｽ
@@ -1799,17 +2140,28 @@ namespace SioLog
             public const int ComCpSndPosi = 7;
             public const int ComCpRcvPosi = 9;
 
-            public const string LogFileName = "SIO.log";
-            public const string OldFileName = "SIO.old";  
+            public const string LogFileName = "SIO.";
             public const string OutFileName = @"\SIO.txt";
 
-            public const string STX = "02";
+            public const string STX = "02";            
+            public const string ETX = "03";
             public const string EOT = "04";
+            public const string ENQ = "05";
             public const string ACK = "06";
+
 
             public const string HeaderHP = "      HP:N";
             public const string HeaderCP = "      CP:N";
             public const string HeaderCh = "      CH";
+
+            public const string SpinSndMsg = "[U0A P2]SND";
+            public const string EtuMark = "45";
+            public const string SpinRcvmsg = "[U0A P2]RCV";
+
+            public const int ComEtuPosi = 11;
+            
+            public const int ComAcuSndPosi = 8;
+            public const int ComAcuRcvPosi = 5;
             
         }       
  

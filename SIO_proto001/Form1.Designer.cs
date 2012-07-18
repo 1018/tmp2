@@ -49,6 +49,9 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.filterNode7 = new System.Windows.Forms.CheckBox();
             this.filterNode6 = new System.Windows.Forms.CheckBox();
+            this.filterEtu = new System.Windows.Forms.CheckBox();
+            this.filteAcu = new System.Windows.Forms.CheckBox();
+            this.filterPulse = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -74,8 +77,8 @@
             this.inputFilePath.AllowDrop = true;
             this.inputFilePath.Location = new System.Drawing.Point(8, 32);
             this.inputFilePath.Name = "inputFilePath";
-            this.inputFilePath.Size = new System.Drawing.Size(424, 19);
-            this.inputFilePath.TabIndex = 2;
+            this.inputFilePath.Size = new System.Drawing.Size(448, 19);
+            this.inputFilePath.TabIndex = 0;
             this.inputFilePath.DragDrop += new System.Windows.Forms.DragEventHandler(this.inputFilePath_DragDrop);
             this.inputFilePath.DragEnter += new System.Windows.Forms.DragEventHandler(this.inputFilePath_DragEnter);
             // 
@@ -84,7 +87,7 @@
             this.outputFilePath.AllowDrop = true;
             this.outputFilePath.Location = new System.Drawing.Point(8, 88);
             this.outputFilePath.Name = "outputFilePath";
-            this.outputFilePath.Size = new System.Drawing.Size(424, 19);
+            this.outputFilePath.Size = new System.Drawing.Size(448, 19);
             this.outputFilePath.TabIndex = 3;
             this.outputFilePath.DragDrop += new System.Windows.Forms.DragEventHandler(this.outputFilePath_DragDrop);
             this.outputFilePath.DragEnter += new System.Windows.Forms.DragEventHandler(this.outputFilePath_DragEnter);
@@ -95,36 +98,36 @@
             this.trashMode.Location = new System.Drawing.Point(8, 120);
             this.trashMode.Name = "trashMode";
             this.trashMode.Size = new System.Drawing.Size(107, 16);
-            this.trashMode.TabIndex = 4;
+            this.trashMode.TabIndex = 5;
             this.trashMode.Text = "すっきりもーど(仮)";
             this.trashMode.UseVisualStyleBackColor = true;
             // 
             // convertBtn
             // 
-            this.convertBtn.Location = new System.Drawing.Point(440, 128);
+            this.convertBtn.Location = new System.Drawing.Point(464, 128);
             this.convertBtn.Name = "convertBtn";
             this.convertBtn.Size = new System.Drawing.Size(64, 32);
-            this.convertBtn.TabIndex = 8;
+            this.convertBtn.TabIndex = 30;
             this.convertBtn.Text = "変換";
             this.convertBtn.UseVisualStyleBackColor = true;
             this.convertBtn.Click += new System.EventHandler(this.convertBtn_Click);
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(440, 25);
+            this.selectBtn.Location = new System.Drawing.Point(464, 25);
             this.selectBtn.Name = "selectBtn";
             this.selectBtn.Size = new System.Drawing.Size(64, 32);
-            this.selectBtn.TabIndex = 9;
+            this.selectBtn.TabIndex = 1;
             this.selectBtn.Text = "参照";
             this.selectBtn.UseVisualStyleBackColor = true;
             this.selectBtn.Click += new System.EventHandler(this.InputFileSelectBtn);
             // 
             // OutputFileSelectBtn
             // 
-            this.OutputFileSelectBtn.Location = new System.Drawing.Point(440, 80);
+            this.OutputFileSelectBtn.Location = new System.Drawing.Point(464, 80);
             this.OutputFileSelectBtn.Name = "OutputFileSelectBtn";
             this.OutputFileSelectBtn.Size = new System.Drawing.Size(64, 32);
-            this.OutputFileSelectBtn.TabIndex = 11;
+            this.OutputFileSelectBtn.TabIndex = 4;
             this.OutputFileSelectBtn.Text = "参照";
             this.OutputFileSelectBtn.UseVisualStyleBackColor = true;
             this.OutputFileSelectBtn.Click += new System.EventHandler(this.OutputFileSelectBtn_Click);
@@ -135,7 +138,7 @@
             this.filterCp.Location = new System.Drawing.Point(120, 120);
             this.filterCp.Name = "filterCp";
             this.filterCp.Size = new System.Drawing.Size(84, 16);
-            this.filterCp.TabIndex = 14;
+            this.filterCp.TabIndex = 6;
             this.filterCp.Text = "CPのみ抽出";
             this.filterCp.UseVisualStyleBackColor = true;
             // 
@@ -145,67 +148,67 @@
             this.filterHp.Location = new System.Drawing.Point(120, 136);
             this.filterHp.Name = "filterHp";
             this.filterHp.Size = new System.Drawing.Size(84, 16);
-            this.filterHp.TabIndex = 15;
+            this.filterHp.TabIndex = 7;
             this.filterHp.Text = "HPのみ抽出";
             this.filterHp.UseVisualStyleBackColor = true;
             // 
             // filterNode0
             // 
             this.filterNode0.AutoSize = true;
-            this.filterNode0.Location = new System.Drawing.Point(216, 120);
+            this.filterNode0.Location = new System.Drawing.Point(232, 120);
             this.filterNode0.Name = "filterNode0";
             this.filterNode0.Size = new System.Drawing.Size(98, 16);
-            this.filterNode0.TabIndex = 16;
+            this.filterNode0.TabIndex = 20;
             this.filterNode0.Text = "ﾉｰﾄﾞ0のみ抽出";
             this.filterNode0.UseVisualStyleBackColor = true;
             // 
             // filterNode1
             // 
             this.filterNode1.AutoSize = true;
-            this.filterNode1.Location = new System.Drawing.Point(216, 136);
+            this.filterNode1.Location = new System.Drawing.Point(232, 136);
             this.filterNode1.Name = "filterNode1";
             this.filterNode1.Size = new System.Drawing.Size(98, 16);
-            this.filterNode1.TabIndex = 17;
+            this.filterNode1.TabIndex = 21;
             this.filterNode1.Text = "ﾉｰﾄﾞ1のみ抽出";
             this.filterNode1.UseVisualStyleBackColor = true;
             // 
             // filterNode3
             // 
             this.filterNode3.AutoSize = true;
-            this.filterNode3.Location = new System.Drawing.Point(216, 168);
+            this.filterNode3.Location = new System.Drawing.Point(232, 168);
             this.filterNode3.Name = "filterNode3";
             this.filterNode3.Size = new System.Drawing.Size(98, 16);
-            this.filterNode3.TabIndex = 19;
+            this.filterNode3.TabIndex = 23;
             this.filterNode3.Text = "ﾉｰﾄﾞ3のみ抽出";
             this.filterNode3.UseVisualStyleBackColor = true;
             // 
             // filterNode2
             // 
             this.filterNode2.AutoSize = true;
-            this.filterNode2.Location = new System.Drawing.Point(216, 152);
+            this.filterNode2.Location = new System.Drawing.Point(232, 152);
             this.filterNode2.Name = "filterNode2";
             this.filterNode2.Size = new System.Drawing.Size(98, 16);
-            this.filterNode2.TabIndex = 18;
+            this.filterNode2.TabIndex = 22;
             this.filterNode2.Text = "ﾉｰﾄﾞ2のみ抽出";
             this.filterNode2.UseVisualStyleBackColor = true;
             // 
             // filterNode5
             // 
             this.filterNode5.AutoSize = true;
-            this.filterNode5.Location = new System.Drawing.Point(328, 136);
+            this.filterNode5.Location = new System.Drawing.Point(344, 136);
             this.filterNode5.Name = "filterNode5";
             this.filterNode5.Size = new System.Drawing.Size(98, 16);
-            this.filterNode5.TabIndex = 21;
+            this.filterNode5.TabIndex = 25;
             this.filterNode5.Text = "ﾉｰﾄﾞ5のみ抽出";
             this.filterNode5.UseVisualStyleBackColor = true;
             // 
             // filterNode4
             // 
             this.filterNode4.AutoSize = true;
-            this.filterNode4.Location = new System.Drawing.Point(328, 120);
+            this.filterNode4.Location = new System.Drawing.Point(344, 120);
             this.filterNode4.Name = "filterNode4";
             this.filterNode4.Size = new System.Drawing.Size(98, 16);
-            this.filterNode4.TabIndex = 20;
+            this.filterNode4.TabIndex = 24;
             this.filterNode4.Text = "ﾉｰﾄﾞ4のみ抽出";
             this.filterNode4.UseVisualStyleBackColor = true;
             // 
@@ -215,7 +218,7 @@
             this.CopyDirPath.Location = new System.Drawing.Point(200, 57);
             this.CopyDirPath.Name = "CopyDirPath";
             this.CopyDirPath.Size = new System.Drawing.Size(32, 23);
-            this.CopyDirPath.TabIndex = 22;
+            this.CopyDirPath.TabIndex = 2;
             this.CopyDirPath.Text = "↓";
             this.toolTip1.SetToolTip(this.CopyDirPath, "ﾌｫﾙﾀﾞﾊﾟｽをｺﾋﾟｰします");
             this.CopyDirPath.UseVisualStyleBackColor = true;
@@ -224,22 +227,52 @@
             // filterNode7
             // 
             this.filterNode7.AutoSize = true;
-            this.filterNode7.Location = new System.Drawing.Point(328, 168);
+            this.filterNode7.Location = new System.Drawing.Point(344, 168);
             this.filterNode7.Name = "filterNode7";
             this.filterNode7.Size = new System.Drawing.Size(98, 16);
-            this.filterNode7.TabIndex = 24;
+            this.filterNode7.TabIndex = 27;
             this.filterNode7.Text = "ﾉｰﾄﾞ7のみ抽出";
             this.filterNode7.UseVisualStyleBackColor = true;
             // 
             // filterNode6
             // 
             this.filterNode6.AutoSize = true;
-            this.filterNode6.Location = new System.Drawing.Point(328, 152);
+            this.filterNode6.Location = new System.Drawing.Point(344, 152);
             this.filterNode6.Name = "filterNode6";
             this.filterNode6.Size = new System.Drawing.Size(98, 16);
-            this.filterNode6.TabIndex = 23;
+            this.filterNode6.TabIndex = 26;
             this.filterNode6.Text = "ﾉｰﾄﾞ6のみ抽出";
             this.filterNode6.UseVisualStyleBackColor = true;
+            // 
+            // filterEtu
+            // 
+            this.filterEtu.AutoSize = true;
+            this.filterEtu.Location = new System.Drawing.Point(120, 168);
+            this.filterEtu.Name = "filterEtu";
+            this.filterEtu.Size = new System.Drawing.Size(91, 16);
+            this.filterEtu.TabIndex = 9;
+            this.filterEtu.Text = "ETUのみ抽出";
+            this.filterEtu.UseVisualStyleBackColor = true;
+            // 
+            // filteAcu
+            // 
+            this.filteAcu.AutoSize = true;
+            this.filteAcu.Location = new System.Drawing.Point(120, 152);
+            this.filteAcu.Name = "filteAcu";
+            this.filteAcu.Size = new System.Drawing.Size(93, 16);
+            this.filteAcu.TabIndex = 8;
+            this.filteAcu.Text = "ACUのみ抽出";
+            this.filteAcu.UseVisualStyleBackColor = true;
+            // 
+            // filterPulse
+            // 
+            this.filterPulse.AutoSize = true;
+            this.filterPulse.Location = new System.Drawing.Point(120, 184);
+            this.filterPulse.Name = "filterPulse";
+            this.filterPulse.Size = new System.Drawing.Size(159, 16);
+            this.filterPulse.TabIndex = 10;
+            this.filterPulse.Text = "ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞのみ抽出";
+            this.filterPulse.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -247,7 +280,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(527, 195);
+            this.ClientSize = new System.Drawing.Size(547, 214);
+            this.Controls.Add(this.filterPulse);
+            this.Controls.Add(this.filterEtu);
+            this.Controls.Add(this.filteAcu);
             this.Controls.Add(this.filterNode7);
             this.Controls.Add(this.filterNode6);
             this.Controls.Add(this.CopyDirPath);
@@ -298,6 +334,9 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.CheckBox filterNode7;
         private System.Windows.Forms.CheckBox filterNode6;
+        private System.Windows.Forms.CheckBox filterEtu;
+        private System.Windows.Forms.CheckBox filteAcu;
+        private System.Windows.Forms.CheckBox filterPulse;
     }
 }
 
