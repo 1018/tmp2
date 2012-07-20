@@ -50,7 +50,7 @@
             this.filterNode7 = new System.Windows.Forms.CheckBox();
             this.filterNode6 = new System.Windows.Forms.CheckBox();
             this.filterEtu = new System.Windows.Forms.CheckBox();
-            this.filteAcu = new System.Windows.Forms.CheckBox();
+            this.filterAcu = new System.Windows.Forms.CheckBox();
             this.filterPulse = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -254,15 +254,15 @@
             this.filterEtu.Text = "ETUのみ抽出";
             this.filterEtu.UseVisualStyleBackColor = true;
             // 
-            // filteAcu
+            // filterAcu
             // 
-            this.filteAcu.AutoSize = true;
-            this.filteAcu.Location = new System.Drawing.Point(120, 152);
-            this.filteAcu.Name = "filteAcu";
-            this.filteAcu.Size = new System.Drawing.Size(93, 16);
-            this.filteAcu.TabIndex = 8;
-            this.filteAcu.Text = "ACUのみ抽出";
-            this.filteAcu.UseVisualStyleBackColor = true;
+            this.filterAcu.AutoSize = true;
+            this.filterAcu.Location = new System.Drawing.Point(120, 152);
+            this.filterAcu.Name = "filterAcu";
+            this.filterAcu.Size = new System.Drawing.Size(93, 16);
+            this.filterAcu.TabIndex = 8;
+            this.filterAcu.Text = "ACUのみ抽出";
+            this.filterAcu.UseVisualStyleBackColor = true;
             // 
             // filterPulse
             // 
@@ -283,7 +283,7 @@
             this.ClientSize = new System.Drawing.Size(547, 214);
             this.Controls.Add(this.filterPulse);
             this.Controls.Add(this.filterEtu);
-            this.Controls.Add(this.filteAcu);
+            this.Controls.Add(this.filterAcu);
             this.Controls.Add(this.filterNode7);
             this.Controls.Add(this.filterNode6);
             this.Controls.Add(this.CopyDirPath);
@@ -335,7 +335,7 @@
         private System.Windows.Forms.CheckBox filterNode7;
         private System.Windows.Forms.CheckBox filterNode6;
         private System.Windows.Forms.CheckBox filterEtu;
-        private System.Windows.Forms.CheckBox filteAcu;
+        private System.Windows.Forms.CheckBox filterAcu;
         private System.Windows.Forms.CheckBox filterPulse;
     }
 }

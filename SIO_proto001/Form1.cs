@@ -39,6 +39,7 @@ namespace SioLog
 
 
         CheckBox[] NodeFileter;
+        CheckBox[] SlaveFilter;
 
         private void InitSplitterDictionary()
 
@@ -91,22 +92,30 @@ namespace SioLog
             {
                 SpinDic = new Dictionary<string, Action<string>>();
 
-                SpinDic["WM"] = SplitWM_ETU;   // 制御ﾓｰﾄﾞ設定
-                SpinDic["RM"] = SplitRM_ETU;   // 制御ﾓｰﾄﾞ取得
-                SpinDic["RR"] = SplitRR_ETU;   // ｽﾃｰﾀｽの読み出し
-                SpinDic["RX"] = SplitRX_ETU;   // 制御ｾﾝｻ測定温度の読み出し
-                SpinDic["WB"] = SplitWB_ETU;   // PID定数及び表示温度校正値(ADJ)の設定
-                SpinDic["RB"] = SplitRB_ETU;   // PID定数及びｵﾌｾｯﾄ読み出し
-                SpinDic["WS"] = SplitWS_ETU;   // 目標温度の設定
-                SpinDic["RS"] = SplitRS_ETU;   // 目標温度の読み出し
-                SpinDic["W%"] = SplitWPe_ETU;  // 上下温度幅の設定
-                SpinDic["R%"] = SplitRPe_ETU;  // 上下温度幅の読み出し
-                SpinDic["WU"] = SplitWU_ETU;  // 内部ｾﾝｻ及び外部ｾﾝｻ微調整値の設定
-                SpinDic["RU"] = SplitRU_ETU;  // 内部ｾﾝｻ及び外部ｾﾝｻ微調整値の読出し
-                SpinDic["WA"] = SplitWA_ETU;  // ARW幅の設定
-                SpinDic["RA"] = SplitRA_ETU;  // ARW幅の読出し
-                SpinDic["RV"] = SplitRV_ETU;  // ｿﾌﾄﾊﾞｰｼﾞｮﾝの読出し
+                // ETU
+                SpinDic["WM"] = SplitWM_ETU;    // 制御ﾓｰﾄﾞ設定
+                SpinDic["RM"] = SplitRM_ETU;    // 制御ﾓｰﾄﾞ取得
+                SpinDic["RR"] = SplitRR_ETU;    // ｽﾃｰﾀｽの読み出し
+                SpinDic["RX"] = SplitRX_ETU;    // 制御ｾﾝｻ測定温度読み出し
+                SpinDic["WB"] = SplitWB_ETU;    // PID定数及び表示温度校正値(ADJ)設定
+                SpinDic["RB"] = SplitRB_ETU;    // PID定数及びｵﾌｾｯﾄ読み出し
+                SpinDic["WS"] = SplitWS_ETU;    // 目標温度設定
+                SpinDic["RS"] = SplitRS_ETU;    // 目標温度読み出し
+                SpinDic["W%"] = SplitWPe_ETU;   // 上下温度幅設定
+                SpinDic["R%"] = SplitRPe_ETU;   // 上下温度幅読み出し
+                SpinDic["WU"] = SplitWU_ETU;    // 内部ｾﾝｻ及び外部ｾﾝｻ微調整値設定
+                SpinDic["RU"] = SplitRU_ETU;    // 内部ｾﾝｻ及び外部ｾﾝｻ微調整値読出し
+                SpinDic["WA"] = SplitWA_ETU;    // ARW幅設定
+                SpinDic["RA"] = SplitRA_ETU;    // ARW幅読出し
+                SpinDic["RV"] = SplitRV_ETU;    // ｿﾌﾄﾊﾞｰｼﾞｮﾝ読出し
 
+                // ACU
+                SpinDic["M1"] = SplitM1_ACU;    // 制御出口空気温度測定値
+                SpinDic["M5"] = SplitM5_ACU;    // 制御出口空気湿度測定値
+                SpinDic["S1"] = SplitS1_ACU;    // 制御出口空気温度設定値
+                SpinDic["S5"] = SplitS5_ACU;    // 制御出口空気湿度設定値
+                SpinDic["JO"] = SplitJO_ACU;    // 運転状態
+                SpinDic["ER"] = SplitER_ACU;    // 警報信号
             }
         }
 
@@ -162,8 +171,36 @@ namespace SioLog
             }
         }
 
-        
-        private void ContainsNodeFilterCheckBox()
+
+        private int ContainsSlaveFilterCheckBox()
+        {
+            this.SlaveFilter = new CheckBox[5];
+            this.SlaveFilter[0] = this.filterCp;
+            this.SlaveFilter[1] = this.filterHp;
+            this.SlaveFilter[3] = this.filterAcu;
+            this.SlaveFilter[2] = this.filterEtu;
+            this.SlaveFilter[4] = this.filterPulse;
+
+            int result = 0x00;
+            for (int i = 0; i < 5; i++)
+            {
+                if (SlaveFilter[i].Checked)
+                {
+                    result += 1 << i;
+                }
+            }
+
+            if (result == 0x00)
+            {
+                result = 0x1F;
+            }
+
+            return result;
+
+        }
+
+
+        private int ContainsNodeFilterCheckBox()
         {
             this.NodeFileter = new CheckBox[8];
             this.NodeFileter[0] = this.filterNode0;
@@ -174,6 +211,22 @@ namespace SioLog
             this.NodeFileter[5] = this.filterNode5;
             this.NodeFileter[6] = this.filterNode6;
             this.NodeFileter[7] = this.filterNode7;
+
+            int result = 0x00;
+            for (int i = 0; i < 8; i++)
+            {
+                if (NodeFileter[i].Checked)
+                {
+                    result += 1 << i;
+                }
+            }
+
+            if (result == 0x00)
+            {
+                result = 0xFF;
+            }
+
+            return result;
         }
 
 
@@ -182,6 +235,7 @@ namespace SioLog
         {
             public List<string> AddData { get; set; }
             public string RcvHpNodeNum { get; set; }
+            public string RcvAcuNodeNum { get; set; }
         }
 
         public class MsgInfo
@@ -197,8 +251,34 @@ namespace SioLog
             "初期設定",
             "NOT",
             "READY",
-            "[U0C P1]RCV"
+            "[U0C P1]RCV",
+            "[U0A P2]RCV 02",
+            "[U0A P2]RCV 04"
         };
+
+        private string[] joData = new string[]{
+            "(停止)",
+            "(準備運転中)",
+            "(運転)",
+            "(送風機(制御空気側)単独運転)"
+        };
+
+        private string[] wm = new string[]{
+            "(制御動作停止ﾓｰﾄﾞ)",
+            "(標準ﾓｰﾄﾞ)",
+            "(学習制御ﾓｰﾄﾞ)",
+            "(外部同調制御ﾓｰﾄﾞ)",
+            "(無指令)"
+        };
+
+        private string[] rm = new string[]{
+            "(制御動作停止ﾓｰﾄﾞ)",
+            "(標準ﾓｰﾄﾞ)",
+            "(学習制御ﾓｰﾄﾞ)",
+            "(外部同調制御ﾓｰﾄﾞ)",
+            "(ｵｰﾄﾁｭｰﾆﾝｸﾞ中)"
+        };
+
         #endregion
 
         #region ﾌｫｰﾑｲﾍﾞﾝﾄ
@@ -231,7 +311,6 @@ namespace SioLog
             // ﾀﾞｲｱﾛｸﾞ表示
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-//                CurrentDir.InFile = ofd.FileName;
                 inputFilePath.Text = ofd.FileName;
             }
         }
@@ -319,6 +398,10 @@ namespace SioLog
                 true,
                 System.Text.Encoding.GetEncoding(myConstants.FileEncording));
 
+            // 
+            int nodeResult = ContainsNodeFilterCheckBox();
+            int slaveResult = ContainsSlaveFilterCheckBox();
+
             int cpDataCounts = 0;
             string line = "";
             while ((line = sr.ReadLine()) != null)
@@ -353,10 +436,19 @@ namespace SioLog
                         }
                     }
                     // SPIN
-                    else if (line.Contains(myConstants.SpinRcvmsg) && !data[4].Contains('S'))
+                    else if (line.Contains(myConstants.SpinRcvmsg))
                     {
-                        continue;
+                        if (data.Length == 0x10)
+                        {
+                            continue;
+                        }
+
+                        if (data[data.Length - 1] == myConstants.ENQ)
+                        {
+                            continue;
+                        }
                     }
+
                 }
                 else
                 {
@@ -388,24 +480,37 @@ namespace SioLog
                         }
                     }
                     // SPIN
-                    else if (line.Contains(myConstants.SpinRcvmsg) && !data[4].Contains('S'))
+                    else if (line.Contains(myConstants.SpinRcvmsg))
                     {
-                        sw.WriteLine(line + sw.NewLine);
-                        continue;
-                    }                   
+                        if (data.Length == 0x0F)
+                        {
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+                        }
+                        if (data[data.Length - 1] == myConstants.ENQ)
+                        {
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+                        }
+                        
+                    }
                 }
                 if (result) continue;
 
 
                 System.Text.StringBuilder ComAscii = new System.Text.StringBuilder();
 
-                OriginalMsg = CheckMsg(line);
+//                OriginalMsg = CheckMsg(line);
+                CheckMsg(line);
                 try
                 {
                     switch (OriginalMsg.MsgKind)
                     {
                         case 1: // CP SND
-                            if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
+                            if (!this.filterCp.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
                             
                             if (!CallCpDic(OriginalMsg.command, line))
                             {
@@ -415,8 +520,10 @@ namespace SioLog
                             break;
 
                         case 2: // Polling SND
-                            if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
-
+                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
                             if (!CallPollingDic(OriginalMsg.command, line))
                             {
                                 throw new Exception(myConstants.ErrorMsg);
@@ -424,30 +531,53 @@ namespace SioLog
                             break;
 
                         case 3: // Selecting SND
-                            if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
-
+                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
                             if (!CallSelectingDic(OriginalMsg.command, line))
                             {
                                 throw new Exception(myConstants.ErrorMsg);
                             }
                             break;
 
-                        case 4: // ETU(4/40),ACU(5/50) SND/RCV
+                        case 4: // ETU SND
                         case 40:
-                        case 5:
+                            if (!this.filterEtu.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
+                            if (!CallSpinDic(OriginalMsg.command, line))
+                            {
+                                throw new Exception(myConstants.ErrorMsg);
+                            }                            
+                            break;
+
+                        case 5: // ACU(5/50) SND/RCV
                         case 50:
+                            if (!this.filterAcu.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
                             if (!CallSpinDic(OriginalMsg.command, line))
                             {
                                 throw new Exception(myConstants.ErrorMsg);
                             }
                             break;
+
                         case 10:    // CPwriting RCV
-                            if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
+                            if (!this.filterCp.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
                             sw.WriteLine(line + sw.NewLine);
                             continue;
 
                         case 11:    // CPreading RCV
-                            if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
+                            if (!this.filterCp.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
 
                             if (!CallCpDic(OriginalMsg.command, line))
                             {
@@ -456,6 +586,10 @@ namespace SioLog
                             break;
 
                         case 20:    // Polling RCV
+                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
                             if (!CallPollingDic(OriginalMsg.command, line))
                             {
                                 sw.WriteLine(line);
@@ -464,121 +598,36 @@ namespace SioLog
                             }
                             break;
 
-                        case 30:    // Selecting RCV
-                            if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
+                        case 30:    // HP Selecting RCV
+                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+
+                        case 31:    // ACU Selecting RCV
+                            if (!this.filterAcu.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+         
+                        case 41:    // ETUwriting
+                            if (!this.filterEtu.Checked && slaveResult != 0x1F)
+                            {
+                                continue;
+                            }
                             sw.WriteLine(line);
+                            sw.WriteLine("ETU書き込み完了" + sw.NewLine);
+
                             continue;
 
                         default :
                             throw new Exception(myConstants.ErrorMsg);
                     }
 
-                    #region 古いmsg確認
-                    //// 2.SND/RCVを確認する
-                    //if (line.Contains(myConstants.SndMsg))
-                    //{
-                    //    // ﾎﾟｰﾘﾝｸﾞ
-                    //    if (line.Contains(myConstants.PollingMark))
-                    //    {
-                    //        if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
-
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingSndPosi], 16));
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingSndPosi + 1], 16));
-
-                    //        command = ComAscii.ToString();
-                    //        if(!CallPollingDic(command, line))
-                    //        {
-                    //            throw new Exception(myConstants.ErrorMsg);
-                    //        }
-                    //    }
-                    //    // ｾﾚｸﾃｨﾝｸﾞ
-                    //    if (data[5] == myConstants.EOT && !(line.Contains(myConstants.PollingMark)))
-                    //    {
-                    //        if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
-
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComSelectingPosi], 16));
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComSelectingPosi + 1], 16));
-
-                    //        command = ComAscii.ToString();
-                    //        if(!CallSelectingDic(command, line))
-                    //        {
-                    //            throw new Exception(myConstants.ErrorMsg);
-                    //        }
-                    //    }
-                    //    // CP
-                    //    if (data[5] == myConstants.STX)
-                    //    {
-                    //        if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
-
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpSndPosi], 16));
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpSndPosi + 1], 16));
-
-                    //        command = ComAscii.ToString();
-                    //        if(!CallCpDic(command, line))
-                    //        {
-                    //            throw new Exception(myConstants.ErrorMsg);
-                    //        }
-
-                    //        cpDataCounts = data.Count();
-                    //    }
-
-                    //}
-                    //else if (line.Contains(myConstants.RcvMsg))
-                    //{
-
-                    //    // ｾﾚｸﾃｨﾝｸﾞ
-                    //    if (data[7] == myConstants.ACK && data.Length == 8)
-                    //    {
-                    //        if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
-                    //        sw.WriteLine(line);
-                    //        continue;
-                    //    }
-                    //    // ﾎﾟｰﾘﾝｸﾞ
-                    //    if(data[7] == myConstants.STX && data[8].CompareTo("40") > 0)
-                    //    {
-                    //        if (this.filterCp.Checked && !this.filterHp.Checked) { continue; }
-
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi], 16));
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi + 1], 16));
-
-                    //        command = ComAscii.ToString();
-                    //        if (!CallPollingDic(command, line))
-                    //        {
-                    //            sw.WriteLine(line);
-                    //            sw.WriteLine(myConstants.ErrorMsg + sw.NewLine);
-                    //            continue;
-                    //        }
-                    //    }
-
-
-                    //    // CP writing
-                    //    if (data[9] == myConstants.ACK && data.Length == 14)
-                    //    {
-                    //        if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
-                    //        sw.WriteLine(line + sw.NewLine);
-                    //        continue;
-                    //    }
-                    //    // CP reading
-                    //    if(data.Length > 15 && data[8].CompareTo("40") < 0)
-                    //    {
-                    //        if (this.filterHp.Checked && !this.filterCp.Checked) { continue; }
-
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpRcvPosi], 16));
-                    //        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComCpRcvPosi + 1], 16));
-
-                    //        command = ComAscii.ToString();
-                    //        if (!CallCpDic(command, line))
-                    //        {
-                    //            throw new Exception(myConstants.ErrorMsg);
-                    //        }
-                    //    }
-                    //}
-
-                    //else
-                    //{
-                    //    throw new Exception(myConstants.ErrorMsg);
-                    //}
-                    #endregion
                 }            
                 catch (Exception ex)
                 {
@@ -587,19 +636,7 @@ namespace SioLog
                     continue;
                 }
 
-                ContainsNodeFilterCheckBox();                
-                
-                int filterResult = 0x00;
-                for(int i = 0; i < 8; i++)
-                {
-                    if(NodeFileter[i].Checked)
-                    {
-                        filterResult += 1 << i;
-                    }
-                }
-
-                
-                if (filterResult == 0x00 || filterResult == 0xFF)
+                if (nodeResult == 0xFF)
                 {
                     sw.WriteLine(line);
                     NewLine.AddData.ForEach((string str) => sw.Write(str));
@@ -616,6 +653,7 @@ namespace SioLog
                             sw.WriteLine(line);
                             NewLine.AddData.ForEach((string str) => sw.Write(str));
                             sw.Write(sw.NewLine);
+                            break;
                         }                        
                     }
                 }
@@ -795,7 +833,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderCP);
                 buf.Append((char)Convert.ToInt32(data[6], 16));
                 NewLine.AddData.Add(buf.ToString());                
-                NewLine.AddData.Add("[WM] 制御ﾓｰﾄﾞの設定\r\n");
+                NewLine.AddData.Add("[WM] 制御ﾓｰﾄﾞ設定\r\n");
             }
 
             for (int i = 0; i < 4; i++)
@@ -824,7 +862,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderCP);
                 buf.Append((char)Convert.ToInt32(data[6], 16));
                 NewLine.AddData.Add(buf.ToString());   
-                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞの取得\r\n");
+                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞ取得\r\n");
                 return;
             }
 
@@ -833,7 +871,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderCP);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());   
-                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞの取得応答\r\n");
+                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞ取得応答\r\n");
             }
             
             for (int i = 0; i < 4; i++)
@@ -849,7 +887,7 @@ namespace SioLog
             return;
         }
 
-        // RR:ｽﾃｰﾀｽの読出し
+        // RR:ｽﾃｰﾀｽ読出し
         private void SplitRR_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -889,7 +927,7 @@ namespace SioLog
             return;
         }
 
-        // RX:制御ｾﾝｻ/外部ｾﾝｻ測定温度の読出し
+        // RX:制御ｾﾝｻ/外部ｾﾝｻ測定温度読出し
         private void SplitRX_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -938,7 +976,7 @@ namespace SioLog
             return;
         }
 
-        // WB:PID定数及び表示温度校正値(ADJ)の設定
+        // WB:PID定数及び表示温度校正値(ADJ)設定
         private void SplitWB_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1078,7 +1116,7 @@ namespace SioLog
             return;
         }
 
-        // WS:目標温度の設定
+        // WS:目標温度設定
         private void SplitWS_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1109,7 +1147,7 @@ namespace SioLog
   
         }
 
-        // RS:目標温度の読出し
+        // RS:目標温度読出し
         private void SplitRS_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1147,7 +1185,7 @@ namespace SioLog
 
         }
 
-        // W%:上下限温度幅の設定
+        // W%:上下限温度幅設定
         private void SplitWPe_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1159,7 +1197,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderCP);
                 buf.Append((char)Convert.ToInt32(data[6], 16));
                 NewLine.AddData.Add(buf.ToString()); 
-                NewLine.AddData.Add("[W%] 上下温度幅の設定\r\n");
+                NewLine.AddData.Add("[W%] 上下温度幅設定\r\n");
 
                 for (int i = 0; i < 4; i++)
                 {
@@ -1189,7 +1227,7 @@ namespace SioLog
 
         }
 
-        // R%:上下温度幅の読出し
+        // R%:上下温度幅読出し
         private void SplitRPe_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1201,14 +1239,14 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderCP);
                 buf.Append((char)Convert.ToInt32(data[6], 16));
                 NewLine.AddData.Add(buf.ToString()); 
-                NewLine.AddData.Add("[R%] 上下温度幅の読出し\r\n");
+                NewLine.AddData.Add("[R%] 上下温度幅読出し\r\n");
             }
             else if (line.Contains(myConstants.RcvMsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderCP);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());  
-                NewLine.AddData.Add("[R%] 上下温度幅の読出し応答\r\n");
+                NewLine.AddData.Add("[R%] 上下温度幅読出し応答\r\n");
 
                 for (int i = 0; i < 4; i++)
                 {
@@ -1238,7 +1276,7 @@ namespace SioLog
 
         }
 
-        // WP:Pb(演算開始定数の設定)
+        // WP:Pb(演算開始定数設定)
         private void SplitWP_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1269,7 +1307,7 @@ namespace SioLog
 
         }
 
-        // RP:演算開始定数の読出し
+        // RP:演算開始定数読出し
         private void SplitRP_CP(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1847,30 +1885,25 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[WM] 制御ﾓｰﾄﾞの設定\r\n");
+                NewLine.AddData.Add("[WM] 制御ﾓｰﾄﾞ設定\r\n");
                 NewLine.AddData.Add("      制御ﾓｰﾄﾞ: ");
                 NewLine.AddData.Add(data[13]);
-                switch (data[13])
+                if (data[13] == "0F")
                 {
-                    case "00":
-                        NewLine.AddData.Add("(制御動作停止ﾓｰﾄﾞ)");
-                        break;
-                    case "01":
-                        NewLine.AddData.Add("(標準ﾓｰﾄﾞ)");
-                        break;
-                    case "02":
-                        NewLine.AddData.Add("(学習制御ﾓｰﾄﾞ)");
-                        break;
-                    case "03":
-                        NewLine.AddData.Add("(外部同調制御ﾓｰﾄﾞ)");
-                        break;
-                    case "0F":
-                        NewLine.AddData.Add("(無指令)");
-                        break;
-                    default:
-                        throw new Exception(myConstants.ErrorMsg);
+                    NewLine.AddData.Add(wm[4]);
+                }
+                else
+                {
+                    NewLine.AddData.Add(wm[int.Parse(data[13])]);
                 }
                 NewLine.AddData.Add("\r\n");
+            }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderEtu);
+                buf.Append((char)Convert.ToInt32(data[8], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[WM] 制御ﾓｰﾄﾞ設定応答\r\n");
             }
 
         }
@@ -1887,44 +1920,24 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞの取得\r\n");
+                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞ取得\r\n");
             }
             else if (line.Contains(myConstants.SpinRcvmsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());                          
-                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞの取得応答\r\n");
-                NewLine.AddData.Add("      ");
-                NewLine.AddData.Add(data[13]);
-                switch (data[13])
-                {
-                    case "00":
-                        NewLine.AddData.Add("(制御動作停止ﾓｰﾄﾞ)");
-                        break;
-                    case "01":
-                        NewLine.AddData.Add("(標準ﾓｰﾄﾞ)");
-                        break;
-                    case "02":
-                        NewLine.AddData.Add("(学習制御ﾓｰﾄ)ﾞ");
-                        break;
-                    case "03":
-                        NewLine.AddData.Add("(外部同調制御ﾓｰﾄﾞ)");
-                        break;
-                    case "0F":
-                        NewLine.AddData.Add("(無指令)");
-                        break;
-                    default:
-                        throw new Exception(myConstants.ErrorMsg);
-                }
-
+                NewLine.AddData.Add("[RM] 制御ﾓｰﾄﾞ取得応答\r\n");
+                NewLine.AddData.Add("      制御ﾓｰﾄﾞ: ");
+                NewLine.AddData.Add(data[33]);
+                NewLine.AddData.Add(rm[int.Parse(data[33])]);
                 NewLine.AddData.Add("\r\n");
 
             } 
 
         }
 
-        // RR:ｽﾃｰﾀｽの読出し
+        // RR:ｽﾃｰﾀｽ読出し
         private void SplitRR_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1944,7 +1957,7 @@ namespace SioLog
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("[RR] ｽﾃｰﾀｽ読出し応答\r\n");
-                NewLine.AddData.Add("      ");
+                NewLine.AddData.Add("      ｽﾃｰﾀｽ: ");
                 NewLine.AddData.Add(data[33]);
                 NewLine.AddData.Add(data[34]);
                 NewLine.AddData.Add("\r\n");
@@ -1952,7 +1965,7 @@ namespace SioLog
 
         }
 
-        // RX:制御ｾﾝｻ/外部ｾﾝｻ測定温度の読出し
+        // RX:制御ｾﾝｻ/外部ｾﾝｻ測定温度読出し
         private void SplitRX_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -1986,7 +1999,7 @@ namespace SioLog
 
         }
 
-        // WB:PID定数及び表示温度校正値(ADJ)の設定
+        // WB:PID定数及び表示温度校正値(ADJ)設定
         private void SplitWB_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2035,11 +2048,19 @@ namespace SioLog
 
                 NewLine.AddData.Add("\r\n");
 
-            } 
+            }
+            else if(line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderEtu);
+                buf.Append((char)Convert.ToInt32(data[8], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[WB] PID定数及び表示温度校正値(ADJ)設定応答\r\n");
+
+            }
             
         }
 
-        // RB:PID定数及び表示温度校正値(ADJ)の読出し
+        // RB:PID定数及び表示温度校正値(ADJ)読出し
         private void SplitRB_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2098,7 +2119,7 @@ namespace SioLog
   
         }
 
-        // WS:目標温度の設定
+        // WS:目標温度設定
         private void SplitWS_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2118,10 +2139,18 @@ namespace SioLog
 
                 NewLine.AddData.Add("\r\n");
             }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderEtu);
+                buf.Append((char)Convert.ToInt32(data[8], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[WS] 目標温度設定応答\r\n");
+
+            }
 
         }
 
-        // RS:目標温度の読出し
+        // RS:目標温度読出し
         private void SplitRS_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2133,14 +2162,14 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RS] 目標温度の読出し\r\n");
+                NewLine.AddData.Add("[RS] 目標温度読出し\r\n");
             }
             else if (line.Contains(myConstants.SpinRcvmsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RS] 目標温度の読出し応答\r\n");
+                NewLine.AddData.Add("[RS] 目標温度読出し応答\r\n");
 
                 NewLine.AddData.Add("      目標温度: ");
                 double tmp = (double.Parse(data[33]) * 10 + double.Parse(data[34]) / 10);
@@ -2151,7 +2180,7 @@ namespace SioLog
 
         }
 
-        // W%:上下限温度幅の設定
+        // W%:上下限温度幅設定
         private void SplitWPe_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2163,7 +2192,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[W%] 上下温度幅の設定\r\n");
+                NewLine.AddData.Add("[W%] 上下温度幅設定\r\n");
 
                 NewLine.AddData.Add("      上限温度幅: ");
                 double tmp = (double.Parse(data[13]) * 10 + double.Parse(data[14]) / 10);
@@ -2176,10 +2205,19 @@ namespace SioLog
                 NewLine.AddData.Add("\r\n");
 
             }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderEtu);
+                buf.Append((char)Convert.ToInt32(data[8], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[W%] 上下温度幅設定応答\r\n");
+
+            }
+
 
         }
 
-        // R%:上下限温度幅の読出し
+        // R%:上下限温度幅読出し
         private void SplitRPe_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2191,14 +2229,14 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[R%] 上下限温度幅の読出し\r\n");
+                NewLine.AddData.Add("[R%] 上下限温度幅読出し\r\n");
             }
             else if (line.Contains(myConstants.SpinRcvmsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[R%] 上下限温度幅の読出し応答\r\n");
+                NewLine.AddData.Add("[R%] 上下限温度幅読出し応答\r\n");
 
                 NewLine.AddData.Add("      上限温度幅: ");
                 double tmp = (double.Parse(data[33]) * 10 + double.Parse(data[34]) / 10);
@@ -2213,7 +2251,7 @@ namespace SioLog
 
         }
 
-        // WU:制御用ｾﾝｻ及び外部ｾﾝｻ微調整値の設定
+        // WU:制御用ｾﾝｻ及び外部ｾﾝｻ微調整値設定
         private void SplitWU_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2225,7 +2263,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[WU] 制御用ｾﾝｻ及び外部ｾﾝｻ微調整値の設定\r\n");
+                NewLine.AddData.Add("[WU] 制御用ｾﾝｻ及び外部ｾﾝｻ微調整値設定\r\n");
 
                 NewLine.AddData.Add("      制御用ｾﾝｻ及び外部ｾﾝｻ微調整値: ");
 
@@ -2244,9 +2282,17 @@ namespace SioLog
                 NewLine.AddData.Add(data[14]);
                 NewLine.AddData.Add("\r\n");
             }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderEtu);
+                buf.Append((char)Convert.ToInt32(data[8], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[WU] 制御用ｾﾝｻ及び外部ｾﾝｻ微調整値応答\r\n");
+
+            }
         }
 
-        // RU:制御用ｾﾝｻ及び外部ｾﾝｻ微調整値の読出し
+        // RU:制御用ｾﾝｻ及び外部ｾﾝｻ微調整値読出し
         private void SplitRU_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2258,14 +2304,14 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RU] 制御用ｾﾝｻ及び外部ｾﾝｻ微調整値の読出し\r\n");
+                NewLine.AddData.Add("[RU] 制御用ｾﾝｻ及び外部ｾﾝｻ微調整値読出し\r\n");
             }
             else if (line.Contains(myConstants.SpinRcvmsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RU] 制御用ｾﾝｻ及び外部ｾﾝｻ微調整値の読出し応答\r\n");
+                NewLine.AddData.Add("[RU] 制御用ｾﾝｻ及び外部ｾﾝｻ微調整値読出し応答\r\n");
 
                 NewLine.AddData.Add("      制御用ｾﾝｻ及び外部ｾﾝｻ微調整値: ");
 
@@ -2288,7 +2334,7 @@ namespace SioLog
 
         }
 
-        // WA:ARW幅の設定
+        // WA:ARW幅設定
         private void SplitWA_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2300,7 +2346,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[WA] ARW幅の設定\r\n");
+                NewLine.AddData.Add("[WA] ARW幅設定\r\n");
 
                 NewLine.AddData.Add("      ARW幅: ");
                 NewLine.AddData.Add(data[13]);
@@ -2309,10 +2355,19 @@ namespace SioLog
 
                 NewLine.AddData.Add("\r\n");
             }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderEtu);
+                buf.Append((char)Convert.ToInt32(data[8], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[WA] ARW幅設定応答\r\n");
+
+            }
+
 
         }
 
-        // RA:ARW幅の読出し
+        // RA:ARW幅読出し
         private void SplitRA_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2324,14 +2379,14 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RA] ARW幅の読出し\r\n");
+                NewLine.AddData.Add("[RA] ARW幅読出し\r\n");
             }
             else if (line.Contains(myConstants.SpinRcvmsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RA] ARW幅の読出し応答\r\n");
+                NewLine.AddData.Add("[RA] ARW幅読出し応答\r\n");
 
                 NewLine.AddData.Add("      ARW幅: ");
                 NewLine.AddData.Add(data[33]);
@@ -2343,7 +2398,7 @@ namespace SioLog
 
         }
 
-        // RV:ｿﾌﾄﾊﾞｰｼﾞｮﾝの読出し
+        // RV:ｿﾌﾄﾊﾞｰｼﾞｮﾝ読出し
         private void SplitRV_ETU(string line)
         {
             NewLine.AddData = new List<string>();
@@ -2355,14 +2410,14 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RV] ｿﾌﾄﾊﾞｰｼﾞｮﾝの読出し\r\n");
+                NewLine.AddData.Add("[RV] ｿﾌﾄﾊﾞｰｼﾞｮﾝ読出し\r\n");
             }
             else if (line.Contains(myConstants.SpinRcvmsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderEtu);
                 buf.Append((char)Convert.ToInt32(data[8], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[RV] ｿﾌﾄﾊﾞｰｼﾞｮﾝの読出し応答\r\n");
+                NewLine.AddData.Add("[RV] ｿﾌﾄﾊﾞｰｼﾞｮﾝ読出し応答\r\n");
 
                 NewLine.AddData.Add("      ｿﾌﾄﾊﾞｰｼﾞｮﾝ: ");
                 NewLine.AddData.Add(data[33]);
@@ -2376,7 +2431,335 @@ namespace SioLog
         #endregion
 
         #region ACU
-        //　これから追加
+
+        // M1:制御出口空気温度測定値
+        private void SplitM1_ACU(string line)
+        {
+            string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(myConstants.SpinSndMsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                buf.Append((char)Convert.ToInt32(data[6], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[M1] 制御出口空気温度測定値読出し\r\n");
+
+                NewLine.RcvAcuNodeNum = buf.ToString();
+
+            }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                if (NewLine.RcvAcuNodeNum != null)
+                {
+
+                    NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
+                }
+                else
+                {
+                    NewLine.AddData.Add(myConstants.ErrorNodeNum);
+                } 
+                NewLine.AddData.Add("[M1] 制御出口空気温度測定値読出し応答\r\n");
+                buf = new System.Text.StringBuilder();
+                for (int i = 0; i < 6; i++)
+                {
+                    buf.Append((char)Convert.ToInt32(data[10 + i], 16));
+                }
+                NewLine.AddData.Add("      測定温度  : ");
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("\r\n");
+
+                NewLine.RcvAcuNodeNum = null;
+            }
+        }
+
+        // M5:制御出口空気湿度測定値
+        private void SplitM5_ACU(string line)
+        {
+            string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(myConstants.SpinSndMsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                buf.Append((char)Convert.ToInt32(data[6], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[M5] 制御出口空気湿度測定値読出し\r\n");
+
+                NewLine.RcvAcuNodeNum = buf.ToString();
+
+            }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                if (NewLine.RcvAcuNodeNum != null)
+                {
+                    NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
+                }
+                else
+                {
+                    NewLine.AddData.Add(myConstants.ErrorNodeNum);
+                }
+                NewLine.AddData.Add("[M5] 制御出口空気湿度測定値読出し応答\r\n");                
+                for (int i = 0; i < 5; i++)
+                {
+                    buf.Append((char)Convert.ToInt32(data[9 + i], 16));
+                }
+                NewLine.AddData.Add("      測定湿度  : ");
+                NewLine.AddData.Add(buf.ToString());
+
+                buf = new System.Text.StringBuilder();
+                for (int i = 0; i < 4; i++)
+                {
+                    buf.Append((char)Convert.ToInt32(data[17 + i], 16));
+                }
+                NewLine.AddData.Add("   測定温度  : ");
+                NewLine.AddData.Add(buf.ToString());
+
+                NewLine.AddData.Add("\r\n");
+
+                NewLine.RcvAcuNodeNum = null;
+            }
+        }
+
+        // S1:制御出口空気温度設定値
+        private void SplitS1_ACU(string line)
+        {
+            string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(myConstants.SpinSndMsg))
+            {
+                // polling
+                if (data.Length == 10)
+                {
+                    NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[6], 16));
+                    NewLine.AddData.Add(buf.ToString());
+                    NewLine.AddData.Add("[S1] 制御出口空気温度設定温度読出し\r\n");
+
+                    NewLine.RcvAcuNodeNum = buf.ToString();
+                }
+                // selecting
+                else
+                {
+                    NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[6], 16));
+                    NewLine.AddData.Add(buf.ToString());
+                    NewLine.AddData.Add("      [S1] 制御出口空気温度設定  : ");
+                    buf = new System.Text.StringBuilder();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        buf.Append((char)Convert.ToInt32(data[14 + i], 16));
+                    }
+                    NewLine.AddData.Add(buf.ToString());
+                    NewLine.AddData.Add("\r\n");
+                }
+
+            }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                if (NewLine.RcvAcuNodeNum != null)
+                {
+
+                    NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
+                }
+                else
+                {
+                    NewLine.AddData.Add(myConstants.ErrorNodeNum);
+                }
+                NewLine.AddData.Add("[S1] 制御出口空気温度設定温度読出し応答\r\n");
+                buf = new System.Text.StringBuilder();
+                for (int i = 0; i < 6; i++)
+                {
+                    buf.Append((char)Convert.ToInt32(data[10 + i], 16));
+                }
+                NewLine.AddData.Add("      設定温度  : ");
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("\r\n");
+
+                NewLine.RcvAcuNodeNum = null;
+            }
+        }
+
+        // S5:制御出口空気湿度設定値
+        private void SplitS5_ACU(string line)
+        {
+            string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(myConstants.SpinSndMsg))
+            {
+                // polling
+                if (data.Length == 10)
+                {
+                    NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[6], 16));
+                    NewLine.AddData.Add(buf.ToString());
+                    NewLine.AddData.Add("[S5] 制御出口空気湿度設定値読出し\r\n");
+
+                    NewLine.RcvAcuNodeNum = buf.ToString();
+                }
+                // selecting
+                else
+                {
+                    NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[6], 16));
+                    NewLine.AddData.Add(buf.ToString());                    
+                    buf = new System.Text.StringBuilder();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        buf.Append((char)Convert.ToInt32(data[14 + i], 16));
+                    }
+                    NewLine.AddData.Add("      [S5] 制御出口空気温度設定  : ");
+                    NewLine.AddData.Add(buf.ToString());
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        buf.Append((char)Convert.ToInt32(data[20 + i], 16));
+                    }
+                    NewLine.AddData.Add("   制御出口空気湿度設定  : ");
+                    NewLine.AddData.Add(buf.ToString());
+
+                    NewLine.AddData.Add("\r\n");
+                }
+
+            }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                if (NewLine.RcvAcuNodeNum != null)
+                {
+
+                    NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
+                }
+                else
+                {
+                    NewLine.AddData.Add(myConstants.ErrorNodeNum);
+                }
+                NewLine.AddData.Add("[S5] 制御出口空気湿度設定値読出し応答\r\n");
+                buf = new System.Text.StringBuilder();
+                for (int i = 0; i < 5; i++)
+                {
+                    buf.Append((char)Convert.ToInt32(data[9 + i], 16));
+                }
+                NewLine.AddData.Add("      設定温度  : ");
+                NewLine.AddData.Add(buf.ToString());
+
+                for (int i = 0; i < 4; i++)
+                {
+                    buf.Append((char)Convert.ToInt32(data[17 + i], 16));
+                }
+                NewLine.AddData.Add("   設定湿度  : ");
+                NewLine.AddData.Add(buf.ToString());
+
+                NewLine.AddData.Add("\r\n");
+
+                NewLine.RcvAcuNodeNum = null;
+            }
+        }
+
+        // JO:運転状態
+        private void SplitJO_ACU(string line)
+        {
+            string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(myConstants.SpinSndMsg))
+            {
+                // polling
+                if (data.Length == 11)
+                {
+                    NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[6], 16));
+                    NewLine.AddData.Add(buf.ToString());
+                    NewLine.AddData.Add("[JO] 運転状態読出し\r\n");
+
+                    NewLine.RcvAcuNodeNum = buf.ToString();
+                }
+                // selecting
+                else
+                {
+                    NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[6], 16));
+                    NewLine.AddData.Add(buf.ToString());
+                    NewLine.AddData.Add("      [JO] 運転状態設定  : ");
+                    buf.Append((char)Convert.ToInt32(data[11], 16));
+                    NewLine.AddData.Add(buf.ToString());
+                    NewLine.AddData.Add(joData[int.Parse(buf.ToString())]);
+                    NewLine.AddData.Add("\r\n");
+                }
+
+            }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                if (NewLine.RcvAcuNodeNum != null)
+                {
+
+                    NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
+                }
+                else
+                {
+                    NewLine.AddData.Add(myConstants.ErrorNodeNum);
+                }
+                NewLine.AddData.Add("[JO] 運転状態読出し応答\r\n");
+                buf.Append((char)Convert.ToInt32(data[8], 16));
+                NewLine.AddData.Add("      運転状態  : ");
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add(joData[int.Parse(buf.ToString())]);
+                NewLine.AddData.Add("\r\n");
+
+                NewLine.RcvAcuNodeNum = buf.ToString();
+            }
+        }
+
+        // ER:警報信号
+        private void SplitER_ACU(string line)
+        {
+            string[] data = line.Split(' ');
+            NewLine.AddData = new List<string>();
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();
+            if (line.Contains(myConstants.SpinSndMsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                buf.Append((char)Convert.ToInt32(data[6], 16));
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("[ER] 警報信号読出し\r\n");
+
+                NewLine.RcvAcuNodeNum = buf.ToString();
+
+            }
+            else if (line.Contains(myConstants.SpinRcvmsg))
+            {
+                NewLine.AddData.Add(myConstants.HeaderAcu);
+                if (NewLine.RcvAcuNodeNum != null)
+                {
+
+                    NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
+                }
+                else
+                {
+                    NewLine.AddData.Add(myConstants.ErrorNodeNum);
+                }
+                NewLine.AddData.Add("[ER] 警報信号読出し応答\r\n");
+                buf = new System.Text.StringBuilder();
+                for (int i = 0; i < 4; i++)
+                {
+                    buf.Append((char)Convert.ToInt32(data[8 + i], 16));
+                }
+                NewLine.AddData.Add("      警報信号  : ");
+                NewLine.AddData.Add(buf.ToString());
+                NewLine.AddData.Add("\r\n");
+
+                NewLine.RcvAcuNodeNum = buf.ToString();
+
+            }
+
+        }
+        
         #endregion
         #endregion
 
@@ -2446,7 +2829,7 @@ namespace SioLog
 
                 }
 
-                // ACU
+                // ACUpolling
                 if (data[5] == myConstants.EOT && data[data.Length - 1] == myConstants.ENQ)
                 {
                     ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuSndPosi], 16));
@@ -2458,11 +2841,40 @@ namespace SioLog
 
                 }
 
+                // ACUselecting
+                if (data[5] == myConstants.EOT && data[8] == myConstants.STX)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuSndPosi + 1], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuSndPosi + 2], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 5;
+                    return OriginalMsg;  
+                }
+
             }
             
             // BAKE RCV
             if (line.Contains(myConstants.RcvMsg))
             {
+                // Selecting   
+                if (data[7] == myConstants.ACK && data.Length == 8)
+                {
+                    OriginalMsg.command = "";
+                    OriginalMsg.MsgKind = 30;
+                    return OriginalMsg;
+                }
+                // Polling
+                if (data[7] == myConstants.STX && data[8].CompareTo("40") > 0)
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi], 16));
+                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi + 1], 16));
+
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 20;
+                    return OriginalMsg;
+                }
+
                 // CPwriting
                 if (data[9] == myConstants.ACK && data.Length == 14)
                 {
@@ -2481,24 +2893,7 @@ namespace SioLog
                     return OriginalMsg; 
                 }
 
-                // Polling
-                if (data[7] == myConstants.STX && data[8].CompareTo("40") > 0)
-                {
-                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi], 16));
-                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComPollingRcvPosi + 1], 16));
 
-                    OriginalMsg.command = ComAscii.ToString();
-                    OriginalMsg.MsgKind = 20;
-                    return OriginalMsg;
-                }
-
-                // Selecting   
-                if (data[7] == myConstants.ACK && data.Length == 8)
-                {
-                    OriginalMsg.command = "";
-                    OriginalMsg.MsgKind = 30;
-                    return OriginalMsg;           
-                }
 
             }            
                         
@@ -2508,14 +2903,26 @@ namespace SioLog
                 // ETU
                 if(data[6] == myConstants.EtuMark && data[data.Length - 3] == myConstants.ETX)
                 {
-                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi], 16));
-                    ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi + 1], 16));
+                    // reading
+                    if (data.Length > 15)
+                    {
+                        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi], 16));
+                        ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComEtuPosi + 1], 16));
 
-                    OriginalMsg.command = ComAscii.ToString();
-                    OriginalMsg.MsgKind = 40;
-                    return OriginalMsg;  
+                        OriginalMsg.command = ComAscii.ToString();
+                        OriginalMsg.MsgKind = 40;
+                        return OriginalMsg;
+                    }
+                    // writing
+                    else
+                    {
+                        OriginalMsg.command = "";
+                        OriginalMsg.MsgKind = 41;
+                        return OriginalMsg;
+
+                    }
                 }
-                // ACU
+                // ACUpolling
                 if(data[data.Length - 2] == myConstants.ETX)
                 {
                     ComAscii.Append((char)Convert.ToInt32(data[myConstants.ComAcuRcvPosi], 16));
@@ -2525,11 +2932,19 @@ namespace SioLog
                     OriginalMsg.MsgKind = 50;
                     return OriginalMsg;  
                 }
+                // ACUselecting
+                if (data[4] == myConstants.ACK && data.Length == 5)
+                {
+                    OriginalMsg.command = "";
+                    OriginalMsg.MsgKind = 31;
+                    return OriginalMsg;           
+                }
+
             }
 
             // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
-
-            return OriginalMsg; // 上での初期化わすれずに！！
+            // どんなんか人見さんに確認する
+            return OriginalMsg;
         }
 
         /// <summary>
@@ -2566,6 +2981,7 @@ namespace SioLog
             public const string HeaderCP = "      CP:N";
             public const string HeaderCh = "      CH";
             public const string HeaderEtu = "      ETU:N";
+            public const string HeaderAcu = "      ACU:N";
 
             public const string SpinSndMsg = "[U0A P2]SND";
             public const string EtuMark = "45";
@@ -2574,7 +2990,7 @@ namespace SioLog
             public const int ComEtuPosi = 11;
             
             public const int ComAcuSndPosi = 8;
-            public const int ComAcuRcvPosi = 5;
+            public const int ComAcuRcvPosi = 6;            
             
         }       
  
