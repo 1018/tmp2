@@ -1,0 +1,239 @@
+07月20日 14:27:07.921 ***** StartLogging BAKE01.log *****
+07月20日 14:27:07.984 【TASK起動】taskMainControl()
+07月20日 14:27:07.984 【TASK起動】taskN2Hmds()
+07月20日 14:27:07.984 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:27:07.984 【TASK起動】subControl()
+07月20日 14:27:07.984 【TASK起動】taskStatusTracking()
+07月20日 14:27:08.000 【TASK起動】controlTask()
+07月20日 14:27:08.000 【TASK起動】sendMsgProc()
+07月20日 14:27:08.000 【TASK起動】messageProc()
+07月20日 14:27:08.000 【TASK起動】taskBakeOpen()
+07月20日 14:27:08.000 【TASK起動】taskTrInterlock()
+07月20日 14:27:08.000 【TASK起動】taskBakeClose()
+07月20日 14:27:08.000 【TASK起動】taskBakeProcess()
+07月20日 14:27:08.000 【TASK起動】taskChangeModeOrigin()
+07月20日 14:27:54.625 ***** StartLogging BAKE01.log *****
+07月20日 14:27:54.640 【TASK起動】controlTask()
+07月20日 14:27:54.656 【TASK起動】messageProc()
+07月20日 14:27:54.656 【TASK起動】sendMsgProc()
+07月20日 14:27:54.656 【TASK起動】taskTrInterlock()
+07月20日 14:27:54.734 【TASK起動】taskBakeOpen()
+07月20日 14:27:54.734 【TASK起動】taskBakeClose()
+07月20日 14:27:54.734 【TASK起動】taskBakeProcess()
+07月20日 14:27:54.734 【TASK起動】taskMainControl()
+07月20日 14:27:54.734 【TASK起動】taskN2Hmds()
+07月20日 14:27:54.734 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:27:54.734 【TASK起動】subControl()
+07月20日 14:27:54.734 【TASK起動】taskStatusTracking()
+07月20日 14:27:54.765 【TASK起動】taskChangeModeOrigin()
+07月20日 14:29:31.437 ***** StartLogging BAKE01.log *****
+07月20日 14:29:31.453 【TASK起動】controlTask()
+07月20日 14:29:31.468 【TASK起動】messageProc()
+07月20日 14:29:31.468 【TASK起動】sendMsgProc()
+07月20日 14:29:31.484 【TASK起動】taskTrInterlock()
+07月20日 14:29:31.546 【TASK起動】taskBakeOpen()
+07月20日 14:29:31.546 【TASK起動】taskBakeClose()
+07月20日 14:29:31.546 【TASK起動】taskBakeProcess()
+07月20日 14:29:31.546 【TASK起動】taskMainControl()
+07月20日 14:29:31.546 【TASK起動】taskN2Hmds()
+07月20日 14:29:31.546 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:29:31.546 【TASK起動】subControl()
+07月20日 14:29:31.562 【TASK起動】taskStatusTracking()
+07月20日 14:29:31.656 【TASK起動】taskChangeModeOrigin()
+07月20日 14:30:30.859 [08 熱処理CLOSE   1000]
+07月20日 14:30:30.859 [10 主制御ﾀｽｸ     1000]
+07月20日 14:30:30.859 [05 TRｲﾝﾀｰﾛｯｸ     6000]
+07月20日 14:30:30.859 [11 減圧駆動ﾀｽｸ   1000]
+07月20日 14:30:30.859 [07 熱処理OPEN    1000]
+07月20日 14:30:30.859 [09 熱処理PROCESS 1000]
+07月20日 14:30:30.921 [04 温調機通信ﾀｽｸ 0300]
+07月20日 14:30:31.125 [03 MSG送信ﾀｽｸ    0600]
+07月20日 14:30:35.765 [01 ｺﾝﾄﾛｰﾙﾀｽｸ1    6000]
+07月20日 14:31:28.656 ***** StartLogging BAKE01.log *****
+07月20日 14:31:28.703 【TASK起動】controlTask()
+07月20日 14:31:28.703 【TASK起動】messageProc()
+07月20日 14:31:28.703 【TASK起動】sendMsgProc()
+07月20日 14:31:28.718 【TASK起動】taskTrInterlock()
+07月20日 14:31:28.750 【TASK起動】taskBakeOpen()
+07月20日 14:31:28.750 【TASK起動】taskBakeClose()
+07月20日 14:31:28.750 【TASK起動】taskBakeProcess()
+07月20日 14:31:28.750 【TASK起動】taskMainControl()
+07月20日 14:31:28.750 【TASK起動】taskN2Hmds()
+07月20日 14:31:28.750 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:31:28.750 【TASK起動】subControl()
+07月20日 14:31:28.750 【TASK起動】taskStatusTracking()
+07月20日 14:31:28.921 【TASK起動】taskChangeModeOrigin()
+07月20日 14:32:27.625 [08 熱処理CLOSE   1000]
+07月20日 14:32:27.625 [10 主制御ﾀｽｸ     1000]
+07月20日 14:32:27.625 [07 熱処理OPEN    1000]
+07月20日 14:32:27.625 [05 TRｲﾝﾀｰﾛｯｸ     6000]
+07月20日 14:32:27.625 [11 減圧駆動ﾀｽｸ   1000]
+07月20日 14:32:27.625 [09 熱処理PROCESS 1000]
+07月20日 14:32:27.687 [04 温調機通信ﾀｽｸ 0300]
+07月20日 14:32:27.921 [03 MSG送信ﾀｽｸ    0600]
+07月20日 14:32:32.546 [01 ｺﾝﾄﾛｰﾙﾀｽｸ1    6000]
+07月20日 14:43:47.375 ***** StartLogging BAKE01.log *****
+07月20日 14:43:47.390 【TASK起動】controlTask()
+07月20日 14:43:47.390 【TASK起動】sendMsgProc()
+07月20日 14:43:47.390 【TASK起動】messageProc()
+07月20日 14:43:47.406 【TASK起動】taskTrInterlock()
+07月20日 14:43:47.437 【TASK起動】taskBakeOpen()
+07月20日 14:43:47.453 【TASK起動】taskChangeModeOrigin()
+07月20日 14:43:47.453 【TASK起動】taskMainControl()
+07月20日 14:43:47.453 【TASK起動】taskN2Hmds()
+07月20日 14:43:47.453 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:43:47.453 【TASK起動】subControl()
+07月20日 14:43:47.453 【TASK起動】taskStatusTracking()
+07月20日 14:43:47.453 【TASK起動】taskBakeClose()
+07月20日 14:43:47.453 【TASK起動】taskBakeProcess()
+07月20日 14:43:52.859 ***** StartLogging BAKE01.log *****
+07月20日 14:43:52.906 【TASK起動】controlTask()
+07月20日 14:43:52.906 【TASK起動】messageProc()
+07月20日 14:43:52.906 【TASK起動】sendMsgProc()
+07月20日 14:43:52.906 【TASK起動】taskTrInterlock()
+07月20日 14:43:57.250 【TASK起動】taskChangeModeOrigin()
+07月20日 14:43:57.265 【TASK起動】taskBakeOpen()
+07月20日 14:43:57.265 【TASK起動】taskBakeClose()
+07月20日 14:43:57.265 【TASK起動】taskBakeProcess()
+07月20日 14:43:57.265 【TASK起動】taskMainControl()
+07月20日 14:43:57.265 【TASK起動】taskN2Hmds()
+07月20日 14:43:57.265 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:43:57.265 【TASK起動】subControl()
+07月20日 14:43:57.265 【TASK起動】taskStatusTracking()
+07月20日 14:45:30.890 [07 熱処理OPEN    1000]
+07月20日 14:45:30.890 [10 主制御ﾀｽｸ     1000]
+07月20日 14:45:30.890 [08 熱処理CLOSE   1000]
+07月20日 14:45:30.890 [09 熱処理PROCESS 1000]
+07月20日 14:45:30.890 [11 減圧駆動ﾀｽｸ   1000]
+07月20日 14:45:30.890 [05 TRｲﾝﾀｰﾛｯｸ     6000]
+07月20日 14:45:30.890 [01 ｺﾝﾄﾛｰﾙﾀｽｸ1    6000]
+07月20日 14:45:30.906 [13 ｽﾃｰﾀｽﾄﾗｯｷﾝｸﾞ  0600]
+07月20日 14:46:36.687 ***** StartLogging BAKE01.log *****
+07月20日 14:46:36.703 【TASK起動】controlTask()
+07月20日 14:46:36.703 【TASK起動】messageProc()
+07月20日 14:46:36.703 【TASK起動】sendMsgProc()
+07月20日 14:46:36.703 【TASK起動】taskTrInterlock()
+07月20日 14:46:36.765 【TASK起動】taskBakeOpen()
+07月20日 14:46:36.781 【TASK起動】taskBakeClose()
+07月20日 14:46:36.781 【TASK起動】taskBakeProcess()
+07月20日 14:46:36.781 【TASK起動】taskMainControl()
+07月20日 14:46:36.781 【TASK起動】taskN2Hmds()
+07月20日 14:46:36.781 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:46:36.796 【TASK起動】subControl()
+07月20日 14:46:36.796 【TASK起動】taskStatusTracking()
+07月20日 14:46:36.828 【TASK起動】taskChangeModeOrigin()
+07月20日 14:47:40.843 ***** StartLogging BAKE01.log *****
+07月20日 14:47:40.859 【TASK起動】controlTask()
+07月20日 14:47:40.859 【TASK起動】messageProc()
+07月20日 14:47:40.859 【TASK起動】sendMsgProc()
+07月20日 14:47:40.875 【TASK起動】taskTrInterlock()
+07月20日 14:47:40.937 【TASK起動】taskChangeModeOrigin()
+07月20日 14:47:40.937 【TASK起動】taskBakeOpen()
+07月20日 14:47:40.937 【TASK起動】taskBakeClose()
+07月20日 14:47:40.937 【TASK起動】taskBakeProcess()
+07月20日 14:47:40.937 【TASK起動】taskMainControl()
+07月20日 14:47:40.937 【TASK起動】taskN2Hmds()
+07月20日 14:47:40.937 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:47:40.937 【TASK起動】subControl()
+07月20日 14:47:40.937 【TASK起動】taskStatusTracking()
+07月20日 14:49:39.250 ***** StartLogging BAKE01.log *****
+07月20日 14:49:39.265 【TASK起動】controlTask()
+07月20日 14:49:39.265 【TASK起動】messageProc()
+07月20日 14:49:39.265 【TASK起動】sendMsgProc()
+07月20日 14:49:39.281 【TASK起動】taskTrInterlock()
+07月20日 14:49:39.328 【TASK起動】taskChangeModeOrigin()
+07月20日 14:49:39.343 【TASK起動】taskN2Hmds()
+07月20日 14:49:39.328 【TASK起動】taskBakeOpen()
+07月20日 14:49:39.328 【TASK起動】taskBakeClose()
+07月20日 14:49:39.328 【TASK起動】taskBakeProcess()
+07月20日 14:49:39.328 【TASK起動】taskMainControl()
+07月20日 14:49:39.343 【TASK起動】subControl()
+07月20日 14:49:39.343 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:49:39.390 【TASK起動】taskStatusTracking()
+07月20日 14:50:46.187 ***** StartLogging BAKE01.log *****
+07月20日 14:50:46.203 【TASK起動】controlTask()
+07月20日 14:50:46.203 【TASK起動】messageProc()
+07月20日 14:50:46.218 【TASK起動】sendMsgProc()
+07月20日 14:50:46.218 【TASK起動】taskTrInterlock()
+07月20日 14:50:46.265 【TASK起動】taskBakeOpen()
+07月20日 14:50:46.265 【TASK起動】taskBakeClose()
+07月20日 14:50:46.265 【TASK起動】taskBakeProcess()
+07月20日 14:50:46.265 【TASK起動】taskMainControl()
+07月20日 14:50:46.265 【TASK起動】taskN2Hmds()
+07月20日 14:50:46.265 BAKE::ｺﾝｽﾄﾗｸﾀ 終了
+07月20日 14:50:46.281 【TASK起動】subControl()
+07月20日 14:50:46.281 【TASK起動】taskStatusTracking()
+07月20日 14:50:46.296 【TASK起動】taskChangeModeOrigin()
+07月20日 14:51:55.062 [11 減圧駆動ﾀｽｸ   1000]
+07月20日 14:51:55.062 [10 主制御ﾀｽｸ     1000]
+07月20日 14:51:55.062 [09 熱処理PROCESS 1000]
+07月20日 14:51:55.062 [08 熱処理CLOSE   1000]
+07月20日 14:51:55.062 [07 熱処理OPEN    1000]
+07月20日 14:51:55.062 [05 TRｲﾝﾀｰﾛｯｸ     6000]
+07月20日 14:51:58.234 [01 ｺﾝﾄﾛｰﾙﾀｽｸ1    6000]
+07月20日 14:52:04.609 [04 温調機通信ﾀｽｸ 0300]
+07月20日 14:52:04.968 [03 MSG送信ﾀｽｸ    0600]
+07月20日 14:52:14.625 [13 ｽﾃｰﾀｽﾄﾗｯｷﾝｸﾞ  0600]
+07月20日 14:52:35.656 [U:12]PinDn開始
+07月20日 14:52:35.765 [U:13]PinDn開始
+07月20日 14:52:35.765 [U:13]ShutterClose開始
+07月20日 14:52:35.890 [U:14]PinDn開始
+07月20日 14:52:35.890 [U:14]ShutterClose開始
+07月20日 14:52:35.953 [U:15]PinDn開始
+07月20日 14:52:35.953 [U:15]ShutterClose開始
+07月20日 14:52:36.078 [U:16]PinDn開始
+07月20日 14:52:36.187 [U:17]PinDn開始
+07月20日 14:52:36.187 [U:17]ShutterClose開始
+07月20日 14:52:36.312 [U:18]PinDn開始
+07月20日 14:52:36.312 [U:18]ShutterClose開始
+07月20日 14:52:36.484 [U: 8]PinDn開始
+07月20日 14:52:36.609 [U: 9]PinDn開始
+07月20日 14:52:36.609 [U: 9]ShutterClose開始
+07月20日 14:52:36.734 [U:10]PinDn開始
+07月20日 14:52:36.734 [U:10]ShutterClose開始
+07月20日 14:52:36.859 [U:11]PinDn開始
+07月20日 14:52:36.859 [U:11]ShutterClose開始
+07月20日 14:52:40.656 SoftTimer:タイムアップ[4]
+07月20日 14:52:40.687 [U:12]Pin下降ALM!
+07月20日 14:52:40.765 SoftTimer:タイムアップ[5]
+07月20日 14:52:40.765 SoftTimer:タイムアップ[45]
+07月20日 14:52:40.812 [U:13]Pin下降ALM!
+07月20日 14:52:40.812 [U:13]ShutterCloseALM!
+07月20日 14:52:40.875 SoftTimer:タイムアップ[6]
+07月20日 14:52:40.890 SoftTimer:タイムアップ[46]
+07月20日 14:52:40.937 [U:14]Pin下降ALM!
+07月20日 14:52:40.937 [U:14]ShutterCloseALM!
+07月20日 14:52:40.953 SoftTimer:タイムアップ[7]
+07月20日 14:52:40.953 SoftTimer:タイムアップ[47]
+07月20日 14:52:40.984 [U:15]Pin下降ALM!
+07月20日 14:52:40.984 [U:15]ShutterCloseALM!
+07月20日 14:52:41.062 SoftTimer:タイムアップ[8]
+07月20日 14:52:41.109 [U:16]Pin下降ALM!
+07月20日 14:52:41.187 SoftTimer:タイムアップ[9]
+07月20日 14:52:41.187 SoftTimer:タイムアップ[49]
+07月20日 14:52:41.234 [U:17]Pin下降ALM!
+07月20日 14:52:41.234 [U:17]ShutterCloseALM!
+07月20日 14:52:41.312 SoftTimer:タイムアップ[10]
+07月20日 14:52:41.312 SoftTimer:タイムアップ[50]
+07月20日 14:52:41.359 [U:18]Pin下降ALM!
+07月20日 14:52:41.359 [U:18]ShutterCloseALM!
+07月20日 14:52:41.484 SoftTimer:タイムアップ[0]
+07月20日 14:52:41.531 [U: 8]Pin下降ALM!
+07月20日 14:52:41.609 SoftTimer:タイムアップ[1]
+07月20日 14:52:41.609 SoftTimer:タイムアップ[41]
+07月20日 14:52:41.656 [U: 9]Pin下降ALM!
+07月20日 14:52:41.656 [U: 9]ShutterCloseALM!
+07月20日 14:52:41.734 SoftTimer:タイムアップ[2]
+07月20日 14:52:41.734 SoftTimer:タイムアップ[42]
+07月20日 14:52:41.765 [U:10]Pin下降ALM!
+07月20日 14:52:41.765 [U:10]ShutterCloseALM!
+07月20日 14:52:41.859 SoftTimer:タイムアップ[3]
+07月20日 14:52:41.859 SoftTimer:タイムアップ[43]
+07月20日 14:52:41.890 [U:11]Pin下降ALM!
+07月20日 14:52:41.890 [U:11]ShutterCloseALM!
+07月20日 14:52:45.671 [10 主制御ﾀｽｸ     1000]
+07月20日 14:52:45.734 [08 熱処理CLOSE   1000]
+07月20日 14:52:46.265 [07 熱処理OPEN    1000]
+07月20日 14:52:46.453 [11 減圧駆動ﾀｽｸ   1000]
+07月20日 14:52:54.609 [05 TRｲﾝﾀｰﾛｯｸ     6000]
+07月20日 14:52:58.234 [01 ｺﾝﾄﾛｰﾙﾀｽｸ1    6000]

@@ -1,0 +1,201 @@
+07Œ20“ú 14:27:07.984 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:27:08.000 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:27:08.000 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:27:08.000 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:27:08.000 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:27:08.000 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:27:08.000 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:27:08.000 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:27:08.000 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:27:08.000 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:27:08.015 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:27:08.015 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:27:08.015 yTASK‹N“®zsubControl()
+07Œ20“ú 14:27:08.015 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:27:54.734 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:27:54.750 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:27:54.750 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:27:54.750 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:27:54.750 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:27:54.765 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:27:54.781 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:27:54.781 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:27:54.781 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:27:54.781 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:27:54.781 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:27:54.781 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:27:54.781 yTASK‹N“®zsubControl()
+07Œ20“ú 14:27:54.781 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:29:31.562 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:29:31.562 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:29:31.562 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:29:31.562 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:29:31.578 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:29:31.593 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:29:31.593 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:29:31.593 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:29:31.593 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:29:31.593 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:29:31.593 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:29:31.593 yTASK‹N“®zsubControl()
+07Œ20“ú 14:29:31.593 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:29:31.656 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:30:30.890 [08 ”Mˆ—CLOSE   1000]
+07Œ20“ú 14:30:30.890 [05 TR²İÀ°Û¯¸     6000]
+07Œ20“ú 14:30:30.890 [10 å§ŒäÀ½¸     1000]
+07Œ20“ú 14:30:30.890 [09 ”Mˆ—PROCESS 1000]
+07Œ20“ú 14:30:30.890 [11 Œ¸ˆ³‹ì“®À½¸   1000]
+07Œ20“ú 14:30:30.890 [07 ”Mˆ—OPEN    1000]
+07Œ20“ú 14:30:30.968 [04 ‰·’²‹@’ÊMÀ½¸ 0300]
+07Œ20“ú 14:30:31.234 [03 MSG‘—MÀ½¸    0600]
+07Œ20“ú 14:30:35.875 [01 ºİÄÛ°ÙÀ½¸1    6000]
+07Œ20“ú 14:31:28.765 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:31:28.765 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:31:28.765 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:31:28.765 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:31:28.781 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:31:28.796 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:31:28.796 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:31:28.796 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:31:28.796 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:31:28.796 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:31:28.796 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:31:28.812 yTASK‹N“®zsubControl()
+07Œ20“ú 14:31:28.812 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:31:28.921 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:32:27.671 [10 å§ŒäÀ½¸     1000]
+07Œ20“ú 14:32:27.671 [07 ”Mˆ—OPEN    1000]
+07Œ20“ú 14:32:27.671 [09 ”Mˆ—PROCESS 1000]
+07Œ20“ú 14:32:27.671 [11 Œ¸ˆ³‹ì“®À½¸   1000]
+07Œ20“ú 14:32:27.671 [08 ”Mˆ—CLOSE   1000]
+07Œ20“ú 14:32:27.687 [05 TR²İÀ°Û¯¸     6000]
+07Œ20“ú 14:32:27.750 [04 ‰·’²‹@’ÊMÀ½¸ 0300]
+07Œ20“ú 14:32:28.000 [03 MSG‘—MÀ½¸    0600]
+07Œ20“ú 14:32:32.625 [01 ºİÄÛ°ÙÀ½¸1    6000]
+07Œ20“ú 14:43:47.453 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:43:47.453 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:43:47.468 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:43:47.468 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:43:47.468 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:43:47.484 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:43:47.484 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:43:47.484 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:43:47.484 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:43:47.484 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:43:47.484 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:43:47.500 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:43:47.500 yTASK‹N“®zsubControl()
+07Œ20“ú 14:43:47.500 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:43:57.265 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:43:57.296 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:43:57.296 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:43:57.296 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:43:57.296 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:43:57.328 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:43:57.328 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:43:57.328 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:43:57.343 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:43:57.343 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:43:57.343 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:43:57.343 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:43:57.359 yTASK‹N“®zsubControl()
+07Œ20“ú 14:43:57.359 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:45:30.921 [10 å§ŒäÀ½¸     1000]
+07Œ20“ú 14:45:30.921 [08 ”Mˆ—CLOSE   1000]
+07Œ20“ú 14:45:30.921 [11 Œ¸ˆ³‹ì“®À½¸   1000]
+07Œ20“ú 14:45:30.921 [07 ”Mˆ—OPEN    1000]
+07Œ20“ú 14:45:30.921 [09 ”Mˆ—PROCESS 1000]
+07Œ20“ú 14:45:30.921 [05 TR²İÀ°Û¯¸     6000]
+07Œ20“ú 14:45:30.921 [01 ºİÄÛ°ÙÀ½¸1    6000]
+07Œ20“ú 14:45:30.937 [13 ½Ã°À½Ä×¯·İ¸Ş  0600]
+07Œ20“ú 14:46:36.781 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:46:36.796 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:46:36.796 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:46:36.796 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:46:36.812 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:46:36.843 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:46:36.843 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:46:36.843 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:46:36.843 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:46:36.843 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:46:36.843 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:46:36.859 yTASK‹N“®zsubControl()
+07Œ20“ú 14:46:36.859 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:46:36.906 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:47:40.937 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:47:40.968 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:47:40.968 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:47:40.968 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:47:40.968 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:47:41.015 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:47:41.015 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:47:41.015 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:47:41.015 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:47:41.031 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:47:41.031 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:47:41.031 yTASK‹N“®zsubControl()
+07Œ20“ú 14:47:41.031 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:47:41.140 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:49:39.390 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:49:39.406 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:49:39.406 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:49:39.406 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:49:39.406 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:49:39.437 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:49:39.437 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:49:39.437 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:49:39.437 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:49:39.437 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:49:39.437 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:49:39.437 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:49:39.453 yTASK‹N“®zsubControl()
+07Œ20“ú 14:49:39.453 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:50:46.265 ***** StartLogging BAKE02.log *****
+07Œ20“ú 14:50:46.296 yTASK‹N“®zcontrolTask()
+07Œ20“ú 14:50:46.296 yTASK‹N“®zmessageProc()
+07Œ20“ú 14:50:46.296 yTASK‹N“®zsendMsgProc()
+07Œ20“ú 14:50:46.296 yTASK‹N“®ztaskTrInterlock()
+07Œ20“ú 14:50:46.296 yTASK‹N“®ztaskBakeOpen()
+07Œ20“ú 14:50:46.296 yTASK‹N“®ztaskBakeClose()
+07Œ20“ú 14:50:46.312 yTASK‹N“®ztaskBakeProcess()
+07Œ20“ú 14:50:46.312 yTASK‹N“®ztaskMainControl()
+07Œ20“ú 14:50:46.312 yTASK‹N“®ztaskN2Hmds()
+07Œ20“ú 14:50:46.312 BAKE::ºİ½Ä×¸À I—¹
+07Œ20“ú 14:50:46.312 yTASK‹N“®zsubControl()
+07Œ20“ú 14:50:46.312 yTASK‹N“®ztaskStatusTracking()
+07Œ20“ú 14:50:46.421 yTASK‹N“®ztaskChangeModeOrigin()
+07Œ20“ú 14:51:55.078 [08 ”Mˆ—CLOSE   1000]
+07Œ20“ú 14:51:55.078 [10 å§ŒäÀ½¸     1000]
+07Œ20“ú 14:51:55.078 [09 ”Mˆ—PROCESS 1000]
+07Œ20“ú 14:51:55.078 [11 Œ¸ˆ³‹ì“®À½¸   1000]
+07Œ20“ú 14:51:55.953 [05 TR²İÀ°Û¯¸     6000]
+07Œ20“ú 14:52:00.062 [01 ºİÄÛ°ÙÀ½¸1    6000]
+07Œ20“ú 14:52:04.812 [04 ‰·’²‹@’ÊMÀ½¸ 0300]
+07Œ20“ú 14:52:05.062 [03 MSG‘—MÀ½¸    0600]
+07Œ20“ú 14:52:15.640 [13 ½Ã°À½Ä×¯·İ¸Ş  0600]
+07Œ20“ú 14:52:36.593 [U:19]PinDnŠJn
+07Œ20“ú 14:52:36.718 [U:20]PinDnŠJn
+07Œ20“ú 14:52:36.718 [U:20]ShutterCloseŠJn
+07Œ20“ú 14:52:36.828 [U:21]PinDnŠJn
+07Œ20“ú 14:52:36.828 [U:21]ShutterCloseŠJn
+07Œ20“ú 14:52:36.953 [U:22]PinDnŠJn
+07Œ20“ú 14:52:36.953 [U:22]ShutterCloseŠJn
+07Œ20“ú 14:52:41.593 SoftTimer:ƒ^ƒCƒ€ƒAƒbƒv[0]
+07Œ20“ú 14:52:41.625 [U:19]Pin‰º~ALM!
+07Œ20“ú 14:52:41.718 SoftTimer:ƒ^ƒCƒ€ƒAƒbƒv[1]
+07Œ20“ú 14:52:41.718 SoftTimer:ƒ^ƒCƒ€ƒAƒbƒv[41]
+07Œ20“ú 14:52:41.750 [U:20]Pin‰º~ALM!
+07Œ20“ú 14:52:41.750 [U:20]ShutterCloseALM!
+07Œ20“ú 14:52:41.828 SoftTimer:ƒ^ƒCƒ€ƒAƒbƒv[2]
+07Œ20“ú 14:52:41.828 SoftTimer:ƒ^ƒCƒ€ƒAƒbƒv[42]
+07Œ20“ú 14:52:41.875 [U:21]Pin‰º~ALM!
+07Œ20“ú 14:52:41.875 [U:21]ShutterCloseALM!
+07Œ20“ú 14:52:41.953 SoftTimer:ƒ^ƒCƒ€ƒAƒbƒv[3]
+07Œ20“ú 14:52:41.953 SoftTimer:ƒ^ƒCƒ€ƒAƒbƒv[43]
+07Œ20“ú 14:52:41.984 [U:22]Pin‰º~ALM!
+07Œ20“ú 14:52:41.984 [U:22]ShutterCloseALM!
+07Œ20“ú 14:52:45.593 [08 ”Mˆ—CLOSE   1000]
+07Œ20“ú 14:52:45.656 [10 å§ŒäÀ½¸     1000]
+07Œ20“ú 14:52:48.046 [07 ”Mˆ—OPEN    1000]
+07Œ20“ú 14:52:48.296 [11 Œ¸ˆ³‹ì“®À½¸   1000]
+07Œ20“ú 14:52:55.953 [05 TR²İÀ°Û¯¸     6000]
