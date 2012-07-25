@@ -37,6 +37,7 @@ namespace SioLog
 
         ConvertedData NewLine = new ConvertedData();
         MsgInfo OriginalMsg = new MsgInfo();
+        DataCounts DataCnt = new DataCounts();
 
 
         CheckBox[] NodeFileter;
@@ -177,15 +178,15 @@ namespace SioLog
 
         private int ContainsSlaveFilterCheckBox()
         {
-            this.SlaveFilter = new CheckBox[5];
+            this.SlaveFilter = new CheckBox[4];
             this.SlaveFilter[0] = this.filterCp;
             this.SlaveFilter[1] = this.filterHp;
             this.SlaveFilter[3] = this.filterAcu;
             this.SlaveFilter[2] = this.filterEtu;
-            this.SlaveFilter[4] = this.filterPulse;
+//            this.SlaveFilter[4] = this.filterPulse;
 
             int result = 0x00;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (SlaveFilter[i].Checked)
                 {
@@ -195,7 +196,7 @@ namespace SioLog
 
             if (result == 0x00)
             {
-                result = 0x1F;
+                result = 0x0F;
             }
 
             return result;
@@ -245,18 +246,30 @@ namespace SioLog
         {
             public string command   { get; set; }
             public int MsgKind      { get; set; }
+//            public int CpDataCnt { get; set; }
+//            public int AcuSelectingDataCnt { get; set; }
+        }
+
+        public class DataCounts
+        {
+            public int cp { get; set; }
+            public int acu { get; set; }
         }
        
 
+        // すっきりもーどで消去するﾒｯｾｰｼﾞ
         private string[] trashBox = new string[]{
+            "*****",
             "占有権",
             "モード",
             "初期設定",
             "NOT",
             "READY",
-            "[U0C P1]RCV",
-            "[U0A P2]RCV 02",
-            "[U0A P2]RCV 04"
+            "]RCV 02",
+            "]RCV 04",
+            "]RCV 06",
+            "]RCV 15",
+            "受信異常"
         };
 
         private string[] joData = new string[]{
@@ -405,11 +418,11 @@ namespace SioLog
             int nodeResult = ContainsNodeFilterCheckBox();
             int slaveResult = ContainsSlaveFilterCheckBox();
 
-            int cpDataCounts = 0;
             string line = "";
             while ((line = sr.ReadLine()) != null)
             {
-                string[] data = line.Split(' '); 
+                string[] data = line.Split(' ');
+                OriginalMsg = new MsgInfo();
                 
                 // すっきりもーど(仮)
                 bool result = false;
@@ -428,7 +441,7 @@ namespace SioLog
                     if (line.Contains(myConstants.BakeRcvMsg) && data.Length > 7)
                     {
                         // CPｴｺｰﾊﾞｯｸ
-                        if (data.Count() == cpDataCounts + 2)
+                        if (data.Count() == DataCnt.cp + 2)
                         {
                             continue;
                         }
@@ -447,6 +460,10 @@ namespace SioLog
                         }
 
                         if (data[data.Length - 1] == myConstants.ENQ)
+                        {
+                            continue;
+                        }
+                        if(data.Count() == DataCnt.acu)
                         {
                             continue;
                         }
@@ -470,7 +487,7 @@ namespace SioLog
                     if (line.Contains(myConstants.BakeRcvMsg) && data.Length > 7)
                     {
                         // CPｴｺｰﾊﾞｯｸ
-                        if (data.Count() == cpDataCounts + 2)
+                        if (data.Count() == DataCnt.cp + 2)
                         {
                             sw.WriteLine(line + sw.NewLine);
                             continue;
@@ -495,7 +512,11 @@ namespace SioLog
                             sw.WriteLine(line + sw.NewLine);
                             continue;
                         }
-                        
+                        if (data.Count() == DataCnt.acu)
+                        {
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+                        }                        
                     }
                 }
                 if (result) continue;
@@ -509,18 +530,18 @@ namespace SioLog
                     GetSndMsgType(line);
                 }
                 // RCV
-                else if (line.Contains(myConstants.BakeRcvMsg) || 
+                else if (line.Contains(myConstants.BakeRcvMsg) ||
                          line.Contains(myConstants.SpinRcvMsg))
                 {
                     GetRcvMsgType(line);
-                }
+                } 
 
                 try
                 {
                     switch (OriginalMsg.MsgKind)
                     {
                         case 1: // CP SND
-                            if (!this.filterCp.Checked && slaveResult != 0x1F)
+                            if (!this.filterCp.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -529,11 +550,10 @@ namespace SioLog
                             {
                                 throw new Exception(myConstants.ErrorMsg);
                             }
-                            cpDataCounts = data.Count();
                             break;
 
                         case 2: // Polling SND
-                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            if (!this.filterHp.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -544,7 +564,7 @@ namespace SioLog
                             break;
 
                         case 3: // Selecting SND
-                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            if (!this.filterHp.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -556,7 +576,7 @@ namespace SioLog
 
                         case 4: // ETU SND
                         case 40:
-                            if (!this.filterEtu.Checked && slaveResult != 0x1F)
+                            if (!this.filterEtu.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -568,7 +588,7 @@ namespace SioLog
 
                         case 5: // ACU(5/50) SND/RCV
                         case 50:
-                            if (!this.filterAcu.Checked && slaveResult != 0x1F)
+                            if (!this.filterAcu.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -579,15 +599,17 @@ namespace SioLog
                             break;
                         // CPwriting RCV
                         case 10:    
-                            if (!this.filterCp.Checked && slaveResult != 0x1F)
+                            if (!this.filterCp.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
-                            sw.WriteLine(line + sw.NewLine);
+                            sw.WriteLine(line);
+                            sw.WriteLine("      CP:ACK(受信成功)\r\n");
+
                             continue;
                         // CPreading RCV
                         case 11:
-                            if (!this.filterCp.Checked && slaveResult != 0x1F)
+                            if (!this.filterCp.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -599,7 +621,7 @@ namespace SioLog
                             break;
                         // Polling RCV
                         case 20:
-                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            if (!this.filterHp.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -612,7 +634,7 @@ namespace SioLog
                             break;
                         // HP Selecting RCV
                         case 30:
-                            if (!this.filterHp.Checked && slaveResult != 0x1F)
+                            if (!this.filterHp.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -620,15 +642,30 @@ namespace SioLog
                             continue;
                         // ACU Selecting RCV
                         case 31:    
-                            if (!this.filterAcu.Checked && slaveResult != 0x1F)
+                            if (data[data.Length - 1] == myConstants.ACK)
+                            {
+                                sw.WriteLine(line);
+                                sw.WriteLine("      ACU:ACK(受信成功)\r\n");
+                                continue;
+                            }
+                            else if (data[data.Length - 1] == myConstants.NAK)
+                            {
+                                sw.WriteLine(line);
+                                sw.WriteLine("      ACU:NAK(受信失敗)\r\n");
+                                continue;
+                            }
+                            else if (data.Length == 6 && data[data.Length - 1] == myConstants.EOT)
                             {
                                 continue;
                             }
-                            sw.WriteLine(line + sw.NewLine);
-                            continue;
+                            else
+                            {
+                                throw new Exception(myConstants.ErrorMsg);
+                            }
+
                         // ETUwriting
                         case 41:
-                            if (!this.filterEtu.Checked && slaveResult != 0x1F)
+                            if (!this.filterEtu.Checked && slaveResult != 0x0F)
                             {
                                 continue;
                             }
@@ -650,15 +687,19 @@ namespace SioLog
 
                         // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
                         case 6:
-                            if (!this.filterPulse.Checked && slaveResult != 0x1F)
+                            // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞを表示しないにﾁｪｯｸ
+                            if (this.filterNoPulse.Checked || !this.filterPulse.Checked)
                             {
                                 continue;
                             }
-                            if (!CallSpinDic(OriginalMsg.command, line))
+                            else if (this.filterPulse.Checked && !this.filterNoPulse.Checked)
                             {
-                                sw.WriteLine(line);
-                                sw.WriteLine(myConstants.ErrorMsg + sw.NewLine);
-                                continue;
+                                if (!CallSpinDic(OriginalMsg.command, line))
+                                {
+                                    sw.WriteLine(line);
+                                    sw.WriteLine(myConstants.ErrorMsg + sw.NewLine);
+                                    continue;
+                                }
                             }
 
                             break;
@@ -1412,7 +1453,6 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderHP);
                 if (NewLine.RcvHpNodeNum != null)
                 {
-
                     NewLine.AddData.Add(NewLine.RcvHpNodeNum);
                 }
                 else
@@ -1487,7 +1527,7 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderHP);
                 buf.Append((char)Convert.ToInt32(data[7], 16));
                 NewLine.AddData.Add(buf.ToString());
-                NewLine.AddData.Add("[S1] 設定温度読出し\r\r\n");
+                NewLine.AddData.Add("[S1] 設定温度読出し\r\n");
 
                 NewLine.RcvHpNodeNum = buf.ToString();
             }
@@ -1496,7 +1536,6 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderHP);
                 if (NewLine.RcvHpNodeNum != null)
                 {
-
                     NewLine.AddData.Add(NewLine.RcvHpNodeNum);
                 }
                 else
@@ -1544,7 +1583,6 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderHP);
                 if (NewLine.RcvHpNodeNum != null)
                 {
-
                     NewLine.AddData.Add(NewLine.RcvHpNodeNum);
                 }
                 else
@@ -2572,6 +2610,7 @@ namespace SioLog
             if (line.Contains(myConstants.SndMsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderAcu);
+                buf.Append((char)Convert.ToInt32(data[mPosi - 3], 16));
                 buf.Append((char)Convert.ToInt32(data[mPosi - 2], 16));
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("[M1] 制御出口空気温度測定値読出し\r\n");
@@ -2617,6 +2656,7 @@ namespace SioLog
             {
                 NewLine.AddData.Add(myConstants.HeaderAcu);
                 buf.Append((char)Convert.ToInt32(data[mPosi - 2], 16));
+                buf.Append((char)Convert.ToInt32(data[mPosi - 1], 16));
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("[M5] 制御出口空気湿度測定値読出し\r\n");
 
@@ -2672,6 +2712,7 @@ namespace SioLog
                 {
                     NewLine.AddData.Add(myConstants.HeaderAcu);
                     buf.Append((char)Convert.ToInt32(data[sPosi - 2], 16));
+                    buf.Append((char)Convert.ToInt32(data[sPosi - 1], 16));
                     NewLine.AddData.Add(buf.ToString());
                     NewLine.AddData.Add("[S1] 制御出口空気温度設定温度読出し\r\n");
 
@@ -2681,9 +2722,10 @@ namespace SioLog
                 else
                 {
                     NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[sPosi - 3], 16));
                     buf.Append((char)Convert.ToInt32(data[sPosi - 2], 16));
                     NewLine.AddData.Add(buf.ToString());
-                    NewLine.AddData.Add("      [S1] 制御出口空気温度設定  : ");
+                    NewLine.AddData.Add("[S1] 制御出口空気温度設定  : ");
                     buf = new System.Text.StringBuilder();
                     for (int i = 0; i < 5; i++)
                     {
@@ -2700,7 +2742,6 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderAcu);
                 if (NewLine.RcvAcuNodeNum != null)
                 {
-
                     NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
                 }
                 else
@@ -2736,6 +2777,7 @@ namespace SioLog
                 {
                     NewLine.AddData.Add(myConstants.HeaderAcu);
                     buf.Append((char)Convert.ToInt32(data[sPosi - 2], 16));
+                    buf.Append((char)Convert.ToInt32(data[sPosi - 1], 16));
                     NewLine.AddData.Add(buf.ToString());
                     NewLine.AddData.Add("[S5] 制御出口空気湿度設定値読出し\r\n");
 
@@ -2745,6 +2787,7 @@ namespace SioLog
                 else
                 {
                     NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[sPosi - 3], 16));
                     buf.Append((char)Convert.ToInt32(data[sPosi - 2], 16));
                     NewLine.AddData.Add(buf.ToString());                    
                     buf = new System.Text.StringBuilder();
@@ -2752,9 +2795,10 @@ namespace SioLog
                     {
                         buf.Append((char)Convert.ToInt32(data[sPosi + 3 + i], 16));
                     }
-                    NewLine.AddData.Add("      [S5] 制御出口空気温度設定  : ");
+                    NewLine.AddData.Add("[S5] 制御出口空気温度設定  : ");
                     NewLine.AddData.Add(buf.ToString());
 
+                    buf = new System.Text.StringBuilder();
                     for (int i = 0; i < 4; i++)
                     {
                         buf.Append((char)Convert.ToInt32(data[sPosi + 11 + i], 16));
@@ -2770,9 +2814,9 @@ namespace SioLog
             else if (line.Contains(myConstants.SpinRcvMsg))
             {
                 NewLine.AddData.Add(myConstants.HeaderAcu);
+
                 if (NewLine.RcvAcuNodeNum != null)
                 {
-
                     NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
                 }
                 else
@@ -2788,6 +2832,7 @@ namespace SioLog
                 NewLine.AddData.Add("      設定温度  : ");
                 NewLine.AddData.Add(buf.ToString());
 
+                buf = new System.Text.StringBuilder();
                 for (int i = 0; i < 4; i++)
                 {
                     buf.Append((char)Convert.ToInt32(data[sPosi + 11 + i], 16));
@@ -2816,6 +2861,7 @@ namespace SioLog
                 {
                     NewLine.AddData.Add(myConstants.HeaderAcu);
                     buf.Append((char)Convert.ToInt32(data[jPosi - 2], 16));
+                    buf.Append((char)Convert.ToInt32(data[jPosi - 1], 16));
                     NewLine.AddData.Add(buf.ToString());
                     NewLine.AddData.Add("[JO] 運転状態読出し\r\n");
 
@@ -2825,10 +2871,13 @@ namespace SioLog
                 else
                 {
                     NewLine.AddData.Add(myConstants.HeaderAcu);
+                    buf.Append((char)Convert.ToInt32(data[jPosi - 3], 16));
                     buf.Append((char)Convert.ToInt32(data[jPosi - 2], 16));
                     NewLine.AddData.Add(buf.ToString());
-                    NewLine.AddData.Add("      [JO] 運転状態設定  : ");
-                    buf.Append((char)Convert.ToInt32(data[jPosi + 3], 16));
+                    NewLine.AddData.Add("[JO] 運転状態設定  : ");
+
+                    buf = new System.Text.StringBuilder();
+                    buf.Append((char)Convert.ToInt32(data[jPosi + 2], 16));
                     NewLine.AddData.Add(buf.ToString());
                     NewLine.AddData.Add(joData[int.Parse(buf.ToString())]);
                     NewLine.AddData.Add("\r\n");
@@ -2841,7 +2890,6 @@ namespace SioLog
                 NewLine.AddData.Add(myConstants.HeaderAcu);
                 if (NewLine.RcvAcuNodeNum != null)
                 {
-
                     NewLine.AddData.Add(NewLine.RcvAcuNodeNum);
                 }
                 else
@@ -2849,13 +2897,15 @@ namespace SioLog
                     NewLine.AddData.Add(myConstants.ErrorNodeNum);
                 }
                 NewLine.AddData.Add("[JO] 運転状態読出し応答\r\n");
-                buf.Append((char)Convert.ToInt32(data[jPosi + 2], 16));
                 NewLine.AddData.Add("      運転状態  : ");
+                buf = new System.Text.StringBuilder();
+                buf.Append((char)Convert.ToInt32(data[jPosi + 2], 16));
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add(joData[int.Parse(buf.ToString())]);
                 NewLine.AddData.Add("\r\n");
 
-                NewLine.RcvAcuNodeNum = buf.ToString();
+                NewLine.RcvAcuNodeNum = buf.ToString();               
+ 
             }
         }
 
@@ -2871,6 +2921,7 @@ namespace SioLog
             {
                 NewLine.AddData.Add(myConstants.HeaderAcu);
                 buf.Append((char)Convert.ToInt32(data[ePosi - 2], 16));
+                buf.Append((char)Convert.ToInt32(data[ePosi - 1], 16));
                 NewLine.AddData.Add(buf.ToString());
                 NewLine.AddData.Add("[ER] 警報信号読出し\r\n");
 
@@ -2924,7 +2975,6 @@ namespace SioLog
             {
                 NewLine.AddData.Add("      ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞｰのﾒｯｾｰｼﾞです\r\n");
             }
-
         }
         #endregion
 
@@ -2985,6 +3035,9 @@ namespace SioLog
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 5;
+
+                    DataCnt.acu = data.Count();
+
                     return OriginalMsg;
                 }
                 // S1
@@ -3008,6 +3061,9 @@ namespace SioLog
 
                         OriginalMsg.command = ComAscii.ToString();
                         OriginalMsg.MsgKind = 5;
+
+                        DataCnt.acu = data.Count();
+
                         return OriginalMsg;
                     }
                 }
@@ -3033,6 +3089,7 @@ namespace SioLog
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 1;
+                    DataCnt.cp = data.Count();
                     return OriginalMsg;
                 }
                 // ETU
@@ -3105,39 +3162,60 @@ namespace SioLog
             // SPIN RCV
             if (line.Contains(myConstants.SpinRcvMsg))
             {
-                // ACUpolling
-                if (data[data.Length - 2] == myConstants.ETX)
+                if (data.Length < 10)
                 {
-                    for (int i = data.Length - 3; i > 0; i--)
-                    {
-                        if (data[i].CompareTo("40") > 0)
-                        {
-                            if (data[i - 1].CompareTo("40") > 0)
-                            {
-                                ComAscii.Append((char)Convert.ToInt32(data[i - 1], 16));
-                                ComAscii.Append((char)Convert.ToInt32(data[i], 16));
-                                break;
-                            }
-                            else
-                            {
-                                ComAscii.Append((char)Convert.ToInt32(data[i], 16));
-                                ComAscii.Append((char)Convert.ToInt32(data[i + 1], 16));
-                                break;
-                            }
-
-                        }
-                    }
-                    OriginalMsg.command = ComAscii.ToString();
-                    OriginalMsg.MsgKind = 50;
-                    return OriginalMsg;
-                }
-                // ACUselecting
-                if (data[5] == myConstants.ACK && data.Length == 6)
-                {
+                    //// ACUselecting
+                    //if (data[data.Length - 1] == myConstants.ACK || 
+                    //    data[data.Length - 1] == myConstants.NAK)
+                    //{
                     OriginalMsg.command = "";
                     OriginalMsg.MsgKind = 31;
-                    return OriginalMsg;
+                    //    return OriginalMsg;
+                    //}
+                    //else
+                    //{
+                    //}
                 }
+                else
+                {
+                    // ACUpolling
+                    if (data[data.Length - 2] == myConstants.ETX)
+                    {
+                        for (int i = data.Length - 3; i > 3; i--)
+                        {
+                            if (data[i].CompareTo("40") > 0)
+                            {
+                                // ﾌｫｰﾏｯﾄは正しくないけど何とかなりそうなやつ
+                                if (data[i - 1].Contains("RCV"))
+                                {
+                                    //ComAscii.Append((char)Convert.ToInt32(data[i], 16));
+                                    //ComAscii.Append((char)Convert.ToInt32(data[i + 1], 16));
+                                    //break;
+                                    OriginalMsg.command = "";
+                                    OriginalMsg.MsgKind = 100;
+                                    return OriginalMsg;
+                                }
+                                // ERとJO
+                                if (data[i - 1].CompareTo("40") > 0)
+                                {
+                                    ComAscii.Append((char)Convert.ToInt32(data[i - 1], 16));
+                                    ComAscii.Append((char)Convert.ToInt32(data[i], 16));
+                                    break;
+                                }
+                                // その他
+                                else
+                                {
+                                    ComAscii.Append((char)Convert.ToInt32(data[i], 16));
+                                    ComAscii.Append((char)Convert.ToInt32(data[i + 1], 16));
+                                    break;
+                                }
+                            }
+                        }
+
+                        OriginalMsg.command = ComAscii.ToString();
+                        OriginalMsg.MsgKind = 50;
+                        return OriginalMsg;
+                    }
 
 #if SIMULATOR_MODE
                 if (data.Length == 14 && data[data.Length - 3] == myConstants.ETX)
@@ -3147,48 +3225,48 @@ namespace SioLog
                     return OriginalMsg;
                 }
 #endif
-                // ETU 
-                if (data[6] == myConstants.EtuMark && data[data.Length - 3] == myConstants.ETX)
-                {
-                    // reading
-                    if (line.Contains(" 52 "))
-                    {
-                        int rPosi = Array.LastIndexOf(data, "52");
-                        if (data[rPosi - 1] != "52")
+                    // ETU 
+//                    if (data[6] == myConstants.EtuMark && data[data.Length - 3] == myConstants.ETX)
+ //                   {
+                        // reading
+                        if (line.Contains(" 52 ") && data[data.Length - 3] == myConstants.ETX)
                         {
-                            ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
-                            ComAscii.Append((char)Convert.ToInt32(data[rPosi + 1], 16));
+                            int rPosi = Array.LastIndexOf(data, "52");
+                            if (data[rPosi - 1] != "52")
+                            {
+                                ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
+                                ComAscii.Append((char)Convert.ToInt32(data[rPosi + 1], 16));
+                            }
+                            // RR
+                            else
+                            {
+                                ComAscii.Append((char)Convert.ToInt32(data[rPosi - 1], 16));
+                                ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
+                            }
+
+                            OriginalMsg.command = ComAscii.ToString();
+                            OriginalMsg.MsgKind = 40;
+                            return OriginalMsg;
                         }
-                        // RR
+                        // writing
                         else
                         {
-                            ComAscii.Append((char)Convert.ToInt32(data[rPosi - 1], 16));
-                            ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
+                            OriginalMsg.command = "";
+                            OriginalMsg.MsgKind = 41;
+                            return OriginalMsg;
                         }
+//                    }
 
-                        OriginalMsg.command = ComAscii.ToString();
-                        OriginalMsg.MsgKind = 40;
-                        return OriginalMsg;
-                    }
-                    // writing
-                    else
+                    // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
+                    if (data[6] == "50")
                     {
-                        OriginalMsg.command = "";
-                        OriginalMsg.MsgKind = 41;
+                        ComAscii.Append((char)Convert.ToInt32(data[Array.IndexOf(data, "50")], 16));
+                        OriginalMsg.command = ComAscii.ToString();
+                        OriginalMsg.MsgKind = 6;
+
                         return OriginalMsg;
                     }
                 }
-
-                // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
-                if (data[6] == "50")
-                {
-                    ComAscii.Append((char)Convert.ToInt32(data[Array.IndexOf(data, "50")], 16));
-                    OriginalMsg.command = ComAscii.ToString();
-                    OriginalMsg.MsgKind = 6;
-
-                    return OriginalMsg;
-                }
-
             }
             return OriginalMsg;
 
@@ -3233,7 +3311,7 @@ namespace SioLog
             public const string EtuMark = "45";             // E
             
 
-            public const string SndMsg = "]SND";
+            public const string SndMsg = "]SND S";
             public const string BakeRcvMsg = "RCV U";
             public const string SpinRcvMsg = "]RCV";
             public const string PulseMortorRcvmsg = "P2]RCV";
@@ -3251,6 +3329,7 @@ namespace SioLog
             public const string EOT = "04";
             public const string ENQ = "05";
             public const string ACK = "06";
+            public const string NAK = "15";
             public const string PERIOD = "2E";
             public const string CR = "0D";
 
@@ -3258,7 +3337,7 @@ namespace SioLog
             public const string HeaderCP = "      CP:N";
             public const string HeaderCh = "      CH";
             public const string HeaderEtu = "      ETU:N";
-            public const string HeaderAcu = "      ACU:N";
+            public const string HeaderAcu = "      ACU:N"; 
 
         }       
 
