@@ -52,7 +52,6 @@
             this.filterEtu = new System.Windows.Forms.CheckBox();
             this.filterAcu = new System.Windows.Forms.CheckBox();
             this.filterPulse = new System.Windows.Forms.CheckBox();
-            this.filterNoPulse = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -196,7 +195,7 @@
             // filterNode5
             // 
             this.filterNode5.AutoSize = true;
-            this.filterNode5.Location = new System.Drawing.Point(328, 136);
+            this.filterNode5.Location = new System.Drawing.Point(336, 136);
             this.filterNode5.Name = "filterNode5";
             this.filterNode5.Size = new System.Drawing.Size(98, 16);
             this.filterNode5.TabIndex = 25;
@@ -206,7 +205,7 @@
             // filterNode4
             // 
             this.filterNode4.AutoSize = true;
-            this.filterNode4.Location = new System.Drawing.Point(328, 120);
+            this.filterNode4.Location = new System.Drawing.Point(336, 120);
             this.filterNode4.Name = "filterNode4";
             this.filterNode4.Size = new System.Drawing.Size(98, 16);
             this.filterNode4.TabIndex = 24;
@@ -228,7 +227,7 @@
             // filterNode7
             // 
             this.filterNode7.AutoSize = true;
-            this.filterNode7.Location = new System.Drawing.Point(328, 168);
+            this.filterNode7.Location = new System.Drawing.Point(336, 168);
             this.filterNode7.Name = "filterNode7";
             this.filterNode7.Size = new System.Drawing.Size(98, 16);
             this.filterNode7.TabIndex = 27;
@@ -238,7 +237,7 @@
             // filterNode6
             // 
             this.filterNode6.AutoSize = true;
-            this.filterNode6.Location = new System.Drawing.Point(328, 152);
+            this.filterNode6.Location = new System.Drawing.Point(336, 152);
             this.filterNode6.Name = "filterNode6";
             this.filterNode6.Size = new System.Drawing.Size(98, 16);
             this.filterNode6.TabIndex = 26;
@@ -270,20 +269,10 @@
             this.filterPulse.AutoSize = true;
             this.filterPulse.Location = new System.Drawing.Point(104, 192);
             this.filterPulse.Name = "filterPulse";
-            this.filterPulse.Size = new System.Drawing.Size(159, 16);
+            this.filterPulse.Size = new System.Drawing.Size(166, 16);
             this.filterPulse.TabIndex = 10;
-            this.filterPulse.Text = "ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞのみ抽出";
+            this.filterPulse.Text = "ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞを表示する";
             this.filterPulse.UseVisualStyleBackColor = true;
-            // 
-            // filterNoPulse
-            // 
-            this.filterNoPulse.AutoSize = true;
-            this.filterNoPulse.Location = new System.Drawing.Point(264, 192);
-            this.filterNoPulse.Name = "filterNoPulse";
-            this.filterNoPulse.Size = new System.Drawing.Size(176, 16);
-            this.filterNoPulse.TabIndex = 31;
-            this.filterNoPulse.Text = "ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞを表示しない";
-            this.filterNoPulse.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -292,7 +281,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(544, 226);
-            this.Controls.Add(this.filterNoPulse);
             this.Controls.Add(this.filterPulse);
             this.Controls.Add(this.filterEtu);
             this.Controls.Add(this.filterAcu);
@@ -349,7 +337,6 @@
         private System.Windows.Forms.CheckBox filterEtu;
         private System.Windows.Forms.CheckBox filterAcu;
         private System.Windows.Forms.CheckBox filterPulse;
-        private System.Windows.Forms.CheckBox filterNoPulse;
     }
 }
 

@@ -246,8 +246,6 @@ namespace SioLog
         {
             public string command   { get; set; }
             public int MsgKind      { get; set; }
-//            public int CpDataCnt { get; set; }
-//            public int AcuSelectingDataCnt { get; set; }
         }
 
         public class DataCounts
@@ -314,7 +312,9 @@ namespace SioLog
             //            ofd.InitialDirectory = @"C\";            
             // [ﾌｧｲﾙの種類]ではじめに
             //「すべてのﾌｧｲﾙ」が選択されているようにする
-            ofd.FilterIndex = 2;
+            ofd.Filter = "すべてのファイル(*.*)|*.*|" + 
+                "ログファイル(*.log)|*.log|" + "oldファイル(*.old)|*.old";
+            ofd.FilterIndex = 1;
             // ﾀｲﾄﾙ設定
             ofd.Title = "読込むﾌｧｲﾙを選択してください";
             // ﾀﾞｲｱﾛｸﾞﾎﾞｯｸｽを閉じる前に現在のDirを復元するようにする
@@ -394,6 +394,20 @@ namespace SioLog
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.FileName = inputFilePath.Text;
 
+
+
+            string inputExtension = System.IO.Path.GetExtension(this.inputFilePath.Text);
+            if (inputExtension != ".log" && inputExtension != ".old" && inputExtension != ".txt")
+            {
+                MessageBox.Show("「SIO.log」または「SIO.old」を選択してください",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+
+            }
+
             System.IO.Stream stream = ofd.OpenFile();
             //内容を読み込む
             System.IO.StreamReader sr =
@@ -404,27 +418,28 @@ namespace SioLog
 
             if (this.outputFilePath.Text == "")
             {
-                this.outputFilePath.Text = 
-                    System.IO.Path.GetDirectoryName(this.inputFilePath.Text);
+                this.outputFilePath.Text =
+                    System.IO.Path.GetDirectoryName(this.inputFilePath.Text) +
+                    myConstants.OutFileName;
             }
 
             // ﾌｧｲﾙ作成
             System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                this.outputFilePath.Text + myConstants.OutFileName,
-                true,
+                this.outputFilePath.Text,
+                false,  //true,
                 System.Text.Encoding.GetEncoding(myConstants.FileEncording));
 
-            // 
+
+            // 各種ﾌｨﾙﾀの状態を確認
             int nodeResult = ContainsNodeFilterCheckBox();
             int slaveResult = ContainsSlaveFilterCheckBox();
 
             string line = "";
             while ((line = sr.ReadLine()) != null)
             {
-                string[] data = line.Split(' ');
-                OriginalMsg = new MsgInfo();
+                string[] data = line.Split(' ');                
                 
-                // すっきりもーど(仮)
+                // すっきりもーど
                 bool result = false;
                 if (trashMode.Checked)
                 {
@@ -433,9 +448,10 @@ namespace SioLog
                         if (line.Contains(str))
                         {                            
                             result = true;
-                            break;
+                            break;                           
                         }
                     }
+                    if (result) continue;
                     // ｴｺｰﾊﾞｯｸ
                     // BAKE
                     if (line.Contains(myConstants.BakeRcvMsg) && data.Length > 7)
@@ -467,6 +483,13 @@ namespace SioLog
                         {
                             continue;
                         }
+#if SIMULATOR_MODE
+                        if (data[data.Length - 8] == myConstants.EtuMark &&
+                        data[data.Length - 3] == myConstants.ETX && data.Length == 14)
+                        {
+                            continue;
+                        }
+#endif
                     }
 
                 }
@@ -479,9 +502,10 @@ namespace SioLog
                             sw.WriteLine(line + sw.NewLine);
                             result = true;
                             break;
+                            
                         }
                     }
-
+                    if (result) continue;
                     // ｴｺｰﾊﾞｯｸ
                     // BAKE
                     if (line.Contains(myConstants.BakeRcvMsg) && data.Length > 7)
@@ -516,13 +540,21 @@ namespace SioLog
                         {
                             sw.WriteLine(line + sw.NewLine);
                             continue;
-                        }                        
+                        }
+#if SIMULATOR_MODE
+                        if (data[data.Length - 8] == myConstants.EtuMark &&
+                        data[data.Length - 3] == myConstants.ETX && data.Length == 14)
+                        {
+                            sw.WriteLine(line + sw.NewLine);
+                            continue;
+                        }
+#endif                        
                     }
-                }
-                if (result) continue;
+                }              
 
 
                 System.Text.StringBuilder ComAscii = new System.Text.StringBuilder();
+                OriginalMsg = new MsgInfo();
 
                 // SND
                 if (line.Contains(myConstants.SndMsg))
@@ -687,12 +719,7 @@ namespace SioLog
 
                         // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
                         case 6:
-                            // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞを表示しないにﾁｪｯｸ
-                            if (this.filterNoPulse.Checked || !this.filterPulse.Checked)
-                            {
-                                continue;
-                            }
-                            else if (this.filterPulse.Checked && !this.filterNoPulse.Checked)
+                            if (this.filterPulse.Checked)
                             {
                                 if (!CallSpinDic(OriginalMsg.command, line))
                                 {
@@ -700,6 +727,10 @@ namespace SioLog
                                     sw.WriteLine(myConstants.ErrorMsg + sw.NewLine);
                                     continue;
                                 }
+                            }
+                            else
+                            {
+                                continue;
                             }
 
                             break;
@@ -728,6 +759,18 @@ namespace SioLog
                 {
                     if (NodeFileter[i].Checked)
                     {
+                        if (NewLine.AddData[0].Contains("ACU"))
+                        {
+                            int acuNodeNum = GetAcuNodeNumber(NewLine.AddData[1]);
+                            if (acuNodeNum == i)
+                            {
+                                sw.WriteLine(line);
+                                NewLine.AddData.ForEach((string str) => sw.Write(str));
+                                sw.Write(sw.NewLine);
+                                break;
+                            }
+                        }
+                        
                         if (NewLine.AddData[1] == i.ToString())
                         {
                             sw.WriteLine(line);
@@ -864,7 +907,8 @@ namespace SioLog
             if (this.inputFilePath.Text != "")
             {
                 this.outputFilePath.Text =
-                    System.IO.Path.GetDirectoryName(this.inputFilePath.Text);
+                    System.IO.Path.GetDirectoryName(this.inputFilePath.Text) + 
+                    myConstants.OutFileName;
             }
         }
 
@@ -1963,7 +2007,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int wPosi = Array.LastIndexOf(data, "57");
+            int wPosi = Array.LastIndexOf(data, "57", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2002,7 +2046,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2036,7 +2080,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52") - 1;  // RRの後ろの方
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4) -1;  // RRの後ろの方
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2071,7 +2115,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2096,8 +2140,9 @@ namespace SioLog
                 NewLine.AddData.Add(".");
                 NewLine.AddData.Add(data[rPosi + 3]);
 
-                NewLine.AddData.Add("   外部ｾﾝｻ: ");    // 0FFF
+                NewLine.AddData.Add("   外部ｾﾝｻ: ");
                 NewLine.AddData.Add(data[rPosi + 4]);
+                NewLine.AddData.Add(".");
                 NewLine.AddData.Add(data[rPosi + 5]);              
 
                 NewLine.AddData.Add("\r\n");
@@ -2111,7 +2156,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int wPosi = Array.LastIndexOf(data, "57");
+            int wPosi = Array.LastIndexOf(data, "57", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2178,7 +2223,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2244,7 +2289,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int wPosi = Array.LastIndexOf(data, "57");
+            int wPosi = Array.LastIndexOf(data, "57", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2279,7 +2324,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2317,7 +2362,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int wPosi = Array.LastIndexOf(data, "57");
+            int wPosi = Array.LastIndexOf(data, "57", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2358,7 +2403,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
 
             // SND
             if (line.Contains(myConstants.SndMsg))
@@ -2398,7 +2443,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int wPosi = Array.LastIndexOf(data, "57");
+            int wPosi = Array.LastIndexOf(data, "57", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2444,7 +2489,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2493,7 +2538,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int wPosi = Array.LastIndexOf(data, "57");
+            int wPosi = Array.LastIndexOf(data, "57", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2530,7 +2575,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2566,7 +2611,7 @@ namespace SioLog
             NewLine.AddData = new List<string>();
             string[] data = line.Split(' ');
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int rPosi = Array.LastIndexOf(data, "52");
+            int rPosi = Array.LastIndexOf(data, "52", data.Length - 4);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2604,7 +2649,7 @@ namespace SioLog
             string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int mPosi = Array.LastIndexOf(data, "4D");
+            int mPosi = Array.LastIndexOf(data, "4D", data.Length - 3);
 
             // SND
             if (line.Contains(myConstants.SndMsg))
@@ -2649,8 +2694,9 @@ namespace SioLog
         {
             string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
-            System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int mPosi = Array.LastIndexOf(data, "4D");
+            System.Text.StringBuilder buf = new System.Text.StringBuilder();            
+            int mPosi = Array.LastIndexOf(data, "4D", data.Length - 3);
+
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2703,7 +2749,7 @@ namespace SioLog
             string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int sPosi = Array.LastIndexOf(data, "53");
+            int sPosi = Array.LastIndexOf(data, "53", data.Length - 3);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2768,7 +2814,7 @@ namespace SioLog
             string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int sPosi = Array.LastIndexOf(data, "53");
+            int sPosi = Array.LastIndexOf(data, "53", data.Length - 3);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2852,7 +2898,7 @@ namespace SioLog
             string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int jPosi = Array.LastIndexOf(data, "4A");
+            int jPosi = Array.LastIndexOf(data, "4A", data.Length - 3);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2915,7 +2961,7 @@ namespace SioLog
             string[] data = line.Split(' ');
             NewLine.AddData = new List<string>();
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
-            int ePosi = Array.LastIndexOf(data, "45");
+            int ePosi = Array.LastIndexOf(data, "45", data.Length - 3);
             // SND
             if (line.Contains(myConstants.SndMsg))
             {
@@ -2987,7 +3033,6 @@ namespace SioLog
         {
             System.Text.StringBuilder ComAscii = new System.Text.StringBuilder();
             string[] data = line.Split(' ');
-            OriginalMsg = new MsgInfo();
 
             // SND
             // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
@@ -2996,12 +3041,10 @@ namespace SioLog
                 ComAscii.Append((char)Convert.ToInt32(data[6], 16));
                 OriginalMsg.command = ComAscii.ToString();
                 OriginalMsg.MsgKind = 6;
-
-                return OriginalMsg;
             }
 
             // polling
-            if (data[5] == myConstants.EOT && data[data.Length - 1] == myConstants.ENQ)
+            else if (data[5] == myConstants.EOT && data[data.Length - 1] == myConstants.ENQ)
             {
                 if (data[8] == myConstants.PollingMark)
                 {
@@ -3011,7 +3054,7 @@ namespace SioLog
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 2;
-                    return OriginalMsg;
+                    
                 }
                 else
                 {
@@ -3021,7 +3064,6 @@ namespace SioLog
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 5;
-                    return OriginalMsg;
                 }
             }
             // selecting
@@ -3037,8 +3079,6 @@ namespace SioLog
                     OriginalMsg.MsgKind = 5;
 
                     DataCnt.acu = data.Count();
-
-                    return OriginalMsg;
                 }
                 // S1
                 else if (line.Contains("53 31"))
@@ -3051,7 +3091,6 @@ namespace SioLog
 
                         OriginalMsg.command = ComAscii.ToString();
                         OriginalMsg.MsgKind = 3;
-                        return OriginalMsg;
                     }
                     // ACUselecting
                     else if (data[data.Length - 5] == myConstants.PERIOD)
@@ -3064,7 +3103,6 @@ namespace SioLog
 
                         DataCnt.acu = data.Count();
 
-                        return OriginalMsg;
                     }
                 }
                 // HPselecting
@@ -3075,7 +3113,6 @@ namespace SioLog
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 3;
-                    return OriginalMsg;
                 }
             }
             // CP/ETU
@@ -3090,7 +3127,6 @@ namespace SioLog
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 1;
                     DataCnt.cp = data.Count();
-                    return OriginalMsg;
                 }
                 // ETU
                 else
@@ -3100,7 +3136,6 @@ namespace SioLog
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 4;
-                    return OriginalMsg;
                 }
 
             }
@@ -3117,7 +3152,6 @@ namespace SioLog
         {
             System.Text.StringBuilder ComAscii = new System.Text.StringBuilder();
             string[] data = line.Split(' ');
-            OriginalMsg = new MsgInfo();
 
             // BAKE RCV
             if (line.Contains(myConstants.BakeRcvMsg))
@@ -3127,55 +3161,50 @@ namespace SioLog
                 {
                     OriginalMsg.command = "";
                     OriginalMsg.MsgKind = 30;
-                    return OriginalMsg;
                 }
                 // Polling
-                if (data[7] == myConstants.STX && data[8].CompareTo("40") > 0)
+                else if (data[7] == myConstants.STX && data[8].CompareTo("40") > 0)
                 {
                     ComAscii.Append((char)Convert.ToInt32(data[8], 16));
                     ComAscii.Append((char)Convert.ToInt32(data[9], 16));
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 20;
-                    return OriginalMsg;                    
                 }
 
                 // CPwriting
-                if (data[9] == myConstants.ACK && data.Length == 14)
+                else if (data[9] == myConstants.ACK && data.Length == 14)
                 {
                     OriginalMsg.command = "";
                     OriginalMsg.MsgKind = 10;
-                    return OriginalMsg;
                 }
                 // CPreading
-                if (data.Length > 15 && data[8].CompareTo("40") < 0)
+                else if (data.Length > 15 && data[8].CompareTo("40") < 0)
                 {
                     ComAscii.Append((char)Convert.ToInt32(data[9], 16));
                     ComAscii.Append((char)Convert.ToInt32(data[10], 16));
 
                     OriginalMsg.command = ComAscii.ToString();
                     OriginalMsg.MsgKind = 11;
-                    return OriginalMsg;
                 }
             }
 
             // SPIN RCV
-            if (line.Contains(myConstants.SpinRcvMsg))
+            else if (line.Contains(myConstants.SpinRcvMsg))
             {
                 if (data.Length < 10)
                 {
-                    //// ACUselecting
-                    //if (data[data.Length - 1] == myConstants.ACK || 
-                    //    data[data.Length - 1] == myConstants.NAK)
-                    //{
                     OriginalMsg.command = "";
                     OriginalMsg.MsgKind = 31;
-                    //    return OriginalMsg;
-                    //}
-                    //else
-                    //{
-                    //}
                 }
+                // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
+                else if (data[6] == "50")
+                {
+                    ComAscii.Append((char)Convert.ToInt32(data[Array.IndexOf(data, "50")], 16));
+                    OriginalMsg.command = ComAscii.ToString();
+                    OriginalMsg.MsgKind = 6;
+                }
+
                 else
                 {
                     // ACUpolling
@@ -3185,15 +3214,12 @@ namespace SioLog
                         {
                             if (data[i].CompareTo("40") > 0)
                             {
-                                // ﾌｫｰﾏｯﾄは正しくないけど何とかなりそうなやつ
+                                // ﾌｫｰﾏｯﾄ正しくないやつ
                                 if (data[i - 1].Contains("RCV"))
                                 {
-                                    //ComAscii.Append((char)Convert.ToInt32(data[i], 16));
-                                    //ComAscii.Append((char)Convert.ToInt32(data[i + 1], 16));
-                                    //break;
                                     OriginalMsg.command = "";
                                     OriginalMsg.MsgKind = 100;
-                                    return OriginalMsg;
+                                    break;
                                 }
                                 // ERとJO
                                 if (data[i - 1].CompareTo("40") > 0)
@@ -3214,76 +3240,38 @@ namespace SioLog
 
                         OriginalMsg.command = ComAscii.ToString();
                         OriginalMsg.MsgKind = 50;
-                        return OriginalMsg;
                     }
-
-#if SIMULATOR_MODE
-                if (data.Length == 14 && data[data.Length - 3] == myConstants.ETX)
-                {
-                    OriginalMsg.command = "";
-                    OriginalMsg.MsgKind = 31;
-                    return OriginalMsg;
-                }
-#endif
                     // ETU 
-//                    if (data[6] == myConstants.EtuMark && data[data.Length - 3] == myConstants.ETX)
- //                   {
-                        // reading
-                        if (line.Contains(" 52 ") && data[data.Length - 3] == myConstants.ETX)
+                    // reading
+                    else if (line.Contains(" 52 ") && data[data.Length - 3] == myConstants.ETX)
+                    {
+                        int rPosi = Array.LastIndexOf(data, "52");
+                        if (data[rPosi - 1] != "52")
                         {
-                            int rPosi = Array.LastIndexOf(data, "52");
-                            if (data[rPosi - 1] != "52")
-                            {
-                                ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
-                                ComAscii.Append((char)Convert.ToInt32(data[rPosi + 1], 16));
-                            }
-                            // RR
-                            else
-                            {
-                                ComAscii.Append((char)Convert.ToInt32(data[rPosi - 1], 16));
-                                ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
-                            }
-
-                            OriginalMsg.command = ComAscii.ToString();
-                            OriginalMsg.MsgKind = 40;
-                            return OriginalMsg;
+                            ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
+                            ComAscii.Append((char)Convert.ToInt32(data[rPosi + 1], 16));
                         }
-                        // writing
+                        // RR
                         else
                         {
-                            OriginalMsg.command = "";
-                            OriginalMsg.MsgKind = 41;
-                            return OriginalMsg;
+                            ComAscii.Append((char)Convert.ToInt32(data[rPosi - 1], 16));
+                            ComAscii.Append((char)Convert.ToInt32(data[rPosi], 16));
                         }
-//                    }
 
-                    // ﾊﾟﾙｽﾓｰﾀｰﾄﾞﾗｲﾊﾞ
-                    if (data[6] == "50")
-                    {
-                        ComAscii.Append((char)Convert.ToInt32(data[Array.IndexOf(data, "50")], 16));
                         OriginalMsg.command = ComAscii.ToString();
-                        OriginalMsg.MsgKind = 6;
-
-                        return OriginalMsg;
+                        OriginalMsg.MsgKind = 40;
+                    }
+                    // writing
+                    else
+                    {
+                        OriginalMsg.command = "";
+                        OriginalMsg.MsgKind = 41;
                     }
                 }
             }
             return OriginalMsg;
 
         }
-
-
-        /// <summary>
-        /// 特定の文字列の出現回数をカウント
-        /// </summary>
-        /// <param name="s"></param>
-        /// <param name="c"></param>
-        /// <returns></returns>
-        public static int CountStx(string[] data, string s)
-        {
-             return data.Count(v => v == s);
-        }
-
 
         /// <summary>
         /// ﾃﾞｰﾀ長確認
@@ -3296,8 +3284,16 @@ namespace SioLog
             {
                 throw new Exception(myConstants.ErrorMsg);
             }
+        }
 
-
+        /// <summary>
+        /// ACUのﾉｰﾄﾞ番号の下一桁を取得する
+        /// </summary>
+        /// <param name="strNode"></param>
+        /// <returns></returns>
+        private int GetAcuNodeNumber(string strNode)
+        {
+            return (int.Parse(strNode)) % 10;
         }
 
 
@@ -3314,8 +3310,6 @@ namespace SioLog
             public const string SndMsg = "]SND S";
             public const string BakeRcvMsg = "RCV U";
             public const string SpinRcvMsg = "]RCV";
-            public const string PulseMortorRcvmsg = "P2]RCV";
-            public const string PulseMortorSndmsg = "P2]SND";
 
             public const string ErrorMsg = "      未対応のﾒｯｾｰｼﾞです";
             public const string ErrorNodeNum = "!!ﾉｰﾄﾞ番号が不明です!!";          
